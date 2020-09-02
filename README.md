@@ -1,2 +1,3 @@
 # ahmedmujtabanizamani.github.io
-* [ipwd](ipwd/lab3.html)
+### IP&amp;WD
+* [lab#3](ipwd/lab3.html)

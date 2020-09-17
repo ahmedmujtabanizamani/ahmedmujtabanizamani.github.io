@@ -1,0 +1,27 @@
+.container{
+margin:20px;
+display:flex;
+background-size:cover;
+flex-wrap:wrap;
+}
+.intro{
+padding:20px;
+}
+.pic{
+width:130px;
+height:130px;
+border-radius:50%;
+box-shadow:1px 1px 4px #0EC0F7;
+}
+.info{
+padding:15px 0 10px 20px;
+}
+a{
+text-decoration:none;
+color:black;
+}
+.icon{
+text-align:center;
+width:20px;
+margin:10px;
+}

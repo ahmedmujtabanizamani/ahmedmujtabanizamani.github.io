@@ -1,0 +1,11 @@
+.gallery{
+margin:10px 50px 10px 50px;
+display:flex;
+flex-flow: row wrap;
+justify-content:center;
+align-items:stretch;
+}
+.gallery > img{
+margin:2px;
+}
+

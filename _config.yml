@@ -1,4 +1,7 @@
 theme: jekyll-theme-cayman
 title : Ahmed Mujtaba
-description: This repository is just for collection of educational materials, which are collected during study purposes.
+description: This repository is just collection of educational materials.
 show_downloads: true
+github:
+  zip_url: http://example.com/download.zip
+  another_url: another value

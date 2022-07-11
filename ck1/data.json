@@ -1,1882 +1,1882 @@
 {
-    "Cardio-Vascular system": [
-      {
-        "name": "EMBRYO",
-        "video": "https://iframe.mediadelivery.net/embed/6781/4264581c-a41f-4180-836d-04c1b83987b6?autoplay=true"
-      },
-      {
-        "name": "CARDIAC OUTPUT | FETAL CIRCULATION | ANATOMY OF HEART",
-        "video": "https://iframe.mediadelivery.net/embed/6781/d4bc45a3-8647-462e-8c33-216548e3c3bc?autoplay=true"
-      },
-      {
-        "name": "CARDIAC OUTPUT EQUATIONS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/24da2370-e867-48db-9fe5-86efed129aec?autoplay=true"
-      },
-      {
-        "name": "4. HEART SOUNDS | SPLITTING HEART SOUNDS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/70a08687-3248-471f-b19e-d6b53d052c12?autoplay=true"
-      },
-      {
-        "name": "5. MYOCARDIAL ACTION POTENTIAL",
-        "video": "https://iframe.mediadelivery.net/embed/6781/ce6a4b98-1795-412d-aacd-26cb41b4d73c?autoplay=true"
-      },
-      {
-        "name": "6. AV BLOCK | ANP | BNP",
-        "video": "https://iframe.mediadelivery.net/embed/6781/76b97488-596c-4498-aab3-f44d8d1c03f1?autoplay=true"
-      },
-      {
-        "name": "7. BARORECEPTOR | CHEMORECEPTOR | AUTOREGULATION",
-        "video": "https://iframe.mediadelivery.net/embed/6781/13866aa8-a048-4706-9180-d24fda764061?autoplay=true"
-      },
-      {
-        "name": "8. AUTOREGULATION | CONGENITAL DISEASES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/2bfc12e8-4b0c-4bdb-a1c5-782083f15129?autoplay=true"
-      },
-      {
-        "name": "9. CONGENITAL DISEASES | ARTERIOSCLEROSIS | ATHEROSCLEROSIS | HYPERTENSION",
-        "video": "https://iframe.mediadelivery.net/embed/6781/27ebed69-9cfa-44fa-988d-2a93650e45a6?autoplay=true"
-      },
-      {
-        "name": "10. ATHEROSCLEROSIS | ANEURISM",
-        "video": "https://iframe.mediadelivery.net/embed/6781/ef59c961-1b3b-4372-aac7-afc84051b49e?autoplay=true"
-      },
-      {
-        "name": "11. ANGINA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f626fa5e-eabb-4f8b-8256-28495b8980c8?autoplay=true"
-      },
-      {
-        "name": "12. CARIOMYPATHIES | HEART FAILURE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/03e6bad4-6ba6-48f5-8c57-784bc61d7664?autoplay=true"
-      },
-      {
-        "name": "13. CARDIAC & VASCULAR FUNCTIONAL CURVE | SHOCK",
-        "video": "https://iframe.mediadelivery.net/embed/6781/74dd9e8d-7c77-4246-a760-a98815e52bbd?autoplay=true"
-      },
-      {
-        "name": "14. SHOCK | RHEUMATIC FEVER",
-        "video": "https://iframe.mediadelivery.net/embed/6781/ef2ee308-9e17-4b14-83bc-6db215d87597?autoplay=true"
-      },
-      {
-        "name": "15. ECG LEADS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8f25ac26-1f6d-45e5-b4d0-b5aa071d3e58?autoplay=true"
-      },
-      {
-        "name": "16. ECG | MURMERS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/9669bb39-d956-4085-b34a-46357912949b?autoplay=true"
-      },
-      {
-        "name": "17. MURMERS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/06a54596-c45c-444c-bcfb-cdec01342681?autoplay=true"
-      },
-      {
-        "name": "18. MURMERS | MYOCARDITIS | PERICARDITIS | VASCULITIS |",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e9525b00-1979-49c2-b20b-357554819481?autoplay=true"
-      },
-      {
-        "name": "19. VASCULITIS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/9f6fc2bb-9617-4fec-addf-fa5c0411dbec?autoplay=true"
-      },
-      {
-        "name": "20. CARDIAC TUMORS | PHARMA (HYPERTENSION TREATMENT & CARDOIVASCULAR AGENTS)",
-        "video": "https://iframe.mediadelivery.net/embed/6781/a851406a-58bf-4c86-b10e-b70bc6cc067a?autoplay=true"
-      },
-      {
-        "name": "21. CALCIUM CHANNEL BLOCKERS | DIGIOXIN",
-        "video": "https://iframe.mediadelivery.net/embed/6781/17d4498e-aefe-4d45-b174-1caf278cf0bf?autoplay=true"
-      },
-      {
-        "name": "22. LIPID LOWERING AGENTS | ANTIARRYTHMIC DRUGS | SODIUM CHANNEL BLOKCERS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/a2e3b3d7-2cc1-4750-9c9b-dace3447af53?autoplay=true"
-      },
-      {
-        "name": "23. ANTIARRYTHMIC DRUGS | SODIUM CHANNEL BLOCKERS | BETA BLOCKERS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/4b0df4a5-41da-496b-a392-c39181067739?autoplay=true"
-      },
-      {
-        "name": "24. CARDIAC CYCLE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/12fce2c2-eb2d-421c-bdd9-052647bfb980?autoplay=true"
-      },
-      {
-        "name": "25. PRESSURE VOLUME | LOOP CARDIAC CYCLE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/38e2e9e1-9393-462b-848e-b606466c9fbe?autoplay=true"
-      },
-      {
-        "name": "26. CARDIAC CYCLE (JVP PORTION)",
-        "video": "https://iframe.mediadelivery.net/embed/6781/2ef56f8a-c9e0-43d5-a3a5-fb58569ce3e4?autoplay=true"
-      },
-      {
-        "name": "ECG",
-        "video": "https://iframe.mediadelivery.net/embed/6781/00e8c7b1-d543-467b-80f9-284cc9df0673?autoplay=true"
-      },
-      {
-        "name": "ECG",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c8eacc54-7def-4c6a-8078-d383a4dc21a7?autoplay=true"
-      },
-      {
-        "name": "ECG",
-        "video": "https://iframe.mediadelivery.net/embed/6781/138d6807-9086-4929-baa9-ba8c5d495b0c?autoplay=true"
-      },
-      {
-        "name": "ECG",
-        "video": "https://iframe.mediadelivery.net/embed/6781/6902c073-afa1-450f-9444-40626cb620f8?autoplay=true"
-      },
-      {
-        "name": "ECG",
-        "video": "https://iframe.mediadelivery.net/embed/6781/22a665cd-45bc-4a75-9185-5f44a3e1033a?autoplay=true"
-      },
-      {
-        "name": "ECG",
-        "video": "https://iframe.mediadelivery.net/embed/6781/10be6de6-55cc-4793-a236-868f275ae07b?autoplay=true"
-      }
-    ],
-    "Central Nervous System": [
-      {
-        "name": "EMBRYO | NEURAL TUBE DEFECT",
-        "video": "https://iframe.mediadelivery.net/embed/6781/3cba4625-d655-4587-b152-4e20d4d039f2?autoplay=true"
-      },
-      {
-        "name": "NEURAL TUBE DEFECT | POSTERIOR CRANIAL FOSSA MALFORMATIONS | SPINAL TRACCT ANATOMY & FUNCTIONING",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f76a04c6-4c9e-4d85-bb1c-f1e7b928f64e?autoplay=true"
-      },
-      {
-        "name": "SPINAL TRACT | UMN | LMN | SYRINGOMELIA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/692bf92e-c623-484d-bd14-072221a8f6ed?autoplay=true"
-      },
-      {
-        "name": "TONGUE DEVELOPMENT | CELLS IN CNS | SENSORY RECEPTORS | PERIPHERAL NERVES | CHROMATOLYSIS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/d3ae1343-d5fa-4d82-b10d-eae853496daf?autoplay=true"
-      },
-      {
-        "name": "NEUROTRANSMITTER CHANGES + DISEASES | MENINGES | BLOOD BRAIN BARRIER | SLEEP PHYSIOLOGY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bbb66891-9320-405c-b32e-239caa10cfd5?autoplay=true"
-      },
-      {
-        "name": "PHYSIOLOGY OF SLEEP",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7b4e133d-2627-44cf-b478-4d32cbcf4746?autoplay=true"
-      },
-      {
-        "name": "HYPOTHALAMUS & ITS NUCLEI | THALAMUS & ITS NUCLEI | LIMBIC SYSTEM",
-        "video": "https://iframe.mediadelivery.net/embed/6781/28851feb-fa32-4071-9715-a5f2976a08e9?autoplay=true"
-      },
-      {
-        "name": "DOPAMINERGIC PATHWAYS | CEREBELLUM",
-        "video": "https://iframe.mediadelivery.net/embed/6781/5abb9a5a-729e-43f6-aa7b-eaa9a097b1b3?autoplay=true"
-      },
-      {
-        "name": "BASAL GANGLIA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7fbaa569-1ecd-45a8-ba76-0f5bf7ff7faf?autoplay=true"
-      },
-      {
-        "name": "CEREBRAL CORTICAL REGION & HOMUNCULUS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/1acbae49-b5b6-4787-a510-08725a417c77?autoplay=true"
-      },
-      {
-        "name": "HOMUNCULUS | CEREBRAL PERFUSION | WATERSHED ZONES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e3a5fa8d-bda8-4901-8cf8-c3ed92e21e1b?autoplay=true"
-      },
-      {
-        "name": "CIRCLE OF WILLIS | DURAL VENOUS SINUS | VENTRICULAR SYSTEM OF BRAIN | CRANIAL NERVE NUCLEI",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8120c955-7998-4250-b816-e38bafd57e7e?autoplay=true"
-      },
-      {
-        "name": "CRANIAL NERVES & CRANIAL VESSELS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/2e5e43d3-0250-4781-91b8-667682ab026c?autoplay=true"
-      },
-      {
-        "name": "CRANIAL NERVES | CRANIAL NERVE REFLEXES | LESIONS OF CRANIAL NERVES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/9efe5bc8-07fc-4e39-8eaf-deb3c37a43f7?autoplay=true"
-      },
-      {
-        "name": "FACIAL NERVE LESION | COMMON CRANIAL NERVE LESIONS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/03e261f1-a133-4dd2-9e88-429e9f53de8b?autoplay=true"
-      },
-      {
-        "name": "PUPILLARY CONTROL | HORNER SYNDROME | CRANIAL NERVE '3' DAMAGE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/4e290566-0467-4066-92a7-f4103e728061?autoplay=true"
-      },
-      {
-        "name": "CRANIAL NERVE '4' & CRANIAL NERVE '6' LESIONS | VISUAL FIELD DEFECT",
-        "video": "https://iframe.mediadelivery.net/embed/6781/4395d3f4-0cd8-4d46-9b4b-ee14edfa6ab3?autoplay=true"
-      },
-      {
-        "name": "CAVERNOUS SINUS | INTRA-NUCLEAR OPHTHALMOPLEGIA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/aa04ad0c-1a02-4cdb-9cfc-435ce31f29cf?autoplay=true"
-      },
-      {
-        "name": "ASCENDING & DESCENDING SPINAL TRACT",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f4bb7909-1dec-4e05-847d-c883ee4fa07c?autoplay=true"
-      },
-      {
-        "name": "MOTOR NEURON LESIONS | BROWN SEQUARD SYNDROME",
-        "video": "https://iframe.mediadelivery.net/embed/6781/72555992-2a94-4db6-b9a0-e5f8aa7ba30d?autoplay=true"
-      },
-      {
-        "name": "CAUDA EQUINA SYNDROME",
-        "video": "https://iframe.mediadelivery.net/embed/6781/a473aaa6-7b60-473f-ab01-375b5d496841?autoplay=true"
-      },
-      {
-        "name": "SYRINGOMELIA | ARNOLD CHIARI MALFORMATION | DANDY WALKER SYNDROME",
-        "video": "https://iframe.mediadelivery.net/embed/6781/1b21eaac-c73a-405a-8f94-6945f0d06298?autoplay=true"
-      },
-      {
-        "name": "INTRA-CRANIAL HAEMORRAHGE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7b8243b6-73d1-4968-b1e9-33e607998d51?autoplay=true"
-      },
-      {
-        "name": "ANEURYSM | NEONATAL INTRAVENTRICULAR HAEMORRHAGE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/86cdf83b-383a-4260-ae34-97cfc55a272f?autoplay=true"
-      },
-      {
-        "name": "ISCHEMIC STROKE | EFFECTS OF STROKE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/2eec7e4c-85e1-4e17-ac0c-33ef1652373a?autoplay=true"
-      },
-      {
-        "name": "APHASIA & ITS STYPES | SEIZURES | FEVER VS HEAT STROKE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/2417de56-3242-4e7c-948e-ba6f5c906d50?autoplay=true"
-      },
-      {
-        "name": "HYDROCEPHALUS | CLINICAL REFLEXES | DERMATOMAL LANDMARKS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/162c5dc6-fe14-4d0a-9bc2-fcd5de1336e9?autoplay=true"
-      },
-      {
-        "name": "CRANIAL NERVES '5' '7' '8' '9' '10' '11' '12' | POSTERIOR CIRCULATION (ASA , AICA , PICA )",
-        "video": "https://iframe.mediadelivery.net/embed/6781/1b3f1399-cf5d-40dd-8e4f-fc5c5495db24?autoplay=true"
-      },
-      {
-        "name": "PRIMITIVE REFLEXES | BRAIN LESIONS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c2efe07d-85ef-46b3-8db0-4b84dc9338d7?autoplay=true"
-      },
-      {
-        "name": "BRAIN LESIONS | MULTIPLE SCLEROSIS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/4cec69bf-895c-409a-bd85-b2aa39dd0561?autoplay=true"
-      },
-      {
-        "name": "MULTIPLE SCLEROSIS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/3d158856-15be-4ddf-9dd4-d272b920a24b?autoplay=true"
-      },
-      {
-        "name": "NEURO-CUTANEOUS DISORDER",
-        "video": "https://iframe.mediadelivery.net/embed/6781/ad2ff01e-a0e0-497f-8c2a-adcb31164a4f?autoplay=true"
-      },
-      {
-        "name": "NEURO-CUTANEOUS DISORDER | BRAIN TUMORS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8736a370-46f4-4c9d-81fc-4af3be5a3da1?autoplay=true"
-      },
-      {
-        "name": "BRAIN TUMOR",
-        "video": "https://iframe.mediadelivery.net/embed/6781/0db7f14a-c6f1-4335-ade6-96e766f9f98b?autoplay=true"
-      },
-      {
-        "name": "NEURO-DEGENERATIVE DISORDER",
-        "video": "https://iframe.mediadelivery.net/embed/6781/9a89b3af-e912-4f94-8c97-23ad59a26839?autoplay=true"
-      },
-      {
-        "name": "NEURODEGENERATIVE DISORDER",
-        "video": "https://iframe.mediadelivery.net/embed/6781/140c200e-fa4f-4d23-acdb-bca454bbda7d?autoplay=true"
-      },
-      {
-        "name": "OTOLOGY--- WEBER's & RINIE's TEST",
-        "video": "https://iframe.mediadelivery.net/embed/6781/a7a4fa93-83f0-4b72-b373-96404208a290?autoplay=true"
-      },
-      {
-        "name": "WEBER TEST & RINNE TEST",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bbabb2c9-9cf2-45f6-b630-4dc38291921a?autoplay=true"
-      },
-      {
-        "name": "NEURO-DEGENERATIVE DISORDER",
-        "video": "https://iframe.mediadelivery.net/embed/6781/28eafcef-54de-4cb7-8905-a30cccf887bf?autoplay=true"
-      },
-      {
-        "name": "VERTIGO",
-        "video": "https://iframe.mediadelivery.net/embed/6781/a3199e9b-4f17-40a1-af43-260cce4ccd6b?autoplay=true"
-      },
-      {
-        "name": "OPHTHALMOLOGY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/9ee61c66-cf48-4faa-8cfa-0e76b47d54a3?autoplay=true"
-      },
-      {
-        "name": "OTHER DEMYELINATING & DYSMYELINATING DISORDERS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/816093bf-2705-4483-a86e-81fb0c848a68?autoplay=true"
-      },
-      {
-        "name": "HERNIATION SYNDROME | MASTICATION | SPINAL NERVE | CEREBRAL PERFUSION",
-        "video": "https://iframe.mediadelivery.net/embed/6781/14e10014-582c-4cc1-9f2d-574094df4e35?autoplay=true"
-      },
-      {
-        "name": "POLIOMYELITIS | SPINAL CORD LESIONS | SYRINGOMYLIA | ANT SPINAL ARTERY OCCLUSION | TERTIARY SYPHILLIS  |  TABES DORSALIS | VIT B12 DEFICIENCY ",
-        "video": "https://iframe.mediadelivery.net/embed/14161/0b4d2fd5-877e-4b91-a678-c2ad5e6cfea4?autoplay=true"
-      }
-    ],
-    "Respiratory System": [
-      {
-        "name": "EMBRYO",
-        "video": "https://iframe.mediadelivery.net/embed/6781/6a850b1c-47f2-4269-8a63-e1f2c317a1c4?autoplay=true"
-      },
-      {
-        "name": "ANATOMY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/af8d13be-2981-46ce-b87d-687ad4f6f729?autoplay=true"
-      },
-      {
-        "name": "ANATOMY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c8f27420-0db3-437f-8246-0ba57fcd5964?autoplay=true"
-      },
-      {
-        "name": "LUNG & CHEST WALL",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f7214727-d54c-4273-8c8c-de36ca9d1ad0?autoplay=true"
-      },
-      {
-        "name": "CHEST WALL",
-        "video": "https://iframe.mediadelivery.net/embed/6781/16bcd9b5-1878-417b-aa23-f72fe8ca470a?autoplay=true"
-      },
-      {
-        "name": "METHHAEMOGLOBIN",
-        "video": "https://iframe.mediadelivery.net/embed/6781/899d0b2f-fc15-4b46-a501-d22b763b2cf6?autoplay=true"
-      },
-      {
-        "name": "O2 CURVE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e569af90-d772-40b8-a3d8-98ca41a90ea1?autoplay=true"
-      },
-      {
-        "name": "PULMONARY CIRCULATION",
-        "video": "https://iframe.mediadelivery.net/embed/6781/1bd2b101-75a9-48b7-ba3e-2ad1613193a8?autoplay=true"
-      },
-      {
-        "name": "ALVEOLAR GAS EQUATION",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bb470572-40a2-4d64-b116-da39f875577b?autoplay=true"
-      },
-      {
-        "name": "V/Q MISMATCH",
-        "video": "https://iframe.mediadelivery.net/embed/6781/0594b2fe-ed76-44d8-ba19-669cdc4ed665?autoplay=true"
-      },
-      {
-        "name": "V/Q MISMATCH",
-        "video": "https://iframe.mediadelivery.net/embed/6781/6883c3ec-7d5f-42e3-aa06-7cd0f055c3af?autoplay=true"
-      },
-      {
-        "name": "CARBON DIOXIDE TRANSPORT",
-        "video": "https://iframe.mediadelivery.net/embed/6781/dd94fbf0-fa56-442d-8b56-3fc6d3e9baa5?autoplay=true"
-      },
-      {
-        "name": "RESPONSE TO HIGH ALTITUDE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/1264e0b5-a68d-461d-b830-216b9e9ad96c?autoplay=true"
-      },
-      {
-        "name": "DEEP VEIN THROMBOSIS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/cdf79e85-cec7-4d95-988d-84de0eeff6dc?autoplay=true"
-      },
-      {
-        "name": "PULMONARY EMBOLISM",
-        "video": "https://iframe.mediadelivery.net/embed/6781/005478cc-371b-419a-a701-3c0183ed2fa1?autoplay=true"
-      },
-      {
-        "name": "FLOW VOLUME LOOP",
-        "video": "https://iframe.mediadelivery.net/embed/6781/1190e34f-305e-4a11-9b45-2d3ac8ebfc4b?autoplay=true"
-      },
-      {
-        "name": "OBSTRUCTIVE LUNG DISEASE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b59db54f-40d2-459f-abf6-de34ea901e44?autoplay=true"
-      },
-      {
-        "name": "CHRONIC BRONCHITIS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/afa3a675-0b3c-4434-be5f-86116759573b?autoplay=true"
-      },
-      {
-        "name": "CHRONIC BRONCHITIS | OBSTRUCTIVE LUNG DISEASE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/fb471893-ed05-4320-86ab-462f718aa37f?autoplay=true"
-      },
-      {
-        "name": "EMPHYSEMA & ASTHMA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7659c5f8-0270-418f-ae0e-09ca451a004f?autoplay=true"
-      },
-      {
-        "name": "RESTRICTIVE LUNG DISEASE | ASTHMA | BRONCHIECTASIS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/a93193e4-1cd8-42aa-b876-1f80e97cc978?autoplay=true"
-      },
-      {
-        "name": "RESTRICTIVE LUNG DISEASE ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/6cb54efc-6c17-49cc-9f59-4fa1eef30ec4?autoplay=true"
-      },
-      {
-        "name": "RESTRICTIVE LUNG DISEASE ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/dbcf07ef-1420-4ee6-8090-2089b9b4bb4f?autoplay=true"
-      },
-      {
-        "name": "ARDS & SLEEP APNEA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8bf17949-144d-4098-98da-bdcc42f89444?autoplay=true"
-      },
-      {
-        "name": "LUNG CANCER",
-        "video": "https://iframe.mediadelivery.net/embed/6781/1c34ed75-9b2a-4f6d-8ed0-a1acf56f6767?autoplay=true"
-      },
-      {
-        "name": "SUPERIOR VENA CAVA SYNDROME | PANCOAST TUMOUR | LUNG ABSCESS | PULMONARY HYPERTENSION",
-        "video": "https://iframe.mediadelivery.net/embed/6781/0eac2357-9011-437b-84af-4adcff30cb33?autoplay=true"
-      },
-      {
-        "name": "PNEUMOTHORAX & PLEURAL EFFUSION",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7b69f26d-2737-4371-a995-4701739f6e10?autoplay=true"
-      },
-      {
-        "name": "PLEURAL EFFUSION | LUNG & CHEST WALL",
-        "video": "https://iframe.mediadelivery.net/embed/6781/29623f45-e796-4beb-9e65-332c93fdbac4?autoplay=true"
-      },
-      {
-        "name": "PNEUMONIA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f19e82f8-9331-4344-9a57-827f31c1cc95?autoplay=true"
-      },
-      {
-        "name": "PNEUMONIA | ATELACTASIS | PATHOLOGY OF MEDIASTINUM | INHALATIONAL INJURY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/23ca3dc9-50fb-44ed-a4d9-0bdaed554a07?autoplay=true"
-      }
-    ],
-    "Gastro-Intestinal System": [
-      {
-        "name": "RESPIRATORY CROUP",
-        "video": "https://iframe.mediadelivery.net/embed/6781/9d2682ba-724e-4a07-bf34-7907c3029546?autoplay=true"
-      },
-      {
-        "name": "NORMAL GIT EMBRYOLOGY | VENTRAL WALL DEFECTS | CONGENITAL UMBILICAL HERNIA | TEF | DUEDENAL AND JEJUNAL ATRESIA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/32c79037-58ff-4b2c-8f61-f31bb57d8ec4?autoplay=true"
-      },
-      {
-        "name": "GIT EMBRYOLOGY | GIT ANATOMY | RETROPERITONEAL STRUCTURES | GIT LIGAMENTS | HYPERTOPHIC PYLORIC STENOSIS | SPLEEN AND PANCREAS ANAMOLIES ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/0a70f0a2-5cd8-4086-8ef9-c9fd1bf03df6?autoplay=true"
-      },
-      {
-        "name": "DIGESTIVE ANATOMY | GI HISTOLOGY BLOOD SUPPLY AND INNEVATION | ABDOMINAL AORTA AND ITS BRANCHES  ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f3516220-13ef-4488-9fcf-daca7194f7d3?autoplay=true"
-      },
-      {
-        "name": "CILIAC TRUNK | PORTOSYSTEMIC ANASTOMOSIS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/10fa2373-e10a-46c9-b006-84cb8d884c20?autoplay=true"
-      },
-      {
-        "name": "PORTOSYSTEMIC ANASTOMOSIS | PECTINATE LINE | HEPATIC ARCHITECTURE ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bf8abedb-5c2c-4a0d-8a8e-349f6c375904?autoplay=true"
-      },
-      {
-        "name": "BILIARY STRUCTURE | FEMORAL REGION | INGUINAL CANAL | ABDOMENAL WALL | HERNIAS | GIT HORMONES ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/341fefa9-e61e-40dc-a55e-45f01887a545?autoplay=true"
-      },
-      {
-        "name": "7. ALCOHLIC LIVER DISEASES | HCC | OTHER LIVER TUMORS | BUD CHIARI SYNDROME | ALPHA ANTITRYPSIN DEFICIENCY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/2e905de0-e14a-443c-82bb-2cb287816227?autoplay=true"
-      },
-      {
-        "name": "8. JAUNDICE | DIRECT & INDIRECT | HYPERBILIRUBINEMIA | BILIARY ATRESIA | HEREDITARY HYPERBILIRUBINEMIA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/5a647b61-adc8-4eb6-ac64-0c409babeee1?autoplay=true"
-      },
-      {
-        "name": "9. WILSON DISEASE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/889e70cf-ba73-4e73-b462-1b77b0c9b4a2?autoplay=true"
-      },
-      {
-        "name": "10. WILSON DISEASE | HEMOCHROMATOSIS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/399f841b-6a58-4084-9ba8-46c1409b4624?autoplay=true"
-      },
-      {
-        "name": "11. BILIARY TRACT DISEASE | CHOLILITHIASIS + PATHOLOGIES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/4441448d-6b29-4628-a4eb-350436fc4a9c?autoplay=true"
-      },
-      {
-        "name": "12. ACUTE & CHRONIC PANCREATITIS | PANCREATIC CANCER",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7cfc485e-8721-4c71-97f9-af337b72a183?autoplay=true"
-      },
-      {
-        "name": "13. GIT Sialadenitis---- Salivary Gland Tumor --- Esophageal Pathology",
-        "video": "https://iframe.mediadelivery.net/embed/6781/63e78b33-19c6-4f64-81d0-6c1522f4e35c?autoplay=true"
-      },
-      {
-        "name": "14. GIT   Secretions----Pancreatic Secretions---Carbon & Iron Absorption",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e2204e08-da82-492f-8f95-066c27cfc6fa?autoplay=true"
-      },
-      {
-        "name": "15. DGESTIVE TRACT ANATOMY | BARRETS ESOPHAGUS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b7231b8e-e60f-49c3-bf99-87d6112d45e3?autoplay=true"
-      },
-      {
-        "name": "16. GASTRITIS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/004e6755-f88a-46b3-82fa-5da987e7633f?autoplay=true"
-      },
-      {
-        "name": "PEPTIC ULCER DISEASE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/28a52160-f96c-4894-a87c-d7756fa733da?autoplay=true"
-      },
-      {
-        "name": "18. SILOLITHIASIS | SALIVARY GLAND TUMORS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/ebdcd0f4-3f50-4375-bb53-a9c2b533820d?autoplay=true"
-      },
-      {
-        "name": "19.ACHLASIA | ESOPHAGEAL PATHOLOGIES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/2a1f41f3-2e12-431c-9873-e82c78915a3b?autoplay=true"
-      },
-      {
-        "name": " 20. ESOPHAGEAL PATHOLOGIES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f3c3ada2-c48b-42cb-830d-88b720f84905?autoplay=true"
-      },
-      {
-        "name": "21 MALABSORBTION SYNDROME",
-        "video": "https://iframe.mediadelivery.net/embed/6781/46178d69-26a4-4899-a1d4-3363c98c17a9?autoplay=true"
-      },
-      {
-        "name": " 22. MALABSORPTION SYNDROME",
-        "video": "https://iframe.mediadelivery.net/embed/6781/0e0dd442-0e79-4e64-8209-82d665276b02?autoplay=true"
-      },
-      {
-        "name": "23. MALABSORPTION SYNDROME",
-        "video": "https://iframe.mediadelivery.net/embed/6781/16c66985-02a1-4803-9d1f-c7ef2c26c8b5?autoplay=true"
-      },
-      {
-        "name": "24. IBD",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b43a96f4-538d-4a1f-98b4-d6928f24a096?autoplay=true"
-      },
-      {
-        "name": "25. IBS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/03dd8c02-142b-4115-a0b5-111b7ac6eb31?autoplay=true"
-      },
-      {
-        "name": "26. INFLAMMATORY BOWEL DISEASE | IRRITABLE BOWEL SYNDROME | ANATOMY OF GIT",
-        "video": "https://iframe.mediadelivery.net/embed/6781/ef2936ec-6cdf-45c9-a53a-b5067d07ca5e?autoplay=true"
-      },
-      {
-        "name": "27. ZENKER DIVERTICULUM | MECKELS DIVERTICULUM | HURSCH SPRING DISEASE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/d5842909-dc98-4401-b7b0-b4a7aaf749db?autoplay=true"
-      },
-      {
-        "name": "28.COLONIC POLYPS | POLYPOSIS SYNDROME ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b82cf66c-7e6f-4120-bb91-4853d4bccd5f?autoplay=true"
-      },
-      {
-        "name": "29. COLORECTAL CA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/3774fba8-07ea-4fb7-9681-348825e0c1f8?autoplay=true"
-      },
-      {
-        "name": "30. COLORECTAL CARCINOMA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f906c546-695f-4426-a19c-2dc78ecb2af2?autoplay=true"
-      },
-      {
-        "name": "31.MALROTATION | INTUSSUSCEPTION",
-        "video": "https://iframe.mediadelivery.net/embed/6781/39345563-370d-4542-9d19-4e9fd4cb8c12?autoplay=true"
-      },
-      {
-        "name": "32. OTHER INTESTINAL DISORDERS  | ISCHEMIAS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b4d858cb-83ca-47b5-8248-2bd4c7d4bab6?autoplay=true"
-      },
-      {
-        "name": "33. ACID SUPPRESSION THERAPY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/32e6bb8f-1d5e-48e8-b54e-1e2e0c17abfb?autoplay=true"
-      },
-      {
-        "name": "34. GIT PHARMACOLOGY ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/24950811-0cc9-4740-a042-7da18e76fd65?autoplay=true"
-      },
-      {
-        "name": "37. GIT PHARMACOLGY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/58735c1a-8205-4d3b-bb58-9d4b5368cb81?autoplay=true"
-      },
-      {
-        "name": "36. GIT PHARMACOLOOGY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/ba9ccd10-fc08-497d-8084-3e5e1699f086?autoplay=true"
-      }
-    ],
-    "Immunology System": [
-      {
-        "name": "HEPATITIS B SEROLOGICAL MARKARS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/d70e27a4-df95-4941-b01a-66723f80ddb9?autoplay=true"
-      },
-      {
-        "name": "1- HYPERSENSITIVITY ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f01598f9-029e-4a66-ae08-7da264690fe1?autoplay=true"
-      },
-      {
-        "name": "2- ARACHIDONIC ACID PATHWAY | TYPE 1 HSV ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b9d85db3-2538-4f2c-88ca-27cf25b773cf?autoplay=true"
-      },
-      {
-        "name": "3- HSV | TB",
-        "video": "https://iframe.mediadelivery.net/embed/6781/d660ce24-6605-4a13-ba99-7f7988c569d3?autoplay=true"
-      },
-      {
-        "name": "4- TYPE 2 HSV ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/557a6567-ce98-44f3-ad3e-d570de4ae4e1?autoplay=true"
-      },
-      {
-        "name": "5- TYPE 3 HSV",
-        "video": "https://iframe.mediadelivery.net/embed/6781/82b43601-84d8-43da-9768-92205ba75987?autoplay=true"
-      },
-      {
-        "name": "6- IMMUNE SYSTEM ORGANS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/47beaa68-2af2-49ae-8776-cd0faf00d709?autoplay=true"
-      },
-      {
-        "name": "7- IMMUNITY TYPES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b47e3fee-9f16-4152-8c12-27cc929fb31c?autoplay=true"
-      },
-      {
-        "name": "8- MHC",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b43bdb78-62f9-434a-a0bb-d8fac4ce7b6d?autoplay=true"
-      },
-      {
-        "name": "9- MHC CLASS 1 AND 2",
-        "video": "https://iframe.mediadelivery.net/embed/6781/ee406b53-9019-4f92-ad50-7c8bb4d4cf7a?autoplay=true"
-      },
-      {
-        "name": "10- B AND T CELL FUNCTIONS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/4c2066a9-b76d-4b94-b27f-f38291ed7e05?autoplay=true"
-      },
-      {
-        "name": "11- IMMUNOGLOBULINS STRUCTURE ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/6d6df800-44ff-4fe0-a8b0-3b4b9fb15147?autoplay=true"
-      },
-      {
-        "name": "12- IMMUNOGLOBULINS ISOTOPES ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7116f2c2-e3cb-45ce-83ef-db95132c41bc?autoplay=true"
-      },
-      {
-        "name": "13- IMMUNOGLOBULINS ISOTOPES ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/3781ab24-c79a-41dc-8e99-826f0ca87b36?autoplay=true"
-      },
-      {
-        "name": "14- PASSIVE VS ACTIVE IMMUNITY ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/20d506ec-e949-40bd-aaed-9061ebc6bea1?autoplay=true"
-      },
-      {
-        "name": "15- COMPLEMENT SYSTEM",
-        "video": "https://iframe.mediadelivery.net/embed/6781/4de83bf5-ce59-48be-8527-471ca65fef27?autoplay=true"
-      },
-      {
-        "name": "16- IMPORTANT CYTOKINES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e69d07d4-e80a-4eb9-b001-7fe492b93f49?autoplay=true"
-      },
-      {
-        "name": "17- HMP SHUNT | RESPIRATORY BURST",
-        "video": "https://iframe.mediadelivery.net/embed/6781/23280d20-f408-4f81-9232-a7f1410fd02a?autoplay=true"
-      },
-      {
-        "name": "18- HSV TYPES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/0a3cc9f2-b546-4ba6-9c34-2d2722bd6580?autoplay=true"
-      },
-      {
-        "name": "19- HSV TYPES ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/5417aee1-5143-4c0a-9ec1-3c17cbcb2791?autoplay=true"
-      },
-      {
-        "name": "20- HSV TYPES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bc494e5a-54f1-469e-b139-d6755289311b?autoplay=true"
-      },
-      {
-        "name": "21- HSV TYPES ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/18e7a1d5-989f-45ee-942b-868318db4e66?autoplay=true"
-      },
-      {
-        "name": "22- IMMUNODEFICIENCIES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/fa62e780-d62b-43e4-87f8-e09625f258d2?autoplay=true"
-      },
-      {
-        "name": "23- IMMUNODEFICIENCIES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/a1615058-4ea6-483c-98a9-7b9c5be9269e?autoplay=true"
-      }
-    ],
-    "Musculo-Skeletal System": [
-      {
-        "name": "24- IMMUNODEFICIENCIES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/96a22d67-7fe7-4d43-a751-2650ebb7b1c2?autoplay=true"
-      },
-      {
-        "name": "1- Upper Limb lesions | Fracture of humerus | Scaphoid fracture | Subacromial bursitis | Injuries due to repeated overuse of elbow joint | Brachial plexus | ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c955836f-ba2e-416d-a611-689fe5736b44?autoplay=true"
-      },
-      {
-        "name": "2- RADIAL NERVE INJURY | CARPAL TUNNEL SYNDROME | INJURRY TO LOWER EXTREMITY NERVES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e29fd0ef-cc5a-4542-b773-dab9e171d25a?autoplay=true"
-      },
-      {
-        "name": "3- Types of muscle fibers | Smooth muscle contraction and relaxation | Bone formation | Achondroplasia | Osteoporosis   ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/acac47a7-a70f-404f-869b-288a5c358d18?autoplay=true"
-      },
-      {
-        "name": "4- Paget disease | Avascular lesions | Changes in Lab values in bone disorders | Bone tumors",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e8721440-14d6-485a-90d0-1299148981ef?autoplay=true"
-      },
-      {
-        "name": "5-Knee examination + tests | Ankle sprain | Lumbosacral Radiculopathy | Neurovascular pairing",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7294da22-6773-4b24-9e57-8aa354bc6b74?autoplay=true"
-      },
-      {
-        "name": "6- Motor Nueron action potential to muscle contraction ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/af029d9b-3997-40cb-91eb-88f0a995d7f6?autoplay=true"
-      },
-      {
-        "name": "7- SLE | APLAS | DRUG INDUCED SLE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/9ba81130-13cf-416e-9fae-c95a4ec6b2e5?autoplay=true"
-      },
-      {
-        "name": "8- Sjogren Syndrome | Polymyalgia rheumatica | Fibromyalgia | Scleroderma | DERMATOMYOSITIS | POLYMYOSITIS | REYNARDS PHENOMENON | MYESTHANIA GRAVIS | LAMBERT EAREN SYNDROME  ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/4452b1a2-824b-4f7e-886c-a8ba8c127615?autoplay=true"
-      },
-      {
-        "name": "9- Rheumatoid Arthritis | Osteo Arthritis",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bd6dd159-8b51-493c-890d-d5e922d4d9eb?autoplay=true"
-      },
-      {
-        "name": "10- Gout | Pseudo Gout | Sero negative Spondyloarthropathy",
-        "video": "https://iframe.mediadelivery.net/embed/6781/01501664-e40d-432a-9f3d-fee615079a39?autoplay=true"
-      },
-      {
-        "name": "11- Layers of skin | Common skin disorders | Auto immune blistering skin disorders | Blistering skin disorders",
-        "video": "https://iframe.mediadelivery.net/embed/6781/6dfd7e6e-418a-4a25-9698-8da738de0670?autoplay=true"
-      },
-      {
-        "name": "12- Layers of skin | Epithelial cell junction | Dermatologic Macroscopic terms | Dermatologic Microscopic terms | Pigmented skin disorders",
-        "video": "https://iframe.mediadelivery.net/embed/6781/526c861f-13b7-4d1e-ae5c-d9ab61c68cfd?autoplay=true"
-      },
-      {
-        "name": "13- Vascular tumors of skin | Common skin disorders",
-        "video": "https://iframe.mediadelivery.net/embed/6781/72e6c307-3a99-47cf-8c88-c458a073e7db?autoplay=true"
-      },
-      {
-        "name": "14- Skin infections | Autoimmune blistering skin disorders | Blistering skin disorders | Miscellaneous skin disorders",
-        "video": "https://iframe.mediadelivery.net/embed/6781/63093b21-915b-4d98-9dad-36c17a293b04?autoplay=true"
-      },
-      {
-        "name": "15- CHILDHOOD MUSCULOSKELETAL CONDITIONS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/1be207fa-0307-4790-b034-f261a938ff0f?autoplay=true"
-      },
-      {
-        "name": "16- SQUAMOUS CELL CARCINOMA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/4a321d9f-72ef-410e-af12-7a8101d596bf?autoplay=true"
-      },
-      {
-        "name": "17- SCC | MELANOMA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c7b6656d-06d2-48a3-abaf-a5e33232eb08?autoplay=true"
-      },
-      {
-        "name": "MELANONA AND ITS TYPES ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/50b21b86-bef6-4238-8dcc-3da33ac13696?autoplay=true"
-      },
-      {
-        "name": "MELANONA | KAPOSI SARCOMA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/50b21b86-bef6-4238-8dcc-3da33ac13696?autoplay=true"
-      },
-      {
-        "name": "UTRICARIA | BCC",
-        "video": "https://iframe.mediadelivery.net/embed/6781/50b21b86-bef6-4238-8dcc-3da33ac13696?autoplay=true"
-      }
-    ],
-    "Renal System": [
-      {
-        "name": "EMBRYO",
-        "video": "https://iframe.mediadelivery.net/embed/6781/fb532aeb-b341-4e26-895a-2565018fb30d?autoplay=true"
-      },
-      {
-        "name": "RENAL ANATOMY | HORSE SHOE SHAPED KIDNEY | POTTER's SEQUENCE | COURSE OF URETER",
-        "video": "https://iframe.mediadelivery.net/embed/6781/fa70c4eb-c72a-41ff-94f1-b9d16740e9c7?autoplay=true"
-      },
-      {
-        "name": "RENAL CLEARANCE | FLOOD COMPARTMENTS | COURSE OF URETERS | GFR BARRIER",
-        "video": "https://iframe.mediadelivery.net/embed/6781/415326b3-6f55-4dfd-ad10-f16e3634b8d1?autoplay=true"
-      },
-      {
-        "name": "RENAL CLEARANCE GFR | EFFECTIVE RENAL PLASMA FLOW",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f32e72de-3968-4714-9fab-197dd1d45f77?autoplay=true"
-      },
-      {
-        "name": "FILTRATION",
-        "video": "https://iframe.mediadelivery.net/embed/6781/392ae521-419b-46fa-85c9-20fefe8ff624?autoplay=true"
-      },
-      {
-        "name": "GLUCOSE CLEARANCE | CHANGES IN GLOMERULAR DYNAMICS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/63fff159-3736-4b61-9a23-77db766b509b?autoplay=true"
-      },
-      {
-        "name": "PHYSIOLOGY OF NEPHRON TRANSPORT ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e9b51445-4ee0-487e-a4e3-729623fef51e?autoplay=true"
-      },
-      {
-        "name": "NEPHRON TRANSPORT | RENAL TUBULAR DEFECTS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/0b2b64d8-56e2-40f6-b9b4-db6a984db418?autoplay=true"
-      },
-      {
-        "name": "NEPHRO TRANSPORT | RENAL TUBULAR DEFECTS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/ae0930d2-3803-43f3-8a39-66d7744fd392?autoplay=true"
-      },
-      {
-        "name": "RTA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/9961942b-8e04-482d-91ad-82b8d3d988f5?autoplay=true"
-      },
-      {
-        "name": "RTA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/24854f25-b868-4285-8968-8f890b156451?autoplay=true"
-      },
-      {
-        "name": "RELATIVE CONCENTRATIONS ALONG PROXIMAL TUBULES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/deabab69-2b8d-4a55-ba0c-baa7ac991916?autoplay=true"
-      },
-      {
-        "name": "RAAAS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/fff3cd33-e28c-445b-a1ca-b717d7425bc6?autoplay=true"
-      },
-      {
-        "name": "KIDNEY ENDOCRINE FUNCTIONS | HORMONES ACTING ON KIDNEY | ACE RECEPTER BLOCKERS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/77f9cf39-9eba-43a7-8548-8e39afc16ea4?autoplay=true"
-      },
-      {
-        "name": "ELECTROLYTES DISTURBANCES | RENAL PHARMACOLOGY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/ff1b5eb7-6d31-42f8-ba61-0c700239c734?autoplay=true"
-      },
-      {
-        "name": "ACIDOSIS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f7922658-2371-4229-9ab6-0ce923a4d46b?autoplay=true"
-      },
-      {
-        "name": "ACIDOSIS & ALKALOSIS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/12501ac9-3676-43d9-8dca-ace10c62222d?autoplay=true"
-      },
-      {
-        "name": "ACIDOSIS & ALKALOSIS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f8c2add7-7303-4d4f-b475-f55252d41622?autoplay=true"
-      },
-      {
-        "name": "CASTS IN URINE | ACIDOSIS AND ALKALOSIS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/01bde5ef-a8af-44cb-8a3f-e8e79cb3684e?autoplay=true"
-      },
-      {
-        "name": "NEPHROTIC SYNDROME",
-        "video": "https://iframe.mediadelivery.net/embed/6781/935d6a20-dcc7-4e8b-8479-1161fcc3555d?autoplay=true"
-      },
-      {
-        "name": "NEPHROTIC SYNDROME",
-        "video": "https://iframe.mediadelivery.net/embed/6781/a0e89918-87b4-4676-81cc-30c7331b5d39?autoplay=true"
-      },
-      {
-        "name": "NEPHRITIC SYNDROME",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e65b4bab-3119-49b9-96a9-a1d5776d2334?autoplay=true"
-      },
-      {
-        "name": "NEPHRITIC SYNDROME",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c05532ce-fd1b-47bf-950d-9f4ccc639c0e?autoplay=true"
-      },
-      {
-        "name": "NEPHRITIC SYNDROME",
-        "video": "https://iframe.mediadelivery.net/embed/6781/0f1d94c9-e1b8-44bb-a94a-0fd17235d424?autoplay=true"
-      },
-      {
-        "name": "NEPHRITIC SYNDROME & RENAL STONES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bf25b1e4-84e2-4f5b-b096-fc0bc78b74be?autoplay=true"
-      },
-      {
-        "name": "CYSTITIS | PYELONEPHRITIS | ACUTE KIDEY INJURY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8e2e3532-caac-4950-83c4-a55f569fe6c5?autoplay=true"
-      },
-      {
-        "name": "AKI",
-        "video": "https://iframe.mediadelivery.net/embed/6781/82a1131e-d005-4041-ac31-9d1bb040d398?autoplay=true"
-      },
-      {
-        "name": "DIURETICS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e555f066-2a2e-45c1-a804-9f12463230a8?autoplay=true"
-      },
-      {
-        "name": "URINARY INCONTINENCE | KIDNEY STONES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/671cf02c-8d43-4128-aaa8-1ef071497209?autoplay=true"
-      },
-      {
-        "name": "PROSTATE CANCER | RCC | PKD",
-        "video": "https://iframe.mediadelivery.net/embed/6781/22aef877-d796-49ea-acbb-99653b67569e?autoplay=true"
-      },
-      {
-        "name": "POLYCYSTIC KIDNEY DISEASE ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/78610673-9393-4c26-b278-dd035a5ef8bd?autoplay=true"
-      },
-      {
-        "name": "BPH PROSTATE CANCER ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/42a22523-b684-4373-94db-e3b2d74e8d6d?autoplay=true"
-      },
-      {
-        "name": "BLADDER CANCER ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/3c2e7cb7-02fe-45e4-a18c-31a43f519eb4?autoplay=true"
-      },
-      {
-        "name": "ICF AND ECF COMPARTMENTS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/9b19d04a-a2f5-4628-9445-881625725836?autoplay=true"
-      }
-    ],
-    "Reproductive System": [
-      {
-        "name": "1. EMBRYOLOGY | IMP GENES OF EMBRYOGENSIS | EARLY FETAL DEVELOPMENT | EMBRYOLOGICAL DERIVATIVE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/2f0947b7-397c-428d-81cd-72110163ff6a?autoplay=true"
-      },
-      {
-        "name": "2. GERM CELL LAYER DERIVATIVE | MORPHOGENSIS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/aebcaa28-97bd-4ca2-b4a3-83c348bbc633?autoplay=true"
-      },
-      {
-        "name": "3- MENSTRUAL CYCLE ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f28ce0fe-f715-48c0-8f7c-3c537fd86c3b?autoplay=true"
-      },
-      {
-        "name": "4- PCOS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8df0edd5-e761-4989-a26f-09d60cd9db8d?autoplay=true"
-      },
-      {
-        "name": "5- REPRODUCTIVE PHARMACOLOGY ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/db138346-edfb-4d64-adb3-a3985eb8d59b?autoplay=true"
-      },
-      {
-        "name": "6- TERATOGENS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c13173e3-96c6-4cda-ad41-7034fb69e405?autoplay=true"
-      },
-      {
-        "name": "7- TWINNING ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/824891fd-9971-4d29-8ecd-a8ac4867876c?autoplay=true"
-      },
-      {
-        "name": "UMBILICAL CORD | URACHUS | VITELINE DUCT ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/55a38777-fafb-4ffd-a408-8ff7befbf58b?autoplay=true"
-      },
-      {
-        "name": "9- PHARYNGEAL APPARATUS AND DERIVATIVES ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/41531288-98c6-4198-a5ae-34fa17819c4c?autoplay=true"
-      },
-      {
-        "name": "10- PHARANGEAL ARCH DERIVATIVES ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/82704428-ff24-45bc-b850-31a5a4d8ec7c?autoplay=true"
-      },
-      {
-        "name": "11- SEXUAL DIFFERENTIATION",
-        "video": "https://iframe.mediadelivery.net/embed/6781/11b3ff85-5842-469e-bf66-9086aee3c602?autoplay=true"
-      },
-      {
-        "name": "12- SEX CHROMOSOMAL DISORDERS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/d89a62a3-e340-46c8-9ef8-e16f066a95af?autoplay=true"
-      },
-      {
-        "name": "13. GONADAL DRAINAGE | FEMALE REPRODUCTIVE ANATOMY ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/93176781-5a7b-4ced-a852-2f34dda2de0f?autoplay=true"
-      },
-      {
-        "name": "14- MENSTRUAL CYCLE | PREGNANCY COMPLICATIONS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/cf33c0f8-44a2-4929-a360-e19ae2a0da1e?autoplay=true"
-      },
-      {
-        "name": "15- ECTOPIC | MOLAR PREGNANCY ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/3208b064-d082-43a3-8ad2-6b736c06984a?autoplay=true"
-      },
-      {
-        "name": "16. VULVAR PATHOLOGY (NON-NEOPLASTIC & NEOPLASTIC TUMOURS | IMPERFORATE HYMEN | VAGINAL TUMORS) | CERVICAL PATHOLOGY (DYSPLASIA & CARCINOMA IN SITU | INVASIVE CARCINOMA)",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bb428f2d-f4dc-4a6e-b215-b95c7ba0b554?autoplay=true"
-      },
-      {
-        "name": "17. EPITHELIAL TUMORS | EPITHELIAL TUMORS | GERM CELL TUMORS | SEX CORD TUMORS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e59ddc49-0029-4222-bcef-b37ac5f82dbe?autoplay=true"
-      },
-      {
-        "name": "18. UTERINE NEOPLASMS (ADENOMYOSIS | ASHERMAN SYNDROME | ENDOMETRIAL HYPERPLASIA | ENDOMETRIOSIS | EDOMETRITIS | ENDOMETRIAL CARCINOMA | LEIOMYOMA | LEIOMYOSARCOMA)",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f901b074-e236-453f-afcd-0e858f89c014?autoplay=true"
-      },
-      {
-        "name": "19. PATHOLOGY OF BREAST CANCER | INFLAMMATORY CONDITIONS | BENIGN & FIBROCYSTIC CHANGES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/60f4860d-6d6b-4e6c-96fb-7e5af97c2109?autoplay=true"
-      },
-      {
-        "name": "20. PATHOLOGY OF BREAST CANCER | PROGNOSTIC & PREDICTIVE FACTORS | MALE BREAST CANCER | GYNECOMASTIA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7c01a9e4-a603-45d6-8de9-cd328ffc0b25?autoplay=true"
-      },
-      {
-        "name": "21. MENSTRUAL CYCLE | HORMONAL MAINTENANCE OF UTERINE ENDOMETROSIS | ADDITIONAL HORMONAL CHANGES OF PREGNANCY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/fb3cf5f5-7de6-403e-8b02-f85351063288?autoplay=true"
-      },
-      {
-        "name": "22. PCOS | CHANGES NEAR END OF PREGNANCY | MAINTAINING LACTATION | FEMALE PSEUDOHERMAPHRODITE | MALE PSOEDOHERMAPHRODITE | ALTERATION IN GONADAL HORMONES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c49dc764-5289-4643-9480-7ad75af6f19c?autoplay=true"
-      },
-      {
-        "name": "23- TANNER STAGES OF DEVELOPMENT ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b12a9cf8-71df-434d-ae43-1e76e92a0e2e?autoplay=true"
-      },
-      {
-        "name": "24- MILESTONES ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/0a5a8114-df7f-40b3-8c8b-9d29c6e1f476?autoplay=true"
-      },
-      {
-        "name": "25- MILESTONES ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b4975758-56c3-4a00-a1d4-5273098eca28?autoplay=true"
-      },
-      {
-        "name": "26- PHYSIOLOGICAL CHANGES IN PREGNANCY ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/2c868360-5f34-409f-b73e-124a8c1206cb?autoplay=false"
-      },
-      {
-        "name": "27-NORMAL PHYSIOLOGICAL CHANGES IN PREGNANCY | SHEEHANS SYNDROME | TERMS ABOUT MORTALITY ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b2d04c06-b2ae-4240-a06e-cfe8b5b88759?autoplay=false"
-      }
-    ],
-    "Psychiatry": [
-      {
-        "name": "URETHRAL INJURY ",
-        "video": "https://iframe.mediadelivery.net/embed/14161/1a3d0818-f490-4f7e-a3e4-c69b71cad187?autoplay=true"
-      },
-      {
-        "name": "1. TRANSFERENCE AND COUNTER TRANSFERANCE | EGO DEFENSES | DULUSIONS AND SCHEZOPHRENIA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/99087b89-cd62-42c6-9b46-81676aa5507c?autoplay=true"
-      },
-      {
-        "name": "2. SCHEZOPHRENIA | BRIEF PSYCHOTIC DISORDER | SCHIZONEFORM DISORDER | BIPOLAR DISORDER ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/a13405e8-a420-4dd5-8c27-f67ca3a76c01?autoplay=true"
-      },
-      {
-        "name": "3. MANIA AND HYPOMANIA | CYCLORHYMIC DISORDER | MAJOUR DEPRESSIVE DISORDER | DYSTHYMIA | CYCLOTHYMIA | DEPRESSION WITH ATYPICAL FEATURES | PERIPARTUM MOOD DISTURBANCE ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/eaf65245-b84d-4c40-a60c-8799052976db?autoplay=true"
-      },
-      {
-        "name": "4. EATING DISORDER | FACTICIOUS DISORDERS | MALINGERING | SOMATIC SYMPTOM DISORDER | ILLNESS ANXIETY DISORDER.",
-        "video": "https://iframe.mediadelivery.net/embed/6781/62cb37ce-8d8a-43e0-94c3-ccba96876c2a?autoplay=true"
-      },
-      {
-        "name": "5. CONVERSATION DISORDER | PERSONALITY DISORDER ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/fd548f14-94ce-4fbf-ac09-9b4cfa9d88fe?autoplay=true"
-      },
-      {
-        "name": "6. PANIC DISORDER | GAD | OCD | PHOBIAS | POST TRAUMATIC DISORDER | SSRIS | ANTIPSYCHOTIC DRUGS | TCAS. ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/17747004-50e3-4cc5-9dd6-848600120731?autoplay=true"
-      },
-      {
-        "name": "7- ATTENTION DEFICIT HYPERACTIVITY DISORDER | AUTISM SPECTRUM DISORDER | TAURRETE SYNDROME ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/60acba11-786b-4d79-b1e0-ded2158ff6f7?autoplay=true"
-      },
-      {
-        "name": "8- TAURRETE SYNDROME | DILIRIUM ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/12c41659-e112-456e-a715-2f06975e0b69?autoplay=true"
-      },
-      {
-        "name": "9-  NARCOLEPSY ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/eef26aa4-c596-40e4-8328-9e7f641f1133?autoplay=true"
-      },
-      {
-        "name": "10- INSOMNIA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/3c127214-8abe-4d36-99b9-abe64c31f852?autoplay=true"
-      },
-      {
-        "name": "11-  SUBSTANCE USE DISORDERS( ALCOHOL ABUSE ND WITHDRAWAL) ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/0b523a8f-ea29-45f1-8c0d-cd18f88f8651?autoplay=true"
-      },
-      {
-        "name": "12- POSTPARTUM DEPPRESSIVE DISORDERS | ADJUSTMENT DISORDERS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/64898266-4bb3-4728-8b96-527d827920d5?autoplay=true"
-      }
-    ],
-    "Microbiology": [
-      {
-        "name": "13- DD OF PSYCHOSIS | ANTIPSYCHOTIC DRUGS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/d1fe1ed6-7c8e-48e8-8347-bc2f213c1051?autoplay=true"
-      },
-      {
-        "name": "1- C. TETANI AND C. BOTULINUM | C. PERFENGENS | S. PYOGENS | S. AUREUS| ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b8be29f3-eed3-44bd-9301-7d908055b214?autoplay=true"
-      },
-      {
-        "name": "2- CLASSIFICATION OF BACTERIA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f92654ba-b7ae-43fa-babf-895212461084?autoplay=true"
-      },
-      {
-        "name": "3- CLASSIFICATION OF BACTERIA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/548a018d-d63e-479a-b303-c784c6ff3f39?autoplay=true"
-      },
-      {
-        "name": "CLASSIFICATION | SPECIAL CULTURE MEDIA | STAINS | AEROBES AND ANAEROBES | FACULTATIVE AND ENCAPSULATED BACTERIA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/993bc106-d56b-4710-b52c-31c1c73a1ee7?autoplay=true"
-      },
-      {
-        "name": "5- NORMAL FLORA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7db79098-cb12-4888-a987-ff13be6d62ff?autoplay=true"
-      },
-      {
-        "name": "6- EXOTOXIN VS ENDOTOXIN",
-        "video": "https://iframe.mediadelivery.net/embed/6781/3f551ca3-7660-4045-8539-2c1cda469d97?autoplay=true"
-      },
-      {
-        "name": "7- INTRODUCTION OF BACTERIOLOGY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b240e114-5f51-4e4c-aec5-9657bb7a4691?autoplay=true"
-      },
-      {
-        "name": "8- INTRODUCTION OF BACTERIA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/a1fced57-e964-41bc-bcb8-acda412f1b27?autoplay=true"
-      },
-      {
-        "name": "9- GRAM POSITIVE BACTERIA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/44c3a8f4-8a87-49e0-b664-6cdc76e2e776?autoplay=true"
-      },
-      {
-        "name": "10- STAPH AUREUS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/3e0084d5-7690-4489-a0a8-8077693e3f42?autoplay=true"
-      },
-      {
-        "name": "11- STREPTOCOCCI IN DETAIL ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7ca8e1f6-f67e-4334-a014-b6da755111c2?autoplay=true"
-      },
-      {
-        "name": "12-STREPTOCOCCI",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e0935f98-1c65-4c11-bb2c-d5415203c9b3?autoplay=true"
-      },
-      {
-        "name": "13- CLOSTRIDIUM SPECIES ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/42733615-11c9-4477-af92-65e6e2fa4062?autoplay=true"
-      },
-      {
-        "name": "14- CORNYBACTERIUM DIPTHERIA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/22be09d7-140c-4369-b69f-840170f105d4?autoplay=true"
-      },
-      {
-        "name": "15- GRAM NEGATIVE BACTERIA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/3a0f12e1-9ab2-475e-ba9a-b2b0a9f6c000?autoplay=true"
-      },
-      {
-        "name": "16- CHYLAMYDIA | SYPHILLIS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bab97ace-91da-4088-91fc-7676959c31bf?autoplay=true"
-      },
-      {
-        "name": "17- SHEGILLA VS SALMONELLA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/ba36837a-b58a-482b-8270-05d186c41803?autoplay=true"
-      },
-      {
-        "name": "18- TYPHOID ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8211ac57-813c-43c6-a3d7-1c54623bcfe9?autoplay=true"
-      },
-      {
-        "name": "19- GRAM POSITIVE BACTERIA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f3335b06-0229-4434-bfdf-5c6c339fd7a9?autoplay=true"
-      },
-      {
-        "name": "20- P- AEREUGINOSA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b2f5b32d-2117-4b24-bd73-e576e8a1738e?autoplay=true"
-      },
-      {
-        "name": "21- H- INFLUENZA | SYPHILLIS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/6c69aada-984e-4505-928b-3148f62ebdc8?autoplay=true"
-      },
-      {
-        "name": "22- H-INFLUENZA | MENINGITIS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/ec6e9d7f-dad8-4853-8082-5c53baad4fb0?autoplay=true"
-      },
-      {
-        "name": "23- TB ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8831fc40-4deb-4731-87cf-ebbad830f264?autoplay=true"
-      },
-      {
-        "name": "24- TB ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f3c9d8d7-428c-4ef2-97c8-44e1cf11c7af?autoplay=true"
-      },
-      {
-        "name": "25- BARTONELLA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/ffe90a7b-9393-4729-9d2a-6486c01a1a13?autoplay=true"
-      },
-      {
-        "name": "1- DERMATOPHYTES( CUTANEOUS MYCOSIS) | PTYRIASIS( TINEA VERSICOLOR)  ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/a3d801c6-d99f-4208-9394-ac6ca9e32d21?autoplay=true"
-      },
-      {
-        "name": "2- CUTANEOUS MYCOSIS | TINEA VERSICOLOR | CANDIDA ALBICANS | ASPERGILLUS FUMIGATUS | CTYPTOCOCCUS NEOFORMINS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/290241c0-d640-4eb3-8fed-e935374e6225?autoplay=true"
-      },
-      {
-        "name": "3- MUCOR AND RHIZOPUS | PNEUMOCYSTIS JIROVECI ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/15d55c88-70fb-4af3-83ce-4326c44dbdcb?autoplay=true"
-      },
-      {
-        "name": "4- SPOROTHRIX SCHENCKII | SYSTEMIC MYCOSIS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/3697b587-3f6a-46d4-91b2-82c800022cd9?autoplay=true"
-      },
-      {
-        "name": "5- CUTANEOUS MYCOSIS | TINEA VERSICOLOR | SPIROTHRIX ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/60f9710f-ffb0-43fc-b22a-702ffa42629a?autoplay=true"
-      },
-      {
-        "name": "6- CANDIDA ALBICANS | CRYPTOCOCCUS | ASPERGILUS | MUCORMYCOSIS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/96c3d246-aed1-4ba7-a4a3-d15c9cea7312?autoplay=true"
-      },
-      {
-        "name": "7- ANTIFUNGAL DRUGS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/fcb8e1df-7fd0-4480-8bb8-ca4076a0ce55?autoplay=true"
-      },
-      {
-        "name": "8- ANTIFUNGAL DRUGS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/5a8d1e62-d2b4-4adf-a6c2-efec2c4643c3?autoplay=true"
-      },
-      {
-        "name": "1- GIARDIA LAMBLIA | E. HISTOLYTICA | TOXOPLASMA GONDII | NAEGLERIA FOWLERI | TRYPAMOSOMIA BRUCI ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/dc71736f-ebb7-4ceb-815c-3d9eb52a70ae?autoplay=true"
-      },
-      {
-        "name": "2- PLASMODIUM ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/2dea6887-ac7c-477a-8b64-6d7e7ecd227a?autoplay=true"
-      },
-      {
-        "name": "3- PLASMODIUM",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8bb7edd0-8f48-4ecc-a5b9-e715b6bd12c9?autoplay=true"
-      },
-      {
-        "name": "4- PINWORM ( ENTEROBIUS VERMICULARIS) | ASCARIS LUMBRICOIDES | STRONGYLOIDES STERCOLARIS | ANCYLOSTOMA DUDENALE | TRICHINELLA SPIRALIS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8fe14143-6a77-4813-92b1-41f7cbda25a2?autoplay=true"
-      },
-      {
-        "name": "5- TINEA SOLIUM ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/36fb66a7-0da5-4d79-b59f-ac3e9f7b4fb5?autoplay=true"
-      },
-      {
-        "name": "6- TENIA SOLIUM | DIPHYLOBOTHRIUM LATUM | E. GRANULOSUS | SCHISTOSOMA MANAONI AND HEAMATOBIUM ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/30e86ead-7978-445a-b69b-ff569f31dcf6?autoplay=true"
-      },
-      {
-        "name": "7- WUCHRARIA BANCROFTI | LOA LOA ONCHOCERCA VOLVULUS | TOXOCARA CARUS | TRICHURIS TRICHURA | SCABIES | HEAD LICE( PEDICULUS HUMANUS / PHTHIRUS PUBIS) ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f43c072f-531c-4a35-afcf-7abc985add29?autoplay=true"
-      },
-      {
-        "name": "1- EBV ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8d6346a8-4212-4233-b01a-4fe616337960?autoplay=true"
-      },
-      {
-        "name": "2- KQPOSI SARCOMA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c4d7fa98-a5ca-4919-b462-922e9fd7003c?autoplay=true"
-      },
-      {
-        "name": "3- RNA VIRUSES | RABIES | RUBELLA ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e7cabd2a-dfd9-42ba-89ab-e25890b2a2a9?autoplay=true"
-      },
-      {
-        "name": "4- BRONCHIOLITIS |",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7f259fa8-db1d-4715-af71-a07294480516?autoplay=true"
-      },
-      {
-        "name": "5- MEASELS | MUMPS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/edf5278c-89c7-4ccb-8035-6f532e39bd3d?autoplay=true"
-      },
-      {
-        "name": "6- HIV",
-        "video": "https://iframe.mediadelivery.net/embed/6781/976146be-04f5-4a0b-b3d2-9c815f0ba6ba?autoplay=true"
-      },
-      {
-        "name": "7- HIV",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bb8607e9-7844-47a3-8734-6e08c4b6c5de?autoplay=true"
-      },
-      {
-        "name": "8- ANTIRETROVIRAL THERAPY ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bfb4b05c-9855-4ad0-9eaf-4d02337c45c2?autoplay=true"
-      }
-    ],
-    "Pharmacology": [
-      {
-        "name": "9- ANTIRETROVIRAL THERAPY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/6556640d-7bcf-4dd6-92a3-c5ac3ed742b9?autoplay=true"
-      },
-      {
-        "name": "ANTI FUNGAL - 1",
-        "video": "https://iframe.mediadelivery.net/embed/6781/486e7fa4-df4d-4e48-98f4-83a11056eb1a?autoplay=true"
-      },
-      {
-        "name": "ANTI FUNGAL - 2",
-        "video": "https://iframe.mediadelivery.net/embed/6781/d3fcf4d0-681c-41e4-bc20-99683d43719e?autoplay=true"
-      },
-      {
-        "name": "ANTI MICROBIAL - 1",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f322065a-2b9e-4355-86b2-93275fe2c55b?autoplay=true"
-      },
-      {
-        "name": "ANTI MICROBIAL - 2",
-        "video": "https://iframe.mediadelivery.net/embed/6781/5aef436c-d0b4-4576-9202-566778b3f445?autoplay=true"
-      },
-      {
-        "name": "ANTI MICROBIAL - 3",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bc8a420b-5c29-4549-b035-f83047ceb7b7?autoplay=true"
-      },
-      {
-        "name": "ANTI MICROBIAL - 4",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8ce8d420-6f6d-401e-92a2-03ab0ba592f9?autoplay=true"
-      },
-      {
-        "name": "ANTI MICROBIAL - 5",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b7426f9a-7b8a-4624-8755-dc0fe764fe05?autoplay=true"
-      },
-      {
-        "name": "ANTI MICROBIAL - 6",
-        "video": "https://iframe.mediadelivery.net/embed/6781/464a7233-1df5-460f-a87a-f012a0cadd5d?autoplay=true"
-      },
-      {
-        "name": "ANTI MICROBIAL - 7",
-        "video": "https://iframe.mediadelivery.net/embed/6781/5d1ea5d1-a34a-4402-97c1-bcf2c5e61e05?autoplay=true"
-      },
-      {
-        "name": "ANTI MICROBIAL - 8",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e389dc95-4186-4f8f-881c-b7051c32d9a6?autoplay=true"
-      },
-      {
-        "name": "ANTI MICROBIAL - 9",
-        "video": "https://iframe.mediadelivery.net/embed/6781/5d2d5621-cf7b-407b-aa3e-1dccd9976a4c?autoplay=true"
-      },
-      {
-        "name": "ANTI MICROBIAL - 10",
-        "video": "https://iframe.mediadelivery.net/embed/6781/968edc19-8467-4d26-81cd-6b6d6432ac44?autoplay=true"
-      },
-      {
-        "name": "AUTONOMIC NERVOUS SYSTEM - 1",
-        "video": "https://iframe.mediadelivery.net/embed/6781/725f322e-a6bb-404f-953b-950cd51b13e9?autoplay=true"
-      },
-      {
-        "name": "AUTONOMIC NERVOUS SYSTEM - 2",
-        "video": "https://iframe.mediadelivery.net/embed/6781/689e06bd-176c-4e56-9766-d779a3e0b26d?autoplay=true"
-      },
-      {
-        "name": "AUTONOMIC NERVOUS SYSTEM - 3",
-        "video": "https://iframe.mediadelivery.net/embed/6781/a0949ff5-66f3-429e-a261-441b6de8941a?autoplay=true"
-      },
-      {
-        "name": "AUTONOMIC NERVOUS SYSTEM - 4",
-        "video": "https://iframe.mediadelivery.net/embed/6781/4b270758-f65c-429a-938f-24408958d73c?autoplay=true"
-      },
-      {
-        "name": "AUTONOMIC NERVOUS SYSTEM - 5",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e1cbe64c-450d-47f3-8aba-803ed49a0d4f?autoplay=true"
-      },
-      {
-        "name": "AUTONOMIC NERVOUS SYSTEM - 6",
-        "video": "https://iframe.mediadelivery.net/embed/6781/fc6b8ed9-7de2-4884-a6fe-060381cd4a74?autoplay=true"
-      },
-      {
-        "name": "AUTONOMIC NERVOUS SYSTEM - 7",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c49a3c40-cfa2-424e-bb55-3a840ec7717e?autoplay=true"
-      },
-      {
-        "name": "AUTONOMIC NERVOUS SYSTEM - 8",
-        "video": "https://iframe.mediadelivery.net/embed/6781/0e2988e4-30a8-4d51-b4de-144214b6101c?autoplay=true"
-      },
-      {
-        "name": "AUTONOMIC NERVOUS SYSTEM - 9",
-        "video": "https://iframe.mediadelivery.net/embed/6781/77e63cca-70ee-475a-ac1c-58060883d209?autoplay=true"
-      },
-      {
-        "name": "BLOOD & ONCOLOGY PHARMACOLOGY - 1",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e9316b4b-3ae1-4f3c-823b-ac71da2d0f43?autoplay=true"
-      },
-      {
-        "name": "BLOOD & ONCOLOGY PHARMACOLOGY - 2",
-        "video": "https://iframe.mediadelivery.net/embed/6781/315bdd5d-5c00-4897-a1d4-df5d75513c74?autoplay=true"
-      },
-      {
-        "name": "BLOOD & ONCOLOGY PHARMACOLOGY - 3",
-        "video": "https://iframe.mediadelivery.net/embed/6781/02a09a20-fcbc-42f2-909f-323e971616e8?autoplay=true"
-      },
-      {
-        "name": "CNS PHARMACOLOGY - 1",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c8a7673c-149c-4549-ab2f-546959e06a50?autoplay=true"
-      },
-      {
-        "name": "CNS PHARMACOLOGY - 2",
-        "video": "https://iframe.mediadelivery.net/embed/6781/3936ab17-8fc3-4eef-ab0d-f01bc8f9d0f1?autoplay=true"
-      },
-      {
-        "name": "CNS PHARMACOLOGY - 3",
-        "video": "https://iframe.mediadelivery.net/embed/6781/3b8c0cee-1beb-4964-94a6-a713d61578e0?autoplay=true"
-      },
-      {
-        "name": "CNS PHARMACOLOGY - 4",
-        "video": "https://iframe.mediadelivery.net/embed/6781/29dbb360-d280-4a72-b2ca-603d84f6d565?autoplay=true"
-      },
-      {
-        "name": "CNS PHARMACOLOGY - 5",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b15e6490-2433-45f2-a1e5-eb1a563125d3?autoplay=true"
-      },
-      {
-        "name": "CNS PHARMACOLOGY - 6",
-        "video": "https://iframe.mediadelivery.net/embed/6781/886dfc77-b6ad-4dc5-9396-21e2c9bcbfdc?autoplay=true"
-      },
-      {
-        "name": "CVS PHARMACOLOGY - 1",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c862a039-40eb-491c-9072-e40d5cdd92eb?autoplay=true"
-      },
-      {
-        "name": "CVS PHARMACOLOGY - 2",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7bc4333a-a280-4562-aeb6-7b93082c66a2?autoplay=true"
-      },
-      {
-        "name": "CVS PHARMACOLOGY - 3",
-        "video": "https://iframe.mediadelivery.net/embed/6781/6f9a0e4c-fb06-42ed-85b2-cf2b5ae51c52?autoplay=true"
-      },
-      {
-        "name": "CVS PHARMACOLOGY - 4",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c9a96cbb-8216-47c8-a4d2-cba4e80fb246?autoplay=true"
-      },
-      {
-        "name": "CVS PHARMACOLOGY - 5",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8e3b9ae6-7e05-4053-b8e9-1dacf1babcfc?autoplay=true"
-      },
-      {
-        "name": "CVS PHARMACOLOGY - 6",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c083680d-d29e-4476-ba79-9b9272e3191e?autoplay=true"
-      },
-      {
-        "name": "CVS PHARMACOLOGY - 7",
-        "video": "https://iframe.mediadelivery.net/embed/6781/4a30cc3c-c059-4fa6-b4ac-d45fbe84efa8?autoplay=true"
-      },
-      {
-        "name": "ENDOCRINOLOGY PHARMACOLOGY - 1",
-        "video": "https://iframe.mediadelivery.net/embed/6781/77df2838-b696-41b9-a392-adee8e1b6723?autoplay=true"
-      },
-      {
-        "name": "ENDOCRINOLOGY PHARMACOLOGY - 2",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f46f53a1-3a7e-4709-abda-2109f18b18d3?autoplay=true"
-      },
-      {
-        "name": "GENERAL PHARMACOLOGY - 1",
-        "video": "https://iframe.mediadelivery.net/embed/6781/9f92f82a-f20b-44fc-be20-6f0f7f994d98?autoplay=true"
-      },
-      {
-        "name": "GENERAL PHARMACOLOGY - 2",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f14e8ef2-4d52-4a07-b7e5-9971af2fe26b?autoplay=true"
-      },
-      {
-        "name": "GENERAL PHARMACOLOGY - 3",
-        "video": "https://iframe.mediadelivery.net/embed/6781/28cfdd21-66c1-48e1-8ed3-b4cd5a6bd7cf?autoplay=true"
-      },
-      {
-        "name": "GENERAL PHARMACOLOGY - 4",
-        "video": "https://iframe.mediadelivery.net/embed/6781/38cf0480-ee45-49cb-9902-8f82ff070747?autoplay=true"
-      },
-      {
-        "name": "GENERAL PHARMACOLOGY - 5",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c18e4d17-eed4-495d-aff0-a4ac6fbd24dc?autoplay=true"
-      },
-      {
-        "name": "GENERAL PHARMACOLOGY - 6",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bf1eced6-c1ee-4634-99e9-87fea913fd9c?autoplay=true"
-      },
-      {
-        "name": "GENERAL PHARMACOLOGY - 7",
-        "video": "https://iframe.mediadelivery.net/embed/6781/9e062f85-a16d-47f8-ad7b-cc5243e0adc2?autoplay=true"
-      },
-      {
-        "name": "HIV AIDS DRUG - 1",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e852e422-a607-4956-9057-ab6a41b5a3ad?autoplay=true"
-      },
-      {
-        "name": "HIV AIDS DRUG - 2",
-        "video": "https://iframe.mediadelivery.net/embed/6781/2950c7ca-6c10-4615-a96b-fbfebbaa16d6?autoplay=true"
-      },
-      {
-        "name": "ONE DAY PHARMACOLOGY - 1",
-        "video": "https://iframe.mediadelivery.net/embed/6781/9cf04fa4-8dc0-4bd8-895f-7485f7194d43?autoplay=true"
-      },
-      {
-        "name": "ONE DAY PHARMACOLOGY - 2",
-        "video": "https://iframe.mediadelivery.net/embed/6781/9deb4a99-9450-40da-bea5-c6c063138ae1?autoplay=true"
-      },
-      {
-        "name": "ONE DAY PHARMACOLOGY - 3",
-        "video": "https://iframe.mediadelivery.net/embed/6781/9c4b77d7-369f-49f6-af48-b4ffc8d7ce59?autoplay=true"
-      },
-      {
-        "name": "ONE DAY PHARMACOLOGY - 4",
-        "video": "https://iframe.mediadelivery.net/embed/6781/af62b2e3-2548-49ac-a02c-310060dee897?autoplay=true"
-      },
-      {
-        "name": "ONE DAY PHARMACOLOGY - 5",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8e26e924-c53c-40de-ad6e-5a66147bf292?autoplay=true"
-      },
-      {
-        "name": "ONE DAY PHARMACOLOGY 6",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7faa8d0f-22ec-4012-a9f2-99e05ad0703a?autoplay=true"
-      },
-      {
-        "name": "RENAL PHARMACOLOGY - 1",
-        "video": "https://iframe.mediadelivery.net/embed/6781/071286fd-8620-4c78-9c3f-ec3ba45cf7aa?autoplay=true"
-      },
-      {
-        "name": "RENAL PHARMACOLOGY - 2",
-        "video": "https://iframe.mediadelivery.net/embed/6781/1218c57b-bc8c-484a-946f-cce48909b917?autoplay=true"
-      },
-      {
-        "name": "RENAL PHARMACOLOGY - 3",
-        "video": "https://iframe.mediadelivery.net/embed/6781/11a969dc-2a69-446f-82bf-9ed6800974c9?autoplay=true"
-      },
-      {
-        "name": "REPRODUCTIVE PHARMACOLOGY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/86f7dcce-af29-475c-929c-3bc74f440558?autoplay=true"
-      }
-    ],
-    "Endocrinology System": [
-      {
-        "name": "1 DAY PHARMACOLOGY ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b5f8bc56-6333-4925-8060-93b555be806f?autoplay=true"
-      },
-      {
-        "name": "1. HYPOPARATHYROIDISM | HYPERPARATHYROIDISM",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7f4d2b03-c739-44e9-b58f-d091bfe4b7d9?autoplay=true"
-      },
-      {
-        "name": "2 HYPOPARATHYROIDISM | INSULIN",
-        "video": "https://iframe.mediadelivery.net/embed/6781/5ad18800-6556-4eb3-8d0f-b9678431edb1?autoplay=true"
-      },
-      {
-        "name": "3. PROLACTIN",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7bec7713-50e3-435f-83f0-66def2e1f7aa?autoplay=true"
-      },
-      {
-        "name": "4. DIABETES MELLITUS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/0985f85c-6e3f-46be-9d3a-28394ee61934?autoplay=true"
-      },
-      {
-        "name": "5. DIABETES MELLITUS & ITS COMPLICATIONS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/cec4b2e1-77c8-428d-8f77-9174b526e10a?autoplay=true"
-      },
-      {
-        "name": "6. PANCREATIC CELL TUMORS | ZOLLINGER ELLISON SYNDROME | PHEOCHROMOCYTOMA | THYROID DEVELOPMENT",
-        "video": "https://iframe.mediadelivery.net/embed/6781/622b5c3f-7e80-4bb8-a786-1488bd2511d0?autoplay=true"
-      },
-      {
-        "name": "7. THYROID HORMONE PHYSIOLOGY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/cb14bb75-03dd-44cc-83e9-ad238cd7def0?autoplay=true"
-      },
-      {
-        "name": "8. DIFFERENCE BETWEEN HYPOTHYROIDISM & HYPERTHYROIDISM",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7580608f-c18e-46d7-a0be-8e14411c8d6e?autoplay=true"
-      },
-      {
-        "name": "9. HYPOTHYROIDISM",
-        "video": "https://iframe.mediadelivery.net/embed/6781/945eec22-92a6-4c82-af06-bf8d06bb5ed0?autoplay=true"
-      },
-      {
-        "name": "10. THYROID CARCINOMA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/006ef0d7-1a51-490a-a319-369390fdf0ed?autoplay=true"
-      },
-      {
-        "name": "11. CORTISOL COMPLETE PHYSIOLOGY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7b91f8da-823c-4224-a1b6-1649b2a8c82e?autoplay=true"
-      },
-      {
-        "name": "12. CUSHING SYNDROME | ADRENAL INSUFFICIENCY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/ada118f8-5a8e-419d-90d9-2cd1927284d2?autoplay=true"
-      },
-      {
-        "name": "13. MICROBIOLOGY E.COLI | SIGNALING PATHWAY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/6406d98b-2c4c-4e5b-b9c0-f4fd47a2c893?autoplay=true"
-      },
-      {
-        "name": "14. CUSHING SYNDROME DIAGNOSTIC TEST | HYPERALDOSTERONISM | NELSON SYNDROME",
-        "video": "https://iframe.mediadelivery.net/embed/6781/ebf5401e-f4c5-4549-b055-c8756496bdf9?autoplay=true"
-      },
-      {
-        "name": "15. ADRENAL STEROIDS | CONGENITAL ADRENAL HYPERPLASIA | GROWTH HORMONE | ACROMEGALY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b728ebaa-4216-487f-a817-7a8a298a00a0?autoplay=true"
-      },
-      {
-        "name": "16. HYPOPITUITRISM | ADH PHYSIOLOGY & PATHOLOGY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b37f135a-3a0b-4005-ae34-f12d4f4ff87a?autoplay=true"
-      },
-      {
-        "name": "17. SIGNALING PATHWAYS OF ENDOCRINE HORMONE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8e7ec25f-6692-44d6-84cf-3d6a40cae26d?autoplay=true"
-      },
-      {
-        "name": "18. APPETITE REGULATION | NEUROENDOCRINE TUMOR | NEUROBLASTOMA |",
-        "video": "https://iframe.mediadelivery.net/embed/6781/62925473-92f8-430a-acdc-2986ac9a035d?autoplay=true"
-      },
-      {
-        "name": "19. ENDOCRINE PHARMACOLOGY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/19508055-4400-4cc5-9842-1c5cea86bf2c?autoplay=true"
-      }
-    ],
-    "Biochemistry": [
-      {
-        "name": "STRUCTURE OF CHROMATIN",
-        "video": "https://iframe.mediadelivery.net/embed/6781/165ea298-ff24-43fa-92cf-9a7342813552?autoplay=true"
-      },
-      {
-        "name": "DNA REPLICATION",
-        "video": "https://iframe.mediadelivery.net/embed/6781/20f88a9d-0a5b-47ab-a1ee-dd64bb15dfa2?autoplay=true"
-      },
-      {
-        "name": "MUTATION OF DNA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/a4ad230d-0f39-4643-b2e0-c9b87b1fd18b?autoplay=true"
-      },
-      {
-        "name": "DNA REPAIR",
-        "video": "https://iframe.mediadelivery.net/embed/6781/643612a0-e75f-4596-aef6-529972f01821?autoplay=true"
-      },
-      {
-        "name": "PURINE SALVAGE PATHWAY",
-        "video": "https://iframe.mediadelivery.net/embed/6781/d81bf0c2-e95c-454a-9478-e6c651dc959f?autoplay=true"
-      },
-      {
-        "name": "PYRIMIDINE SYNTHESIS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e75bc23b-2862-4ad2-bb27-1b4ae10c519d?autoplay=true"
-      },
-      {
-        "name": "TRANSCRIPTION",
-        "video": "https://iframe.mediadelivery.net/embed/6781/39840ce4-3c17-44f7-836d-1fa52d5fc3c4?autoplay=true"
-      },
-      {
-        "name": "TRNA & PROTEIN SYNTHESIS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/4ae42f98-20ef-4d8b-8fe7-59acabba7509?autoplay=true"
-      },
-      {
-        "name": "CELL CYCLE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/2c334346-1866-4501-b70d-8357bcb1db27?autoplay=true"
-      },
-      {
-        "name": "CELL TYPES & CELL TRAFFICKING",
-        "video": "https://iframe.mediadelivery.net/embed/6781/96eacca1-1d05-4571-ab72-30036304aa14?autoplay=true"
-      },
-      {
-        "name": "COLLAGEN & ELASTIN SYNTHESIS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bf86c87b-42ed-4e88-8ca2-91b7549114ff?autoplay=true"
-      },
-      {
-        "name": "CILIA STRUCTUR + COLLAGEN + NA PUMP",
-        "video": "https://iframe.mediadelivery.net/embed/6781/969da1ec-a971-4bb0-820e-20fa5b48b014?autoplay=true"
-      },
-      {
-        "name": " PEROXISOME + PROTEASOME + MICROTUBULES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/3556c258-adfb-423e-aff0-65c00737c74e?autoplay=true"
-      },
-      {
-        "name": "AUTOSOMAL TRIOSOMIES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e5ba7f2d-dbd0-4fe4-85fc-b9e3b464f479?autoplay=true"
-      },
-      {
-        "name": " FRAGILE SYNDROME + MUSCULAR DYSTROPHIES + RETT SYNDROME",
-        "video": "https://iframe.mediadelivery.net/embed/6781/05fe660a-f48e-45f4-b8d1-15ee908b5ee5?autoplay=true"
-      },
-      {
-        "name": "MODES OF INHERITANCE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/63a26b58-422b-43cd-922b-4482dd47d551?autoplay=true"
-      },
-      {
-        "name": " FA genetics pedigree",
-        "video": "https://iframe.mediadelivery.net/embed/6781/7a472926-e488-4a5f-a6e8-1bfd342353a1?autoplay=true"
-      },
-      {
-        "name": "Genetic Terms",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bf582708-a26f-4e3b-8468-da726e8f44e6?autoplay=true"
-      },
-      {
-        "name": "VITAMIN A",
-        "video": "https://iframe.mediadelivery.net/embed/6781/6d972dcd-1c80-409e-b4f1-7f5d26d9f192?autoplay=true"
-      },
-      {
-        "name": "VITAMIN B COMPLEX",
-        "video": "https://iframe.mediadelivery.net/embed/6781/d10ff554-17f0-4144-a080-7cca107cdcfd?autoplay=true"
-      },
-      {
-        "name": "VITAMIN B-12 + VITAMIN -C + VITAMIN-D",
-        "video": "https://iframe.mediadelivery.net/embed/6781/2b431768-8c0c-4bf9-9392-06f67d0c8322?autoplay=true"
-      },
-      {
-        "name": "VITAMIN E + VITAMIN K + PROTEIN ENERGY MALNUTRITION",
-        "video": "https://iframe.mediadelivery.net/embed/6781/6489f1a8-07c3-4b4f-b713-54eb17386d69?autoplay=true"
-      },
-      {
-        "name": "ETHANOL METABOLISM",
-        "video": "https://iframe.mediadelivery.net/embed/6781/437225e9-6e80-44fb-96ac-3a313e469740?autoplay=true"
-      },
-      {
-        "name": "GLYCOLYSIS + HEXOKINASE+GLUCOKINASE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c1652234-a62c-408c-8d86-c3372c915347?autoplay=true"
-      },
-      {
-        "name": "GLUCONEOGENESIS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/765e7947-1e12-49b6-8d96-bf6a144e895c?autoplay=true"
-      },
-      {
-        "name": "PYRUVATE METABOLISM + ETC+ TCA CYCLE",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f15b0a3d-82f4-4760-8bb3-92d94a11e995?autoplay=true"
-      },
-      {
-        "name": "PYRUVATE METABOLISM",
-        "video": "https://iframe.mediadelivery.net/embed/6781/d32b4721-47e6-43ed-a715-9b35c304a285?autoplay=true"
-      },
-      {
-        "name": " ELECTRON TRANSPORT INHIBITORS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/3ebc7bc4-a94f-4051-b88d-8c5f658a1086?autoplay=true"
-      },
-      {
-        "name": "GLYCOGEN METABOLISM",
-        "video": "https://iframe.mediadelivery.net/embed/6781/6f4ff463-f9da-4391-9f4c-e5f6be2efc9d?autoplay=true"
-      },
-      {
-        "name": "PPP + G6PD + FRUCTOSE METABOLISM",
-        "video": "https://iframe.mediadelivery.net/embed/6781/4656d1c7-1c01-4906-9ace-ffeb50b0d4aa?autoplay=true"
-      },
-      {
-        "name": "GLYCOGEN METABOLISM + HMS FUNCTION",
-        "video": "https://iframe.mediadelivery.net/embed/6781/540547f9-caac-44d6-a07f-bce1907fff8d?autoplay=true"
-      },
-      {
-        "name": "FRUCTOSE METABOLISM + DISORDERS OF GALACTOSE METABOLISM + SORBITOL + AMINO ACIDS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/a5aa1fbc-1537-4917-adab-d2802a711bad?autoplay=true"
-      },
-      {
-        "name": "UREA CYCLE & AMINO ACIDS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/09eb7776-cd77-4eaa-9f44-71e8a6d47840?autoplay=true"
-      },
-      {
-        "name": "TRANSPORT OF AMMONIA + HYPERAMONIEMIA + AMINO ACID DERIVATIVES + TYROSINE CATABOLISM + PHENYLKETONURIA",
-        "video": "https://iframe.mediadelivery.net/embed/6781/2e0c91b3-8cbb-4cbf-b95e-f8441ec5175d?autoplay=true"
-      },
-      {
-        "name": "FATTY ACID METABOLISM",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b73c21c3-22f2-4f75-b661-e18668afa1b1?autoplay=true"
-      },
-      {
-        "name": "ALKAPTONURIA & MSUD",
-        "video": "https://iframe.mediadelivery.net/embed/6781/4123c6be-5a0e-4e1f-9d8e-b292ef8a32e0?autoplay=true"
-      },
-      {
-        "name": "LIPID METABOLISM",
-        "video": "https://iframe.mediadelivery.net/embed/6781/fff51134-adfb-46c7-8f69-424bbbe7ded2?autoplay=true"
-      },
-      {
-        "name": "FAT METABOLISM",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f167a697-cbb8-4a97-863b-bd660bb8034f?autoplay=true"
-      },
-      {
-        "name": "LDL DEGRADATION",
-        "video": "https://iframe.mediadelivery.net/embed/6781/2ddd6d12-f4e6-4c37-a713-1b678f8816f5?autoplay=true"
-      },
-      {
-        "name": "KETONE BODIES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8e65b6c3-b965-4fae-8bfb-c7ea6ada54e3?autoplay=true"
-      },
-      {
-        "name": "LYSOSOMAL STORAGE DISEASES",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bc975774-0bf7-4e36-9540-fefec639f6f9?autoplay=true"
-      }
-    ],
-    "Community Medicine": [
-      {
-        "name": "LECTURE 1",
-        "video": "https://iframe.mediadelivery.net/embed/6781/66076d6e-9e9f-4569-83fd-f0297bd63eaf?autoplay=true"
-      },
-      {
-        "name": "LECTURE 2",
-        "video": "https://iframe.mediadelivery.net/embed/6781/95c130f9-a018-4b8e-9511-0971bd9833cd?autoplay=true"
-      },
-      {
-        "name": "LECTURE 3",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8a9f273a-daf2-44ff-a2b6-528ac2f90eb4?autoplay=true"
-      },
-      {
-        "name": "LECTURE 4",
-        "video": "https://iframe.mediadelivery.net/embed/6781/e90a3117-8e07-4eba-b3d2-2844db8532c5?autoplay=true"
-      },
-      {
-        "name": "Biostat & Epidemiology - New Lecture 1",
-        "video": "https://iframe.mediadelivery.net/embed/6781/85d297b7-5733-4b84-9944-ebfc5c63227c?autoplay=true"
-      },
-      {
-        "name": "Biostat & Epidemiology - New Lecture 2",
-        "video": "https://iframe.mediadelivery.net/embed/6781/40b59f63-4ee6-4a16-b817-3e65ccb97819?autoplay=true"
-      },
-      {
-        "name": "Biostat & Epidemiology - New Lecture 3",
-        "video": "https://iframe.mediadelivery.net/embed/6781/b1e620f5-d497-497e-9d12-a371ff79868b?autoplay=true"
-      },
-      {
-        "name": "Biostat & Epidemiology - New Lecture 4",
-        "video": "https://iframe.mediadelivery.net/embed/6781/c49f12af-dc40-4e58-b575-0aa5b69da828?autoplay=true"
-      },
-      {
-        "name": "Biostat & Epidemiology - New Lecture 5",
-        "video": "https://iframe.mediadelivery.net/embed/6781/395357a6-7958-48eb-8450-a1e46cfa9b19?autoplay=true"
-      },
-      {
-        "name": "Biostat & Epidemiology - New Lecture 6",
-        "video": "https://iframe.mediadelivery.net/embed/6781/bcf1603b-2cce-4101-9aab-ccdeecda832a?autoplay=true"
-      },
-      {
-        "name": "Biostat & Epidemiology - New Lecture 7",
-        "video": "https://iframe.mediadelivery.net/embed/6781/a9921d0d-77e8-4eb3-9247-55cbd90259e8?autoplay=true"
-      },
-      {
-        "name": "Biostat & Epidemiology - New Lecture 8",
-        "video": "https://iframe.mediadelivery.net/embed/6781/edcac190-6e36-4179-89c9-125803bf257e?autoplay=true"
-      }
-    ],
-    "Hemetology": [
-      {
-        "name": "1- ANEMIAS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/f71545d8-14ec-4f8e-98ef-e2e22519c5b4?autoplay=true"
-      },
-      {
-        "name": "2- ANEMIAS | THALASSEMIAS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/918388db-8b84-44aa-9d20-181377f66813?autoplay=true"
-      },
-      {
-        "name": "3- HEMOLYTIC ANEMIAS | COOMBS TEST ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/714f8857-922a-4ea3-989c-3b4a1c6c171b?autoplay=true"
-      },
-      {
-        "name": "4- ANEMIAS",
-        "video": "https://iframe.mediadelivery.net/embed/6781/8c8d6621-8352-4e9c-a4d3-7787f984605d?autoplay=true"
-      },
-      {
-        "name": "5- LEUKEMIA | LYMPHOMAS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/283b4598-df3a-41b3-a013-1239dd655a22?autoplay=true"
-      },
-      {
-        "name": "6- LYMPHOMAS ",
-        "video": "https://iframe.mediadelivery.net/embed/6781/d0c3c77b-9533-4529-9f93-c5c464092e82?autoplay=true"
-      },
-      {
-        "name": "LECTURE NO. 7",
-        "video": "https://iframe.mediadelivery.net/embed/6781/fe47fbf2-29fc-4690-8b2c-e48f4db8680c?autoplay=true"
-      },
-      {
-        "name": "LECTURE NO. 8",
-        "video": "https://iframe.mediadelivery.net/embed/6781/33bfab12-f158-4d74-a642-3b76e2f12760?autoplay=true"
-      },
-      {
-        "name": "LECTURE NO. 9",
-        "video": "https://iframe.mediadelivery.net/embed/6781/ad906a8b-8092-4ca1-952c-172991c0b124?autoplay=true"
-      },
-      {
-        "name": "LECTURE NO. 10",
-        "video": "https://iframe.mediadelivery.net/embed/6781/6e7b6004-4cf3-4e2f-86c3-d85bd959ed6c?autoplay=true"
-      }
-    ],
-    "CVS MURMURS": [
-      {
-        "name": "LECTURE 1",
-        "video": "https://iframe.mediadelivery.net/embed/14161/9ab58eb8-b00f-46a7-a4a0-83a6ab5bde06?autoplay=true"
-      },
-      {
-        "name": "LECTURE 2",
-        "video": "https://iframe.mediadelivery.net/embed/14161/8aa34f9f-f5e7-4540-b027-c2622f734f46?autoplay=true"
-      },
-      {
-        "name": "LECTURE 3",
-        "video": "https://iframe.mediadelivery.net/embed/14161/77ede275-c1f7-4f09-b12d-a0558bbc77ad?autoplay=true"
-      },
-      {
-        "name": "LECTURE 4",
-        "video": "https://iframe.mediadelivery.net/embed/14161/75aa8f1f-3970-4409-a08f-fe29b4c15493?autoplay=true"
-      },
-      {
-        "name": "LECTURE 5",
-        "video": "https://iframe.mediadelivery.net/embed/14161/9b90b716-dcd1-42ac-813b-e2439a10b5fe?autoplay=true"
-      },
-      {
-        "name": "LECTURE 6",
-        "video": "https://iframe.mediadelivery.net/embed/14161/d187e600-c250-4834-8134-9b098a75beac?autoplay=true"
-      },
-      {
-        "name": "LECTURE 7",
-        "video": "https://iframe.mediadelivery.net/embed/14161/4a13e600-5052-494d-a07e-ccbf675da95c?autoplay=true"
-      },
-      {
-        "name": "LECTURE 8",
-        "video": "https://iframe.mediadelivery.net/embed/14161/7ffbb281-2a65-4999-b14a-cbe930805c67?autoplay=true"
-      },
-      {
-        "name": "LECTURE 9",
-        "video": "https://iframe.mediadelivery.net/embed/14161/0f332dd0-8ccc-4c9f-b20f-73f792dd9a71?autoplay=true"
-      }
-    ]
-  }
+  "Cardio-Vascular system": [
+    {
+      "name": "EMBRYO",
+      "video": "https://iframe.mediadelivery.net/embed/6781/4264581c-a41f-4180-836d-04c1b83987b6?autoplay=true"
+    },
+    {
+      "name": "CARDIAC OUTPUT | FETAL CIRCULATION | ANATOMY OF HEART",
+      "video": "https://iframe.mediadelivery.net/embed/6781/d4bc45a3-8647-462e-8c33-216548e3c3bc?autoplay=true"
+    },
+    {
+      "name": "CARDIAC OUTPUT EQUATIONS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/24da2370-e867-48db-9fe5-86efed129aec?autoplay=true"
+    },
+    {
+      "name": "4. HEART SOUNDS | SPLITTING HEART SOUNDS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/70a08687-3248-471f-b19e-d6b53d052c12?autoplay=true"
+    },
+    {
+      "name": "5. MYOCARDIAL ACTION POTENTIAL",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ce6a4b98-1795-412d-aacd-26cb41b4d73c?autoplay=true"
+    },
+    {
+      "name": "6. AV BLOCK | ANP | BNP",
+      "video": "https://iframe.mediadelivery.net/embed/6781/76b97488-596c-4498-aab3-f44d8d1c03f1?autoplay=true"
+    },
+    {
+      "name": "7. BARORECEPTOR | CHEMORECEPTOR | AUTOREGULATION",
+      "video": "https://iframe.mediadelivery.net/embed/6781/13866aa8-a048-4706-9180-d24fda764061?autoplay=true"
+    },
+    {
+      "name": "8. AUTOREGULATION | CONGENITAL DISEASES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/2bfc12e8-4b0c-4bdb-a1c5-782083f15129?autoplay=true"
+    },
+    {
+      "name": "9. CONGENITAL DISEASES | ARTERIOSCLEROSIS | ATHEROSCLEROSIS | HYPERTENSION",
+      "video": "https://iframe.mediadelivery.net/embed/6781/27ebed69-9cfa-44fa-988d-2a93650e45a6?autoplay=true"
+    },
+    {
+      "name": "10. ATHEROSCLEROSIS | ANEURISM",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ef59c961-1b3b-4372-aac7-afc84051b49e?autoplay=true"
+    },
+    {
+      "name": "11. ANGINA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f626fa5e-eabb-4f8b-8256-28495b8980c8?autoplay=true"
+    },
+    {
+      "name": "12. CARIOMYPATHIES | HEART FAILURE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/03e6bad4-6ba6-48f5-8c57-784bc61d7664?autoplay=true"
+    },
+    {
+      "name": "13. CARDIAC & VASCULAR FUNCTIONAL CURVE | SHOCK",
+      "video": "https://iframe.mediadelivery.net/embed/6781/74dd9e8d-7c77-4246-a760-a98815e52bbd?autoplay=true"
+    },
+    {
+      "name": "14. SHOCK | RHEUMATIC FEVER",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ef2ee308-9e17-4b14-83bc-6db215d87597?autoplay=true"
+    },
+    {
+      "name": "15. ECG LEADS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8f25ac26-1f6d-45e5-b4d0-b5aa071d3e58?autoplay=true"
+    },
+    {
+      "name": "16. ECG | MURMERS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/9669bb39-d956-4085-b34a-46357912949b?autoplay=true"
+    },
+    {
+      "name": "17. MURMERS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/06a54596-c45c-444c-bcfb-cdec01342681?autoplay=true"
+    },
+    {
+      "name": "18. MURMERS | MYOCARDITIS | PERICARDITIS | VASCULITIS |",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e9525b00-1979-49c2-b20b-357554819481?autoplay=true"
+    },
+    {
+      "name": "19. VASCULITIS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/9f6fc2bb-9617-4fec-addf-fa5c0411dbec?autoplay=true"
+    },
+    {
+      "name": "20. CARDIAC TUMORS | PHARMA (HYPERTENSION TREATMENT & CARDOIVASCULAR AGENTS)",
+      "video": "https://iframe.mediadelivery.net/embed/6781/a851406a-58bf-4c86-b10e-b70bc6cc067a?autoplay=true"
+    },
+    {
+      "name": "21. CALCIUM CHANNEL BLOCKERS | DIGIOXIN",
+      "video": "https://iframe.mediadelivery.net/embed/6781/17d4498e-aefe-4d45-b174-1caf278cf0bf?autoplay=true"
+    },
+    {
+      "name": "22. LIPID LOWERING AGENTS | ANTIARRYTHMIC DRUGS | SODIUM CHANNEL BLOKCERS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/a2e3b3d7-2cc1-4750-9c9b-dace3447af53?autoplay=true"
+    },
+    {
+      "name": "23. ANTIARRYTHMIC DRUGS | SODIUM CHANNEL BLOCKERS | BETA BLOCKERS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/4b0df4a5-41da-496b-a392-c39181067739?autoplay=true"
+    },
+    {
+      "name": "24. CARDIAC CYCLE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/12fce2c2-eb2d-421c-bdd9-052647bfb980?autoplay=true"
+    },
+    {
+      "name": "25. PRESSURE VOLUME | LOOP CARDIAC CYCLE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/38e2e9e1-9393-462b-848e-b606466c9fbe?autoplay=true"
+    },
+    {
+      "name": "26. CARDIAC CYCLE (JVP PORTION)",
+      "video": "https://iframe.mediadelivery.net/embed/6781/2ef56f8a-c9e0-43d5-a3a5-fb58569ce3e4?autoplay=true"
+    },
+    {
+      "name": "ECG",
+      "video": "https://iframe.mediadelivery.net/embed/6781/00e8c7b1-d543-467b-80f9-284cc9df0673?autoplay=true"
+    },
+    {
+      "name": "ECG",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c8eacc54-7def-4c6a-8078-d383a4dc21a7?autoplay=true"
+    },
+    {
+      "name": "ECG",
+      "video": "https://iframe.mediadelivery.net/embed/6781/138d6807-9086-4929-baa9-ba8c5d495b0c?autoplay=true"
+    },
+    {
+      "name": "ECG",
+      "video": "https://iframe.mediadelivery.net/embed/6781/6902c073-afa1-450f-9444-40626cb620f8?autoplay=true"
+    },
+    {
+      "name": "ECG",
+      "video": "https://iframe.mediadelivery.net/embed/6781/22a665cd-45bc-4a75-9185-5f44a3e1033a?autoplay=true"
+    },
+    {
+      "name": "ECG",
+      "video": "https://iframe.mediadelivery.net/embed/6781/10be6de6-55cc-4793-a236-868f275ae07b?autoplay=true"
+    }
+  ],
+  "Central Nervous System": [
+    {
+      "name": "EMBRYO | NEURAL TUBE DEFECT",
+      "video": "https://iframe.mediadelivery.net/embed/6781/3cba4625-d655-4587-b152-4e20d4d039f2?autoplay=true"
+    },
+    {
+      "name": "NEURAL TUBE DEFECT | POSTERIOR CRANIAL FOSSA MALFORMATIONS | SPINAL TRACCT ANATOMY & FUNCTIONING",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f76a04c6-4c9e-4d85-bb1c-f1e7b928f64e?autoplay=true"
+    },
+    {
+      "name": "SPINAL TRACT | UMN | LMN | SYRINGOMELIA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/692bf92e-c623-484d-bd14-072221a8f6ed?autoplay=true"
+    },
+    {
+      "name": "TONGUE DEVELOPMENT | CELLS IN CNS | SENSORY RECEPTORS | PERIPHERAL NERVES | CHROMATOLYSIS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/d3ae1343-d5fa-4d82-b10d-eae853496daf?autoplay=true"
+    },
+    {
+      "name": "NEUROTRANSMITTER CHANGES + DISEASES | MENINGES | BLOOD BRAIN BARRIER | SLEEP PHYSIOLOGY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bbb66891-9320-405c-b32e-239caa10cfd5?autoplay=true"
+    },
+    {
+      "name": "PHYSIOLOGY OF SLEEP",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7b4e133d-2627-44cf-b478-4d32cbcf4746?autoplay=true"
+    },
+    {
+      "name": "HYPOTHALAMUS & ITS NUCLEI | THALAMUS & ITS NUCLEI | LIMBIC SYSTEM",
+      "video": "https://iframe.mediadelivery.net/embed/6781/28851feb-fa32-4071-9715-a5f2976a08e9?autoplay=true"
+    },
+    {
+      "name": "DOPAMINERGIC PATHWAYS | CEREBELLUM",
+      "video": "https://iframe.mediadelivery.net/embed/6781/5abb9a5a-729e-43f6-aa7b-eaa9a097b1b3?autoplay=true"
+    },
+    {
+      "name": "BASAL GANGLIA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7fbaa569-1ecd-45a8-ba76-0f5bf7ff7faf?autoplay=true"
+    },
+    {
+      "name": "CEREBRAL CORTICAL REGION & HOMUNCULUS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/1acbae49-b5b6-4787-a510-08725a417c77?autoplay=true"
+    },
+    {
+      "name": "HOMUNCULUS | CEREBRAL PERFUSION | WATERSHED ZONES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e3a5fa8d-bda8-4901-8cf8-c3ed92e21e1b?autoplay=true"
+    },
+    {
+      "name": "CIRCLE OF WILLIS | DURAL VENOUS SINUS | VENTRICULAR SYSTEM OF BRAIN | CRANIAL NERVE NUCLEI",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8120c955-7998-4250-b816-e38bafd57e7e?autoplay=true"
+    },
+    {
+      "name": "CRANIAL NERVES & CRANIAL VESSELS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/2e5e43d3-0250-4781-91b8-667682ab026c?autoplay=true"
+    },
+    {
+      "name": "CRANIAL NERVES | CRANIAL NERVE REFLEXES | LESIONS OF CRANIAL NERVES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/9efe5bc8-07fc-4e39-8eaf-deb3c37a43f7?autoplay=true"
+    },
+    {
+      "name": "FACIAL NERVE LESION | COMMON CRANIAL NERVE LESIONS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/03e261f1-a133-4dd2-9e88-429e9f53de8b?autoplay=true"
+    },
+    {
+      "name": "PUPILLARY CONTROL | HORNER SYNDROME | CRANIAL NERVE '3' DAMAGE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/4e290566-0467-4066-92a7-f4103e728061?autoplay=true"
+    },
+    {
+      "name": "CRANIAL NERVE '4' & CRANIAL NERVE '6' LESIONS | VISUAL FIELD DEFECT",
+      "video": "https://iframe.mediadelivery.net/embed/6781/4395d3f4-0cd8-4d46-9b4b-ee14edfa6ab3?autoplay=true"
+    },
+    {
+      "name": "CAVERNOUS SINUS | INTRA-NUCLEAR OPHTHALMOPLEGIA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/aa04ad0c-1a02-4cdb-9cfc-435ce31f29cf?autoplay=true"
+    },
+    {
+      "name": "ASCENDING & DESCENDING SPINAL TRACT",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f4bb7909-1dec-4e05-847d-c883ee4fa07c?autoplay=true"
+    },
+    {
+      "name": "MOTOR NEURON LESIONS | BROWN SEQUARD SYNDROME",
+      "video": "https://iframe.mediadelivery.net/embed/6781/72555992-2a94-4db6-b9a0-e5f8aa7ba30d?autoplay=true"
+    },
+    {
+      "name": "CAUDA EQUINA SYNDROME",
+      "video": "https://iframe.mediadelivery.net/embed/6781/a473aaa6-7b60-473f-ab01-375b5d496841?autoplay=true"
+    },
+    {
+      "name": "SYRINGOMELIA | ARNOLD CHIARI MALFORMATION | DANDY WALKER SYNDROME",
+      "video": "https://iframe.mediadelivery.net/embed/6781/1b21eaac-c73a-405a-8f94-6945f0d06298?autoplay=true"
+    },
+    {
+      "name": "INTRA-CRANIAL HAEMORRAHGE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7b8243b6-73d1-4968-b1e9-33e607998d51?autoplay=true"
+    },
+    {
+      "name": "ANEURYSM | NEONATAL INTRAVENTRICULAR HAEMORRHAGE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/86cdf83b-383a-4260-ae34-97cfc55a272f?autoplay=true"
+    },
+    {
+      "name": "ISCHEMIC STROKE | EFFECTS OF STROKE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/2eec7e4c-85e1-4e17-ac0c-33ef1652373a?autoplay=true"
+    },
+    {
+      "name": "APHASIA & ITS STYPES | SEIZURES | FEVER VS HEAT STROKE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/2417de56-3242-4e7c-948e-ba6f5c906d50?autoplay=true"
+    },
+    {
+      "name": "HYDROCEPHALUS | CLINICAL REFLEXES | DERMATOMAL LANDMARKS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/162c5dc6-fe14-4d0a-9bc2-fcd5de1336e9?autoplay=true"
+    },
+    {
+      "name": "CRANIAL NERVES '5' '7' '8' '9' '10' '11' '12' | POSTERIOR CIRCULATION (ASA , AICA , PICA )",
+      "video": "https://iframe.mediadelivery.net/embed/6781/1b3f1399-cf5d-40dd-8e4f-fc5c5495db24?autoplay=true"
+    },
+    {
+      "name": "PRIMITIVE REFLEXES | BRAIN LESIONS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c2efe07d-85ef-46b3-8db0-4b84dc9338d7?autoplay=true"
+    },
+    {
+      "name": "BRAIN LESIONS | MULTIPLE SCLEROSIS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/4cec69bf-895c-409a-bd85-b2aa39dd0561?autoplay=true"
+    },
+    {
+      "name": "MULTIPLE SCLEROSIS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/3d158856-15be-4ddf-9dd4-d272b920a24b?autoplay=true"
+    },
+    {
+      "name": "NEURO-CUTANEOUS DISORDER",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ad2ff01e-a0e0-497f-8c2a-adcb31164a4f?autoplay=true"
+    },
+    {
+      "name": "NEURO-CUTANEOUS DISORDER | BRAIN TUMORS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8736a370-46f4-4c9d-81fc-4af3be5a3da1?autoplay=true"
+    },
+    {
+      "name": "BRAIN TUMOR",
+      "video": "https://iframe.mediadelivery.net/embed/6781/0db7f14a-c6f1-4335-ade6-96e766f9f98b?autoplay=true"
+    },
+    {
+      "name": "NEURO-DEGENERATIVE DISORDER",
+      "video": "https://iframe.mediadelivery.net/embed/6781/9a89b3af-e912-4f94-8c97-23ad59a26839?autoplay=true"
+    },
+    {
+      "name": "NEURODEGENERATIVE DISORDER",
+      "video": "https://iframe.mediadelivery.net/embed/6781/140c200e-fa4f-4d23-acdb-bca454bbda7d?autoplay=true"
+    },
+    {
+      "name": "OTOLOGY--- WEBER's & RINIE's TEST",
+      "video": "https://iframe.mediadelivery.net/embed/6781/a7a4fa93-83f0-4b72-b373-96404208a290?autoplay=true"
+    },
+    {
+      "name": "WEBER TEST & RINNE TEST",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bbabb2c9-9cf2-45f6-b630-4dc38291921a?autoplay=true"
+    },
+    {
+      "name": "NEURO-DEGENERATIVE DISORDER",
+      "video": "https://iframe.mediadelivery.net/embed/6781/28eafcef-54de-4cb7-8905-a30cccf887bf?autoplay=true"
+    },
+    {
+      "name": "VERTIGO",
+      "video": "https://iframe.mediadelivery.net/embed/6781/a3199e9b-4f17-40a1-af43-260cce4ccd6b?autoplay=true"
+    },
+    {
+      "name": "OPHTHALMOLOGY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/9ee61c66-cf48-4faa-8cfa-0e76b47d54a3?autoplay=true"
+    },
+    {
+      "name": "OTHER DEMYELINATING & DYSMYELINATING DISORDERS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/816093bf-2705-4483-a86e-81fb0c848a68?autoplay=true"
+    },
+    {
+      "name": "HERNIATION SYNDROME | MASTICATION | SPINAL NERVE | CEREBRAL PERFUSION",
+      "video": "https://iframe.mediadelivery.net/embed/6781/14e10014-582c-4cc1-9f2d-574094df4e35?autoplay=true"
+    },
+    {
+      "name": "POLIOMYELITIS | SPINAL CORD LESIONS | SYRINGOMYLIA | ANT SPINAL ARTERY OCCLUSION | TERTIARY SYPHILLIS  |  TABES DORSALIS | VIT B12 DEFICIENCY ",
+      "video": "https://iframe.mediadelivery.net/embed/14161/0b4d2fd5-877e-4b91-a678-c2ad5e6cfea4?autoplay=true"
+    }
+  ],
+  "Respiratory System": [
+    {
+      "name": "EMBRYO",
+      "video": "https://iframe.mediadelivery.net/embed/6781/6a850b1c-47f2-4269-8a63-e1f2c317a1c4?autoplay=true"
+    },
+    {
+      "name": "ANATOMY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/af8d13be-2981-46ce-b87d-687ad4f6f729?autoplay=true"
+    },
+    {
+      "name": "ANATOMY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c8f27420-0db3-437f-8246-0ba57fcd5964?autoplay=true"
+    },
+    {
+      "name": "LUNG & CHEST WALL",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f7214727-d54c-4273-8c8c-de36ca9d1ad0?autoplay=true"
+    },
+    {
+      "name": "CHEST WALL",
+      "video": "https://iframe.mediadelivery.net/embed/6781/16bcd9b5-1878-417b-aa23-f72fe8ca470a?autoplay=true"
+    },
+    {
+      "name": "METHHAEMOGLOBIN",
+      "video": "https://iframe.mediadelivery.net/embed/6781/899d0b2f-fc15-4b46-a501-d22b763b2cf6?autoplay=true"
+    },
+    {
+      "name": "O2 CURVE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e569af90-d772-40b8-a3d8-98ca41a90ea1?autoplay=true"
+    },
+    {
+      "name": "PULMONARY CIRCULATION",
+      "video": "https://iframe.mediadelivery.net/embed/6781/1bd2b101-75a9-48b7-ba3e-2ad1613193a8?autoplay=true"
+    },
+    {
+      "name": "ALVEOLAR GAS EQUATION",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bb470572-40a2-4d64-b116-da39f875577b?autoplay=true"
+    },
+    {
+      "name": "V/Q MISMATCH",
+      "video": "https://iframe.mediadelivery.net/embed/6781/0594b2fe-ed76-44d8-ba19-669cdc4ed665?autoplay=true"
+    },
+    {
+      "name": "V/Q MISMATCH",
+      "video": "https://iframe.mediadelivery.net/embed/6781/6883c3ec-7d5f-42e3-aa06-7cd0f055c3af?autoplay=true"
+    },
+    {
+      "name": "CARBON DIOXIDE TRANSPORT",
+      "video": "https://iframe.mediadelivery.net/embed/6781/dd94fbf0-fa56-442d-8b56-3fc6d3e9baa5?autoplay=true"
+    },
+    {
+      "name": "RESPONSE TO HIGH ALTITUDE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/1264e0b5-a68d-461d-b830-216b9e9ad96c?autoplay=true"
+    },
+    {
+      "name": "DEEP VEIN THROMBOSIS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/cdf79e85-cec7-4d95-988d-84de0eeff6dc?autoplay=true"
+    },
+    {
+      "name": "PULMONARY EMBOLISM",
+      "video": "https://iframe.mediadelivery.net/embed/6781/005478cc-371b-419a-a701-3c0183ed2fa1?autoplay=true"
+    },
+    {
+      "name": "FLOW VOLUME LOOP",
+      "video": "https://iframe.mediadelivery.net/embed/6781/1190e34f-305e-4a11-9b45-2d3ac8ebfc4b?autoplay=true"
+    },
+    {
+      "name": "OBSTRUCTIVE LUNG DISEASE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b59db54f-40d2-459f-abf6-de34ea901e44?autoplay=true"
+    },
+    {
+      "name": "CHRONIC BRONCHITIS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/afa3a675-0b3c-4434-be5f-86116759573b?autoplay=true"
+    },
+    {
+      "name": "CHRONIC BRONCHITIS | OBSTRUCTIVE LUNG DISEASE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/fb471893-ed05-4320-86ab-462f718aa37f?autoplay=true"
+    },
+    {
+      "name": "EMPHYSEMA & ASTHMA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7659c5f8-0270-418f-ae0e-09ca451a004f?autoplay=true"
+    },
+    {
+      "name": "RESTRICTIVE LUNG DISEASE | ASTHMA | BRONCHIECTASIS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/a93193e4-1cd8-42aa-b876-1f80e97cc978?autoplay=true"
+    },
+    {
+      "name": "RESTRICTIVE LUNG DISEASE ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/6cb54efc-6c17-49cc-9f59-4fa1eef30ec4?autoplay=true"
+    },
+    {
+      "name": "RESTRICTIVE LUNG DISEASE ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/dbcf07ef-1420-4ee6-8090-2089b9b4bb4f?autoplay=true"
+    },
+    {
+      "name": "ARDS & SLEEP APNEA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8bf17949-144d-4098-98da-bdcc42f89444?autoplay=true"
+    },
+    {
+      "name": "LUNG CANCER",
+      "video": "https://iframe.mediadelivery.net/embed/6781/1c34ed75-9b2a-4f6d-8ed0-a1acf56f6767?autoplay=true"
+    },
+    {
+      "name": "SUPERIOR VENA CAVA SYNDROME | PANCOAST TUMOUR | LUNG ABSCESS | PULMONARY HYPERTENSION",
+      "video": "https://iframe.mediadelivery.net/embed/6781/0eac2357-9011-437b-84af-4adcff30cb33?autoplay=true"
+    },
+    {
+      "name": "PNEUMOTHORAX & PLEURAL EFFUSION",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7b69f26d-2737-4371-a995-4701739f6e10?autoplay=true"
+    },
+    {
+      "name": "PLEURAL EFFUSION | LUNG & CHEST WALL",
+      "video": "https://iframe.mediadelivery.net/embed/6781/29623f45-e796-4beb-9e65-332c93fdbac4?autoplay=true"
+    },
+    {
+      "name": "PNEUMONIA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f19e82f8-9331-4344-9a57-827f31c1cc95?autoplay=true"
+    },
+    {
+      "name": "PNEUMONIA | ATELACTASIS | PATHOLOGY OF MEDIASTINUM | INHALATIONAL INJURY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/23ca3dc9-50fb-44ed-a4d9-0bdaed554a07?autoplay=true"
+    },
+    {
+      "name": "RESPIRATORY CROUP",
+      "video": "https://iframe.mediadelivery.net/embed/6781/9d2682ba-724e-4a07-bf34-7907c3029546?autoplay=true"
+    }
+  ],
+  "Gastro-Intestinal System": [
+    {
+      "name": "NORMAL GIT EMBRYOLOGY | VENTRAL WALL DEFECTS | CONGENITAL UMBILICAL HERNIA | TEF | DUEDENAL AND JEJUNAL ATRESIA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/32c79037-58ff-4b2c-8f61-f31bb57d8ec4?autoplay=true"
+    },
+    {
+      "name": "GIT EMBRYOLOGY | GIT ANATOMY | RETROPERITONEAL STRUCTURES | GIT LIGAMENTS | HYPERTOPHIC PYLORIC STENOSIS | SPLEEN AND PANCREAS ANAMOLIES ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/0a70f0a2-5cd8-4086-8ef9-c9fd1bf03df6?autoplay=true"
+    },
+    {
+      "name": "DIGESTIVE ANATOMY | GI HISTOLOGY BLOOD SUPPLY AND INNEVATION | ABDOMINAL AORTA AND ITS BRANCHES  ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f3516220-13ef-4488-9fcf-daca7194f7d3?autoplay=true"
+    },
+    {
+      "name": "CILIAC TRUNK | PORTOSYSTEMIC ANASTOMOSIS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/10fa2373-e10a-46c9-b006-84cb8d884c20?autoplay=true"
+    },
+    {
+      "name": "PORTOSYSTEMIC ANASTOMOSIS | PECTINATE LINE | HEPATIC ARCHITECTURE ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bf8abedb-5c2c-4a0d-8a8e-349f6c375904?autoplay=true"
+    },
+    {
+      "name": "BILIARY STRUCTURE | FEMORAL REGION | INGUINAL CANAL | ABDOMENAL WALL | HERNIAS | GIT HORMONES ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/341fefa9-e61e-40dc-a55e-45f01887a545?autoplay=true"
+    },
+    {
+      "name": "7. ALCOHLIC LIVER DISEASES | HCC | OTHER LIVER TUMORS | BUD CHIARI SYNDROME | ALPHA ANTITRYPSIN DEFICIENCY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/2e905de0-e14a-443c-82bb-2cb287816227?autoplay=true"
+    },
+    {
+      "name": "8. JAUNDICE | DIRECT & INDIRECT | HYPERBILIRUBINEMIA | BILIARY ATRESIA | HEREDITARY HYPERBILIRUBINEMIA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/5a647b61-adc8-4eb6-ac64-0c409babeee1?autoplay=true"
+    },
+    {
+      "name": "9. WILSON DISEASE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/889e70cf-ba73-4e73-b462-1b77b0c9b4a2?autoplay=true"
+    },
+    {
+      "name": "10. WILSON DISEASE | HEMOCHROMATOSIS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/399f841b-6a58-4084-9ba8-46c1409b4624?autoplay=true"
+    },
+    {
+      "name": "11. BILIARY TRACT DISEASE | CHOLILITHIASIS + PATHOLOGIES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/4441448d-6b29-4628-a4eb-350436fc4a9c?autoplay=true"
+    },
+    {
+      "name": "12. ACUTE & CHRONIC PANCREATITIS | PANCREATIC CANCER",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7cfc485e-8721-4c71-97f9-af337b72a183?autoplay=true"
+    },
+    {
+      "name": "13. GIT Sialadenitis---- Salivary Gland Tumor --- Esophageal Pathology",
+      "video": "https://iframe.mediadelivery.net/embed/6781/63e78b33-19c6-4f64-81d0-6c1522f4e35c?autoplay=true"
+    },
+    {
+      "name": "14. GIT   Secretions----Pancreatic Secretions---Carbon & Iron Absorption",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e2204e08-da82-492f-8f95-066c27cfc6fa?autoplay=true"
+    },
+    {
+      "name": "15. DGESTIVE TRACT ANATOMY | BARRETS ESOPHAGUS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b7231b8e-e60f-49c3-bf99-87d6112d45e3?autoplay=true"
+    },
+    {
+      "name": "16. GASTRITIS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/004e6755-f88a-46b3-82fa-5da987e7633f?autoplay=true"
+    },
+    {
+      "name": "PEPTIC ULCER DISEASE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/28a52160-f96c-4894-a87c-d7756fa733da?autoplay=true"
+    },
+    {
+      "name": "18. SILOLITHIASIS | SALIVARY GLAND TUMORS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ebdcd0f4-3f50-4375-bb53-a9c2b533820d?autoplay=true"
+    },
+    {
+      "name": "19.ACHLASIA | ESOPHAGEAL PATHOLOGIES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/2a1f41f3-2e12-431c-9873-e82c78915a3b?autoplay=true"
+    },
+    {
+      "name": " 20. ESOPHAGEAL PATHOLOGIES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f3c3ada2-c48b-42cb-830d-88b720f84905?autoplay=true"
+    },
+    {
+      "name": "21 MALABSORBTION SYNDROME",
+      "video": "https://iframe.mediadelivery.net/embed/6781/46178d69-26a4-4899-a1d4-3363c98c17a9?autoplay=true"
+    },
+    {
+      "name": " 22. MALABSORPTION SYNDROME",
+      "video": "https://iframe.mediadelivery.net/embed/6781/0e0dd442-0e79-4e64-8209-82d665276b02?autoplay=true"
+    },
+    {
+      "name": "23. MALABSORPTION SYNDROME",
+      "video": "https://iframe.mediadelivery.net/embed/6781/16c66985-02a1-4803-9d1f-c7ef2c26c8b5?autoplay=true"
+    },
+    {
+      "name": "24. IBD",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b43a96f4-538d-4a1f-98b4-d6928f24a096?autoplay=true"
+    },
+    {
+      "name": "25. IBS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/03dd8c02-142b-4115-a0b5-111b7ac6eb31?autoplay=true"
+    },
+    {
+      "name": "26. INFLAMMATORY BOWEL DISEASE | IRRITABLE BOWEL SYNDROME | ANATOMY OF GIT",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ef2936ec-6cdf-45c9-a53a-b5067d07ca5e?autoplay=true"
+    },
+    {
+      "name": "27. ZENKER DIVERTICULUM | MECKELS DIVERTICULUM | HURSCH SPRING DISEASE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/d5842909-dc98-4401-b7b0-b4a7aaf749db?autoplay=true"
+    },
+    {
+      "name": "28.COLONIC POLYPS | POLYPOSIS SYNDROME ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b82cf66c-7e6f-4120-bb91-4853d4bccd5f?autoplay=true"
+    },
+    {
+      "name": "29. COLORECTAL CA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/3774fba8-07ea-4fb7-9681-348825e0c1f8?autoplay=true"
+    },
+    {
+      "name": "30. COLORECTAL CARCINOMA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f906c546-695f-4426-a19c-2dc78ecb2af2?autoplay=true"
+    },
+    {
+      "name": "31.MALROTATION | INTUSSUSCEPTION",
+      "video": "https://iframe.mediadelivery.net/embed/6781/39345563-370d-4542-9d19-4e9fd4cb8c12?autoplay=true"
+    },
+    {
+      "name": "32. OTHER INTESTINAL DISORDERS  | ISCHEMIAS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b4d858cb-83ca-47b5-8248-2bd4c7d4bab6?autoplay=true"
+    },
+    {
+      "name": "33. ACID SUPPRESSION THERAPY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/32e6bb8f-1d5e-48e8-b54e-1e2e0c17abfb?autoplay=true"
+    },
+    {
+      "name": "34. GIT PHARMACOLOGY ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/24950811-0cc9-4740-a042-7da18e76fd65?autoplay=true"
+    },
+    {
+      "name": "37. GIT PHARMACOLGY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/58735c1a-8205-4d3b-bb58-9d4b5368cb81?autoplay=true"
+    },
+    {
+      "name": "36. GIT PHARMACOLOOGY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ba9ccd10-fc08-497d-8084-3e5e1699f086?autoplay=true"
+    },
+    {
+      "name": "HEPATITIS B SEROLOGICAL MARKARS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/d70e27a4-df95-4941-b01a-66723f80ddb9?autoplay=true"
+    }
+  ],
+  "Immunology System": [
+    {
+      "name": "1- HYPERSENSITIVITY ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f01598f9-029e-4a66-ae08-7da264690fe1?autoplay=true"
+    },
+    {
+      "name": "2- ARACHIDONIC ACID PATHWAY | TYPE 1 HSV ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b9d85db3-2538-4f2c-88ca-27cf25b773cf?autoplay=true"
+    },
+    {
+      "name": "3- HSV | TB",
+      "video": "https://iframe.mediadelivery.net/embed/6781/d660ce24-6605-4a13-ba99-7f7988c569d3?autoplay=true"
+    },
+    {
+      "name": "4- TYPE 2 HSV ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/557a6567-ce98-44f3-ad3e-d570de4ae4e1?autoplay=true"
+    },
+    {
+      "name": "5- TYPE 3 HSV",
+      "video": "https://iframe.mediadelivery.net/embed/6781/82b43601-84d8-43da-9768-92205ba75987?autoplay=true"
+    },
+    {
+      "name": "6- IMMUNE SYSTEM ORGANS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/47beaa68-2af2-49ae-8776-cd0faf00d709?autoplay=true"
+    },
+    {
+      "name": "7- IMMUNITY TYPES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b47e3fee-9f16-4152-8c12-27cc929fb31c?autoplay=true"
+    },
+    {
+      "name": "8- MHC",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b43bdb78-62f9-434a-a0bb-d8fac4ce7b6d?autoplay=true"
+    },
+    {
+      "name": "9- MHC CLASS 1 AND 2",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ee406b53-9019-4f92-ad50-7c8bb4d4cf7a?autoplay=true"
+    },
+    {
+      "name": "10- B AND T CELL FUNCTIONS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/4c2066a9-b76d-4b94-b27f-f38291ed7e05?autoplay=true"
+    },
+    {
+      "name": "11- IMMUNOGLOBULINS STRUCTURE ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/6d6df800-44ff-4fe0-a8b0-3b4b9fb15147?autoplay=true"
+    },
+    {
+      "name": "12- IMMUNOGLOBULINS ISOTOPES ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7116f2c2-e3cb-45ce-83ef-db95132c41bc?autoplay=true"
+    },
+    {
+      "name": "13- IMMUNOGLOBULINS ISOTOPES ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/3781ab24-c79a-41dc-8e99-826f0ca87b36?autoplay=true"
+    },
+    {
+      "name": "14- PASSIVE VS ACTIVE IMMUNITY ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/20d506ec-e949-40bd-aaed-9061ebc6bea1?autoplay=true"
+    },
+    {
+      "name": "15- COMPLEMENT SYSTEM",
+      "video": "https://iframe.mediadelivery.net/embed/6781/4de83bf5-ce59-48be-8527-471ca65fef27?autoplay=true"
+    },
+    {
+      "name": "16- IMPORTANT CYTOKINES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e69d07d4-e80a-4eb9-b001-7fe492b93f49?autoplay=true"
+    },
+    {
+      "name": "17- HMP SHUNT | RESPIRATORY BURST",
+      "video": "https://iframe.mediadelivery.net/embed/6781/23280d20-f408-4f81-9232-a7f1410fd02a?autoplay=true"
+    },
+    {
+      "name": "18- HSV TYPES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/0a3cc9f2-b546-4ba6-9c34-2d2722bd6580?autoplay=true"
+    },
+    {
+      "name": "19- HSV TYPES ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/5417aee1-5143-4c0a-9ec1-3c17cbcb2791?autoplay=true"
+    },
+    {
+      "name": "20- HSV TYPES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bc494e5a-54f1-469e-b139-d6755289311b?autoplay=true"
+    },
+    {
+      "name": "21- HSV TYPES ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/18e7a1d5-989f-45ee-942b-868318db4e66?autoplay=true"
+    },
+    {
+      "name": "22- IMMUNODEFICIENCIES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/fa62e780-d62b-43e4-87f8-e09625f258d2?autoplay=true"
+    },
+    {
+      "name": "23- IMMUNODEFICIENCIES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/a1615058-4ea6-483c-98a9-7b9c5be9269e?autoplay=true"
+    },
+    {
+      "name": "24- IMMUNODEFICIENCIES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/96a22d67-7fe7-4d43-a751-2650ebb7b1c2?autoplay=true"
+    }
+  ],
+  "Musculo-Skeletal System": [
+    {
+      "name": "1- Upper Limb lesions | Fracture of humerus | Scaphoid fracture | Subacromial bursitis | Injuries due to repeated overuse of elbow joint | Brachial plexus | ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c955836f-ba2e-416d-a611-689fe5736b44?autoplay=true"
+    },
+    {
+      "name": "2- RADIAL NERVE INJURY | CARPAL TUNNEL SYNDROME | INJURRY TO LOWER EXTREMITY NERVES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e29fd0ef-cc5a-4542-b773-dab9e171d25a?autoplay=true"
+    },
+    {
+      "name": "3- Types of muscle fibers | Smooth muscle contraction and relaxation | Bone formation | Achondroplasia | Osteoporosis   ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/acac47a7-a70f-404f-869b-288a5c358d18?autoplay=true"
+    },
+    {
+      "name": "4- Paget disease | Avascular lesions | Changes in Lab values in bone disorders | Bone tumors",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e8721440-14d6-485a-90d0-1299148981ef?autoplay=true"
+    },
+    {
+      "name": "5-Knee examination + tests | Ankle sprain | Lumbosacral Radiculopathy | Neurovascular pairing",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7294da22-6773-4b24-9e57-8aa354bc6b74?autoplay=true"
+    },
+    {
+      "name": "6- Motor Nueron action potential to muscle contraction ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/af029d9b-3997-40cb-91eb-88f0a995d7f6?autoplay=true"
+    },
+    {
+      "name": "7- SLE | APLAS | DRUG INDUCED SLE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/9ba81130-13cf-416e-9fae-c95a4ec6b2e5?autoplay=true"
+    },
+    {
+      "name": "8- Sjogren Syndrome | Polymyalgia rheumatica | Fibromyalgia | Scleroderma | DERMATOMYOSITIS | POLYMYOSITIS | REYNARDS PHENOMENON | MYESTHANIA GRAVIS | LAMBERT EAREN SYNDROME  ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/4452b1a2-824b-4f7e-886c-a8ba8c127615?autoplay=true"
+    },
+    {
+      "name": "9- Rheumatoid Arthritis | Osteo Arthritis",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bd6dd159-8b51-493c-890d-d5e922d4d9eb?autoplay=true"
+    },
+    {
+      "name": "10- Gout | Pseudo Gout | Sero negative Spondyloarthropathy",
+      "video": "https://iframe.mediadelivery.net/embed/6781/01501664-e40d-432a-9f3d-fee615079a39?autoplay=true"
+    },
+    {
+      "name": "11- Layers of skin | Common skin disorders | Auto immune blistering skin disorders | Blistering skin disorders",
+      "video": "https://iframe.mediadelivery.net/embed/6781/6dfd7e6e-418a-4a25-9698-8da738de0670?autoplay=true"
+    },
+    {
+      "name": "12- Layers of skin | Epithelial cell junction | Dermatologic Macroscopic terms | Dermatologic Microscopic terms | Pigmented skin disorders",
+      "video": "https://iframe.mediadelivery.net/embed/6781/526c861f-13b7-4d1e-ae5c-d9ab61c68cfd?autoplay=true"
+    },
+    {
+      "name": "13- Vascular tumors of skin | Common skin disorders",
+      "video": "https://iframe.mediadelivery.net/embed/6781/72e6c307-3a99-47cf-8c88-c458a073e7db?autoplay=true"
+    },
+    {
+      "name": "14- Skin infections | Autoimmune blistering skin disorders | Blistering skin disorders | Miscellaneous skin disorders",
+      "video": "https://iframe.mediadelivery.net/embed/6781/63093b21-915b-4d98-9dad-36c17a293b04?autoplay=true"
+    },
+    {
+      "name": "15- CHILDHOOD MUSCULOSKELETAL CONDITIONS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/1be207fa-0307-4790-b034-f261a938ff0f?autoplay=true"
+    },
+    {
+      "name": "16- SQUAMOUS CELL CARCINOMA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/4a321d9f-72ef-410e-af12-7a8101d596bf?autoplay=true"
+    },
+    {
+      "name": "17- SCC | MELANOMA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c7b6656d-06d2-48a3-abaf-a5e33232eb08?autoplay=true"
+    },
+    {
+      "name": "MELANONA AND ITS TYPES ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/50b21b86-bef6-4238-8dcc-3da33ac13696?autoplay=true"
+    },
+    {
+      "name": "MELANONA | KAPOSI SARCOMA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/50b21b86-bef6-4238-8dcc-3da33ac13696?autoplay=true"
+    },
+    {
+      "name": "UTRICARIA | BCC",
+      "video": "https://iframe.mediadelivery.net/embed/6781/50b21b86-bef6-4238-8dcc-3da33ac13696?autoplay=true"
+    }
+  ],
+  "Renal System": [
+    {
+      "name": "EMBRYO",
+      "video": "https://iframe.mediadelivery.net/embed/6781/fb532aeb-b341-4e26-895a-2565018fb30d?autoplay=true"
+    },
+    {
+      "name": "RENAL ANATOMY | HORSE SHOE SHAPED KIDNEY | POTTER's SEQUENCE | COURSE OF URETER",
+      "video": "https://iframe.mediadelivery.net/embed/6781/fa70c4eb-c72a-41ff-94f1-b9d16740e9c7?autoplay=true"
+    },
+    {
+      "name": "RENAL CLEARANCE | FLOOD COMPARTMENTS | COURSE OF URETERS | GFR BARRIER",
+      "video": "https://iframe.mediadelivery.net/embed/6781/415326b3-6f55-4dfd-ad10-f16e3634b8d1?autoplay=true"
+    },
+    {
+      "name": "RENAL CLEARANCE GFR | EFFECTIVE RENAL PLASMA FLOW",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f32e72de-3968-4714-9fab-197dd1d45f77?autoplay=true"
+    },
+    {
+      "name": "FILTRATION",
+      "video": "https://iframe.mediadelivery.net/embed/6781/392ae521-419b-46fa-85c9-20fefe8ff624?autoplay=true"
+    },
+    {
+      "name": "GLUCOSE CLEARANCE | CHANGES IN GLOMERULAR DYNAMICS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/63fff159-3736-4b61-9a23-77db766b509b?autoplay=true"
+    },
+    {
+      "name": "PHYSIOLOGY OF NEPHRON TRANSPORT ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e9b51445-4ee0-487e-a4e3-729623fef51e?autoplay=true"
+    },
+    {
+      "name": "NEPHRON TRANSPORT | RENAL TUBULAR DEFECTS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/0b2b64d8-56e2-40f6-b9b4-db6a984db418?autoplay=true"
+    },
+    {
+      "name": "NEPHRO TRANSPORT | RENAL TUBULAR DEFECTS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ae0930d2-3803-43f3-8a39-66d7744fd392?autoplay=true"
+    },
+    {
+      "name": "RTA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/9961942b-8e04-482d-91ad-82b8d3d988f5?autoplay=true"
+    },
+    {
+      "name": "RTA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/24854f25-b868-4285-8968-8f890b156451?autoplay=true"
+    },
+    {
+      "name": "RELATIVE CONCENTRATIONS ALONG PROXIMAL TUBULES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/deabab69-2b8d-4a55-ba0c-baa7ac991916?autoplay=true"
+    },
+    {
+      "name": "RAAAS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/fff3cd33-e28c-445b-a1ca-b717d7425bc6?autoplay=true"
+    },
+    {
+      "name": "KIDNEY ENDOCRINE FUNCTIONS | HORMONES ACTING ON KIDNEY | ACE RECEPTER BLOCKERS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/77f9cf39-9eba-43a7-8548-8e39afc16ea4?autoplay=true"
+    },
+    {
+      "name": "ELECTROLYTES DISTURBANCES | RENAL PHARMACOLOGY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ff1b5eb7-6d31-42f8-ba61-0c700239c734?autoplay=true"
+    },
+    {
+      "name": "ACIDOSIS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f7922658-2371-4229-9ab6-0ce923a4d46b?autoplay=true"
+    },
+    {
+      "name": "ACIDOSIS & ALKALOSIS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/12501ac9-3676-43d9-8dca-ace10c62222d?autoplay=true"
+    },
+    {
+      "name": "ACIDOSIS & ALKALOSIS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f8c2add7-7303-4d4f-b475-f55252d41622?autoplay=true"
+    },
+    {
+      "name": "CASTS IN URINE | ACIDOSIS AND ALKALOSIS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/01bde5ef-a8af-44cb-8a3f-e8e79cb3684e?autoplay=true"
+    },
+    {
+      "name": "NEPHROTIC SYNDROME",
+      "video": "https://iframe.mediadelivery.net/embed/6781/935d6a20-dcc7-4e8b-8479-1161fcc3555d?autoplay=true"
+    },
+    {
+      "name": "NEPHROTIC SYNDROME",
+      "video": "https://iframe.mediadelivery.net/embed/6781/a0e89918-87b4-4676-81cc-30c7331b5d39?autoplay=true"
+    },
+    {
+      "name": "NEPHRITIC SYNDROME",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e65b4bab-3119-49b9-96a9-a1d5776d2334?autoplay=true"
+    },
+    {
+      "name": "NEPHRITIC SYNDROME",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c05532ce-fd1b-47bf-950d-9f4ccc639c0e?autoplay=true"
+    },
+    {
+      "name": "NEPHRITIC SYNDROME",
+      "video": "https://iframe.mediadelivery.net/embed/6781/0f1d94c9-e1b8-44bb-a94a-0fd17235d424?autoplay=true"
+    },
+    {
+      "name": "NEPHRITIC SYNDROME & RENAL STONES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bf25b1e4-84e2-4f5b-b096-fc0bc78b74be?autoplay=true"
+    },
+    {
+      "name": "CYSTITIS | PYELONEPHRITIS | ACUTE KIDEY INJURY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8e2e3532-caac-4950-83c4-a55f569fe6c5?autoplay=true"
+    },
+    {
+      "name": "AKI",
+      "video": "https://iframe.mediadelivery.net/embed/6781/82a1131e-d005-4041-ac31-9d1bb040d398?autoplay=true"
+    },
+    {
+      "name": "DIURETICS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e555f066-2a2e-45c1-a804-9f12463230a8?autoplay=true"
+    },
+    {
+      "name": "URINARY INCONTINENCE | KIDNEY STONES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/671cf02c-8d43-4128-aaa8-1ef071497209?autoplay=true"
+    },
+    {
+      "name": "PROSTATE CANCER | RCC | PKD",
+      "video": "https://iframe.mediadelivery.net/embed/6781/22aef877-d796-49ea-acbb-99653b67569e?autoplay=true"
+    },
+    {
+      "name": "POLYCYSTIC KIDNEY DISEASE ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/78610673-9393-4c26-b278-dd035a5ef8bd?autoplay=true"
+    },
+    {
+      "name": "BPH PROSTATE CANCER ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/42a22523-b684-4373-94db-e3b2d74e8d6d?autoplay=true"
+    },
+    {
+      "name": "BLADDER CANCER ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/3c2e7cb7-02fe-45e4-a18c-31a43f519eb4?autoplay=true"
+    },
+    {
+      "name": "ICF AND ECF COMPARTMENTS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/9b19d04a-a2f5-4628-9445-881625725836?autoplay=true"
+    }
+  ],
+  "Reproductive System": [
+    {
+      "name": "1. EMBRYOLOGY | IMP GENES OF EMBRYOGENSIS | EARLY FETAL DEVELOPMENT | EMBRYOLOGICAL DERIVATIVE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/2f0947b7-397c-428d-81cd-72110163ff6a?autoplay=true"
+    },
+    {
+      "name": "2. GERM CELL LAYER DERIVATIVE | MORPHOGENSIS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/aebcaa28-97bd-4ca2-b4a3-83c348bbc633?autoplay=true"
+    },
+    {
+      "name": "3- MENSTRUAL CYCLE ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f28ce0fe-f715-48c0-8f7c-3c537fd86c3b?autoplay=true"
+    },
+    {
+      "name": "4- PCOS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8df0edd5-e761-4989-a26f-09d60cd9db8d?autoplay=true"
+    },
+    {
+      "name": "5- REPRODUCTIVE PHARMACOLOGY ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/db138346-edfb-4d64-adb3-a3985eb8d59b?autoplay=true"
+    },
+    {
+      "name": "6- TERATOGENS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c13173e3-96c6-4cda-ad41-7034fb69e405?autoplay=true"
+    },
+    {
+      "name": "7- TWINNING ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/824891fd-9971-4d29-8ecd-a8ac4867876c?autoplay=true"
+    },
+    {
+      "name": "UMBILICAL CORD | URACHUS | VITELINE DUCT ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/55a38777-fafb-4ffd-a408-8ff7befbf58b?autoplay=true"
+    },
+    {
+      "name": "9- PHARYNGEAL APPARATUS AND DERIVATIVES ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/41531288-98c6-4198-a5ae-34fa17819c4c?autoplay=true"
+    },
+    {
+      "name": "10- PHARANGEAL ARCH DERIVATIVES ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/82704428-ff24-45bc-b850-31a5a4d8ec7c?autoplay=true"
+    },
+    {
+      "name": "11- SEXUAL DIFFERENTIATION",
+      "video": "https://iframe.mediadelivery.net/embed/6781/11b3ff85-5842-469e-bf66-9086aee3c602?autoplay=true"
+    },
+    {
+      "name": "12- SEX CHROMOSOMAL DISORDERS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/d89a62a3-e340-46c8-9ef8-e16f066a95af?autoplay=true"
+    },
+    {
+      "name": "13. GONADAL DRAINAGE | FEMALE REPRODUCTIVE ANATOMY ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/93176781-5a7b-4ced-a852-2f34dda2de0f?autoplay=true"
+    },
+    {
+      "name": "14- MENSTRUAL CYCLE | PREGNANCY COMPLICATIONS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/cf33c0f8-44a2-4929-a360-e19ae2a0da1e?autoplay=true"
+    },
+    {
+      "name": "15- ECTOPIC | MOLAR PREGNANCY ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/3208b064-d082-43a3-8ad2-6b736c06984a?autoplay=true"
+    },
+    {
+      "name": "16. VULVAR PATHOLOGY (NON-NEOPLASTIC & NEOPLASTIC TUMOURS | IMPERFORATE HYMEN | VAGINAL TUMORS) | CERVICAL PATHOLOGY (DYSPLASIA & CARCINOMA IN SITU | INVASIVE CARCINOMA)",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bb428f2d-f4dc-4a6e-b215-b95c7ba0b554?autoplay=true"
+    },
+    {
+      "name": "17. EPITHELIAL TUMORS | EPITHELIAL TUMORS | GERM CELL TUMORS | SEX CORD TUMORS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e59ddc49-0029-4222-bcef-b37ac5f82dbe?autoplay=true"
+    },
+    {
+      "name": "18. UTERINE NEOPLASMS (ADENOMYOSIS | ASHERMAN SYNDROME | ENDOMETRIAL HYPERPLASIA | ENDOMETRIOSIS | EDOMETRITIS | ENDOMETRIAL CARCINOMA | LEIOMYOMA | LEIOMYOSARCOMA)",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f901b074-e236-453f-afcd-0e858f89c014?autoplay=true"
+    },
+    {
+      "name": "19. PATHOLOGY OF BREAST CANCER | INFLAMMATORY CONDITIONS | BENIGN & FIBROCYSTIC CHANGES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/60f4860d-6d6b-4e6c-96fb-7e5af97c2109?autoplay=true"
+    },
+    {
+      "name": "20. PATHOLOGY OF BREAST CANCER | PROGNOSTIC & PREDICTIVE FACTORS | MALE BREAST CANCER | GYNECOMASTIA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7c01a9e4-a603-45d6-8de9-cd328ffc0b25?autoplay=true"
+    },
+    {
+      "name": "21. MENSTRUAL CYCLE | HORMONAL MAINTENANCE OF UTERINE ENDOMETROSIS | ADDITIONAL HORMONAL CHANGES OF PREGNANCY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/fb3cf5f5-7de6-403e-8b02-f85351063288?autoplay=true"
+    },
+    {
+      "name": "22. PCOS | CHANGES NEAR END OF PREGNANCY | MAINTAINING LACTATION | FEMALE PSEUDOHERMAPHRODITE | MALE PSOEDOHERMAPHRODITE | ALTERATION IN GONADAL HORMONES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c49dc764-5289-4643-9480-7ad75af6f19c?autoplay=true"
+    },
+    {
+      "name": "23- TANNER STAGES OF DEVELOPMENT ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b12a9cf8-71df-434d-ae43-1e76e92a0e2e?autoplay=true"
+    },
+    {
+      "name": "24- MILESTONES ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/0a5a8114-df7f-40b3-8c8b-9d29c6e1f476?autoplay=true"
+    },
+    {
+      "name": "25- MILESTONES ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b4975758-56c3-4a00-a1d4-5273098eca28?autoplay=true"
+    },
+    {
+      "name": "26- PHYSIOLOGICAL CHANGES IN PREGNANCY ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/2c868360-5f34-409f-b73e-124a8c1206cb?autoplay=false"
+    },
+    {
+      "name": "27-NORMAL PHYSIOLOGICAL CHANGES IN PREGNANCY | SHEEHANS SYNDROME | TERMS ABOUT MORTALITY ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b2d04c06-b2ae-4240-a06e-cfe8b5b88759?autoplay=false"
+    },
+    {
+      "name": "URETHRAL INJURY ",
+      "video": "https://iframe.mediadelivery.net/embed/14161/1a3d0818-f490-4f7e-a3e4-c69b71cad187?autoplay=true"
+    }
+  ],
+  "Psychiatry": [
+    {
+      "name": "1. TRANSFERENCE AND COUNTER TRANSFERANCE | EGO DEFENSES | DULUSIONS AND SCHEZOPHRENIA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/99087b89-cd62-42c6-9b46-81676aa5507c?autoplay=true"
+    },
+    {
+      "name": "2. SCHEZOPHRENIA | BRIEF PSYCHOTIC DISORDER | SCHIZONEFORM DISORDER | BIPOLAR DISORDER ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/a13405e8-a420-4dd5-8c27-f67ca3a76c01?autoplay=true"
+    },
+    {
+      "name": "3. MANIA AND HYPOMANIA | CYCLORHYMIC DISORDER | MAJOUR DEPRESSIVE DISORDER | DYSTHYMIA | CYCLOTHYMIA | DEPRESSION WITH ATYPICAL FEATURES | PERIPARTUM MOOD DISTURBANCE ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/eaf65245-b84d-4c40-a60c-8799052976db?autoplay=true"
+    },
+    {
+      "name": "4. EATING DISORDER | FACTICIOUS DISORDERS | MALINGERING | SOMATIC SYMPTOM DISORDER | ILLNESS ANXIETY DISORDER.",
+      "video": "https://iframe.mediadelivery.net/embed/6781/62cb37ce-8d8a-43e0-94c3-ccba96876c2a?autoplay=true"
+    },
+    {
+      "name": "5. CONVERSATION DISORDER | PERSONALITY DISORDER ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/fd548f14-94ce-4fbf-ac09-9b4cfa9d88fe?autoplay=true"
+    },
+    {
+      "name": "6. PANIC DISORDER | GAD | OCD | PHOBIAS | POST TRAUMATIC DISORDER | SSRIS | ANTIPSYCHOTIC DRUGS | TCAS. ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/17747004-50e3-4cc5-9dd6-848600120731?autoplay=true"
+    },
+    {
+      "name": "7- ATTENTION DEFICIT HYPERACTIVITY DISORDER | AUTISM SPECTRUM DISORDER | TAURRETE SYNDROME ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/60acba11-786b-4d79-b1e0-ded2158ff6f7?autoplay=true"
+    },
+    {
+      "name": "8- TAURRETE SYNDROME | DILIRIUM ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/12c41659-e112-456e-a715-2f06975e0b69?autoplay=true"
+    },
+    {
+      "name": "9-  NARCOLEPSY ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/eef26aa4-c596-40e4-8328-9e7f641f1133?autoplay=true"
+    },
+    {
+      "name": "10- INSOMNIA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/3c127214-8abe-4d36-99b9-abe64c31f852?autoplay=true"
+    },
+    {
+      "name": "11-  SUBSTANCE USE DISORDERS( ALCOHOL ABUSE ND WITHDRAWAL) ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/0b523a8f-ea29-45f1-8c0d-cd18f88f8651?autoplay=true"
+    },
+    {
+      "name": "12- POSTPARTUM DEPPRESSIVE DISORDERS | ADJUSTMENT DISORDERS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/64898266-4bb3-4728-8b96-527d827920d5?autoplay=true"
+    },
+    {
+      "name": "13- DD OF PSYCHOSIS | ANTIPSYCHOTIC DRUGS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/d1fe1ed6-7c8e-48e8-8347-bc2f213c1051?autoplay=true"
+    }
+  ],
+  "Microbiology": [
+    {
+      "name": "1- C. TETANI AND C. BOTULINUM | C. PERFENGENS | S. PYOGENS | S. AUREUS| ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b8be29f3-eed3-44bd-9301-7d908055b214?autoplay=true"
+    },
+    {
+      "name": "2- CLASSIFICATION OF BACTERIA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f92654ba-b7ae-43fa-babf-895212461084?autoplay=true"
+    },
+    {
+      "name": "3- CLASSIFICATION OF BACTERIA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/548a018d-d63e-479a-b303-c784c6ff3f39?autoplay=true"
+    },
+    {
+      "name": "CLASSIFICATION | SPECIAL CULTURE MEDIA | STAINS | AEROBES AND ANAEROBES | FACULTATIVE AND ENCAPSULATED BACTERIA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/993bc106-d56b-4710-b52c-31c1c73a1ee7?autoplay=true"
+    },
+    {
+      "name": "5- NORMAL FLORA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7db79098-cb12-4888-a987-ff13be6d62ff?autoplay=true"
+    },
+    {
+      "name": "6- EXOTOXIN VS ENDOTOXIN",
+      "video": "https://iframe.mediadelivery.net/embed/6781/3f551ca3-7660-4045-8539-2c1cda469d97?autoplay=true"
+    },
+    {
+      "name": "7- INTRODUCTION OF BACTERIOLOGY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b240e114-5f51-4e4c-aec5-9657bb7a4691?autoplay=true"
+    },
+    {
+      "name": "8- INTRODUCTION OF BACTERIA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/a1fced57-e964-41bc-bcb8-acda412f1b27?autoplay=true"
+    },
+    {
+      "name": "9- GRAM POSITIVE BACTERIA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/44c3a8f4-8a87-49e0-b664-6cdc76e2e776?autoplay=true"
+    },
+    {
+      "name": "10- STAPH AUREUS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/3e0084d5-7690-4489-a0a8-8077693e3f42?autoplay=true"
+    },
+    {
+      "name": "11- STREPTOCOCCI IN DETAIL ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7ca8e1f6-f67e-4334-a014-b6da755111c2?autoplay=true"
+    },
+    {
+      "name": "12-STREPTOCOCCI",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e0935f98-1c65-4c11-bb2c-d5415203c9b3?autoplay=true"
+    },
+    {
+      "name": "13- CLOSTRIDIUM SPECIES ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/42733615-11c9-4477-af92-65e6e2fa4062?autoplay=true"
+    },
+    {
+      "name": "14- CORNYBACTERIUM DIPTHERIA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/22be09d7-140c-4369-b69f-840170f105d4?autoplay=true"
+    },
+    {
+      "name": "15- GRAM NEGATIVE BACTERIA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/3a0f12e1-9ab2-475e-ba9a-b2b0a9f6c000?autoplay=true"
+    },
+    {
+      "name": "16- CHYLAMYDIA | SYPHILLIS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bab97ace-91da-4088-91fc-7676959c31bf?autoplay=true"
+    },
+    {
+      "name": "17- SHEGILLA VS SALMONELLA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ba36837a-b58a-482b-8270-05d186c41803?autoplay=true"
+    },
+    {
+      "name": "18- TYPHOID ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8211ac57-813c-43c6-a3d7-1c54623bcfe9?autoplay=true"
+    },
+    {
+      "name": "19- GRAM POSITIVE BACTERIA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f3335b06-0229-4434-bfdf-5c6c339fd7a9?autoplay=true"
+    },
+    {
+      "name": "20- P- AEREUGINOSA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b2f5b32d-2117-4b24-bd73-e576e8a1738e?autoplay=true"
+    },
+    {
+      "name": "21- H- INFLUENZA | SYPHILLIS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/6c69aada-984e-4505-928b-3148f62ebdc8?autoplay=true"
+    },
+    {
+      "name": "22- H-INFLUENZA | MENINGITIS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ec6e9d7f-dad8-4853-8082-5c53baad4fb0?autoplay=true"
+    },
+    {
+      "name": "23- TB ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8831fc40-4deb-4731-87cf-ebbad830f264?autoplay=true"
+    },
+    {
+      "name": "24- TB ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f3c9d8d7-428c-4ef2-97c8-44e1cf11c7af?autoplay=true"
+    },
+    {
+      "name": "25- BARTONELLA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ffe90a7b-9393-4729-9d2a-6486c01a1a13?autoplay=true"
+    },
+    {
+      "name": "1- DERMATOPHYTES( CUTANEOUS MYCOSIS) | PTYRIASIS( TINEA VERSICOLOR)  ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/a3d801c6-d99f-4208-9394-ac6ca9e32d21?autoplay=true"
+    },
+    {
+      "name": "2- CUTANEOUS MYCOSIS | TINEA VERSICOLOR | CANDIDA ALBICANS | ASPERGILLUS FUMIGATUS | CTYPTOCOCCUS NEOFORMINS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/290241c0-d640-4eb3-8fed-e935374e6225?autoplay=true"
+    },
+    {
+      "name": "3- MUCOR AND RHIZOPUS | PNEUMOCYSTIS JIROVECI ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/15d55c88-70fb-4af3-83ce-4326c44dbdcb?autoplay=true"
+    },
+    {
+      "name": "4- SPOROTHRIX SCHENCKII | SYSTEMIC MYCOSIS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/3697b587-3f6a-46d4-91b2-82c800022cd9?autoplay=true"
+    },
+    {
+      "name": "5- CUTANEOUS MYCOSIS | TINEA VERSICOLOR | SPIROTHRIX ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/60f9710f-ffb0-43fc-b22a-702ffa42629a?autoplay=true"
+    },
+    {
+      "name": "6- CANDIDA ALBICANS | CRYPTOCOCCUS | ASPERGILUS | MUCORMYCOSIS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/96c3d246-aed1-4ba7-a4a3-d15c9cea7312?autoplay=true"
+    },
+    {
+      "name": "7- ANTIFUNGAL DRUGS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/fcb8e1df-7fd0-4480-8bb8-ca4076a0ce55?autoplay=true"
+    },
+    {
+      "name": "8- ANTIFUNGAL DRUGS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/5a8d1e62-d2b4-4adf-a6c2-efec2c4643c3?autoplay=true"
+    },
+    {
+      "name": "1- GIARDIA LAMBLIA | E. HISTOLYTICA | TOXOPLASMA GONDII | NAEGLERIA FOWLERI | TRYPAMOSOMIA BRUCI ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/dc71736f-ebb7-4ceb-815c-3d9eb52a70ae?autoplay=true"
+    },
+    {
+      "name": "2- PLASMODIUM ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/2dea6887-ac7c-477a-8b64-6d7e7ecd227a?autoplay=true"
+    },
+    {
+      "name": "3- PLASMODIUM",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8bb7edd0-8f48-4ecc-a5b9-e715b6bd12c9?autoplay=true"
+    },
+    {
+      "name": "4- PINWORM ( ENTEROBIUS VERMICULARIS) | ASCARIS LUMBRICOIDES | STRONGYLOIDES STERCOLARIS | ANCYLOSTOMA DUDENALE | TRICHINELLA SPIRALIS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8fe14143-6a77-4813-92b1-41f7cbda25a2?autoplay=true"
+    },
+    {
+      "name": "5- TINEA SOLIUM ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/36fb66a7-0da5-4d79-b59f-ac3e9f7b4fb5?autoplay=true"
+    },
+    {
+      "name": "6- TENIA SOLIUM | DIPHYLOBOTHRIUM LATUM | E. GRANULOSUS | SCHISTOSOMA MANAONI AND HEAMATOBIUM ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/30e86ead-7978-445a-b69b-ff569f31dcf6?autoplay=true"
+    },
+    {
+      "name": "7- WUCHRARIA BANCROFTI | LOA LOA ONCHOCERCA VOLVULUS | TOXOCARA CARUS | TRICHURIS TRICHURA | SCABIES | HEAD LICE( PEDICULUS HUMANUS / PHTHIRUS PUBIS) ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f43c072f-531c-4a35-afcf-7abc985add29?autoplay=true"
+    },
+    {
+      "name": "1- EBV ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8d6346a8-4212-4233-b01a-4fe616337960?autoplay=true"
+    },
+    {
+      "name": "2- KQPOSI SARCOMA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c4d7fa98-a5ca-4919-b462-922e9fd7003c?autoplay=true"
+    },
+    {
+      "name": "3- RNA VIRUSES | RABIES | RUBELLA ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e7cabd2a-dfd9-42ba-89ab-e25890b2a2a9?autoplay=true"
+    },
+    {
+      "name": "4- BRONCHIOLITIS |",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7f259fa8-db1d-4715-af71-a07294480516?autoplay=true"
+    },
+    {
+      "name": "5- MEASELS | MUMPS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/edf5278c-89c7-4ccb-8035-6f532e39bd3d?autoplay=true"
+    },
+    {
+      "name": "6- HIV",
+      "video": "https://iframe.mediadelivery.net/embed/6781/976146be-04f5-4a0b-b3d2-9c815f0ba6ba?autoplay=true"
+    },
+    {
+      "name": "7- HIV",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bb8607e9-7844-47a3-8734-6e08c4b6c5de?autoplay=true"
+    },
+    {
+      "name": "8- ANTIRETROVIRAL THERAPY ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bfb4b05c-9855-4ad0-9eaf-4d02337c45c2?autoplay=true"
+    },
+    {
+      "name": "9- ANTIRETROVIRAL THERAPY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/6556640d-7bcf-4dd6-92a3-c5ac3ed742b9?autoplay=true"
+    }
+  ],
+  "Pharmacology": [
+    {
+      "name": "ANTI FUNGAL - 1",
+      "video": "https://iframe.mediadelivery.net/embed/6781/486e7fa4-df4d-4e48-98f4-83a11056eb1a?autoplay=true"
+    },
+    {
+      "name": "ANTI FUNGAL - 2",
+      "video": "https://iframe.mediadelivery.net/embed/6781/d3fcf4d0-681c-41e4-bc20-99683d43719e?autoplay=true"
+    },
+    {
+      "name": "ANTI MICROBIAL - 1",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f322065a-2b9e-4355-86b2-93275fe2c55b?autoplay=true"
+    },
+    {
+      "name": "ANTI MICROBIAL - 2",
+      "video": "https://iframe.mediadelivery.net/embed/6781/5aef436c-d0b4-4576-9202-566778b3f445?autoplay=true"
+    },
+    {
+      "name": "ANTI MICROBIAL - 3",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bc8a420b-5c29-4549-b035-f83047ceb7b7?autoplay=true"
+    },
+    {
+      "name": "ANTI MICROBIAL - 4",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8ce8d420-6f6d-401e-92a2-03ab0ba592f9?autoplay=true"
+    },
+    {
+      "name": "ANTI MICROBIAL - 5",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b7426f9a-7b8a-4624-8755-dc0fe764fe05?autoplay=true"
+    },
+    {
+      "name": "ANTI MICROBIAL - 6",
+      "video": "https://iframe.mediadelivery.net/embed/6781/464a7233-1df5-460f-a87a-f012a0cadd5d?autoplay=true"
+    },
+    {
+      "name": "ANTI MICROBIAL - 7",
+      "video": "https://iframe.mediadelivery.net/embed/6781/5d1ea5d1-a34a-4402-97c1-bcf2c5e61e05?autoplay=true"
+    },
+    {
+      "name": "ANTI MICROBIAL - 8",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e389dc95-4186-4f8f-881c-b7051c32d9a6?autoplay=true"
+    },
+    {
+      "name": "ANTI MICROBIAL - 9",
+      "video": "https://iframe.mediadelivery.net/embed/6781/5d2d5621-cf7b-407b-aa3e-1dccd9976a4c?autoplay=true"
+    },
+    {
+      "name": "ANTI MICROBIAL - 10",
+      "video": "https://iframe.mediadelivery.net/embed/6781/968edc19-8467-4d26-81cd-6b6d6432ac44?autoplay=true"
+    },
+    {
+      "name": "AUTONOMIC NERVOUS SYSTEM - 1",
+      "video": "https://iframe.mediadelivery.net/embed/6781/725f322e-a6bb-404f-953b-950cd51b13e9?autoplay=true"
+    },
+    {
+      "name": "AUTONOMIC NERVOUS SYSTEM - 2",
+      "video": "https://iframe.mediadelivery.net/embed/6781/689e06bd-176c-4e56-9766-d779a3e0b26d?autoplay=true"
+    },
+    {
+      "name": "AUTONOMIC NERVOUS SYSTEM - 3",
+      "video": "https://iframe.mediadelivery.net/embed/6781/a0949ff5-66f3-429e-a261-441b6de8941a?autoplay=true"
+    },
+    {
+      "name": "AUTONOMIC NERVOUS SYSTEM - 4",
+      "video": "https://iframe.mediadelivery.net/embed/6781/4b270758-f65c-429a-938f-24408958d73c?autoplay=true"
+    },
+    {
+      "name": "AUTONOMIC NERVOUS SYSTEM - 5",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e1cbe64c-450d-47f3-8aba-803ed49a0d4f?autoplay=true"
+    },
+    {
+      "name": "AUTONOMIC NERVOUS SYSTEM - 6",
+      "video": "https://iframe.mediadelivery.net/embed/6781/fc6b8ed9-7de2-4884-a6fe-060381cd4a74?autoplay=true"
+    },
+    {
+      "name": "AUTONOMIC NERVOUS SYSTEM - 7",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c49a3c40-cfa2-424e-bb55-3a840ec7717e?autoplay=true"
+    },
+    {
+      "name": "AUTONOMIC NERVOUS SYSTEM - 8",
+      "video": "https://iframe.mediadelivery.net/embed/6781/0e2988e4-30a8-4d51-b4de-144214b6101c?autoplay=true"
+    },
+    {
+      "name": "AUTONOMIC NERVOUS SYSTEM - 9",
+      "video": "https://iframe.mediadelivery.net/embed/6781/77e63cca-70ee-475a-ac1c-58060883d209?autoplay=true"
+    },
+    {
+      "name": "BLOOD & ONCOLOGY PHARMACOLOGY - 1",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e9316b4b-3ae1-4f3c-823b-ac71da2d0f43?autoplay=true"
+    },
+    {
+      "name": "BLOOD & ONCOLOGY PHARMACOLOGY - 2",
+      "video": "https://iframe.mediadelivery.net/embed/6781/315bdd5d-5c00-4897-a1d4-df5d75513c74?autoplay=true"
+    },
+    {
+      "name": "BLOOD & ONCOLOGY PHARMACOLOGY - 3",
+      "video": "https://iframe.mediadelivery.net/embed/6781/02a09a20-fcbc-42f2-909f-323e971616e8?autoplay=true"
+    },
+    {
+      "name": "CNS PHARMACOLOGY - 1",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c8a7673c-149c-4549-ab2f-546959e06a50?autoplay=true"
+    },
+    {
+      "name": "CNS PHARMACOLOGY - 2",
+      "video": "https://iframe.mediadelivery.net/embed/6781/3936ab17-8fc3-4eef-ab0d-f01bc8f9d0f1?autoplay=true"
+    },
+    {
+      "name": "CNS PHARMACOLOGY - 3",
+      "video": "https://iframe.mediadelivery.net/embed/6781/3b8c0cee-1beb-4964-94a6-a713d61578e0?autoplay=true"
+    },
+    {
+      "name": "CNS PHARMACOLOGY - 4",
+      "video": "https://iframe.mediadelivery.net/embed/6781/29dbb360-d280-4a72-b2ca-603d84f6d565?autoplay=true"
+    },
+    {
+      "name": "CNS PHARMACOLOGY - 5",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b15e6490-2433-45f2-a1e5-eb1a563125d3?autoplay=true"
+    },
+    {
+      "name": "CNS PHARMACOLOGY - 6",
+      "video": "https://iframe.mediadelivery.net/embed/6781/886dfc77-b6ad-4dc5-9396-21e2c9bcbfdc?autoplay=true"
+    },
+    {
+      "name": "CVS PHARMACOLOGY - 1",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c862a039-40eb-491c-9072-e40d5cdd92eb?autoplay=true"
+    },
+    {
+      "name": "CVS PHARMACOLOGY - 2",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7bc4333a-a280-4562-aeb6-7b93082c66a2?autoplay=true"
+    },
+    {
+      "name": "CVS PHARMACOLOGY - 3",
+      "video": "https://iframe.mediadelivery.net/embed/6781/6f9a0e4c-fb06-42ed-85b2-cf2b5ae51c52?autoplay=true"
+    },
+    {
+      "name": "CVS PHARMACOLOGY - 4",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c9a96cbb-8216-47c8-a4d2-cba4e80fb246?autoplay=true"
+    },
+    {
+      "name": "CVS PHARMACOLOGY - 5",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8e3b9ae6-7e05-4053-b8e9-1dacf1babcfc?autoplay=true"
+    },
+    {
+      "name": "CVS PHARMACOLOGY - 6",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c083680d-d29e-4476-ba79-9b9272e3191e?autoplay=true"
+    },
+    {
+      "name": "CVS PHARMACOLOGY - 7",
+      "video": "https://iframe.mediadelivery.net/embed/6781/4a30cc3c-c059-4fa6-b4ac-d45fbe84efa8?autoplay=true"
+    },
+    {
+      "name": "ENDOCRINOLOGY PHARMACOLOGY - 1",
+      "video": "https://iframe.mediadelivery.net/embed/6781/77df2838-b696-41b9-a392-adee8e1b6723?autoplay=true"
+    },
+    {
+      "name": "ENDOCRINOLOGY PHARMACOLOGY - 2",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f46f53a1-3a7e-4709-abda-2109f18b18d3?autoplay=true"
+    },
+    {
+      "name": "GENERAL PHARMACOLOGY - 1",
+      "video": "https://iframe.mediadelivery.net/embed/6781/9f92f82a-f20b-44fc-be20-6f0f7f994d98?autoplay=true"
+    },
+    {
+      "name": "GENERAL PHARMACOLOGY - 2",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f14e8ef2-4d52-4a07-b7e5-9971af2fe26b?autoplay=true"
+    },
+    {
+      "name": "GENERAL PHARMACOLOGY - 3",
+      "video": "https://iframe.mediadelivery.net/embed/6781/28cfdd21-66c1-48e1-8ed3-b4cd5a6bd7cf?autoplay=true"
+    },
+    {
+      "name": "GENERAL PHARMACOLOGY - 4",
+      "video": "https://iframe.mediadelivery.net/embed/6781/38cf0480-ee45-49cb-9902-8f82ff070747?autoplay=true"
+    },
+    {
+      "name": "GENERAL PHARMACOLOGY - 5",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c18e4d17-eed4-495d-aff0-a4ac6fbd24dc?autoplay=true"
+    },
+    {
+      "name": "GENERAL PHARMACOLOGY - 6",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bf1eced6-c1ee-4634-99e9-87fea913fd9c?autoplay=true"
+    },
+    {
+      "name": "GENERAL PHARMACOLOGY - 7",
+      "video": "https://iframe.mediadelivery.net/embed/6781/9e062f85-a16d-47f8-ad7b-cc5243e0adc2?autoplay=true"
+    },
+    {
+      "name": "HIV AIDS DRUG - 1",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e852e422-a607-4956-9057-ab6a41b5a3ad?autoplay=true"
+    },
+    {
+      "name": "HIV AIDS DRUG - 2",
+      "video": "https://iframe.mediadelivery.net/embed/6781/2950c7ca-6c10-4615-a96b-fbfebbaa16d6?autoplay=true"
+    },
+    {
+      "name": "ONE DAY PHARMACOLOGY - 1",
+      "video": "https://iframe.mediadelivery.net/embed/6781/9cf04fa4-8dc0-4bd8-895f-7485f7194d43?autoplay=true"
+    },
+    {
+      "name": "ONE DAY PHARMACOLOGY - 2",
+      "video": "https://iframe.mediadelivery.net/embed/6781/9deb4a99-9450-40da-bea5-c6c063138ae1?autoplay=true"
+    },
+    {
+      "name": "ONE DAY PHARMACOLOGY - 3",
+      "video": "https://iframe.mediadelivery.net/embed/6781/9c4b77d7-369f-49f6-af48-b4ffc8d7ce59?autoplay=true"
+    },
+    {
+      "name": "ONE DAY PHARMACOLOGY - 4",
+      "video": "https://iframe.mediadelivery.net/embed/6781/af62b2e3-2548-49ac-a02c-310060dee897?autoplay=true"
+    },
+    {
+      "name": "ONE DAY PHARMACOLOGY - 5",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8e26e924-c53c-40de-ad6e-5a66147bf292?autoplay=true"
+    },
+    {
+      "name": "ONE DAY PHARMACOLOGY 6",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7faa8d0f-22ec-4012-a9f2-99e05ad0703a?autoplay=true"
+    },
+    {
+      "name": "RENAL PHARMACOLOGY - 1",
+      "video": "https://iframe.mediadelivery.net/embed/6781/071286fd-8620-4c78-9c3f-ec3ba45cf7aa?autoplay=true"
+    },
+    {
+      "name": "RENAL PHARMACOLOGY - 2",
+      "video": "https://iframe.mediadelivery.net/embed/6781/1218c57b-bc8c-484a-946f-cce48909b917?autoplay=true"
+    },
+    {
+      "name": "RENAL PHARMACOLOGY - 3",
+      "video": "https://iframe.mediadelivery.net/embed/6781/11a969dc-2a69-446f-82bf-9ed6800974c9?autoplay=true"
+    },
+    {
+      "name": "REPRODUCTIVE PHARMACOLOGY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/86f7dcce-af29-475c-929c-3bc74f440558?autoplay=true"
+    },
+    {
+      "name": "1 DAY PHARMACOLOGY ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b5f8bc56-6333-4925-8060-93b555be806f?autoplay=true"
+    }
+  ],
+  "Endocrinology System": [
+    {
+      "name": "1. HYPOPARATHYROIDISM | HYPERPARATHYROIDISM",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7f4d2b03-c739-44e9-b58f-d091bfe4b7d9?autoplay=true"
+    },
+    {
+      "name": "2 HYPOPARATHYROIDISM | INSULIN",
+      "video": "https://iframe.mediadelivery.net/embed/6781/5ad18800-6556-4eb3-8d0f-b9678431edb1?autoplay=true"
+    },
+    {
+      "name": "3. PROLACTIN",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7bec7713-50e3-435f-83f0-66def2e1f7aa?autoplay=true"
+    },
+    {
+      "name": "4. DIABETES MELLITUS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/0985f85c-6e3f-46be-9d3a-28394ee61934?autoplay=true"
+    },
+    {
+      "name": "5. DIABETES MELLITUS & ITS COMPLICATIONS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/cec4b2e1-77c8-428d-8f77-9174b526e10a?autoplay=true"
+    },
+    {
+      "name": "6. PANCREATIC CELL TUMORS | ZOLLINGER ELLISON SYNDROME | PHEOCHROMOCYTOMA | THYROID DEVELOPMENT",
+      "video": "https://iframe.mediadelivery.net/embed/6781/622b5c3f-7e80-4bb8-a786-1488bd2511d0?autoplay=true"
+    },
+    {
+      "name": "7. THYROID HORMONE PHYSIOLOGY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/cb14bb75-03dd-44cc-83e9-ad238cd7def0?autoplay=true"
+    },
+    {
+      "name": "8. DIFFERENCE BETWEEN HYPOTHYROIDISM & HYPERTHYROIDISM",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7580608f-c18e-46d7-a0be-8e14411c8d6e?autoplay=true"
+    },
+    {
+      "name": "9. HYPOTHYROIDISM",
+      "video": "https://iframe.mediadelivery.net/embed/6781/945eec22-92a6-4c82-af06-bf8d06bb5ed0?autoplay=true"
+    },
+    {
+      "name": "10. THYROID CARCINOMA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/006ef0d7-1a51-490a-a319-369390fdf0ed?autoplay=true"
+    },
+    {
+      "name": "11. CORTISOL COMPLETE PHYSIOLOGY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7b91f8da-823c-4224-a1b6-1649b2a8c82e?autoplay=true"
+    },
+    {
+      "name": "12. CUSHING SYNDROME | ADRENAL INSUFFICIENCY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ada118f8-5a8e-419d-90d9-2cd1927284d2?autoplay=true"
+    },
+    {
+      "name": "13. MICROBIOLOGY E.COLI | SIGNALING PATHWAY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/6406d98b-2c4c-4e5b-b9c0-f4fd47a2c893?autoplay=true"
+    },
+    {
+      "name": "14. CUSHING SYNDROME DIAGNOSTIC TEST | HYPERALDOSTERONISM | NELSON SYNDROME",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ebf5401e-f4c5-4549-b055-c8756496bdf9?autoplay=true"
+    },
+    {
+      "name": "15. ADRENAL STEROIDS | CONGENITAL ADRENAL HYPERPLASIA | GROWTH HORMONE | ACROMEGALY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b728ebaa-4216-487f-a817-7a8a298a00a0?autoplay=true"
+    },
+    {
+      "name": "16. HYPOPITUITRISM | ADH PHYSIOLOGY & PATHOLOGY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b37f135a-3a0b-4005-ae34-f12d4f4ff87a?autoplay=true"
+    },
+    {
+      "name": "17. SIGNALING PATHWAYS OF ENDOCRINE HORMONE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8e7ec25f-6692-44d6-84cf-3d6a40cae26d?autoplay=true"
+    },
+    {
+      "name": "18. APPETITE REGULATION | NEUROENDOCRINE TUMOR | NEUROBLASTOMA |",
+      "video": "https://iframe.mediadelivery.net/embed/6781/62925473-92f8-430a-acdc-2986ac9a035d?autoplay=true"
+    },
+    {
+      "name": "19. ENDOCRINE PHARMACOLOGY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/19508055-4400-4cc5-9842-1c5cea86bf2c?autoplay=true"
+    }
+  ],
+  "Biochemistry": [
+    {
+      "name": "STRUCTURE OF CHROMATIN",
+      "video": "https://iframe.mediadelivery.net/embed/6781/165ea298-ff24-43fa-92cf-9a7342813552?autoplay=true"
+    },
+    {
+      "name": "DNA REPLICATION",
+      "video": "https://iframe.mediadelivery.net/embed/6781/20f88a9d-0a5b-47ab-a1ee-dd64bb15dfa2?autoplay=true"
+    },
+    {
+      "name": "MUTATION OF DNA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/a4ad230d-0f39-4643-b2e0-c9b87b1fd18b?autoplay=true"
+    },
+    {
+      "name": "DNA REPAIR",
+      "video": "https://iframe.mediadelivery.net/embed/6781/643612a0-e75f-4596-aef6-529972f01821?autoplay=true"
+    },
+    {
+      "name": "PURINE SALVAGE PATHWAY",
+      "video": "https://iframe.mediadelivery.net/embed/6781/d81bf0c2-e95c-454a-9478-e6c651dc959f?autoplay=true"
+    },
+    {
+      "name": "PYRIMIDINE SYNTHESIS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e75bc23b-2862-4ad2-bb27-1b4ae10c519d?autoplay=true"
+    },
+    {
+      "name": "TRANSCRIPTION",
+      "video": "https://iframe.mediadelivery.net/embed/6781/39840ce4-3c17-44f7-836d-1fa52d5fc3c4?autoplay=true"
+    },
+    {
+      "name": "TRNA & PROTEIN SYNTHESIS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/4ae42f98-20ef-4d8b-8fe7-59acabba7509?autoplay=true"
+    },
+    {
+      "name": "CELL CYCLE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/2c334346-1866-4501-b70d-8357bcb1db27?autoplay=true"
+    },
+    {
+      "name": "CELL TYPES & CELL TRAFFICKING",
+      "video": "https://iframe.mediadelivery.net/embed/6781/96eacca1-1d05-4571-ab72-30036304aa14?autoplay=true"
+    },
+    {
+      "name": "COLLAGEN & ELASTIN SYNTHESIS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bf86c87b-42ed-4e88-8ca2-91b7549114ff?autoplay=true"
+    },
+    {
+      "name": "CILIA STRUCTUR + COLLAGEN + NA PUMP",
+      "video": "https://iframe.mediadelivery.net/embed/6781/969da1ec-a971-4bb0-820e-20fa5b48b014?autoplay=true"
+    },
+    {
+      "name": " PEROXISOME + PROTEASOME + MICROTUBULES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/3556c258-adfb-423e-aff0-65c00737c74e?autoplay=true"
+    },
+    {
+      "name": "AUTOSOMAL TRIOSOMIES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e5ba7f2d-dbd0-4fe4-85fc-b9e3b464f479?autoplay=true"
+    },
+    {
+      "name": " FRAGILE SYNDROME + MUSCULAR DYSTROPHIES + RETT SYNDROME",
+      "video": "https://iframe.mediadelivery.net/embed/6781/05fe660a-f48e-45f4-b8d1-15ee908b5ee5?autoplay=true"
+    },
+    {
+      "name": "MODES OF INHERITANCE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/63a26b58-422b-43cd-922b-4482dd47d551?autoplay=true"
+    },
+    {
+      "name": " FA genetics pedigree",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7a472926-e488-4a5f-a6e8-1bfd342353a1?autoplay=true"
+    },
+    {
+      "name": "Genetic Terms",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bf582708-a26f-4e3b-8468-da726e8f44e6?autoplay=true"
+    },
+    {
+      "name": "VITAMIN A",
+      "video": "https://iframe.mediadelivery.net/embed/6781/6d972dcd-1c80-409e-b4f1-7f5d26d9f192?autoplay=true"
+    },
+    {
+      "name": "VITAMIN B COMPLEX",
+      "video": "https://iframe.mediadelivery.net/embed/6781/d10ff554-17f0-4144-a080-7cca107cdcfd?autoplay=true"
+    },
+    {
+      "name": "VITAMIN B-12 + VITAMIN -C + VITAMIN-D",
+      "video": "https://iframe.mediadelivery.net/embed/6781/2b431768-8c0c-4bf9-9392-06f67d0c8322?autoplay=true"
+    },
+    {
+      "name": "VITAMIN E + VITAMIN K + PROTEIN ENERGY MALNUTRITION",
+      "video": "https://iframe.mediadelivery.net/embed/6781/6489f1a8-07c3-4b4f-b713-54eb17386d69?autoplay=true"
+    },
+    {
+      "name": "ETHANOL METABOLISM",
+      "video": "https://iframe.mediadelivery.net/embed/6781/437225e9-6e80-44fb-96ac-3a313e469740?autoplay=true"
+    },
+    {
+      "name": "GLYCOLYSIS + HEXOKINASE+GLUCOKINASE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c1652234-a62c-408c-8d86-c3372c915347?autoplay=true"
+    },
+    {
+      "name": "GLUCONEOGENESIS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/765e7947-1e12-49b6-8d96-bf6a144e895c?autoplay=true"
+    },
+    {
+      "name": "PYRUVATE METABOLISM + ETC+ TCA CYCLE",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f15b0a3d-82f4-4760-8bb3-92d94a11e995?autoplay=true"
+    },
+    {
+      "name": "PYRUVATE METABOLISM",
+      "video": "https://iframe.mediadelivery.net/embed/6781/d32b4721-47e6-43ed-a715-9b35c304a285?autoplay=true"
+    },
+    {
+      "name": " ELECTRON TRANSPORT INHIBITORS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/3ebc7bc4-a94f-4051-b88d-8c5f658a1086?autoplay=true"
+    },
+    {
+      "name": "GLYCOGEN METABOLISM",
+      "video": "https://iframe.mediadelivery.net/embed/6781/6f4ff463-f9da-4391-9f4c-e5f6be2efc9d?autoplay=true"
+    },
+    {
+      "name": "PPP + G6PD + FRUCTOSE METABOLISM",
+      "video": "https://iframe.mediadelivery.net/embed/6781/4656d1c7-1c01-4906-9ace-ffeb50b0d4aa?autoplay=true"
+    },
+    {
+      "name": "GLYCOGEN METABOLISM + HMS FUNCTION",
+      "video": "https://iframe.mediadelivery.net/embed/6781/540547f9-caac-44d6-a07f-bce1907fff8d?autoplay=true"
+    },
+    {
+      "name": "FRUCTOSE METABOLISM + DISORDERS OF GALACTOSE METABOLISM + SORBITOL + AMINO ACIDS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/a5aa1fbc-1537-4917-adab-d2802a711bad?autoplay=true"
+    },
+    {
+      "name": "UREA CYCLE & AMINO ACIDS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/09eb7776-cd77-4eaa-9f44-71e8a6d47840?autoplay=true"
+    },
+    {
+      "name": "TRANSPORT OF AMMONIA + HYPERAMONIEMIA + AMINO ACID DERIVATIVES + TYROSINE CATABOLISM + PHENYLKETONURIA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/2e0c91b3-8cbb-4cbf-b95e-f8441ec5175d?autoplay=true"
+    },
+    {
+      "name": "FATTY ACID METABOLISM",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b73c21c3-22f2-4f75-b661-e18668afa1b1?autoplay=true"
+    },
+    {
+      "name": "ALKAPTONURIA & MSUD",
+      "video": "https://iframe.mediadelivery.net/embed/6781/4123c6be-5a0e-4e1f-9d8e-b292ef8a32e0?autoplay=true"
+    },
+    {
+      "name": "LIPID METABOLISM",
+      "video": "https://iframe.mediadelivery.net/embed/6781/fff51134-adfb-46c7-8f69-424bbbe7ded2?autoplay=true"
+    },
+    {
+      "name": "FAT METABOLISM",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f167a697-cbb8-4a97-863b-bd660bb8034f?autoplay=true"
+    },
+    {
+      "name": "LDL DEGRADATION",
+      "video": "https://iframe.mediadelivery.net/embed/6781/2ddd6d12-f4e6-4c37-a713-1b678f8816f5?autoplay=true"
+    },
+    {
+      "name": "KETONE BODIES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8e65b6c3-b965-4fae-8bfb-c7ea6ada54e3?autoplay=true"
+    },
+    {
+      "name": "LYSOSOMAL STORAGE DISEASES",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bc975774-0bf7-4e36-9540-fefec639f6f9?autoplay=true"
+    }
+  ],
+  "Community Medicine": [
+    {
+      "name": "LECTURE 1",
+      "video": "https://iframe.mediadelivery.net/embed/6781/66076d6e-9e9f-4569-83fd-f0297bd63eaf?autoplay=true"
+    },
+    {
+      "name": "LECTURE 2",
+      "video": "https://iframe.mediadelivery.net/embed/6781/95c130f9-a018-4b8e-9511-0971bd9833cd?autoplay=true"
+    },
+    {
+      "name": "LECTURE 3",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8a9f273a-daf2-44ff-a2b6-528ac2f90eb4?autoplay=true"
+    },
+    {
+      "name": "LECTURE 4",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e90a3117-8e07-4eba-b3d2-2844db8532c5?autoplay=true"
+    },
+    {
+      "name": "Biostat & Epidemiology - New Lecture 1",
+      "video": "https://iframe.mediadelivery.net/embed/6781/85d297b7-5733-4b84-9944-ebfc5c63227c?autoplay=true"
+    },
+    {
+      "name": "Biostat & Epidemiology - New Lecture 2",
+      "video": "https://iframe.mediadelivery.net/embed/6781/40b59f63-4ee6-4a16-b817-3e65ccb97819?autoplay=true"
+    },
+    {
+      "name": "Biostat & Epidemiology - New Lecture 3",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b1e620f5-d497-497e-9d12-a371ff79868b?autoplay=true"
+    },
+    {
+      "name": "Biostat & Epidemiology - New Lecture 4",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c49f12af-dc40-4e58-b575-0aa5b69da828?autoplay=true"
+    },
+    {
+      "name": "Biostat & Epidemiology - New Lecture 5",
+      "video": "https://iframe.mediadelivery.net/embed/6781/395357a6-7958-48eb-8450-a1e46cfa9b19?autoplay=true"
+    },
+    {
+      "name": "Biostat & Epidemiology - New Lecture 6",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bcf1603b-2cce-4101-9aab-ccdeecda832a?autoplay=true"
+    },
+    {
+      "name": "Biostat & Epidemiology - New Lecture 7",
+      "video": "https://iframe.mediadelivery.net/embed/6781/a9921d0d-77e8-4eb3-9247-55cbd90259e8?autoplay=true"
+    },
+    {
+      "name": "Biostat & Epidemiology - New Lecture 8",
+      "video": "https://iframe.mediadelivery.net/embed/6781/edcac190-6e36-4179-89c9-125803bf257e?autoplay=true"
+    }
+  ],
+  "Hemetology": [
+    {
+      "name": "1- ANEMIAS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f71545d8-14ec-4f8e-98ef-e2e22519c5b4?autoplay=true"
+    },
+    {
+      "name": "2- ANEMIAS | THALASSEMIAS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/918388db-8b84-44aa-9d20-181377f66813?autoplay=true"
+    },
+    {
+      "name": "3- HEMOLYTIC ANEMIAS | COOMBS TEST ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/714f8857-922a-4ea3-989c-3b4a1c6c171b?autoplay=true"
+    },
+    {
+      "name": "4- ANEMIAS",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8c8d6621-8352-4e9c-a4d3-7787f984605d?autoplay=true"
+    },
+    {
+      "name": "5- LEUKEMIA | LYMPHOMAS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/283b4598-df3a-41b3-a013-1239dd655a22?autoplay=true"
+    },
+    {
+      "name": "6- LYMPHOMAS ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/d0c3c77b-9533-4529-9f93-c5c464092e82?autoplay=true"
+    },
+    {
+      "name": "LECTURE NO. 7",
+      "video": "https://iframe.mediadelivery.net/embed/6781/fe47fbf2-29fc-4690-8b2c-e48f4db8680c?autoplay=true"
+    },
+    {
+      "name": "LECTURE NO. 8",
+      "video": "https://iframe.mediadelivery.net/embed/6781/33bfab12-f158-4d74-a642-3b76e2f12760?autoplay=true"
+    },
+    {
+      "name": "LECTURE NO. 9",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ad906a8b-8092-4ca1-952c-172991c0b124?autoplay=true"
+    },
+    {
+      "name": "LECTURE NO. 10",
+      "video": "https://iframe.mediadelivery.net/embed/6781/6e7b6004-4cf3-4e2f-86c3-d85bd959ed6c?autoplay=true"
+    }
+  ],
+  "CVS MURMURS": [
+    {
+      "name": "LECTURE 1",
+      "video": "https://iframe.mediadelivery.net/embed/14161/9ab58eb8-b00f-46a7-a4a0-83a6ab5bde06?autoplay=true"
+    },
+    {
+      "name": "LECTURE 2",
+      "video": "https://iframe.mediadelivery.net/embed/14161/8aa34f9f-f5e7-4540-b027-c2622f734f46?autoplay=true"
+    },
+    {
+      "name": "LECTURE 3",
+      "video": "https://iframe.mediadelivery.net/embed/14161/77ede275-c1f7-4f09-b12d-a0558bbc77ad?autoplay=true"
+    },
+    {
+      "name": "LECTURE 4",
+      "video": "https://iframe.mediadelivery.net/embed/14161/75aa8f1f-3970-4409-a08f-fe29b4c15493?autoplay=true"
+    },
+    {
+      "name": "LECTURE 5",
+      "video": "https://iframe.mediadelivery.net/embed/14161/9b90b716-dcd1-42ac-813b-e2439a10b5fe?autoplay=true"
+    },
+    {
+      "name": "LECTURE 6",
+      "video": "https://iframe.mediadelivery.net/embed/14161/d187e600-c250-4834-8134-9b098a75beac?autoplay=true"
+    },
+    {
+      "name": "LECTURE 7",
+      "video": "https://iframe.mediadelivery.net/embed/14161/4a13e600-5052-494d-a07e-ccbf675da95c?autoplay=true"
+    },
+    {
+      "name": "LECTURE 8",
+      "video": "https://iframe.mediadelivery.net/embed/14161/7ffbb281-2a65-4999-b14a-cbe930805c67?autoplay=true"
+    },
+    {
+      "name": "LECTURE 9",
+      "video": "https://iframe.mediadelivery.net/embed/14161/0f332dd0-8ccc-4c9f-b20f-73f792dd9a71?autoplay=true"
+    }
+  ]
+}

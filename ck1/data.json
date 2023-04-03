@@ -1,134 +1,4 @@
 {
-  "Cardio-Vascular system": [
-    {
-      "name": "EMBRYO",
-      "video": "https://iframe.mediadelivery.net/embed/6781/4264581c-a41f-4180-836d-04c1b83987b6?autoplay=true"
-    },
-    {
-      "name": "CARDIAC OUTPUT | FETAL CIRCULATION | ANATOMY OF HEART",
-      "video": "https://iframe.mediadelivery.net/embed/6781/d4bc45a3-8647-462e-8c33-216548e3c3bc?autoplay=true"
-    },
-    {
-      "name": "CARDIAC OUTPUT EQUATIONS",
-      "video": "https://iframe.mediadelivery.net/embed/6781/24da2370-e867-48db-9fe5-86efed129aec?autoplay=true"
-    },
-    {
-      "name": "4. HEART SOUNDS | SPLITTING HEART SOUNDS",
-      "video": "https://iframe.mediadelivery.net/embed/6781/70a08687-3248-471f-b19e-d6b53d052c12?autoplay=true"
-    },
-    {
-      "name": "5. MYOCARDIAL ACTION POTENTIAL",
-      "video": "https://iframe.mediadelivery.net/embed/6781/ce6a4b98-1795-412d-aacd-26cb41b4d73c?autoplay=true"
-    },
-    {
-      "name": "6. AV BLOCK | ANP | BNP",
-      "video": "https://iframe.mediadelivery.net/embed/6781/76b97488-596c-4498-aab3-f44d8d1c03f1?autoplay=true"
-    },
-    {
-      "name": "7. BARORECEPTOR | CHEMORECEPTOR | AUTOREGULATION",
-      "video": "https://iframe.mediadelivery.net/embed/6781/13866aa8-a048-4706-9180-d24fda764061?autoplay=true"
-    },
-    {
-      "name": "8. AUTOREGULATION | CONGENITAL DISEASES",
-      "video": "https://iframe.mediadelivery.net/embed/6781/2bfc12e8-4b0c-4bdb-a1c5-782083f15129?autoplay=true"
-    },
-    {
-      "name": "9. CONGENITAL DISEASES | ARTERIOSCLEROSIS | ATHEROSCLEROSIS | HYPERTENSION",
-      "video": "https://iframe.mediadelivery.net/embed/6781/27ebed69-9cfa-44fa-988d-2a93650e45a6?autoplay=true"
-    },
-    {
-      "name": "10. ATHEROSCLEROSIS | ANEURISM",
-      "video": "https://iframe.mediadelivery.net/embed/6781/ef59c961-1b3b-4372-aac7-afc84051b49e?autoplay=true"
-    },
-    {
-      "name": "11. ANGINA",
-      "video": "https://iframe.mediadelivery.net/embed/6781/f626fa5e-eabb-4f8b-8256-28495b8980c8?autoplay=true"
-    },
-    {
-      "name": "12. CARIOMYPATHIES | HEART FAILURE",
-      "video": "https://iframe.mediadelivery.net/embed/6781/03e6bad4-6ba6-48f5-8c57-784bc61d7664?autoplay=true"
-    },
-    {
-      "name": "13. CARDIAC & VASCULAR FUNCTIONAL CURVE | SHOCK",
-      "video": "https://iframe.mediadelivery.net/embed/6781/74dd9e8d-7c77-4246-a760-a98815e52bbd?autoplay=true"
-    },
-    {
-      "name": "14. SHOCK | RHEUMATIC FEVER",
-      "video": "https://iframe.mediadelivery.net/embed/6781/ef2ee308-9e17-4b14-83bc-6db215d87597?autoplay=true"
-    },
-    {
-      "name": "15. ECG LEADS",
-      "video": "https://iframe.mediadelivery.net/embed/6781/8f25ac26-1f6d-45e5-b4d0-b5aa071d3e58?autoplay=true"
-    },
-    {
-      "name": "16. ECG | MURMERS",
-      "video": "https://iframe.mediadelivery.net/embed/6781/9669bb39-d956-4085-b34a-46357912949b?autoplay=true"
-    },
-    {
-      "name": "17. MURMERS",
-      "video": "https://iframe.mediadelivery.net/embed/6781/06a54596-c45c-444c-bcfb-cdec01342681?autoplay=true"
-    },
-    {
-      "name": "18. MURMERS | MYOCARDITIS | PERICARDITIS | VASCULITIS |",
-      "video": "https://iframe.mediadelivery.net/embed/6781/e9525b00-1979-49c2-b20b-357554819481?autoplay=true"
-    },
-    {
-      "name": "19. VASCULITIS",
-      "video": "https://iframe.mediadelivery.net/embed/6781/9f6fc2bb-9617-4fec-addf-fa5c0411dbec?autoplay=true"
-    },
-    {
-      "name": "20. CARDIAC TUMORS | PHARMA (HYPERTENSION TREATMENT & CARDOIVASCULAR AGENTS)",
-      "video": "https://iframe.mediadelivery.net/embed/6781/a851406a-58bf-4c86-b10e-b70bc6cc067a?autoplay=true"
-    },
-    {
-      "name": "21. CALCIUM CHANNEL BLOCKERS | DIGIOXIN",
-      "video": "https://iframe.mediadelivery.net/embed/6781/17d4498e-aefe-4d45-b174-1caf278cf0bf?autoplay=true"
-    },
-    {
-      "name": "22. LIPID LOWERING AGENTS | ANTIARRYTHMIC DRUGS | SODIUM CHANNEL BLOKCERS",
-      "video": "https://iframe.mediadelivery.net/embed/6781/a2e3b3d7-2cc1-4750-9c9b-dace3447af53?autoplay=true"
-    },
-    {
-      "name": "23. ANTIARRYTHMIC DRUGS | SODIUM CHANNEL BLOCKERS | BETA BLOCKERS",
-      "video": "https://iframe.mediadelivery.net/embed/6781/4b0df4a5-41da-496b-a392-c39181067739?autoplay=true"
-    },
-    {
-      "name": "24. CARDIAC CYCLE",
-      "video": "https://iframe.mediadelivery.net/embed/6781/12fce2c2-eb2d-421c-bdd9-052647bfb980?autoplay=true"
-    },
-    {
-      "name": "25. PRESSURE VOLUME | LOOP CARDIAC CYCLE",
-      "video": "https://iframe.mediadelivery.net/embed/6781/38e2e9e1-9393-462b-848e-b606466c9fbe?autoplay=true"
-    },
-    {
-      "name": "26. CARDIAC CYCLE (JVP PORTION)",
-      "video": "https://iframe.mediadelivery.net/embed/6781/2ef56f8a-c9e0-43d5-a3a5-fb58569ce3e4?autoplay=true"
-    },
-    {
-      "name": "ECG",
-      "video": "https://iframe.mediadelivery.net/embed/6781/00e8c7b1-d543-467b-80f9-284cc9df0673?autoplay=true"
-    },
-    {
-      "name": "ECG",
-      "video": "https://iframe.mediadelivery.net/embed/6781/c8eacc54-7def-4c6a-8078-d383a4dc21a7?autoplay=true"
-    },
-    {
-      "name": "ECG",
-      "video": "https://iframe.mediadelivery.net/embed/6781/138d6807-9086-4929-baa9-ba8c5d495b0c?autoplay=true"
-    },
-    {
-      "name": "ECG",
-      "video": "https://iframe.mediadelivery.net/embed/6781/6902c073-afa1-450f-9444-40626cb620f8?autoplay=true"
-    },
-    {
-      "name": "ECG",
-      "video": "https://iframe.mediadelivery.net/embed/6781/22a665cd-45bc-4a75-9185-5f44a3e1033a?autoplay=true"
-    },
-    {
-      "name": "ECG",
-      "video": "https://iframe.mediadelivery.net/embed/6781/10be6de6-55cc-4793-a236-868f275ae07b?autoplay=true"
-    }
-  ],
   "Central Nervous System": [
     {
       "name": "EMBRYO | NEURAL TUBE DEFECT",
@@ -309,36 +179,36 @@
   ],
   "Respiratory System": [
     {
-      "name": "EMBRYO",
-      "video": "https://iframe.mediadelivery.net/embed/6781/6a850b1c-47f2-4269-8a63-e1f2c317a1c4?autoplay=true"
+      "name": "⚫Club cells     ⚫Alveolar cell types        ⚫Neonatal respiratory distress syndrome",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b8e7abfa-2349-46aa-9e54-e1f084c13b0c?autoplay=true"
     },
     {
       "name": "ANATOMY",
-      "video": "https://iframe.mediadelivery.net/embed/6781/af8d13be-2981-46ce-b87d-687ad4f6f729?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/611ce210-8a82-4b90-9fa0-40456809dbbc?autoplay=true"
     },
     {
       "name": "ANATOMY",
-      "video": "https://iframe.mediadelivery.net/embed/6781/c8f27420-0db3-437f-8246-0ba57fcd5964?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/5d0c77d6-4de6-4d6f-af07-0ff5579943cd?autoplay=true"
     },
     {
       "name": "LUNG & CHEST WALL",
-      "video": "https://iframe.mediadelivery.net/embed/6781/f7214727-d54c-4273-8c8c-de36ca9d1ad0?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/c9857158-7e48-4efc-9614-2c937ac577eb?autoplay=true"
     },
     {
       "name": "CHEST WALL",
-      "video": "https://iframe.mediadelivery.net/embed/6781/16bcd9b5-1878-417b-aa23-f72fe8ca470a?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/34a9d173-12c8-444d-bccd-b48b9b7d9ee6?autoplay=true"
     },
     {
-      "name": "METHHAEMOGLOBIN",
-      "video": "https://iframe.mediadelivery.net/embed/6781/899d0b2f-fc15-4b46-a501-d22b763b2cf6?autoplay=true"
+      "name": "⚪Cyanide vs carbon monoxide poisoning ⚪Methemoglobin ⚪Oxygen-hemoglobin dissociation curve",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8b8f7af0-0c50-4db7-b8d5-506ad05ed536?autoplay=true"
     },
     {
       "name": "O2 CURVE",
-      "video": "https://iframe.mediadelivery.net/embed/6781/e569af90-d772-40b8-a3d8-98ca41a90ea1?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/a8d86d44-ada7-48f6-9adc-a143d85a504e?autoplay=true"
     },
     {
       "name": "PULMONARY CIRCULATION",
-      "video": "https://iframe.mediadelivery.net/embed/6781/1bd2b101-75a9-48b7-ba3e-2ad1613193a8?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/4f42b948-579c-455f-adf8-97da05e5286d?autoplay=true"
     },
     {
       "name": "ALVEOLAR GAS EQUATION",
@@ -346,31 +216,31 @@
     },
     {
       "name": "V/Q MISMATCH",
-      "video": "https://iframe.mediadelivery.net/embed/6781/0594b2fe-ed76-44d8-ba19-669cdc4ed665?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/e0d9be4c-f166-477a-afac-18566a15c20a?autoplay=true"
     },
     {
       "name": "V/Q MISMATCH",
-      "video": "https://iframe.mediadelivery.net/embed/6781/6883c3ec-7d5f-42e3-aa06-7cd0f055c3af?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/eb23434d-8c6e-405d-894d-6211b0dd0fe6?autoplay=true"
     },
     {
       "name": "CARBON DIOXIDE TRANSPORT",
-      "video": "https://iframe.mediadelivery.net/embed/6781/dd94fbf0-fa56-442d-8b56-3fc6d3e9baa5?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/67964525-a814-4c1f-a02f-f341354dd593?autoplay=true"
     },
     {
       "name": "RESPONSE TO HIGH ALTITUDE",
-      "video": "https://iframe.mediadelivery.net/embed/6781/1264e0b5-a68d-461d-b830-216b9e9ad96c?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/07bda206-231c-489c-bd6b-8a7235649fab?autoplay=true"
     },
     {
       "name": "DEEP VEIN THROMBOSIS",
-      "video": "https://iframe.mediadelivery.net/embed/6781/cdf79e85-cec7-4d95-988d-84de0eeff6dc?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/c5cb6b2e-c189-46b3-a975-b3a3799102ab?autoplay=true"
     },
     {
       "name": "PULMONARY EMBOLISM",
-      "video": "https://iframe.mediadelivery.net/embed/6781/005478cc-371b-419a-a701-3c0183ed2fa1?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/e96ec8ac-e690-4c1e-b01c-944adf317021?autoplay=true"
     },
     {
       "name": "FLOW VOLUME LOOP",
-      "video": "https://iframe.mediadelivery.net/embed/6781/1190e34f-305e-4a11-9b45-2d3ac8ebfc4b?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/be70df48-d822-4e94-8e6e-25b69c3673cd?autoplay=true"
     },
     {
       "name": "OBSTRUCTIVE LUNG DISEASE",
@@ -378,11 +248,11 @@
     },
     {
       "name": "CHRONIC BRONCHITIS",
-      "video": "https://iframe.mediadelivery.net/embed/6781/afa3a675-0b3c-4434-be5f-86116759573b?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/69760514-015c-4a47-8887-380be92696ef?autoplay=true"
     },
     {
       "name": "CHRONIC BRONCHITIS | OBSTRUCTIVE LUNG DISEASE",
-      "video": "https://iframe.mediadelivery.net/embed/6781/fb471893-ed05-4320-86ab-462f718aa37f?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/b836c898-4d8d-4b58-acc5-0d45df10dfba?autoplay=true"
     },
     {
       "name": "EMPHYSEMA & ASTHMA",
@@ -390,11 +260,11 @@
     },
     {
       "name": "RESTRICTIVE LUNG DISEASE | ASTHMA | BRONCHIECTASIS",
-      "video": "https://iframe.mediadelivery.net/embed/6781/a93193e4-1cd8-42aa-b876-1f80e97cc978?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/26b0b4c8-f75b-4020-a83a-12e4a2fe307d?autoplay=true"
     },
     {
       "name": "RESTRICTIVE LUNG DISEASE ",
-      "video": "https://iframe.mediadelivery.net/embed/6781/6cb54efc-6c17-49cc-9f59-4fa1eef30ec4?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/e012f831-61e4-4f87-bb8d-2e0727e0746c?autoplay=true"
     },
     {
       "name": "RESTRICTIVE LUNG DISEASE ",
@@ -402,31 +272,31 @@
     },
     {
       "name": "ARDS & SLEEP APNEA",
-      "video": "https://iframe.mediadelivery.net/embed/6781/8bf17949-144d-4098-98da-bdcc42f89444?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/f71df46b-0609-4cc3-b146-6654c48b84d1?autoplay=true"
     },
     {
       "name": "LUNG CANCER",
-      "video": "https://iframe.mediadelivery.net/embed/6781/1c34ed75-9b2a-4f6d-8ed0-a1acf56f6767?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/486e60d2-2077-4d74-a5c7-69c9da0eb823?autoplay=true"
     },
     {
       "name": "SUPERIOR VENA CAVA SYNDROME | PANCOAST TUMOUR | LUNG ABSCESS | PULMONARY HYPERTENSION",
-      "video": "https://iframe.mediadelivery.net/embed/6781/0eac2357-9011-437b-84af-4adcff30cb33?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/43aa5b56-e170-4c3c-8251-5aa40ec1e031?autoplay=true"
     },
     {
       "name": "PNEUMOTHORAX & PLEURAL EFFUSION",
-      "video": "https://iframe.mediadelivery.net/embed/6781/7b69f26d-2737-4371-a995-4701739f6e10?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/e018ed35-7032-4a44-82c8-acc6c824ed81?autoplay=true"
     },
     {
       "name": "PLEURAL EFFUSION | LUNG & CHEST WALL",
-      "video": "https://iframe.mediadelivery.net/embed/6781/29623f45-e796-4beb-9e65-332c93fdbac4?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/6781c796-e719-4ea8-a6de-f8a3d73b5ac9?autoplay=true"
     },
     {
       "name": "PNEUMONIA",
-      "video": "https://iframe.mediadelivery.net/embed/6781/f19e82f8-9331-4344-9a57-827f31c1cc95?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/e35e9679-09ba-4984-a683-8174373ffdf5?autoplay=true"
     },
     {
       "name": "PNEUMONIA | ATELACTASIS | PATHOLOGY OF MEDIASTINUM | INHALATIONAL INJURY",
-      "video": "https://iframe.mediadelivery.net/embed/6781/23ca3dc9-50fb-44ed-a4d9-0bdaed554a07?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/64b069fc-daa9-4c4a-927e-0d5ab02220cc?autoplay=true"
     },
     {
       "name": "RESPIRATORY CROUP",
@@ -586,99 +456,99 @@
   "Immunology System": [
     {
       "name": "1- HYPERSENSITIVITY ",
-      "video": "https://iframe.mediadelivery.net/embed/6781/f01598f9-029e-4a66-ae08-7da264690fe1?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/974bf516-3124-4525-823a-c7b3d22352a4?autoplay=true"
     },
     {
       "name": "2- ARACHIDONIC ACID PATHWAY | TYPE 1 HSV ",
-      "video": "https://iframe.mediadelivery.net/embed/6781/b9d85db3-2538-4f2c-88ca-27cf25b773cf?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/3ec25bee-8849-4918-8f7d-1a49ee0cf67f?autoplay=true"
     },
     {
       "name": "3- HSV | TB",
-      "video": "https://iframe.mediadelivery.net/embed/6781/d660ce24-6605-4a13-ba99-7f7988c569d3?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/66b65899-8cd6-4dda-808c-12c9abe52410?autoplay=true"
     },
     {
       "name": "4- TYPE 2 HSV ",
-      "video": "https://iframe.mediadelivery.net/embed/6781/557a6567-ce98-44f3-ad3e-d570de4ae4e1?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/7718081a-db61-4b05-8522-14ea9739257c?autoplay=true"
     },
     {
       "name": "5- TYPE 3 HSV",
-      "video": "https://iframe.mediadelivery.net/embed/6781/82b43601-84d8-43da-9768-92205ba75987?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/7991805c-b1c0-4c57-a91b-b57c771db706?autoplay=true"
     },
     {
       "name": "6- IMMUNE SYSTEM ORGANS",
-      "video": "https://iframe.mediadelivery.net/embed/6781/47beaa68-2af2-49ae-8776-cd0faf00d709?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/b6dda54d-db45-4b28-aa85-de74a4c686dd?autoplay=true"
     },
     {
       "name": "7- IMMUNITY TYPES",
-      "video": "https://iframe.mediadelivery.net/embed/6781/b47e3fee-9f16-4152-8c12-27cc929fb31c?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/6da3b73d-7834-49f8-9322-74341cc055cf?autoplay=true"
     },
     {
       "name": "8- MHC",
-      "video": "https://iframe.mediadelivery.net/embed/6781/b43bdb78-62f9-434a-a0bb-d8fac4ce7b6d?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/942c7e37-db50-4260-a3ec-c109e7069ba4?autoplay=true"
     },
     {
       "name": "9- MHC CLASS 1 AND 2",
-      "video": "https://iframe.mediadelivery.net/embed/6781/ee406b53-9019-4f92-ad50-7c8bb4d4cf7a?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/7b669966-bf42-4e71-8186-e7996042037d?autoplay=true"
     },
     {
       "name": "10- B AND T CELL FUNCTIONS ",
-      "video": "https://iframe.mediadelivery.net/embed/6781/4c2066a9-b76d-4b94-b27f-f38291ed7e05?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/92d72028-cf96-46d2-8024-0dae700d64bc?autoplay=true"
     },
     {
       "name": "11- IMMUNOGLOBULINS STRUCTURE ",
-      "video": "https://iframe.mediadelivery.net/embed/6781/6d6df800-44ff-4fe0-a8b0-3b4b9fb15147?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/7d85d706-f02c-411c-8418-7e1ae5dfb372?autoplay=true"
     },
     {
       "name": "12- IMMUNOGLOBULINS ISOTOPES ",
-      "video": "https://iframe.mediadelivery.net/embed/6781/7116f2c2-e3cb-45ce-83ef-db95132c41bc?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/c615f0e7-2bda-4a27-9d99-4cab9e6eae44?autoplay=true"
     },
     {
       "name": "13- IMMUNOGLOBULINS ISOTOPES ",
-      "video": "https://iframe.mediadelivery.net/embed/6781/3781ab24-c79a-41dc-8e99-826f0ca87b36?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/12bc5097-1da0-4a6f-aa38-e313f5632eb5?autoplay=true"
     },
     {
       "name": "14- PASSIVE VS ACTIVE IMMUNITY ",
-      "video": "https://iframe.mediadelivery.net/embed/6781/20d506ec-e949-40bd-aaed-9061ebc6bea1?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/81b3d10c-471a-4281-869a-29d4f5d11fd1?autoplay=true"
     },
     {
       "name": "15- COMPLEMENT SYSTEM",
-      "video": "https://iframe.mediadelivery.net/embed/6781/4de83bf5-ce59-48be-8527-471ca65fef27?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/02e2b8a3-2030-441c-8a45-e8ea3fbfebd0?autoplay=true"
     },
     {
       "name": "16- IMPORTANT CYTOKINES",
-      "video": "https://iframe.mediadelivery.net/embed/6781/e69d07d4-e80a-4eb9-b001-7fe492b93f49?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/efc04256-e1fa-49f0-af0d-8ececa10edb0?autoplay=true"
     },
     {
       "name": "17- HMP SHUNT | RESPIRATORY BURST",
-      "video": "https://iframe.mediadelivery.net/embed/6781/23280d20-f408-4f81-9232-a7f1410fd02a?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/f8772b87-1d68-4a79-b280-0aa3402d39cb?autoplay=true"
     },
     {
       "name": "18- HSV TYPES",
-      "video": "https://iframe.mediadelivery.net/embed/6781/0a3cc9f2-b546-4ba6-9c34-2d2722bd6580?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/be7fdf38-347e-4552-80b5-30fcd2ab8d63?autoplay=true"
     },
     {
       "name": "19- HSV TYPES ",
-      "video": "https://iframe.mediadelivery.net/embed/6781/5417aee1-5143-4c0a-9ec1-3c17cbcb2791?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/663da0d6-a459-41d5-b104-e7f6dd769e35?autoplay=true"
     },
     {
       "name": "20- HSV TYPES",
-      "video": "https://iframe.mediadelivery.net/embed/6781/bc494e5a-54f1-469e-b139-d6755289311b?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/4e5005f3-e454-4d3b-8fb5-959a7d266264?autoplay=true"
     },
     {
       "name": "21- HSV TYPES ",
-      "video": "https://iframe.mediadelivery.net/embed/6781/18e7a1d5-989f-45ee-942b-868318db4e66?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/924a1c46-0d38-4da9-9490-6c2dda077a23?autoplay=true"
     },
     {
       "name": "22- IMMUNODEFICIENCIES",
-      "video": "https://iframe.mediadelivery.net/embed/6781/fa62e780-d62b-43e4-87f8-e09625f258d2?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/8572e508-bd5a-4b14-a268-04daecdc22ee?autoplay=true"
     },
     {
       "name": "23- IMMUNODEFICIENCIES",
-      "video": "https://iframe.mediadelivery.net/embed/6781/a1615058-4ea6-483c-98a9-7b9c5be9269e?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/0ed9199f-234b-421b-b090-a41f5977c1ef?autoplay=true"
     },
     {
       "name": "24- IMMUNODEFICIENCIES",
-      "video": "https://iframe.mediadelivery.net/embed/6781/96a22d67-7fe7-4d43-a751-2650ebb7b1c2?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/3367a5e1-3c34-4fd8-8fe3-d875e6f4e527?autoplay=true"
     }
   ],
   "Musculo-Skeletal System": [
@@ -895,10 +765,6 @@
     {
       "name": "BLADDER CANCER ",
       "video": "https://iframe.mediadelivery.net/embed/6781/3c2e7cb7-02fe-45e4-a18c-31a43f519eb4?autoplay=true"
-    },
-    {
-      "name": "ICF AND ECF COMPARTMENTS ",
-      "video": "https://iframe.mediadelivery.net/embed/6781/9b19d04a-a2f5-4628-9445-881625725836?autoplay=true"
     }
   ],
   "Reproductive System": [
@@ -1265,6 +1131,10 @@
     {
       "name": "9- ANTIRETROVIRAL THERAPY",
       "video": "https://iframe.mediadelivery.net/embed/6781/6556640d-7bcf-4dd6-92a3-c5ac3ed742b9?autoplay=true"
+    },
+    {
+      "name": "E COLI ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/6406d98b-2c4c-4e5b-b9c0-f4fd47a2c893?autoplay=true"
     }
   ],
   "Pharmacology": [
@@ -1503,84 +1373,100 @@
     {
       "name": "1 DAY PHARMACOLOGY ",
       "video": "https://iframe.mediadelivery.net/embed/6781/b5f8bc56-6333-4925-8060-93b555be806f?autoplay=true"
+    },
+    {
+      "name": "Respiratory Pharmacology Lecture - 1",
+      "video": "https://iframe.mediadelivery.net/embed/6781/34f5dd00-8d81-420d-9049-97db9d70d565?autoplay=true"
+    },
+    {
+      "name": "Respiratory Pharmacology Lecture - 2",
+      "video": "https://iframe.mediadelivery.net/embed/6781/891684d7-9222-451f-93af-d907562509d3?autoplay=true"
+    },
+    {
+      "name": "Respiratory Pharmacology Lecture - 3",
+      "video": "https://iframe.mediadelivery.net/embed/6781/b9f025b7-f048-466e-99d5-25ba64250ff7?autoplay=true"
+    },
+    {
+      "name": "Anti-Microbial - 11",
+      "video": "https://iframe.mediadelivery.net/embed/6781/7a78efec-580a-4057-88cd-f722c63c6820?autoplay=true"
     }
   ],
   "Endocrinology System": [
     {
       "name": "1. HYPOPARATHYROIDISM | HYPERPARATHYROIDISM",
-      "video": "https://iframe.mediadelivery.net/embed/6781/7f4d2b03-c739-44e9-b58f-d091bfe4b7d9?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/b2f33c1f-8e60-470c-a970-e037277ff5c4?autoplay=true"
     },
     {
       "name": "2 HYPOPARATHYROIDISM | INSULIN",
-      "video": "https://iframe.mediadelivery.net/embed/6781/5ad18800-6556-4eb3-8d0f-b9678431edb1?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/9852c41f-80c4-45b6-9234-735d733450db?autoplay=true"
     },
     {
       "name": "3. PROLACTIN",
-      "video": "https://iframe.mediadelivery.net/embed/6781/7bec7713-50e3-435f-83f0-66def2e1f7aa?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/0771f52c-58d9-4aaa-8cc9-ca5baa540ff6?autoplay=true"
     },
     {
       "name": "4. DIABETES MELLITUS ",
-      "video": "https://iframe.mediadelivery.net/embed/6781/0985f85c-6e3f-46be-9d3a-28394ee61934?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/dd86ed60-375f-42d5-aa1e-a806f0b21f7d?autoplay=true"
     },
     {
       "name": "5. DIABETES MELLITUS & ITS COMPLICATIONS",
-      "video": "https://iframe.mediadelivery.net/embed/6781/cec4b2e1-77c8-428d-8f77-9174b526e10a?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/dbae96fb-4498-4b01-b3a3-6c9e0136968e?autoplay=true"
     },
     {
       "name": "6. PANCREATIC CELL TUMORS | ZOLLINGER ELLISON SYNDROME | PHEOCHROMOCYTOMA | THYROID DEVELOPMENT",
-      "video": "https://iframe.mediadelivery.net/embed/6781/622b5c3f-7e80-4bb8-a786-1488bd2511d0?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/5a78d35c-7f27-48ec-9a35-4198c3f214ff?autoplay=true"
     },
     {
       "name": "7. THYROID HORMONE PHYSIOLOGY",
-      "video": "https://iframe.mediadelivery.net/embed/6781/cb14bb75-03dd-44cc-83e9-ad238cd7def0?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/fd46dd92-3c52-4a2a-a26b-b2ae40886b34?autoplay=true"
     },
     {
       "name": "8. DIFFERENCE BETWEEN HYPOTHYROIDISM & HYPERTHYROIDISM",
-      "video": "https://iframe.mediadelivery.net/embed/6781/7580608f-c18e-46d7-a0be-8e14411c8d6e?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/afda4fde-5e74-49cf-af87-16274c49d97b?autoplay=true"
     },
     {
       "name": "9. HYPOTHYROIDISM",
-      "video": "https://iframe.mediadelivery.net/embed/6781/945eec22-92a6-4c82-af06-bf8d06bb5ed0?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/bc3277e3-00b7-4d8d-886a-773943765ea9?autoplay=true"
     },
     {
       "name": "10. THYROID CARCINOMA",
-      "video": "https://iframe.mediadelivery.net/embed/6781/006ef0d7-1a51-490a-a319-369390fdf0ed?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/10f40588-17ef-4bc9-a82a-c35e15f827bd?autoplay=true"
     },
     {
       "name": "11. CORTISOL COMPLETE PHYSIOLOGY",
-      "video": "https://iframe.mediadelivery.net/embed/6781/7b91f8da-823c-4224-a1b6-1649b2a8c82e?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/2dc2c58e-b35a-4017-87ef-69554609bb02?autoplay=true"
     },
     {
       "name": "12. CUSHING SYNDROME | ADRENAL INSUFFICIENCY",
-      "video": "https://iframe.mediadelivery.net/embed/6781/ada118f8-5a8e-419d-90d9-2cd1927284d2?autoplay=true"
-    },
-    {
-      "name": "13. MICROBIOLOGY E.COLI | SIGNALING PATHWAY",
-      "video": "https://iframe.mediadelivery.net/embed/6781/6406d98b-2c4c-4e5b-b9c0-f4fd47a2c893?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/a9ee1a58-06d8-425f-8ec2-e1f3311c31b8?autoplay=true"
     },
     {
       "name": "14. CUSHING SYNDROME DIAGNOSTIC TEST | HYPERALDOSTERONISM | NELSON SYNDROME",
-      "video": "https://iframe.mediadelivery.net/embed/6781/ebf5401e-f4c5-4549-b055-c8756496bdf9?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/1b15cb3d-02b9-4b57-a9b1-9772725e2f11?autoplay=true"
     },
     {
       "name": "15. ADRENAL STEROIDS | CONGENITAL ADRENAL HYPERPLASIA | GROWTH HORMONE | ACROMEGALY",
-      "video": "https://iframe.mediadelivery.net/embed/6781/b728ebaa-4216-487f-a817-7a8a298a00a0?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/b5daeb06-ffbc-4830-97f0-b75109c15dbd?autoplay=true"
     },
     {
       "name": "16. HYPOPITUITRISM | ADH PHYSIOLOGY & PATHOLOGY",
-      "video": "https://iframe.mediadelivery.net/embed/6781/b37f135a-3a0b-4005-ae34-f12d4f4ff87a?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/df1f4762-88f2-4084-a0cf-d67122ae367e?autoplay=true"
     },
     {
       "name": "17. SIGNALING PATHWAYS OF ENDOCRINE HORMONE",
-      "video": "https://iframe.mediadelivery.net/embed/6781/8e7ec25f-6692-44d6-84cf-3d6a40cae26d?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/d2c7fa18-750f-4ea7-aaae-cb473b63c38a?autoplay=true"
     },
     {
       "name": "18. APPETITE REGULATION | NEUROENDOCRINE TUMOR | NEUROBLASTOMA |",
-      "video": "https://iframe.mediadelivery.net/embed/6781/62925473-92f8-430a-acdc-2986ac9a035d?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/91407b4c-b248-4cb6-8e7d-0483280341e7?autoplay=true"
     },
     {
       "name": "19. ENDOCRINE PHARMACOLOGY",
-      "video": "https://iframe.mediadelivery.net/embed/6781/19508055-4400-4cc5-9842-1c5cea86bf2c?autoplay=true"
+      "video": "https://iframe.mediadelivery.net/embed/6781/5e813869-e5ca-43b3-9b6d-cb59d62902c4?autoplay=true"
+    },
+    {
+      "name": "13- Signal Transduction",
+      "video": "https://iframe.mediadelivery.net/embed/6781/5f9aa324-3db9-4875-848b-690462b0d972?autoplay=true"
     }
   ],
   "Biochemistry": [
@@ -1839,6 +1725,130 @@
     {
       "name": "LECTURE NO. 10",
       "video": "https://iframe.mediadelivery.net/embed/6781/6e7b6004-4cf3-4e2f-86c3-d85bd959ed6c?autoplay=true"
+    },
+    {
+      "name": "Vitamin B12 & related topics",
+      "video": "https://iframe.mediadelivery.net/embed/6781/384f8dbe-39fa-4e74-97dd-80c593c0e2d3?autoplay=true"
+    },
+    {
+      "name": "Vitamin B12 & Microcytic Anemia",
+      "video": "https://iframe.mediadelivery.net/embed/6781/8dfab4f2-008a-462c-bbc6-6364741dcfe2?autoplay=true"
+    },
+    {
+      "name": "Intrinsic & Extrinsic Pathway",
+      "video": "https://iframe.mediadelivery.net/embed/6781/41ce4add-d6be-4814-92d5-f8762f4d41ac?autoplay=true"
+    },
+    {
+      "name": "Anticoagulation - Heparin vs Warfarin",
+      "video": "https://iframe.mediadelivery.net/embed/6781/fef664d7-a6fa-4943-b56f-8b78aae5d7dc?autoplay=true"
+    },
+    {
+      "name": "Anemia",
+      "video": "https://iframe.mediadelivery.net/embed/6781/88397f1a-644c-41f4-b843-a0a3a8961812?autoplay=true"
+    },
+    {
+      "name": "PNH & Sickle Cell Anemia",
+      "video": "https://iframe.mediadelivery.net/embed/6781/80d3c71b-6542-468a-84a0-ec2d70931fac?autoplay=true"
+    },
+    {
+      "name": "Hematopoiesis",
+      "video": "https://iframe.mediadelivery.net/embed/6781/14a0a0c1-f333-43e9-ae6a-eccd7ee722b9?autoplay=true"
+    },
+    {
+      "name": "Polycythemia ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/46d0d911-596b-44d2-951e-56443a471583?autoplay=true"
+    },
+    {
+      "name": "Chromosomal Translocations",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f809b30e-c310-4522-b82c-4e56fc189e09?autoplay=true"
+    },
+    {
+      "name": "Cancer Therapy - Cell Cycle",
+      "video": "https://iframe.mediadelivery.net/embed/6781/49369d15-d55c-47bd-9e53-22b92991e3cb?autoplay=true"
+    },
+    {
+      "name": "Anti-Metabolites",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c1c3eb2a-0754-4cc4-9e17-2332165667d0?autoplay=true"
+    },
+    {
+      "name": "Sideroblastic Anemia",
+      "video": "https://iframe.mediadelivery.net/embed/6781/e9b1f52c-8623-42c1-bf38-8302bcdd183b?autoplay=true"
+    },
+    {
+      "name": "Sickle Cell Anemia",
+      "video": "https://iframe.mediadelivery.net/embed/6781/1bba41d4-2aef-4d6a-993b-754d8fd55c15?autoplay=true"
+    },
+    {
+      "name": "Hereditary Spehrocytosis",
+      "video": "https://iframe.mediadelivery.net/embed/6781/abf2cd1b-aeda-4a18-91e3-0b0e6d62aea9?autoplay=true"
+    },
+    {
+      "name": "PAROXYSMAL HEMATURIA & G6PD ANEMIA",
+      "video": "https://iframe.mediadelivery.net/embed/6781/ef081063-b17a-48ed-a272-3747f385323b?autoplay=true"
+    },
+    {
+      "name": "Cold Agglutinins Disease",
+      "video": "https://iframe.mediadelivery.net/embed/6781/0f1fc8bc-a95b-4a52-8556-f3c21855b52f?autoplay=true"
+    },
+    {
+      "name": "Acute Leukemia",
+      "video": "https://iframe.mediadelivery.net/embed/6781/3c547910-c42c-4455-ade1-d2913b657f69?autoplay=true"
+    },
+    {
+      "name": "Acute Leukemia",
+      "video": "https://iframe.mediadelivery.net/embed/6781/bb4063ab-258c-426a-817a-d07cb74c9ac3?autoplay=true"
+    },
+    {
+      "name": "Acute Leukemia",
+      "video": "https://iframe.mediadelivery.net/embed/6781/4a47e545-30d6-43fe-8965-325b553f7a7a?autoplay=true"
+    },
+    {
+      "name": "Leukemia",
+      "video": "https://iframe.mediadelivery.net/embed/6781/45899cd2-2001-4ce1-b223-e01361c37399?autoplay=true"
+    },
+    {
+      "name": "Multiple Myeloma",
+      "video": "https://iframe.mediadelivery.net/embed/6781/06781886-709f-4867-94ab-960bbf00e2c9?autoplay=true"
+    },
+    {
+      "name": "Waldenstorm Anemia",
+      "video": "https://iframe.mediadelivery.net/embed/6781/49f08d8c-7b63-40bd-9b76-66346f8410bf?autoplay=true"
+    },
+    {
+      "name": "Hodgkin Lymphoma",
+      "video": "https://iframe.mediadelivery.net/embed/6781/d3c07495-05b3-465e-8a94-4880fd82ee93?autoplay=true"
+    },
+    {
+      "name": "Lymphomas",
+      "video": "https://iframe.mediadelivery.net/embed/6781/9232e6aa-3a19-4fd2-9ae1-99808ab2a5c0?autoplay=true"
+    },
+    {
+      "name": "Hodgkin vs Non-Hodgkin",
+      "video": "https://iframe.mediadelivery.net/embed/6781/26a9d418-a84d-45a2-95ca-d185552ae116?autoplay=true"
+    },
+    {
+      "name": "Thalassemia",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c0ab028a-f9dd-478a-afe3-e7486ec96733?autoplay=true"
+    },
+    {
+      "name": "Thalassemia",
+      "video": "https://iframe.mediadelivery.net/embed/6781/c7b6906f-2813-466e-a1c1-a7b1b134fb57?autoplay=true"
+    },
+    {
+      "name": "Polycythemia ",
+      "video": "https://iframe.mediadelivery.net/embed/6781/04d40cb5-3f3d-4b2e-bfa8-fd0831b911d1?autoplay=true"
+    },
+    {
+      "name": "Normal Hemostasis",
+      "video": "https://iframe.mediadelivery.net/embed/6781/f2450db1-c785-42f5-ae64-15fab24c26c2?autoplay=true"
+    },
+    {
+      "name": "Hemostasis",
+      "video": "https://iframe.mediadelivery.net/embed/6781/df68b00e-884d-4516-81e9-579c2546decf?autoplay=true"
+    },
+    {
+      "name": "Normal Hemostasis",
+      "video": "https://iframe.mediadelivery.net/embed/6781/0188c698-d1be-449a-b403-a3c1b4a5146d?autoplay=true"
     }
   ],
   "CVS MURMURS": [

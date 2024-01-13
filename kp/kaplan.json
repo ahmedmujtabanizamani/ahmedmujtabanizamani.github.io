@@ -1,674 +1,172 @@
-{
-  "trauma": [
-    {
-      "name": "1- GCS SCORING  ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/4d1fe1f3-1fe6-4ed4-8ca2-8749dc0e4cbb?autoplay=true"
-    },
-    {
-      "name": "2- GCS SCORING ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/7465ca2d-6259-494b-b8d2-f7e0d878d07d?autoplay=true"
-    },
-    {
-      "name": "3- TRAUMA ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/d4157ba8-8f8c-4b56-8bfa-5a61eb3cee8b?autoplay=true"
-    },
-    {
-      "name": "4- TRAUMA ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/4171b348-3634-4ff6-b3dd-c7e41f4bba71?autoplay=true"
-    },
-    {
-      "name": "5- TRAUMA ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/8b3da2d2-77e0-4ffe-973a-b78f644684bd?autoplay=true"
-    },
-    {
-      "name": "6- TRAUMA  ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/243ccaea-ebf4-4088-a129-dd982849f02e?autoplay=true"
-    },
-    {
-      "name": "7- TRAUMA ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/d90af577-88a8-4f7b-8495-0703b724293b?autoplay=true"
-    },
-    {
-      "name": "8- TRAUMA ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/07331470-233e-4191-8e49-36f6fbf9b24c?autoplay=true"
-    },
-    {
-      "name": "9- SPINAL TRACTS | BROWN SQUARD SYNDROME | POLIOMYELITIS  ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/baa27847-b081-4197-82ba-f7de7fe765be?autoplay=true"
-    },
-    {
-      "name": "10- POLIOMYELITIS  ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/ea4059d8-fa65-4375-bbe2-9a246fc11704?autoplay=true"
-    },
-    {
-      "name": "11- TRAUMA ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/ba4e48d5-84af-4de4-a267-f9862ff4c01f?autoplay=true"
-    },
-    {
-      "name": "12- SPINAL CORD LESIONS ( ANT. CORD SYNDROME/ ANT.SPINAL ARTERY LESSION AND CENTRAL CORD SYNDROME/ SYRINGOMYLIA ) ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/499dd0b4-4d0a-44fd-a971-3c27abf04fc9?autoplay=true"
-    },
-    {
-      "name": "13- COMPLETE AND INCOMPLETE CORD LESION | SPINAL SHOCK | PENETRATING NECK INJURY  ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/f935c83c-6f7e-417e-864b-924cfacdf0d2?autoplay=true"
-    },
-    {
-      "name": "14- MYOCARDIAL CONTUSION  TRAUMATIC RUPTURE OF AORTA |  ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/cea824ea-1e04-4480-a36a-3111890303d3?autoplay=true"
-    },
-    {
-      "name": "15- AIR EMBOLISM | FAT EMBOLISM  ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/b99390ea-5c37-4f39-b7d4-1e05650b19be?autoplay=true"
-    },
-    {
-      "name": "16- TRAUMATIC RUPTURE OF TRACHEA AND ITS DD ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/973765d4-b888-469a-b50b-9e0b4bdfff76?autoplay=true"
-    },
-    {
-      "name": "17- PENETRATING ABDOMINAL TRAUMA ( GUN SHOT AND STAB WOUND)  DAMAGE CONTROL SURGERY | ABDOMINAL COMPARTMENT SYNDROME  ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/52a32b82-81b0-44de-9794-1ec00b0ee26b?autoplay=true"
-    },
-    {
-      "name": "18- EPIDURAL HEMATOMA | SUBDURAL HEMATOMA ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/be13da85-2333-425d-9887-2190be11cb82?autoplay=true"
-    },
-    {
-      "name": "19- EPIDURAL HEMATOMA ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/281b35aa-b38b-41b6-b752-4bfd857f94f8?autoplay=true"
-    },
-    {
-      "name": "20- SUBDURAL AND EPIDURAL HEMATOMA | INTRACRANIAL HTN | CUSHING TRIAD | DIFFUSE AXONAL INJURY ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/57fda57d-0630-428c-a94c-a4ce1790885c?autoplay=true"
-    },
-    {
-      "name": "21- PELVIC FRACTURE | URETHRAL INJURY | BLADDER INJURY  ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/f12e6b6d-ee65-4e93-b622-c2ce52273c8a?autoplay=true"
-    },
-    {
-      "name": "22- BURNS  ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/7726f68a-30db-472b-b8d4-fe5e54156f57?autoplay=true"
-    },
-    {
-      "name": "23- BURNS | INHALATION INJURY | ELECTRIC BURNS ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/e16560be-942c-4508-9388-53616a968c8f?autoplay=true"
-    },
-    {
-      "name": "24- BURNS | BITES AND STINGS | DOG BITES ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/f6514904-c76d-4b71-be15-babc877f043b?autoplay=true"
-    },
-    {
-      "name": "25- BITES AND STINGS | BEE STINGS | WIDOW SPIDERS | SNAKE BITE ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/af076634-32b6-4ee4-aad4-f6f5fee9dbcf?autoplay=true"
-    },
-    {
-      "name": "26- SPIDERS | HUMAN BITES  ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/b89db81e-7912-4032-9869-bc65d1d04d55?autoplay=true"
-    },
-    {
-      "name": "27- BURNS ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/57ab9ad9-3353-4f84-9c25-4b4f213413ed?autoplay=true"
-    },
-    {
-      "name": "28- SHOCK ( OBSTRUCTIVE ND HEMORRHAGIC)  | CARDIAC TEMPONADE  ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/da4cf36b-7c63-43f4-b076-dc4c2f7032a7?autoplay=true"
-    },
-    {
-      "name": "29- SPINAL CORD LESIONS | POLIOMYELITIS | ALS | SPINAL ARTERY OCCLUSION | TABES DORSALIS | TERTIARY SYPHILIS | VIT B12 DEFICIENCY ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/0b4d2fd5-877e-4b91-a678-c2ad5e6cfea4?autoplay=true"
-    },
-    {
-      "name": "30- CHEST TRAUMA ( RIB FRACTURE | TENSION PNEUMOTHORAX) | HEMOTHORAX  ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/df71ff54-d16d-4612-b2e2-1a8b433c6491?autoplay=true"
-    },
-    {
-      "name": "31- SUCKING CHEST WOUND | RIB FRACTURE | PNUMOTHORAX. | FLIAL CHEST | PULMONARY CONTUSION  ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/b50415ca-2139-4f47-b6e4-09b3a007dcdb?autoplay=true"
-    },
-    {
-      "name": "32- MYOCARDIAL CONTUSION | DIAPHRAMATIC REPTURE | TRAUMATIC REPTUTE OF TRACHEA ND MAJOR BRONCHUS | DD OF SUBCUTANEOUS EMPHYSEMA  ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/9a0ede91-f397-42ae-8281-170717335d90?autoplay=true"
-    },
-    {
-      "name": "33- ABDOMINAL TRAUMA (PENETRATING / GUN SHOT AND BLUNT/ STAB WOUND)   ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/957bfa4a-ce79-4054-9bdd-aa623957fef4?autoplay=true"
-    },
-    {
-      "name": "34- EPIDURAL HEMATOMA | PELVIC FRACTURE | URETHRAL INJURY | BLADDER INJURY | RENAL INJURY |  ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/1d15cce5-4a97-486a-8478-8c0794a489cb?autoplay=true"
-    }
-  ],
-  "orthopedic": [
-    {
-      "name": "LECTURE 1 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/0f403b58-78b1-4358-8b46-893e4b86f297?autoplay=true"
-    },
-    {
-      "name": "LECTURE 2 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/c475c1b4-8c02-4c24-98e1-53b494f7b938?autoplay=true"
-    },
-    {
-      "name": "LECTURE 3 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/4e5b541c-a97f-4f8e-97ec-aca5461729c4?autoplay=true"
-    },
-    {
-      "name": "LECTURE 4 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/9a24f7f8-ff92-4e27-a9a6-e66d8d1e9253?autoplay=true"
-    },
-    {
-      "name": "LECTURE 5 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/2b223ce6-45b4-4d31-8718-a94d137d7910?autoplay=true"
-    },
-    {
-      "name": "LECTURE 6 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/30189753-b2e5-4e45-949a-69bc4c1905ad?autoplay=true"
-    },
-    {
-      "name": "LECTURE 7 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/a1b33847-42f6-425b-9c99-111172093e6a?autoplay=true"
-    },
-    {
-      "name": "LECTURE 8 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/02288f26-16ff-41e6-bb07-ddbce0a0697c?autoplay=true"
-    },
-    {
-      "name": "LECTURE 9 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/55cf87f6-9fd0-47c1-af53-c60b4d3ddad5?autoplay=true"
-    },
-    {
-      "name": "LECTURE 10 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/ec91cd2d-68bd-4952-9999-394befd307f0?autoplay=true"
-    },
-    {
-      "name": "LECTURE 11 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/cdc8a50a-6645-4f0f-96c7-df248bdcc986?autoplay=true"
-    },
-    {
-      "name": "LECTURE 12 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/92f135b4-9936-425a-b522-6d5a3776a8ad?autoplay=true"
-    },
-    {
-      "name": "LECTURE 13 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/07f1bb2e-08dd-427b-99fe-86a48f1d3304?autoplay=true"
-    },
-    {
-      "name": "LECTURE 14 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/e7fe9fd9-38f9-4f09-8bfd-7c8a9e64437f?autoplay=true"
-    },
-    {
-      "name": "LECTURE 15 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/2f3c2733-ed40-4c67-a5ae-430ecdbeff1a?autoplay=true"
-    },
-    {
-      "name": "LECTURE 16 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/7672e1c6-ae41-4cde-b861-ef32485bd776?autoplay=true"
-    },
-    {
-      "name": "LECTURE 17 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/0ede3e1b-0119-48db-8103-e15986e15243?autoplay=true"
-    },
-    {
-      "name": "LECTURE 18 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/29e4f7fb-eca4-440f-96e0-555637a91b97?autoplay=true"
-    },
-    {
-      "name": "LECTURE 19 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/01a8ad60-c5fb-4395-a7e0-da69cb5c180f?autoplay=true"
-    },
-    {
-      "name": "LECTURE 20 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/a630f0a8-666d-4629-bb9e-9aad924d3ecf?autoplay=true"
-    },
-    {
-      "name": "LECTURE 21 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/e0406c6c-d856-4774-b9f5-4a4ebedbbe71?autoplay=true"
-    },
-    {
-      "name": "LECTURE 22 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/3a9c0e16-03de-4f15-9814-15fd37fb3661?autoplay=true"
-    }
-  ],
-  "pre_operative_and_post_operative": [
-    {
-      "name": "LECTURE 1 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/e93ee475-0e07-4d67-b8c8-c4e2b588d850?autoplay=true"
-    },
-    {
-      "name": "LECTURE 2 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/9f1e11ab-afba-4a57-a939-3c509986e136?autoplay=true"
-    },
-    {
-      "name": "LECTURE 3 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/c88c2b16-5195-45e2-86c3-2072a1ad3572?autoplay=true"
-    },
-    {
-      "name": "LECTURE 4 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/2276cbf3-1575-4860-ad05-addad779c830?autoplay=true"
-    },
-    {
-      "name": "LECTURE 5 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/b1915741-9fa6-4992-99ee-f2a67c96f0c0?autoplay=true"
-    },
-    {
-      "name": "LECTURE 6 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/dfc4c8f2-32f8-4b4e-96d4-f02ee19cc6ff?autoplay=true"
-    },
-    {
-      "name": "LECTURE 7 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/3c107e24-84aa-4084-a76b-0ccd36044901?autoplay=true"
-    },
-    {
-      "name": "LECTURE 8 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/47f38cb2-264b-4b22-948c-28002399dbe3?autoplay=true"
-    },
-    {
-      "name": "LECTURE 9 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/141ffb09-c66e-409a-83d7-1e512427ab78?autoplay=true"
-    },
-    {
-      "name": "LECTURE 10 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/e50c4b5b-9736-4f73-a4b1-4f071ddfa814?autoplay=true"
-    },
-    {
-      "name": "LECTURE 11 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/79b781f1-f9ef-4f8e-a60f-5eb9de366bba?autoplay=true"
-    },
-    {
-      "name": "LECTURE 12 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/bb679ca8-369b-4b39-afeb-6328a0a01f7c?autoplay=true"
-    },
-    {
-      "name": "LECTURE 13 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/39d93115-dba5-4be6-b287-4a3aa0848481?autoplay=true"
-    },
-    {
-      "name": "LECTURE 14 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/bff61ca0-9ad1-416e-a078-5b4a30076758?autoplay=true"
-    },
-    {
-      "name": "LECTURE 15 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/9dd91ea5-dd17-4505-a8ba-7d809eb4402d?autoplay=true"
-    },
-    {
-      "name": "LECTURE 16 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/6df758a3-485b-431f-96f1-2e029db64a79?autoplay=true"
-    },
-    {
-      "name": "LECTURE 17 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/3d98183f-07fe-4416-a3d5-6e88d220ff7a?autoplay=true"
-    },
-    {
-      "name": "LECTURE 18 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/eb7f3f79-0620-4bf1-910f-198d607a4abf?autoplay=true"
-    },
-    {
-      "name": "LECTURE 19 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/c77657e9-3aab-48d4-87c5-65fdb14a55e9?autoplay=true"
-    }
-  ],
-  "neuro_surgery": [
-    {
-      "name": "LECTURE 1 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/be828ed2-f213-45db-ba15-9e1160261baf?autoplay=true"
-    },
-    {
-      "name": "LECTURE 2 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/070f7190-2898-4327-81a3-031a4dea4c3f?autoplay=true"
-    },
-    {
-      "name": "LECTURE 3 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/a16ebbca-99c6-454a-86ac-77f247ecb9b0?autoplay=true"
-    },
-    {
-      "name": "LECTURE 4 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/6e9ec117-50e3-4f99-a235-455dbf1767a4?autoplay=true"
-    },
-    {
-      "name": "LECTURE 5 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/4ce199c7-b4c7-4f68-a877-a5fd2f299f38?autoplay=true"
-    }
-  ],
-  "urology": [
-    {
-      "name": "LECTURE 1 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/dd2cc3ef-b018-4877-b150-74c1549d736d?autoplay=true"
-    },
-    {
-      "name": "LECTURE 2 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/58d1d7ce-b5ca-4790-8483-deb28d1df561?autoplay=true"
-    },
-    {
-      "name": "LECTURE 3 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/bd2ba8c0-a458-49c3-af0a-03ea6c451fe6?autoplay=true"
-    },
-    {
-      "name": "LECTURE 4 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/64f6478b-7cd5-4a8c-9cd4-3f9624f924a1?autoplay=true"
-    },
-    {
-      "name": "LECTURE 5 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/ec13d3a3-5998-4585-9f18-ca5ae24639be?autoplay=true"
-    },
-    {
-      "name": "LECTURE 6 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/f5008bf3-9c9d-4433-86ea-30b14baf9b72?autoplay=true"
-    },
-    {
-      "name": "LECTURE 7 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/5f5181c3-08e8-4abc-b838-4e023332d72f?autoplay=true"
-    }
-  ],
-  "murmurs": [
-    {
-      "name": "LECTURE 1 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/9ab58eb8-b00f-46a7-a4a0-83a6ab5bde06?autoplay=true"
-    },
-    {
-      "name": "LECTURE 2 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/8aa34f9f-f5e7-4540-b027-c2622f734f46?autoplay=true"
-    },
-    {
-      "name": "LECTURE 3 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/77ede275-c1f7-4f09-b12d-a0558bbc77ad?autoplay=true"
-    },
-    {
-      "name": "LECTURE 4 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/75aa8f1f-3970-4409-a08f-fe29b4c15493?autoplay=true"
-    },
-    {
-      "name": "LECTURE 5 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/9b90b716-dcd1-42ac-813b-e2439a10b5fe?autoplay=true"
-    },
-    {
-      "name": "LECTURE 6 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/d187e600-c250-4834-8134-9b098a75beac?autoplay=true"
-    },
-    {
-      "name": "LECTURE 7 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/4a13e600-5052-494d-a07e-ccbf675da95c?autoplay=true"
-    },
-    {
-      "name": "LECTURE 8 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/7ffbb281-2a65-4999-b14a-cbe930805c67?autoplay=true"
-    },
-    {
-      "name": "LECTURE 9 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/0f332dd0-8ccc-4c9f-b20f-73f792dd9a71?autoplay=true"
-    }
-  ],
-  "ENT": [
-    {
-      "name": "LECTURE 1 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/144be345-d2f3-4a90-9426-24e059a22c70?autoplay=true"
-    },
-    {
-      "name": "LECTURE 2 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/7caa5e5b-d518-4bba-9348-a265df2f879c?autoplay=true"
-    },
-    {
-      "name": "LECTURE 3 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/5e4ea193-4140-4ba6-8269-1ee741874236?autoplay=true"
-    },
-    {
-      "name": "LECTURE 4 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/b0e8ce53-97c7-4756-83a8-651a0c6ed2a1?autoplay=true"
-    },
-    {
-      "name": "LECTURE 5 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/ca32c870-fce5-40ba-b8e4-3ddec2570990?autoplay=true"
-    }
-  ],
-  "opthlamology": [
-    {
-      "name": "LECTURE 1 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/8c42b1b7-538e-44a3-835f-af4e6494bc2a?autoplay=true"
-    },
-    {
-      "name": "LECTURE 2 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/61419cc8-1763-4e7d-8c6b-b076b2eed3f0?autoplay=true"
-    }
-  ],
-  "dermatology": [
-    {
-      "name": "LECTURE 1 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/781cefdb-2bc1-4f06-bf67-a211a6cdf107?autoplay=true"
-    },
-    {
-      "name": "LECTURE 2 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/bda04922-6aac-463c-a523-c9e03255b8bc?autoplay=true"
-    }
-  ],
-  "vascular_surgery": [
-    {
-      "name": "LECTURE 1 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/cc98c9e8-e18d-41f5-903f-067b169d24e0?autoplay=true"
-    },
-    {
-      "name": "LECTURE 2 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/e5d2383b-87cb-4afa-a85c-8861b699bd94?autoplay=true"
-    },
-    {
-      "name": "LECTURE 3 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/14a7453f-435c-49f2-b435-50aff7e43939?autoplay=true"
-    },
-    {
-      "name": "LECTURE 4 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/00f73938-82ec-4466-980c-559971befc19?autoplay=true"
-    }
-  ],
-  "cardio_thoracic": [
-    {
-      "name": "LECTURE 1 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/51b9be5d-05eb-41a4-b2fb-533bbf5e7d14?autoplay=true"
-    },
-    {
-      "name": "LECTURE 2 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/b35fac38-1316-4c37-9623-5e9fe3598e41?autoplay=true"
-    }
-  ],
-  "paediatric_surgery": [
-    {
-      "name": "LECTURE 1 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/173f459e-2507-4257-bc7c-d5ae896f5fe4?autoplay=true"
-    },
-    {
-      "name": "LECTURE 2 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/d987ba5e-d648-4b1e-8284-bf7ac3237d85?autoplay=true"
-    },
-    {
-      "name": "LECTURE 3 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/d6fd6876-2c0f-4b6e-8e67-7ccbc2775268?autoplay=true"
-    },
-    {
-      "name": "LECTURE 4 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/055e633a-ee7c-4583-ad43-74c16fc12fb1?autoplay=true"
-    },
-    {
-      "name": "LECTURE 5 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/081004c0-75a6-4c68-aa79-a4ec37861448?autoplay=true"
-    }
-  ],
-  "breast_surgery": [
-    {
-      "name": "LECTURE 1 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/7c6a289b-2c98-4a1d-bc6b-0ed651d5e562?autoplay=true"
-    },
-    {
-      "name": "LECTURE 2 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/3f3b5af3-4a0b-4890-9e46-99eef777020a?autoplay=true"
-    },
-    {
-      "name": "LECTURE 3 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/e4f6e348-bb7b-4731-93ff-1360a0ef4700?autoplay=true"
-    },
-    {
-      "name": "LECTURE 4 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/867cdacd-5c21-49f1-8a16-fe9891f81931?autoplay=true"
-    },
-    {
-      "name": "LECTURE 5 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/7ecd1b8d-8ca8-4d67-9a2a-f26c33fc1aa4?autoplay=true"
-    },
-    {
-      "name": "LECTURE 6 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/8e5896b9-3769-45ec-af2b-459cd357d45b?autoplay=true"
-    },
-    {
-      "name": "LECTURE 7 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/d9036389-4d54-4c5a-a841-71316c7f5825?autoplay=true"
-    }
-  ],
-  "general_surgery": [
-    {
-      "name": "LECTURE 1 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/b6188f95-0e93-4cb2-95bd-65ddde8d2de3?autoplay=true"
-    },
-    {
-      "name": "LECTURE 2 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/d579e61b-7203-4cc0-9130-bd620084548a?autoplay=true"
-    },
-    {
-      "name": "LECTURE 3 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/72386656-f94e-48d5-8a86-64a6c7e90a9e?autoplay=true"
-    },
-    {
-      "name": "LECTURE 4 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/21345157-be24-4cc6-946d-dc9919e8aa0f?autoplay=true"
-    },
-    {
-      "name": "LECTURE 5 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/6e679a41-e4da-448c-9169-ab6f517f44b3?autoplay=true"
-    },
-    {
-      "name": "LECTURE 6 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/837d9baa-89ca-433a-8e0f-e007cf39342a?autoplay=true"
-    },
-    {
-      "name": "LECTURE 7 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/ec90408e-8999-4957-94c2-b81ca72a0786?autoplay=true"
-    },
-    {
-      "name": "LECTURE 8 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/ff7347a9-53cb-4a4e-bfe2-8c1a0bc90c36?autoplay=true"
-    },
-    {
-      "name": "LECTURE 9 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/5bfa59d7-d963-4c5f-863a-1f233acde591?autoplay=true"
-    },
-    {
-      "name": "LECTURE 10 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/2b503916-a28c-4b52-94d9-46c8f67b10bd?autoplay=true"
-    },
-    {
-      "name": "LECTURE 11 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/92a4e4bf-a2f9-4752-be29-6e20abdd535a?autoplay=true"
-    },
-    {
-      "name": "LECTURE 12 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/0184b6e8-3938-4893-a0d9-ac8e2cd5aadd?autoplay=true"
-    },
-    {
-      "name": "LECTURE 13 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/176fefa5-a783-413e-b769-030211c9b2a6?autoplay=true"
-    },
-    {
-      "name": "LECTURE 14 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/cd0ca0d7-c11d-46d0-a903-5f60be1f0ed5?autoplay=true"
-    },
-    {
-      "name": "LECTURE 15 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/996e3274-4c75-4ba9-bfca-bc6f60287610?autoplay=true"
-    },
-    {
-      "name": "LECTURE 16 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/0302cec4-7ac1-495f-8e07-77c824e4bbab?autoplay=true"
-    },
-    {
-      "name": "LECTURE 17 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/36682716-1c1d-4004-96db-4c68c331d7b8?autoplay=true"
-    },
-    {
-      "name": "LECTURE 18 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/7d5986ea-3bb8-45be-8640-2a82f9bfed4c?autoplay=true"
-    },
-    {
-      "name": "LECTURE 19 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/63bcecc5-932e-4f56-a7b8-1244a260148e?autoplay=true"
-    },
-    {
-      "name": "LECTURE 20 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/a5886bfc-75c3-4cbf-8dfe-fe2c9b1d3139?autoplay=true"
-    },
-    {
-      "name": "LECTURE 21 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/db9937f4-e18a-48c0-890d-07c0bfcb3c85?autoplay=true"
-    },
-    {
-      "name": "LECTURE 22 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/a3a8d86d-546d-4db3-8efc-3cf6ed42fdf5?autoplay=true"
-    },
-    {
-      "name": "LECTURE 23 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/b5f42d53-a4c3-4006-9fb2-88899a31a70a?autoplay=true"
-    },
-    {
-      "name": "LECTURE 24 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/4737f9ab-b729-405e-9692-269963f9c156?autoplay=true"
-    },
-    {
-      "name": "LECTURE 25 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/56539a10-e476-446e-9d65-9f51cd839be8?autoplay=true"
-    },
-    {
-      "name": "LECTURE 26 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/68ef7262-0a3d-44be-89cf-d5380d3fb3ec?autoplay=true"
-    },
-    {
-      "name": "LECTURE 27 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/d5ee4bd5-0784-430e-a96d-27072e4473f0?autoplay=true"
-    },
-    {
-      "name": "LECTURE 28 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/5f6c173f-549c-4b4e-a0f2-50d8aeb56032?autoplay=true"
-    },
-    {
-      "name": "LECTURE 29 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/c4f9da4a-02d0-4c18-886e-e3e8af94b038?autoplay=true"
-    },
-    {
-      "name": "LECTURE 30 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/2b066d40-73a0-4178-80f8-cfc2412b1aab?autoplay=true"
-    },
-    {
-      "name": "LECTURE 31 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/4e3dc2ed-6fb0-497b-bb26-dcddfbb2e367?autoplay=true"
-    },
-    {
-      "name": "LECTURE 32 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/6e21ba5d-bece-472d-8085-2d26955c6d9a?autoplay=true"
-    },
-    {
-      "name": "LECTURE 33 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/8deaea84-cbc8-4b69-a314-4ed3eea59bb0?autoplay=true"
-    },
-    {
-      "name": "LECTURE 34 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/d1f87111-f2ef-4b1f-9e5a-9df743d0639c?autoplay=true"
-    },
-    {
-      "name": "LECTURE 35 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/58b04133-4316-42de-9369-dd534d6ae0f2?autoplay=true"
-    },
-    {
-      "name": "LECTURE 36 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/8896df39-8f3e-40de-8f46-94ba27a177bf?autoplay=true"
-    },
-    {
-      "name": "LECTURE 37 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/f8cf74fb-1dc3-4479-9b4b-f386473d77a9?autoplay=true"
-    },
-    {
-      "name": "LECTURE 38 ",
-      "video": "https://iframe.mediadelivery.net/embed/14161/5e33387a-2e9e-4594-b107-c2e887a4beb2?autoplay=true"
-    }
-  ]
-}
+{"Trauma": [{"name":"1- GCS SCORING ", "video":"https://iframe.mediadelivery.net/embed/14161/838faab5-f41f-4514-ae3c-b848fb877c1d?autoplay=true"},
+{"name":"2- GCS SCORING", "video":"https://iframe.mediadelivery.net/embed/14161/f23b5605-a225-4114-93ed-6487f4bcea3e?autoplay=true"},
+{"name":"3- TRAUMA", "video":"https://iframe.mediadelivery.net/embed/14161/9f08971b-926e-4135-a69a-58d699bb9f0d?autoplay=true"},
+{"name":"4- TRAUMA", "video":"https://iframe.mediadelivery.net/embed/14161/f4bec9df-4b20-4ede-a368-5648877dc5da?autoplay=true"},
+{"name":"5- TRAUMA", "video":"https://iframe.mediadelivery.net/embed/14161/8df41b87-9b78-4fa2-82d3-b26e09fe714b?autoplay=true"},
+{"name":"6- TRAUMA ", "video":"https://iframe.mediadelivery.net/embed/14161/65b992ed-ae4d-458e-966c-28640efbfd22?autoplay=true"},
+{"name":"7- TRAUMA", "video":"https://iframe.mediadelivery.net/embed/14161/2cef6523-16d6-4f96-a1d6-de9566c80c60?autoplay=true"},
+{"name":"8- TRAUMA", "video":"https://iframe.mediadelivery.net/embed/14161/a3176872-4978-477c-ac66-5ce72706a149?autoplay=true"},
+{"name":"9- SPINAL TRACTS | BROWN SQUARD SYNDROME | POLIOMYELITIS ", "video":"https://iframe.mediadelivery.net/embed/14161/b74da342-6e3c-47cf-a8b4-d3001693e66e?autoplay=true"},
+{"name":"10- POLIOMYELITIS ", "video":"https://iframe.mediadelivery.net/embed/14161/dc103618-5049-427e-b0c0-d15f1e4a5c96?autoplay=true"},
+{"name":"11- TRAUMA", "video":"https://iframe.mediadelivery.net/embed/14161/95596e7b-c010-489a-89bf-d4d0d28e9cc2?autoplay=true"},
+{"name":"12- SPINAL CORD LESIONS ( ANT. CORD SYNDROME/ ANT.SPINAL ARTERY LESSION AND CENTRAL CORD SYNDROME/ SYRINGOMYLIA )", "video":"https://iframe.mediadelivery.net/embed/14161/26096d33-a91d-41b1-9182-2a4ddccdac29?autoplay=true"},
+{"name":"13- COMPLETE AND INCOMPLETE CORD LESION | SPINAL SHOCK | PENETRATING NECK INJURY ", "video":"https://iframe.mediadelivery.net/embed/14161/6fa811bd-8d06-420e-a77b-83de9968b565?autoplay=true"},
+{"name":"14- MYOCARDIAL CONTUSION | TRAUMATIC RUPTURE OF AORTA ", "video":"https://iframe.mediadelivery.net/embed/14161/d4e4415e-0d5c-40c6-918f-ef866ec4a8ab?autoplay=true"},
+{"name":"15- AIR EMBOLISM | FAT EMBOLISM ", "video":"https://iframe.mediadelivery.net/embed/14161/8ff9dd9a-869f-4a1c-949b-c32fdde3f356?autoplay=true"},
+{"name":"16- TRAUMATIC RUPTURE OF TRACHEA AND ITS DD", "video":"https://iframe.mediadelivery.net/embed/14161/5282450a-00d0-45c4-b7d1-7a45b551d3b9?autoplay=true"},
+{"name":"17- PENETRATING ABDOMINAL TRAUMA ( GUN SHOT AND STAB WOUND)  DAMAGE CONTROL SURGERY | ABDOMINAL COMPARTMENT SYNDROME ", "video":"https://iframe.mediadelivery.net/embed/14161/ec1d3a1b-5deb-41d0-b41c-e56930767438?autoplay=true"},
+{"name":"18- EPIDURAL HEMATOMA | SUBDURAL HEMATOMA", "video":"https://iframe.mediadelivery.net/embed/14161/9fd429cc-0284-4d89-98dc-f76c29907a61?autoplay=true"},
+{"name":"19- EPIDURAL HEMATOMA", "video":"https://iframe.mediadelivery.net/embed/14161/33e65c29-133d-40d1-91cb-039bfcc9dc50?autoplay=true"},
+{"name":"20- SUBDURAL AND EPIDURAL HEMATOMA | INTRACRANIAL HTN | CUSHING TRIAD | DIFFUSE AXONAL INJURY", "video":"https://iframe.mediadelivery.net/embed/14161/e06db1d8-54fa-47fe-bf63-e780df4e7521?autoplay=true"},
+{"name":"21- PELVIC FRACTURE | URETHRAL INJURY | BLADDER INJURY ", "video":"https://iframe.mediadelivery.net/embed/14161/210fb94b-1cd8-4b47-8962-9ec44e844a41?autoplay=true"},
+{"name":"22- BURNS ", "video":"https://iframe.mediadelivery.net/embed/14161/22a0c060-2d39-41a0-9c20-7080ea11d234?autoplay=true"},
+{"name":"23- BURNS | INHALATION INJURY | ELECTRIC BURNS", "video":"https://iframe.mediadelivery.net/embed/14161/7634d4a4-9556-4e74-abc9-af8ed51bbbaf?autoplay=true"},
+{"name":"24- BURNS | BITES AND STINGS | DOG BITES", "video":"https://iframe.mediadelivery.net/embed/14161/fe0247ff-0d60-4791-a282-2b150e37fdef?autoplay=true"},
+{"name":"25- BITES AND STINGS | BEE STINGS | WIDOW SPIDERS | SNAKE BITE", "video":"https://iframe.mediadelivery.net/embed/14161/66cd38d3-9857-4332-a7a5-ab9ea79e56bf?autoplay=true"},
+{"name":"26- SPIDERS | HUMAN BITES ", "video":"https://iframe.mediadelivery.net/embed/14161/420a709f-555a-44b1-a81d-644b039d1584?autoplay=true"},
+{"name":"27- BURNS", "video":"https://iframe.mediadelivery.net/embed/14161/fabe8224-c7be-46c2-83ee-4dc4d994c36a?autoplay=true"},
+{"name":"28- SHOCK ( OBSTRUCTIVE ND HEMORRHAGIC)  | CARDIAC TEMPONADE ", "video":"https://iframe.mediadelivery.net/embed/14161/278f28f7-cbf2-447d-a4f7-a1223b5a0e65?autoplay=true"},
+{"name":"29- SPINAL CORD LESIONS | POLIOMYELITIS | ALS | SPINAL ARTERY OCCLUSION | TABES DORSALIS | TERTIARY SYPHILIS | VIT B12 DEFICIENCY", "video":"https://iframe.mediadelivery.net/embed/14161/b88bdcd3-e89e-47d2-98fc-9d71bcdad30c?autoplay=true"},
+{"name":"30- CHEST TRAUMA ( RIB FRACTURE | TENSION PNEUMOTHORAX) | HEMOTHORAX ", "video":"https://iframe.mediadelivery.net/embed/14161/ddd9a5ba-b082-439b-a223-a1be5584366f?autoplay=true"},
+{"name":"31- SUCKING CHEST WOUND | RIB FRACTURE | PNUMOTHORAX. | FLIAL CHEST | PULMONARY CONTUSION ", "video":"https://iframe.mediadelivery.net/embed/14161/856d7744-f21c-4f4b-a9ae-1ec23ebca38d?autoplay=true"},
+{"name":"32- MYOCARDIAL CONTUSION | DIAPHRAMATIC REPTURE | TRAUMATIC REPTUTE OF TRACHEA ND MAJOR BRONCHUS | DD OF SUBCUTANEOUS EMPHYSEMA ", "video":"https://iframe.mediadelivery.net/embed/14161/a6e47d0e-fe5e-4b62-99f6-8e3b55c4a28d?autoplay=true"},
+{"name":"33- ABDOMINAL TRAUMA (PENETRATING / GUN SHOT AND BLUNT/ STAB WOUND)  ", "video":"https://iframe.mediadelivery.net/embed/14161/7802f544-ab0c-4488-8685-fb00a27c6b90?autoplay=true"},
+{"name":"34- EPIDURAL HEMATOMA | PELVIC FRACTURE | URETHRAL INJURY | BLADDER INJURY | RENAL INJURY | ", "video":"https://iframe.mediadelivery.net/embed/14161/cdf76b2f-2e85-4c1b-89c8-fdba404dfba4?autoplay=true"}
+], "Orthopedic": [
+{"name":"1- Dysplasia of the Hip /Leg | Perthes disease |  Slipped capital femoral epiphysis ", "video":"https://iframe.mediadelivery.net/embed/14161/12121f5c-ad60-4700-86db-d7d3a18ef576?autoplay=true\u0026preload=true"},
+{"name":"2- Osteogenic sarcoma | Ewing sarcoma | Multiple myeloma ", "video":"https://iframe.mediadelivery.net/embed/14161/e46e37e9-d417-4b3c-aba1-d900a9ccf052?autoplay=true\u0026preload=true"},
+{"name":"3- Multiple myeloma | Soft tissue sarcoma", "video":"https://iframe.mediadelivery.net/embed/14161/98d1b8d8-f598-477b-86cc-033cb6ea3938?autoplay=true\u0026preload=true"},
+{"name":"4- General orthopedics | Clavicular fractures | Ant-dislocation of shoulders", "video":"https://iframe.mediadelivery.net/embed/14161/0eeac7f0-72cf-49be-a846-1f56343cdf5c?autoplay=true\u0026preload=true"},
+{"name":"5- Posterior shoulder dislocation | Montegia fracture | Galeazzi leazzi fracture | Anatomic snuff box | Scaphoid bone fracture | Metacarpal neck fracture  ", "video":"https://iframe.mediadelivery.net/embed/14161/382daf6b-9f55-4adc-b476-7304655b5c69?autoplay=true\u0026preload=true"},
+{"name":"6- Hip fracture | Femoral shaft fracture  ", "video":"https://iframe.mediadelivery.net/embed/14161/904d26d9-ebc8-4f1e-8143-0d2be82ab2bc?autoplay=true\u0026preload=true"},
+{"name":"7- X-ray for suspected fractures", "video":"https://iframe.mediadelivery.net/embed/14161/c6b9f989-0040-4ecd-9e72-46411a75c911?autoplay=true\u0026preload=true"},
+{"name":"8- Femoral shaft fracture | Knee injuries | Collateral ligament injury | Anterior cruciate ligament injury | Meniscal tear", "video":"https://iframe.mediadelivery.net/embed/14161/44c427de-96ed-46ba-a1d8-e5c1bce12b06?autoplay=true\u0026preload=true"},
+{"name":"9- Mcmurray test | Lachman test | Meniscal tear | Tibial stress fracture | Rupture of achiles tendon ", "video":"https://iframe.mediadelivery.net/embed/14161/d1e476f0-407f-4a86-a9bb-10b55f122d74?autoplay=true\u0026preload=true"},
+{"name":"10- Compartment syndrome | Pain under cast | Open fracture ", "video":"https://iframe.mediadelivery.net/embed/14161/c39c647f-99de-4a1e-828b-919c9845b8da?autoplay=true\u0026preload=true"},
+{"name":"11- Carpel tunnel syndrome ", "video":"https://iframe.mediadelivery.net/embed/14161/564ad996-b053-462b-a964-09b1c958c893?autoplay=true\u0026preload=true"},
+{"name":"12- Carpel tunnel syndrome | Trigger finger | Dequirven tenosynovitis | Dupuytren contracture ", "video":"https://iframe.mediadelivery.net/embed/14161/73a618a7-efd1-4a99-8088-b7ef42963eba?autoplay=true\u0026preload=true"},
+{"name":"13- Felon | Jersey finger | Mallet finger | Gemekeeper thumb | Traumatically amputed digit ", "video":"https://iframe.mediadelivery.net/embed/14161/e62f7a83-3852-4225-b04f-7b1d063cb3f9?autoplay=true\u0026preload=true"},
+{"name":"14- Back pain | Cauda equina syndrome | Ankylosing spondylitis  ", "video":"https://iframe.mediadelivery.net/embed/14161/d2b840e8-03e3-4786-80ce-79dd98e47905?autoplay=true\u0026preload=true"},
+{"name":"15- Leg ulcers | Marjolin ulcer | Planter fascitis | Morton neuroma | Gout | Summary various ulcers ", "video":"https://iframe.mediadelivery.net/embed/14161/63e7cd61-b59e-4fd7-9727-748d6c838683?autoplay=true\u0026preload=true"},
+{"name":"16- Slipped capital femoral | Epiphysis | Septic hip | Osgood-sclatter disease | Club foot | Scoliosis ", "video":"https://iframe.mediadelivery.net/embed/14161/2298ed81-2f9e-4aca-b814-86ce62db0b3c?autoplay=true\u0026preload=true"},
+{"name":"17- Rupture of achiles tendon | Tibia Stress fracture | Fracture involving tibia \u0026 fibula | Fractures of ankle", "video":"https://iframe.mediadelivery.net/embed/14161/7f196399-94fd-459b-a2d9-82d8d9729deb?autoplay=true\u0026preload=true"},
+{"name":"18- Pulmonary embolism open fractures | Posterior dislocation of hip | Gas gangrene | The radial nerve | Popliteal artery injury  ", "video":"https://iframe.mediadelivery.net/embed/14161/0155e855-a4d2-4764-b7c4-d721e75b1afb?autoplay=true\u0026preload=true"},
+{"name":"19- Popliteal artery injuries | Injury patterns ", "video":"https://iframe.mediadelivery.net/embed/14161/62b05a73-f710-44d1-a97c-3f18d4173f2e?autoplay=true\u0026preload=true"},
+{"name":"20- Carpel tunnel syndrome ", "video":"https://iframe.mediadelivery.net/embed/14161/3cfa425f-6ffe-4f49-90af-621c7e848be1?autoplay=true\u0026preload=true"}
+], "Pre-Operative &amp; Post-Operative": [
+{"name":"1- MALIGNANT HYPERTHERMIA", "video":"https://iframe.mediadelivery.net/embed/14161/c9ae7a22-b8c5-493a-b688-8a17490a096b?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"2- BACTEREMIA", "video":"https://iframe.mediadelivery.net/embed/14161/187a2685-8975-4df4-b95a-116cd5c4beb4?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"3- POST OP FEVER", "video":"https://iframe.mediadelivery.net/embed/14161/187a2685-8975-4df4-b95a-116cd5c4beb4?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"4-  POST OP FEVER ", "video":"https://iframe.mediadelivery.net/embed/14161/18cea72e-69dd-4873-a2cc-5891635241b8?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"5- INTRA OP AND POST OP CHEST PAIN", "video":"https://iframe.mediadelivery.net/embed/14161/1a4b7f0e-aad0-42e0-a778-e27dd78fade1?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"6- PULMONARY COMPLICATIONS ", "video":"https://iframe.mediadelivery.net/embed/14161/8f65d234-fdc1-4ead-97d2-ce74b2a8e10c?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"7- HYPONATREMIA | AMMONIA INTOXICATION IN LIVER FAILURE ", "video":"https://iframe.mediadelivery.net/embed/14161/19ce959b-9033-4267-8059-9f1b6f88203e?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"8- AMMONIA INTOXICATION IN LIVER FAILURE ", "video":"https://iframe.mediadelivery.net/embed/14161/25a84700-a8e2-410f-b220-f3c04f272289?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"9- POST OP URINARY COMPLICATIONS ", "video":"https://iframe.mediadelivery.net/embed/14161/79181dda-c916-4490-b8c6-ca583ba30b12?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"10- POST OP URINARY COMPLICATIONS | ABDOMINAL DISTENSION ", "video":"https://iframe.mediadelivery.net/embed/14161/1b0d534a-7d69-4a76-8714-567ad7bb71c4?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"11- HYPER AND HYPONATREMIA ", "video":"https://iframe.mediadelivery.net/embed/14161/2ed21d3d-1a8e-4182-a959-2ec7d89b947b?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"12 - HYPER AND HYPOKALEMIA ", "video":"https://iframe.mediadelivery.net/embed/14161/a81168b4-22a9-4ea1-9c27-676aeb812a79?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"13-HYPER AND HYPOKALEMIA ", "video":"https://iframe.mediadelivery.net/embed/14161/3c6ea57d-b88b-44e3-bb9e-09af1431230e?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"14- ACIDOSIS AND ALKALOSIS ", "video":"https://iframe.mediadelivery.net/embed/14161/a8f88d1c-2a40-4ecf-a8e0-c1c69073d3cc?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"15- HYPERVOLUMIC,  HYPOVOLUMIC ND EUVOLUMIC HYPONATREMIA | ", "video":"https://iframe.mediadelivery.net/embed/14161/95921ab9-4ca8-4a6a-838a-1a395e67ab2a?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"16- HYPERNATREMIA ", "video":"https://iframe.mediadelivery.net/embed/14161/fa07b81c-cdbf-4545-996a-0ad38defe655?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"17-  WOUND DEHISCENCE | EVISCERATION ", "video":"https://iframe.mediadelivery.net/embed/14161/0b04ca89-8463-4175-96b7-d190932b2532?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"18 -WOUND DEHISCENCE | EVISCERATION", "video":"https://iframe.mediadelivery.net/embed/14161/f1538cff-9f72-4edf-bc05-782b3ee5a43d?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"19- MCQ DISCUSSION", "video":"https://iframe.mediadelivery.net/embed/14161/0a0a2de8-1dd7-40ea-bcd4-7f5d377438d4?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"}
+], "Neuro Surgery": [
+{"name":"1- STROKE( HEMARHAGIC AND ISCHEMIC)  | TIA", "video":"https://iframe.mediadelivery.net/embed/14161/052526c6-0a78-4085-80e4-b684ccc2f4f1?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"2- ISCHEMIC AND HEMARHAGIC STROKE | SUBARACHNOID HEMARHAGE | BRAIN TUMOR ", "video":"https://iframe.mediadelivery.net/embed/14161/401b5490-48ed-4830-b88f-d83d3153c67f?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"3- BRAIN TUMOR | TUMOR OF FRONTAL LOBE | CRANIOPHARYNGEOMA | PROLACTINOMA | ACROMEGALY| PITUITARY APOPLEXY ", "video":"https://iframe.mediadelivery.net/embed/14161/f564cc00-f46f-4177-a243-baa50b82e29f?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"4- PITUITARY APOPLEXY | TUMOR OF PINEAL GLAND | BRAIN TUMOR IN CHILD | BRAIN ABSCESS | TUMORS AFFECTING SPINAL CORD | LUMBAR DISC HERNIATION   ", "video":"https://iframe.mediadelivery.net/embed/14161/d15b5654-8e4c-4536-9cd0-cadae0300b96?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"5- NEUROGENIC CLAUDICATION IN SPINAL STENOSIS | AUTONOMIC DYSREFLEXIA | REFLEX SYMPATHETIC DYSTROPHY  ", "video":"https://iframe.mediadelivery.net/embed/14161/21eff9e3-31a7-46bf-aee7-c813a8911a83?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"}
+], "Urology": [
+{"name":"1-  TESTICULAR TORSION | EPIDIDYMITIS | OBSTRUCTION INFECTIOUS COMBINATION | CYSTITIS", "video":"https://iframe.mediadelivery.net/embed/14161/bf54185d-4d91-450e-a113-57fb231003b2?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"2- PYELONEPHRITIS | ACUTE BACTERIAL PROSTATITIS | CONGENITAL UROLOGICAL DISEASE | LOW IMPLANTATION OF URETER", "video":"https://iframe.mediadelivery.net/embed/14161/f46ed7ef-1d30-4bd3-88e1-432c4ea66f55?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"3- URETEROPELVIC JUNCTION | TUMORS ", "video":"https://iframe.mediadelivery.net/embed/14161/d51bccea-cd71-4524-87a0-8604f91dfbb8?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"4- TUMORS ", "video":"https://iframe.mediadelivery.net/embed/14161/cfeafd05-d580-407b-b3a0-15c1ffe0ae7c?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"5- URINARY RETENTION | STONES", "video":"https://iframe.mediadelivery.net/embed/14161/34148bc1-d4a7-4085-abfc-6fa165c95b02?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"6-  PNEUMATURIA | ", "video":"https://iframe.mediadelivery.net/embed/14161/7c4860ca-ed84-4285-9c65-ffe427c14cbb?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"7- IMPOTENCE ", "video":"https://iframe.mediadelivery.net/embed/14161/78b77758-92d0-45c5-92d1-7390b949067c?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"}
+], "Murmurs": [
+{"name":"LECTURE 1", "video":"https://iframe.mediadelivery.net/embed/14161/9ab58eb8-b00f-46a7-a4a0-83a6ab5bde06?autoplay=true"},
+{"name":"LECTURE 2", "video":"https://iframe.mediadelivery.net/embed/14161/8aa34f9f-f5e7-4540-b027-c2622f734f46?autoplay=true"},
+{"name":"LECTURE 3", "video":"https://iframe.mediadelivery.net/embed/14161/77ede275-c1f7-4f09-b12d-a0558bbc77ad?autoplay=true"},
+{"name":"LECTURE 4", "video":"https://iframe.mediadelivery.net/embed/14161/75aa8f1f-3970-4409-a08f-fe29b4c15493?autoplay=true"},
+{"name":"LECTURE 5", "video":"https://iframe.mediadelivery.net/embed/14161/9b90b716-dcd1-42ac-813b-e2439a10b5fe?autoplay=true"},
+{"name":"LECTURE 6", "video":"https://iframe.mediadelivery.net/embed/14161/d187e600-c250-4834-8134-9b098a75beac?autoplay=true"},
+{"name":"LECTURE 7", "video":"https://iframe.mediadelivery.net/embed/14161/4a13e600-5052-494d-a07e-ccbf675da95c?autoplay=true"},
+{"name":"LECTURE 8", "video":"https://iframe.mediadelivery.net/embed/14161/7ffbb281-2a65-4999-b14a-cbe930805c67?autoplay=true"},
+{"name":"LECTURE 9", "video":"https://iframe.mediadelivery.net/embed/14161/0f332dd0-8ccc-4c9f-b20f-73f792dd9a71?autoplay=true"}
+], "Ear-Nose-Throat": [
+{"name":"1- CONGENITAL DISEASES | INFLAMMATORY VS NEOPLASTIC ", "video":"https://iframe.mediadelivery.net/embed/14161/0a73757b-3185-4f91-ae33-bd8281b0077f?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"2- SQUAMOUS CELL CARCINOMA | OTHER TUMORS ", "video":"https://iframe.mediadelivery.net/embed/14161/9015519d-436c-42c1-b7f0-f6564a74a42f?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"3-  UPPER ND LOWER MOTOR NUERON LESION | BELLS PALSY | OTHER TUMORS | LUDWIG ANGINA | PEDIATRIC ENT", "video":"https://iframe.mediadelivery.net/embed/14161/5427894a-9a71-4506-a09f-0cea979136b9?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"4- LUDWIGS ANGINA | BELLS PALSY | FACIAL NERVE INJURY | CAVERNOUS SINUS THROMBOSIS | EPISTAXIS", "video":"https://iframe.mediadelivery.net/embed/14161/2022cb59-7f55-444b-bb27-1e6c9c5064da?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"5- DIZZINESS ", "video":"https://iframe.mediadelivery.net/embed/14161/2e3df12a-427e-4d7f-b957-8b835a2b6453?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"}
+], "Ophthlamology": [
+{"name":"1- EMBLYOPIA | STRABISMUS | WHITE PUPIL | GLAUCOMA ", "video":"https://iframe.mediadelivery.net/embed/14161/8c42b1b7-538e-44a3-835f-af4e6494bc2a?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"2- ORBITAL CELLULITIS | BURNS OF EYE | RETINAL DETACHMENT | EMBOLIC OCCLUSION OF RETINAL ARTERY  ", "video":"https://iframe.mediadelivery.net/embed/14161/61419cc8-1763-4e7d-8c6b-b076b2eed3f0?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"}
+], "Dermatology": [
+{"name":"1- BASAL CELL CARCINOMA | SQUAMOUS CELL CARCINOMA ", "video":"https://iframe.mediadelivery.net/embed/14161/5b2e60e3-cdd5-47ac-b5ad-ded3ad931b57?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"2-  MELANOMA", "video":"https://iframe.mediadelivery.net/embed/14161/7dc5c530-19b6-4358-af07-f24900607b1f?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"}
+], "Vascular Surgery": [
+{"name":"1- SUBCLAVIAN STEAL SYNDROME | ABDOMINAL AORTIC ANEURYSM ", "video":"https://iframe.mediadelivery.net/embed/14161/de9927b4-78a4-4476-8ab9-0e4c1fa51601?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"2 - ABDOMINAL AORTIC ANEURYSM | PERIPHERAL ARTERIAl DISEASE ", "video":"https://iframe.mediadelivery.net/embed/14161/b0b7c172-63fe-4767-af0d-df37a481fd21?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"3-  PVD | ARTERIAL EMBOLIZATION FROM DISTANT SOURCE | AORTIC DISSECTION ", "video":"https://iframe.mediadelivery.net/embed/14161/cdf1f1bb-c5b7-402d-a995-2f604a903d18?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"4 - AORTIC DISSECTION ", "video":"https://iframe.mediadelivery.net/embed/14161/1c7a3823-fefe-47a1-b63e-f50985a3b971?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"}
+], "Cardio-Thoracic": [
+{"name":"1- LUNG CANCER ", "video":"https://iframe.mediadelivery.net/embed/14161/57b92a86-22b9-48c1-accf-2f36867fd062?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"2- LUNG CANCER | VASCULAR RINGS | CONGENITAL ANOMALIES ", "video":"https://iframe.mediadelivery.net/embed/14161/4b491083-5cc0-4b99-843b-35cb75bf2248?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"}
+], "Paediatric Surgery": [
+{"name":"1- TRACHEOESOPHAGEAL FISTULA |  ESOPHAGEAL ATRESIA | CONGENITAL DIAPHRAGMATIC HERNIA", "video":"https://iframe.mediadelivery.net/embed/14161/24faa6d6-247e-4752-9082-da368b4fb4ae?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"2- IMPERFORATED ANUS | ABDOMINAL WALL DEFECTS ", "video":"https://iframe.mediadelivery.net/embed/14161/1d217b19-66fb-46f8-8996-812a60fa8c23?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"3-  EXTROPHY OF URINARY BLADDER | INTESTINAL ATRESIA | DUODENAL ATRESIA | MALROTATION | ANNULAR PANCREAS  ", "video":"https://iframe.mediadelivery.net/embed/14161/80dc3adf-5d84-4614-b8c5-35550356634e?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"4-  NECROTIZING ENTEROCOLITIS | MECONIUM ILEUS | HYPERTROPHIC PYLORIC STENOSIS | BILIARY ATRESIA  ", "video":"https://iframe.mediadelivery.net/embed/14161/de051e00-33ea-4677-aeb5-16b9a1736650?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"5- HURSCHSPRUNG DISEASE", "video":"https://iframe.mediadelivery.net/embed/14161/08926efc-77d1-4896-9014-4da5ebadb0b1?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"}
+], "Breast Surgery": [
+{"name":"1- BREAST CYST | BREAST MASS", "video":"https://iframe.mediadelivery.net/embed/14161/99135e7d-7c31-4e72-9482-ac12803fe262?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"2- FIBROADENOMA | PHYLOIDS TUMOR | FAT NECROSIS ", "video":"https://iframe.mediadelivery.net/embed/14161/ed07e8ad-5d87-4174-9fd6-5f0e474be78f?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"3 -FAT NECROSIS ", "video":"https://iframe.mediadelivery.net/embed/14161/ccab155a-6d82-4fec-9346-aa62816e4a91?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"4- BREAST ABSCESS | MASTITIS ", "video":"https://iframe.mediadelivery.net/embed/14161/c84b283a-b40e-4d87-ae8a-2a13a11d6962?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"5- DUCT ECTASIA | GYNECOMASTIA | MASTALGIA | INVASIVE DUCTAL CARCINOMA | INFLAMMATORY BREAST CARCINOMA  ", "video":"https://iframe.mediadelivery.net/embed/14161/abd39a1e-5978-4ed4-9935-1a88fc336076?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"6- INVASIVE DUCTAL CARCINOMA | INTRADUCTAL PAPILOMA | PEGETS DISEASE OF NIPPLE | MASTECTOMY ", "video":"https://iframe.mediadelivery.net/embed/14161/43b239c5-6fcf-4717-b8d3-0a9a52ea47ac?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"7- CA BREAST ", "video":"https://iframe.mediadelivery.net/embed/14161/4f65c714-8aae-4d31-a753-88afc8fe96ed?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"}
+], "General Surgery": [
+{"name":"1- GERD | BARRETS ESOPHAGUS ", "video":"https://iframe.mediadelivery.net/embed/14161/0435127b-6783-4f2e-955d-dcc862cb9065?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"2- ACHLASIA | SCC ", "video":"https://iframe.mediadelivery.net/embed/14161/1149d404-f1ee-4fa2-ab6f-a4d6a8ef41c1?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"3-Mallery wies tear | BOERHAVE SYNDROME | ESOPHAGEAL PERFORATION | CA STOMACH | ", "video":"https://iframe.mediadelivery.net/embed/14161/7cfbf8d7-70cf-416b-87b5-46aef6552032?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"4- DD OF GI DISEASES | INTESTINAL OBSTRUCTION | PERITONITIS ", "video":"https://iframe.mediadelivery.net/embed/14161/c66c0b0d-034d-4b6f-b84a-c357a61dda42?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"5- HERNIA | CARCINOID SYNDROME | APPENDICITIS ", "video":"https://iframe.mediadelivery.net/embed/14161/9b3283e7-efdc-4a4c-9935-d2570b18021e?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"LECTURE 6", "video":"https://iframe.mediadelivery.net/embed/14161/cb878041-9733-4dfa-86c9-feb2f0a87fd6?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"LECTURE 7", "video":"https://iframe.mediadelivery.net/embed/14161/d6f64364-ea0e-4a09-8b62-8213bf4f8ea9?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"8-Toxic Megacolon | Pseudomembranous Colitis", "video":"https://iframe.mediadelivery.net/embed/14161/cef47f09-795d-4269-9420-1e2b554d6d50?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"9- Hemorrhoids ", "video":"https://iframe.mediadelivery.net/embed/14161/391a9832-8a84-4c86-8fe3-c4e435040ec6?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"10- Hemorrhoids ", "video":"https://iframe.mediadelivery.net/embed/14161/f5e65c05-f94b-43ef-8287-db7ae2f55f3b?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"11- Hemorrhoids | Anal fissure  ", "video":"https://iframe.mediadelivery.net/embed/14161/dd89fd69-f494-4aed-b320-9d13d5d97f18?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"12- PeriAnal abscess | Ischiorectal Abscess | Fistula In Ano ", "video":"https://iframe.mediadelivery.net/embed/14161/f2f1bb46-7437-4c3a-9614-6b8b33c648f2?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"13- Fistula In Ano | Squamous cell | Carcinoma of anus ", "video":"https://iframe.mediadelivery.net/embed/14161/ddcaf52f-fb74-4cdc-94d4-597f77379267?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"14- Upper Gi bleed", "video":"https://iframe.mediadelivery.net/embed/14161/791be8e7-176b-4932-8f0a-6244c5c0acfa?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"15-IBD(Inflammatory Bowel Disease) | Crohn\u0027s Ds \u0026 Ulcerative colitis.", "video":"https://iframe.mediadelivery.net/embed/14161/6ee155a5-5369-4d74-b5ed-8fbbbd21a8e7?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"16- Ulcerative colitis", "video":"https://iframe.mediadelivery.net/embed/14161/f13155a8-fab1-405d-bbd8-1d85c65346d4?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"17-Hepatocellular Carcinoma | Hepatic Adenoma | Liver Abscess", "video":"https://iframe.mediadelivery.net/embed/14161/9f4010b0-4529-4e74-a582-2bb4eadabf6b?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"18-Liver Abscess | Amoebic Abscess | Hydatid cyst", "video":"https://iframe.mediadelivery.net/embed/14161/9010d491-cf5b-4fe2-b21c-fc45f589bfc5?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"19- Choledochal cyst", "video":"https://iframe.mediadelivery.net/embed/14161/56cc9658-30b1-4b87-b331-b96eec9e973d?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"20-Cholilithiasis | Cholecystectomy | Cholestomy | Cholecystitis | Cholidolithiasis | Cholingitis | Cholangio | Carcinoma | Choledochal cyst", "video":"https://iframe.mediadelivery.net/embed/14161/3dcece42-a077-454b-8410-2e56cff044e4?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"21- Dx of Cholingitis | Rx of Cholingitis ", "video":"https://iframe.mediadelivery.net/embed/14161/fb8bad72-05cd-496b-b69d-a081723abc6f?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"22- Cholingitis | Cholidolithiasis ", "video":"https://iframe.mediadelivery.net/embed/14161/8aeafdb2-4014-4434-8c6a-1c2b376cbbcc?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"23- Gallstones | Cholecystitis ", "video":"https://iframe.mediadelivery.net/embed/14161/c85aac80-7299-4b90-9be1-8159316905dc?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"24- Mucocele of Gall bladder | Acute cholecystitis | Chronic cholecystitis", "video":"https://iframe.mediadelivery.net/embed/14161/25074e26-93d5-4131-9d48-bc0164575e59?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"25- Seq Cholilithiasis | Seq Acute | Cholecystitis", "video":"https://iframe.mediadelivery.net/embed/14161/ddd66156-7522-47c2-a41b-7a89e95475ce?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"26-Acute Ascending Cholangitis | Biliary Pancreatitis", "video":"https://iframe.mediadelivery.net/embed/14161/a3e95d00-7957-4bd4-9544-6b9808e5cd77?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"27-Biliary Pancreatitis", "video":"https://iframe.mediadelivery.net/embed/14161/2d65196d-0d10-4226-b414-4403046fa634?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"28- Acute Pancreatitis | Ranson Criteria", "video":"https://iframe.mediadelivery.net/embed/14161/461ba2e5-82d7-46a3-b113-5c23018c05ec?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"29-Acure pancreatitis | Acute Severe | Pancreatitis | Pancreatic Abscess | Pseudocyst", "video":"https://iframe.mediadelivery.net/embed/14161/6783c793-b099-49d8-84ee-4e969bcec807?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"30-Rx of Pseudocyst | Chronic Pancreatitis", "video":"https://iframe.mediadelivery.net/embed/14161/bc8228ae-da39-459d-8527-ed52561a2885?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"31- Thyroglossal Duct Cyst | Cushing Syndrome", "video":"https://iframe.mediadelivery.net/embed/14161/23c3ac68-f226-466b-aed2-45fbb4a424b7?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"32- Cushing Syndrome | Cushing Disease |  Zollinger-Ellison Ds", "video":"https://iframe.mediadelivery.net/embed/14161/d09de250-0b61-4636-a444-f4e5dab4bf89?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"33-Glucagonoma | Insulinoma", "video":"https://iframe.mediadelivery.net/embed/14161/60d089c6-b188-424d-9abf-f447fbca262e?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"34-Hyperaldosteronism Fibromuscular | Dysplasia", "video":"https://iframe.mediadelivery.net/embed/14161/d00633b3-600c-4ee1-9009-aa593ee6f431?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"35- Appendicitis", "video":"https://iframe.mediadelivery.net/embed/14161/12dc5570-ef6f-41dd-9ed5-97e455240817?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"36- no video", "video":"https://iframe.mediadelivery.net/embed/14161/52e7e96e-2f2d-4267-bcb2-e9ac7267ccc0?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"37-Gastro-Intestinal Bleed", "video":"https://iframe.mediadelivery.net/embed/14161/cc515de5-8d1d-4e9a-bdd4-a34fe182367a?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"},
+{"name":"38-Renovascular | HTN/Artero | Sclerosis | Coarctation of Aorta | Pheochromocytoma", "video":"https://iframe.mediadelivery.net/embed/14161/092cebfc-fc72-44d6-bf90-5e8fa62a494e?autoplay=true\u0026loop=false\u0026muted=false\u0026preload=true"}]}

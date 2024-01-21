@@ -76,8 +76,8 @@
 	<script>
 		var data = {};
 		
-		var activeTopic = "Cardio-Vascular system";
-		var activeEpisode = "Cardio-Vascular system0";
+		var activeTopic = "NOT";
+		var activeEpisode = "NOT";
 		var initEp = 0;
 		
 		if(getCookie('prev')){
@@ -106,12 +106,20 @@
 				/*xobj.setRequestHeader("Access-Control-Allow-Origin","*");*/
 				xobj.send(null);  
 			};
-		
+		function firstLoadTopicSet(response){
+			activeTopic = Object.keys(response)[0];
+			activeEpisode = activeTopic + '0';
+		}
 		loadJSON(function(response) {
 				// Parse JSON string into object
 				//document.getElementById("demo").innerHTML = JSON.parse(response);
 				// Parse JSON array string into object
 				data = JSON.parse(response);
+				
+				// first Topic on First load
+				
+				if(activeTopic == 'NOT' && activeEpisode == 'NOT')
+					firstLoadTopicSet(data);
 				
 				// main topics
 				

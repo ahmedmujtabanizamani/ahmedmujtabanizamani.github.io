@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	</head>
+	<style>
+		
+		.online::after{content:''; background-color:green;display:inline-block;width:20px; height:20px; border-radius:50%; vertical-align:-5px; margin-left: 5px;}
+		.offline::after{background-color: red;}
+		 html {
+  scroll-behavior: smooth;
+}
+		body{background-color:#1B1B1B;}
+		button{ background-color: #363636; border: none; color:#F9F9F9; font-size: 20px; margin:10px; width:50px;}
+		.vframe{border: none; height: 400px; width: 100%;}
+		.v_container{width:100%; height: auto;margin: 0 auto 0 auto;}
+		.ep_container{border: none; height:auto; margin: auto; display: flex; flex-direction: row; flex-wrap:wrap; justify-content:center;}
+		.topic{color:#F9F9F9; padding:5px; border: solid 2px black; margin:5px; border-radius: 12px 0 12px 0;}
+		.topic:nth-child(even){background-color:#131313;}
+		.topic_container{display: flex; flex-direction: row; flex-wrap:wrap; justify-content:center; margin:30px; }
+		.selected_topic{color:#FFC119; text-shadow: 1px 1px 4px green;}
+		.selected_episode{color: #FFFFFF; background-color: #FFC119; }
+		.heading{color: #1B1B1B; background-color: #FFC119; padding:20px; font-family: "sans-serif"; margin:0;}
+		.section{width:70%; margin:0 auto 5px auto; border: solid #B2FFF0 1px}
+		.footer{align-items: end; display:flex; flex-wrap: no-wrap; flex-direction:row; justify-content: space-between; color:#565656; font-family: 'sans serif'; padding:15px; font-size: 9px;}
+		.no-border{border:none;}
+		
+		@media only screen and (max-width: 600px) {
+			body {margin:0;padding:0;}
+			.v_container{height:300px;}
+			.vframe{height:300px;}
+			.topic{margin:2px;}
+			.topic_container{margin:10px 0;}
+			.ep_container{margin:5px;}
+			.section{width:calc(100% - 2px);}
+			button{margin:2px;}
+		}
+	</style>
+<body>
+	
+	
+	<div class="section">
+			<h4 id="name" class="heading">NRE Mock Test</h4><!-- changeHere -->
+
+		<div class="v_container">
+			<!---
+			<iframe src="cid:frame-E2D9B653A979CE5A85FDDC1405BE1EC4@mhtml.blink" id="MyIframe" class="embed-responsive-item" loading="lazy" style="border: none;
+                                    position: absolute; top: 0; height: 100%; width: 100%;" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;">
+            </iframe>
+            --->
+			<iframe id="MyIframe" class="vframe" src="https://video.bunnycdn.com/play/14161/7465ca2d-6259-494b-b8d2-f7e0d878d07d?autoplay=true" loading="lazy" allow="fullscreen; accelerometer; gyroscope; encrypted-media; picture-in-picture;">
+			</iframe>
+		</div>
+		<hr width="95%"> 
+
+		<div id="topics" class="topic_container"></div>
+	
+	</div>
+	
+	<div class="section">
+		<div id="episode_container" class="ep_container"></div>
+	</div>
+	<div class="section no-border">
+		<hr width='95%' style="color:#363636">
+		<div id="footer" class="footer">
+			<div>
+				ASN &copy;2024<br>Nizamani Developers <i id='online' class="online"></i>
+			</div>
+			<div>
+				<img src='dr.png' width='100px' />
+			</div>
+			
+		</div>
+	</div>
+	
+	<script>
+		var data = {};
+		
+		var activeTopic = "NOT";
+		var activeEpisode = "NOT";
+		var initEp = 0;
+		
+		if(getCookie('prev')){
+			let temp = getCookie('prev').split('&');
+			activeTopic = temp[0];
+			activeEpisode = temp[0]+temp[1];
+			initEp = temp[1];
+		}
+		
+		function loadJSON(callback) {
+				var xobj = new XMLHttpRequest();
+				xobj.overrideMimeType("application/json");
+
+				xobj.onreadystatechange = function () {
+						if (xobj.readyState == 4 && xobj.status == "200") {
+							// Required use of an anonymous callback as .open will NOT return 
+							// a value but simply returns undefined in asynchronous mode
+							callback(xobj.responseText);
+						} else {
+							callback("[{\"Nothing\"}]");
+						}
+					};
+
+				xobj.open('GET', 'a15.json', true);<!-- changeHere -->
+				// Maybe you require use of an unknown origin.
+				/*xobj.setRequestHeader("Access-Control-Allow-Origin","*");*/
+				xobj.send(null);  
+			};
+		function firstLoadTopicSet(response){
+			activeTopic = Object.keys(response)[0];
+			activeEpisode = activeTopic + '0';
+		}
+		loadJSON(function(response) {
+				// Parse JSON string into object
+				//document.getElementById("demo").innerHTML = JSON.parse(response);
+				// Parse JSON array string into object
+				data = JSON.parse(response);
+				
+				// first Topic on First load
+				
+				if(activeTopic == 'NOT' && activeEpisode == 'NOT')
+					firstLoadTopicSet(data);
+				
+				// main topics
+				
+				renderTopics();
+				document.getElementById("MyIframe").src=data[activeTopic][initEp].video;
+				document.getElementById("name").innerText=data[activeTopic][initEp].name;
+				// episodes
+				renderEpisodes(activeTopic);
+			});
+			function changeTopic(newTopic){
+				
+				a = newTopic.getAttribute('data-name');
+				
+				activeTopic = a;
+				renderTopics();
+				renderEpisodes(a);
+			}
+		
+			function renderTopics(){
+				
+				document.getElementById("topics").innerHTML = '';
+				
+				for(i in data){
+					
+					var node = document.createElement("a");                
+					var textnode = document.createTextNode(i);        
+					
+					node.appendChild(textnode); 
+					node.setAttribute('data-name', i);
+					node.classList.add("topic");                            
+					node.addEventListener("click", function(e) {changeTopic(this);}, false);
+					if(activeTopic == i){
+						node.classList.add('selected_topic');
+					}
+					
+					document.getElementById("topics").appendChild(node);
+				}
+			}
+			
+			function renderEpisodes(topic){
+								
+				document.getElementById("episode_container").innerHTML = ''; 
+
+				for(i=0; i<data[topic].length; i++){
+					
+					var node = document.createElement("button");                
+					var textnode = document.createTextNode(i+1);        
+					
+					node.appendChild(textnode); 
+					node.setAttribute("data-id", i);                            
+					node.addEventListener("click", function(e) {changeSrc(this);}, false);
+
+					if(activeEpisode == (activeTopic+''+i) ){
+						node.classList.add("selected_episode");
+					}
+					document.getElementById("episode_container").appendChild(node);   
+				}
+			}
+			
+			function changeSrc(o){
+				//alert(o.getAttribute('data-id')+data.trauma[1].video);
+				var i = o.getAttribute('data-id');
+				//alert(activeEpisode);
+				activeEpisode = activeTopic+''+i;
+				renderEpisodes(activeTopic);
+				
+				setCookie('prev', activeTopic+'&'+i, 30);
+				//alert(activeEpisode);
+				document.getElementById("MyIframe").src=data[activeTopic][i].video;
+				document.getElementById("name").innerText=data[activeTopic][i].name;
+				document.body.scrollTop = 0; // For Safari
+				document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+				onlineCheck();
+			}
+			
+			function setCookie(cname, cvalue, exdays) {
+				const d = new Date();
+				d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+				let expires = "expires="+d.toUTCString();
+				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/a/nremt";<!-- changeHere -->
+			}
+
+			function getCookie(cname) {
+				let name = cname + "=";
+				let ca = document.cookie.split(';');
+				for(let i = 0; i < ca.length; i++) {
+					let c = ca[i];
+					while (c.charAt(0) == ' ') {
+						c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+						return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			}
+			function onlineCheck(){
+				
+				let obj = document.getElementById('online');
+				
+				var xobj = new XMLHttpRequest();
+				xobj.overrideMimeType("application/json");
+
+				xobj.onreadystatechange = function () {
+						if (xobj.readyState == 4) {
+							//alert(xobj.status);
+							if(xobj.status == 200 ){
+								obj.classList.remove('offline');
+							}else{
+								obj.classList.add('offline');
+							}
+							
+						} else {
+							//callback("[{\"Nothing\"}]");
+						}
+					}
+					
+					xobj.open('GET', 'index.html', true);
+				// Maybe you require use of an unknown origin.
+				/*xobj.setRequestHeader("Access-Control-Allow-Origin","*");*/
+				xobj.send(null);
+
+			}
+	</script>
+	
+</body>
+</html>

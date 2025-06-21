@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Duplicates</title>
+    <style>
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #6b8cae;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --border: #dee2e6;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .textareas-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .textareas-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .duplicates-container {
+                grid-column: span 2;
+            }
+        }
+
+        .textarea-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 14px;
+            resize: vertical;
+            transition: all 0.3s ease;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--shadow);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Remove Duplicates</h1>
+        
+        <div class="textareas-container">
+            <div class="textarea-group">
+                <label for="original-list">List <span id="original-list-count"></span></label>
+                <textarea id="original-list" placeholder="Enter your list items here, one per line..."></textarea>
+            </div>
+            
+            <div class="textarea-group">
+                <label for="updated-list">Updated List <span id="updated-list-count"></span></label>
+                <textarea id="updated-list" readonly placeholder="Unique items will appear here..."></textarea>
+            </div>
+            
+            <div class="textarea-group duplicates-container">
+                <label for="duplicates">Duplicates <span id="duplicate-count"></span></label>
+                <textarea id="duplicates" readonly placeholder="Duplicate items will appear here..."></textarea>
+            </div>
+        </div>
+        
+        <div class="button-container">
+            <button id="process-btn" onclick="listupdate()">Remove Duplicates</button>
+        </div>
+    </div>
+
+    <script>
+       var duplicates = [];
+
+
+function removeDuplicatesPreserveNumbering(list) {
+  const seen = new Set();
+  const dup = new Set(); // duplicates
+  const unique = [];
+  duplicates = [];
+  
+  for (const item of list) {
+    if (!seen.has(item.email.toLowerCase())) {
+      seen.add(item.email.toLowerCase());
+      unique.push(item);
+    }else{
+      // duplicates
+      if(!dup.has(item.email.toLowerCase())){
+        dup.add(item.email.toLowerCase());
+        duplicates.push(item);
+      }
+    }
+  }
+  return unique;
+}
+function createEmailListOBJ(str){
+ let emailList = [];
+ let arr = str.split('\n');
+ for(i=0; i < arr.length; i++){
+  if(arr[i].length > 0){
+	let text = arr[i].trim();
+	let numbering = text.match("^[0-9]+");
+	let emailStr = text.match(" [^ ]+$");
+	if(numbering && emailStr){
+          //alert(numbering[0] + "," + emailStr[0].split(" ")[1]);
+	  emailList.push({id:numbering[0], email:emailStr[0].split(" ")[1]});
+        }
+    	//alert(numbering + "," +emailStr);
+  
+  }
+ }
+ return emailList;
+}
+function outputStr(emailOBJ){
+  let result = "";
+  for(i = 0; i < emailOBJ.length; i++){
+    result += emailOBJ[i].id + ", " + emailOBJ[i].email + "\n";
+  }
+  return result;
+}
+function sortByEmail(arr, caseSensitive = false) {
+  return [...arr].sort((a, b) => 
+    (caseSensitive ? a.email : a.email.toLowerCase())
+      .localeCompare(
+        caseSensitive ? b.email : b.email.toLowerCase()
+      )
+  );
+}
+function listupdate(){
+
+  let inputStr = document.querySelector("#original-list").value;
+
+  let emailList = createEmailListOBJ(inputStr);
+  //alert(JSON.stringify(emailList));
+
+  const uniqueEmails = removeDuplicatesPreserveNumbering(emailList);
+  //console.log(uniqueEmails);
+  document.querySelector("#updated-list-count").innerHTML = uniqueEmails.length;
+  document.querySelector("#updated-list").value = outputStr(uniqueEmails);
+  document.querySelector("#original-list-count").innerHTML = emailList.length;
+  document.querySelector("#duplicate-count").innerHTML = duplicates.length;
+  document.querySelector("#duplicates").value = "";//outputStr(sortByEmail(duplicates));
+  for(i = 0; i < duplicates.length; i++){
+    for(j = 0; j < emailList.length; j++){
+     if(duplicates[i].email.toLowerCase() == emailList[j].email.toLowerCase()){
+         document.querySelector("#duplicates").value += emailList[j].id + ", " + emailList[j].email + "\n";
+       }
+
+    }
+  }
+
+}
+</script>
+
+</body>
+</html>

@@ -168,17 +168,20 @@ function removeDuplicatesPreserveNumbering(list) {
 function createEmailListOBJ(str){
  let emailList = [];
  let arr = str.split('\n');
+ let delimiters = "\t ,";
+ let delimiterRegex = new RegExp("[" + delimiters + "]");
+ let emailRegex = new RegExp(delimiterRegex.source + "[^" + delimiters + "]+$");
+ let numberRegex = /^[0-9]+/;
+
  for(i=0; i < arr.length; i++){
   if(arr[i].length > 0){
 	let text = arr[i].trim();
-	let numbering = text.match("^[0-9]+");
-	let emailStr = text.match(" [^ ]+$");
+	let numbering = text.match(numberRegex);
+	let emailStr = text.match(emailRegex);
 	if(numbering && emailStr){
           //alert(numbering[0] + "," + emailStr[0].split(" ")[1]);
-	  emailList.push({id:numbering[0], email:emailStr[0].split(" ")[1]});
+	  emailList.push({id:numbering[0], email:emailStr[0].split(delimiterRegex)[1]});
         }
-    	//alert(numbering + "," +emailStr);
-  
   }
  }
  return emailList;

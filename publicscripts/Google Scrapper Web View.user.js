@@ -15,7 +15,7 @@
     document.querySelector("#rhs").style.display = "none";
     // mobile friendly CSS
     document.querySelector("#rcnt").style.cssText = "display:block; min-width: auto; width: 100%";
-    document.querySelector("#searchform").style.cssText = "display:block; min-width: auto; width: 100%";
+    document.querySelector("#searchform").style.cssText = "display:block; min-width: auto; width: 100%; overflow: scroll";
     // hide profile pic area
     document.querySelector("#searchform form").nextElementSibling.style.display = "none";
 
@@ -23,7 +23,7 @@
     var meta = document.createElement('meta');
     // Set the name and content attributes for the viewport meta tag
     meta.setAttribute('name', 'viewport');
-    meta.setAttribute('content', 'width=device-width, initial-scale=1.0');
+    meta.setAttribute('content', 'width=device-width, initial-scale=1;user-scalable=no;user-scalable=0;');
     // Append the meta element to the head section of the document
     document.head.appendChild(meta);
 

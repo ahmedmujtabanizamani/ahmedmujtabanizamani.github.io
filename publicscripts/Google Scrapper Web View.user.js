@@ -11,21 +11,27 @@
 (function() {
     'use strict';
     // fix browser view for mobile
-    // hide map
-    document.querySelector("#rhs").style.display = "none";
-    // mobile friendly CSS
-    document.querySelector("#rcnt").style.cssText = "display:block; min-width: auto; width: 100%";
-    document.querySelector("#searchform").style.cssText = "display:block; min-width: auto; width: 100%; overflow: scroll";
-    // hide profile pic area
-    document.querySelector("#searchform form").nextElementSibling.style.display = "none";
+    
+    let mapEle = document.querySelector("#rhs");
+    let mapPoints = document.querySelectorAll('[data-lat]');
+    if(mapPoints.length > 0 && mapEle){
+      // hide map
+      mapEle.style.display = "none";
+      // mobile friendly CSS
+      document.querySelector("#rcnt").style.cssText = "display:block; min-width: auto; width: 100%";
+      document.querySelector("#searchform").style.cssText = "display:block; min-width: auto; width: 100%; overflow: scroll";
+      // hide profile pic area
+      document.querySelector("#searchform form").nextElementSibling.style.display = "none";
 
-    // Create a new meta element
-    var meta = document.createElement('meta');
-    // Set the name and content attributes for the viewport meta tag
-    meta.setAttribute('name', 'viewport');
-    meta.setAttribute('content', 'width=device-width, initial-scale=1;user-scalable=no;user-scalable=0;');
-    // Append the meta element to the head section of the document
-    document.head.appendChild(meta);
+      // Create a new meta element
+      var meta = document.createElement('meta');
+      // Set the name and content attributes for the viewport meta tag
+      meta.setAttribute('name', 'viewport');
+      meta.setAttribute('content', 'width=device-width, initial-scale=1;user-scalable=no;user-scalable=0;');
+      // Append the meta element to the head section of the document
+      document.head.appendChild(meta);
+    }
+    
 
     // Your code here...
     async function extractData(){
@@ -39,6 +45,7 @@
             let SNum = pageNum + "." + indexNum;
             let entryLinks = x.querySelectorAll('a[aria-describedby]');
             let entryLink = "NA";
+            let dirLink = "NA";
             let entryName = x.querySelectorAll('[role=heading]')[0].innerText;
 
             if(!isSponsored){
@@ -48,9 +55,11 @@
                     if(!y.getAttribute("data-url")){
                         //console.log("this is it" + y.getAttribute("href"));
                         entryLink = "[Link](" + y.getAttribute("href") + ")";
+                    }else{
+                        dirLink = "[Dir](https://www.google.com" + y.getAttribute("href") + ")";
                     }
                 });
-                str += "- " + SNum + "  -  " + entryName + "  -  " + entryLink + "\n";
+                str += "- " + SNum + "  -  " + entryName + "  -  " + entryLink + "  -  " + dirLink + "\n";
                 indexNum++;
             }
         });

@@ -54,12 +54,14 @@
                 entryLinks.forEach(y=>{
                     if(!y.getAttribute("data-url")){
                         //console.log("this is it" + y.getAttribute("href"));
-                        entryLink = "[Link](" + y.getAttribute("href") + ")";
+                        entryLink = y.getAttribute("href");
                     }else{
-                        dirLink = "[Dir](https://www.google.com" + y.getAttribute("href") + ")";
+                        //dirLink = "[Dir](https://www.google.com" + y.getAttribute("href") + ")";
                     }
                 });
-                str += "- " + SNum + "  -  " + entryName + "  -  " + entryLink + "  -  " + dirLink + "\n";
+				if(entryLink != "NA"){
+					 str += "- " + SNum + "  -  " + entryName + "  -  " + entryLink + "\n";
+				}
                 indexNum++;
             }
         });

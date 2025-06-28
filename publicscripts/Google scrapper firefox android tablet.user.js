@@ -25,7 +25,7 @@
         let entries = document.querySelectorAll('.X7NTVe');
         entries.forEach(x=>{
             let SNum = pageNum + "." + indexNum;
-            let entryLinks = "[link](" + x.firstChild + ")";
+            let entryLinks = "https://www.google.com/search?" + x.firstElementChild.href.match(/q=[^&]*/)[0];
             let entryName = x.querySelector('h3').innerText;
             // Website link
             str += "- " + SNum + "  -  " + entryName + "  -  " + entryLinks + "\n";

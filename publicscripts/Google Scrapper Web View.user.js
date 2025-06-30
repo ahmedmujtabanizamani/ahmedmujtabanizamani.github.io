@@ -36,12 +36,6 @@
     }
     // Your code here...
     async function extractData(){
-
-        let oldEntry = "NA";
-        let newEntry = oldEntry;
-        try{
-            document.querySelectorAll('path[d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-.61.08-1.21.21-1.78L8.99 15v1c0 1.1.9 2 2 2v1.93C7.06 19.43 4 16.07 4 12zm13.89 5.4c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41C17.92 5.77 20 8.65 20 12c0 2.08-.81 3.98-2.11 5.4z"]')[0].closest('a').closest("div[id]").innerHTML = "";
-        }catch(e){}
         // reset data for "str" variable so it contain new data from new scrape
         str = "";
         // Page number
@@ -69,8 +63,7 @@
             let entryName = entryNameEle.innerText;
             let newDynamicLinkElement = [];
             let appointmentLinkElement = [];
-            // keep track of old value and new value for quick refresh
-            oldEntry = newEntry;
+
             // exempt sponsored entries only
             if(!isSponsored){
                 // Website link
@@ -84,32 +77,35 @@
                 }
                 // if Website link is not available click on item, so it load the detail
                 if(entryLink == "NA"){
+                    let detailModal = "NA";
+                    // reset detail modal
+                    resetElement(detailModalEle());
                     entryNameEle.click();
-                    // wait so data get loaded
+                    // wait so detail modal data get loaded
                     let counter = 0;
-                    while(oldEntry == newEntry && counter <= 25){
+                    // while modal data loading
+                    while(detailModal == "NA" && counter <= 25){
+                        // look for new modal data
                         try{
-                            newEntry = document.querySelectorAll('path[d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-.61.08-1.21.21-1.78L8.99 15v1c0 1.1.9 2 2 2v1.93C7.06 19.43 4 16.07 4 12zm13.89 5.4c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41C17.92 5.77 20 8.65 20 12c0 2.08-.81 3.98-2.11 5.4z"]')[0].closest('a').href;
-                        }catch(e){
-                            newEntry = "NA";
-                        }
+                            detailModal = document.querySelectorAll('div[class=yf][data-jiis=up][data-async-type=lcl_akp]')[0].querySelectorAll('h2')[0].innerText;
+                            // alert(detailModal);
+                        }catch(e){}
+                        // keep clicking periodically
                         if(counter > 0 && counter % 10 == 0){
                             entryNameEle.click();
                         }
                         await sleep(200);
                         counter++;
                     }
-
                     // locate Website link now in new loaded data
                     newDynamicLinkElement = document.querySelectorAll('path[d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-.61.08-1.21.21-1.78L8.99 15v1c0 1.1.9 2 2 2v1.93C7.06 19.43 4 16.07 4 12zm13.89 5.4c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41C17.92 5.77 20 8.65 20 12c0 2.08-.81 3.98-2.11 5.4z"]');
                     appointmentLinkElement = document.querySelectorAll("div[data-attrid='kc:/local:appointment']");
                 }
                 // if new data contain some link consider it.
-                if(newDynamicLinkElement.length > 0){
+                if(entryLink == "NA" && newDynamicLinkElement.length > 0){
                     entryLink = newDynamicLinkElement[0].closest('a').href;
                     //console.log(entryLink + " - " + entryName);
-                }else if(appointmentLinkElement.length > 0){
-
+                }else if(entryLink == "NA" && appointmentLinkElement.length > 0){
                     entryLink = appointmentLinkElement[0].querySelector('a').href;
                 }
                 // exempt non website results
@@ -133,6 +129,17 @@
         await navigator.clipboard.writeText(str);
         alert("copied");
         document.querySelector('#progress-element').style.display = "none";
+    }
+    function detailModalEle(){
+        try{
+            return document.querySelectorAll('div[class=yf][data-jiis=up][data-async-type=lcl_akp]')[0];
+        }catch(e){}
+        return null;
+    }
+    function resetElement(ele){
+        if(ele){
+            ele.innerHTML = "";
+        }
     }
     // New Elements to generate and embbed in original page
     // scrape trigger button

@@ -117,7 +117,7 @@
                     entryLink = appointmentLinkElement[0].querySelector('a').href;
                 }
                 // exempt non website results
-                if(entryLink != "NA"){
+                if(entryLink != "NA" || fbLink){
                     // progress report
                     document.querySelector('#progress-element').innerHTML = document.querySelector('#progress-element').innerHTML + "<br>" + "- " + SNum + "  -  " + entryName + "  -  " + entryLink + (fbLink ? "  -  " + fbLink : "");
                     str += "- " + SNum + "  -  " + entryName + "  -  " + entryLink + (fbLink ? "  -  " + fbLink : "") + "\n";

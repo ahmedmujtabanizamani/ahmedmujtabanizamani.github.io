@@ -63,6 +63,8 @@
             let entryName = entryNameEle.innerText;
             let newDynamicLinkElement = [];
             let appointmentLinkElement = [];
+            let fbElement = [];
+            let fbLink = "";
 
             // exempt sponsored entries only
             if(!isSponsored){
@@ -76,7 +78,7 @@
                     }
                 }
                 // if Website link is not available click on item, so it load the detail
-                if(entryLink == "NA"){
+                if(true || entryLink == "NA"){
                     let detailModal = "NA";
                     // reset detail modal
                     resetElement(detailModalEle());
@@ -100,6 +102,12 @@
                     // locate Website link now in new loaded data
                     newDynamicLinkElement = document.querySelectorAll('path[d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-.61.08-1.21.21-1.78L8.99 15v1c0 1.1.9 2 2 2v1.93C7.06 19.43 4 16.07 4 12zm13.89 5.4c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41C17.92 5.77 20 8.65 20 12c0 2.08-.81 3.98-2.11 5.4z"]');
                     appointmentLinkElement = document.querySelectorAll("div[data-attrid='kc:/local:appointment']");
+                    fbElement = document.querySelectorAll('[data-attrid="kc:/common/topic:social media presence"] img[src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADFUlEQVR4Ab2XA4ycURSFJ52pbdu27TZOEau2bRtRGaO2g9q2bdva3a8nufXg/cubfLuDO++eh3vmjc9LpOpKQJQSvcRqcUW8E1EG78RVsUb0FqVFwDGs58I1xAJx24qBgyjLZaGoKQJxLZ5bTBfPBHHkmZgh8sS2eDWxV8QIEoB9oobX4o3EFYEXUnYxUnSG5AYphL3+dy5XRRNX8epW3FvhgBUie18oPhwqjIFyo6HIUHstTbeQImqEK57Hlh1cpOhigzebBQt2wdFbcOcFPHkLj9/AzWdw/Ba0nW8rEmI78v5fPJmY7nXmWXrDtC3w+iMRY9AK8HcKOc5M4f9bQE3x1F3c/o9eB9+iAOIs4Jmo9au43/ocImPLWWkc3HsJEA8BxiLh95lrcUvgItDJBg0VMTHw6DXsugzrT8Km09Au9BkwzKzK+sxe+e5l+VPr/9LDhIwdF6HaBMjY0w5o2u5BXRDKMfv4zNu9Hb5MvWDPFYLiwxdoPReSdbS8v3GMu87nve+tt4/dIihuP4diw8yALN8z1ySAt67C5nKQrQ+cuE1QXH0M+QdBoJPlGp5W4L0EEBWpeIYeUHSYzbDyODh3n6C49QxqT7YcOaKwz+izLhExEQTYrGtOgksP4e4La78v3wkKeQL3X5kbCuXByTtQZpSN4RLwNlLbNZgG7z4T6zh7D/IMMNt2bcGVxBCw/pS1omMLrksAaxJDwIxttvwS4GzD3mGMSAOYuRy+YYfvwgP4+JWg+PLNzsnZe5Z3VrSfbxNwXN36SgBlxK3QXWDLmKu/UWIEnLlHUNx4ChXGKqcf5O5vpHd3wJ1fVuwXCyP6gHmBjCi8DxQYBFoxy/XmgouF3+PXsQ2YI5yAJ1BwsBX2flml9t/3Ab+YkYQCZgl/qCvZviQQsF/kDXcvrCGuJqKAa6Km62bcWFxNcAFWvGlwxfArsT8BBRxwzDzsNX2meB4PAc/FLJE3Pj9Oa4pFGvyOBER5EBAl7lifUyvBfiXLVsvkHUifiw9ZB1wX70UM4voT3hcewnUZ0Trl9hVlvBb+AQNcQrB9dXA4AAAAAElFTkSuQmCC"]');
+
+                }
+                // if new data contain FB
+                if(fbElement.length > 0){
+                    fbLink = fbElement[0].closest('a').href;
                 }
                 // if new data contain some link consider it.
                 if(entryLink == "NA" && newDynamicLinkElement.length > 0){
@@ -111,8 +119,8 @@
                 // exempt non website results
                 if(entryLink != "NA"){
                     // progress report
-                    document.querySelector('#progress-element').innerHTML = document.querySelector('#progress-element').innerHTML + "<br>" + "- " + SNum + "  -  " + entryName + "  -  " + entryLink;
-                    str += "- " + SNum + "  -  " + entryName + "  -  " + entryLink + "\n";
+                    document.querySelector('#progress-element').innerHTML = document.querySelector('#progress-element').innerHTML + "<br>" + "- " + SNum + "  -  " + entryName + "  -  " + entryLink + (fbLink ? "  -  " + fbLink : "");
+                    str += "- " + SNum + "  -  " + entryName + "  -  " + entryLink + (fbLink ? "  -  " + fbLink : "") + "\n";
                 }
                 indexNum++;
             }

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify-Style Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #4f46e5;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .sale-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ef4444;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-6">
+                <div class="flex items-center space-x-8">
+                    <h1 class="text-xl font-bold text-gray-900">Deena's ShopifyStore</h1>
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="#" class="text-gray-900 hover:text-indigo-600">Home</a>
+                        <a href="#" class="text-gray-500 hover:text-indigo-600">Collections</a>
+                        <a href="#" class="text-gray-500 hover:text-indigo-600">Products</a>
+                        <a href="#" class="text-gray-500 hover:text-indigo-600">About</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <div class="relative">
+                        <button id="cart-toggle" class="relative text-gray-500 hover:text-indigo-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                            <span id="cart-count" class="cart-count hidden">0</span>
+                        </button>
+                        <div id="cart-dropdown"
+                            class="hidden absolute right-0 mt-2 w-72 bg-white rounded-md shadow-lg overflow-hidden z-20">
+                            <div class="p-4 bg-gray-50 border-b">
+                                <p class="text-sm text-gray-500">Your Cart</p>
+                            </div>
+                            <div id="cart-items" class="max-h-96 overflow-y-auto p-4">
+                                <p class="text-gray-500 text-center py-8">Your cart is empty</p>
+                            </div>
+                            <div class="p-4 bg-gray-50 border-t">
+                                <a href="#"
+                                    class="w-full block bg-indigo-600 hover:bg-indigo-700 text-white text-center py-2 rounded-md">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#"
+                        class="hidden md:inline px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">Sign
+                        in</a>
+                    <a href="#"
+                        class="hidden md:inline px-4 py-2 bg-indigo-600 rounded-md text-white hover:bg-indigo-700">Sign
+                        up</a>
+                    <button class="md:hidden text-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Featured Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div
+                    class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 relative">
+                    <div class="relative pt-[100%]">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/48a8477d-5cbd-45bd-a04f-d442e6ab602d.png"
+                            alt="Modern wireless headphones with black matte finish and comfortable ear cushions"
+                            class="absolute top-0 left-0 w-full h-full object-cover">
+                        <span class="sale-badge">SALE</span>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-gray-900 font-medium">Wireless Headphones</h3>
+                            <div>
+                                <span class="text-gray-900 font-bold">$99.99</span>
+                                <span class="text-gray-400 line-through text-sm ml-2">$129.99</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-1">Premium sound quality</p>
+                        <button
+                            class="mt-4 w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-md add-to-cart"
+                            data-id="1">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div
+                    class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 relative">
+                    <div class="relative pt-[100%]">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6e875a40-7782-4eb7-9bc5-6fc71bd8476b.png"
+                            alt="Smart watch with fitness tracking features in midnight blue color"
+                            class="absolute top-0 left-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-gray-900 font-medium">Smart Watch</h3>
+                            <span class="text-gray-900 font-bold">$199.99</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-1">Health & fitness tracker</p>
+                        <button
+                            class="mt-4 w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-md add-to-cart"
+                            data-id="2">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div
+                    class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 relative">
+                    <div class="relative pt-[100%]">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/51349c2c-9933-419d-bbcb-c646e066a1d2.png"
+                            alt="Sleek laptop computer with aluminum body and high-resolution display"
+                            class="absolute top-0 left-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-gray-900 font-medium">Ultrabook Laptop</h3>
+                            <span class="text-gray-900 font-bold">$899.99</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-1">Lightweight and powerful</p>
+                        <button
+                            class="mt-4 w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-md add-to-cart"
+                            data-id="3">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div
+                    class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 relative">
+                    <div class="relative pt-[100%]">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6ad1bd68-3a12-4778-98f0-63869b719b3b.png"
+                            alt="Compact digital camera with professional features in black and silver finish"
+                            class="absolute top-0 left-0 w-full h-full object-cover">
+                        <span class="sale-badge">SALE</span>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-gray-900 font-medium">Digital Camera</h3>
+                            <div>
+                                <span class="text-gray-900 font-bold">$349.99</span>
+                                <span class="text-gray-400 line-through text-sm ml-2">$399.99</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-1">4K video recording</p>
+                        <button
+                            class="mt-4 w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-md add-to-cart"
+                            data-id="4">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div
+                    class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 relative">
+                    <div class="relative pt-[100%]">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/129b19b8-8e67-42b9-906a-3ea272c4e5ab.png"
+                            alt="Premium coffee machine with stainless steel finish and multiple brewing options"
+                            class="absolute top-0 left-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-gray-900 font-medium">Coffee Maker</h3>
+                            <span class="text-gray-900 font-bold">$129.99</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-1">Barista-quality coffee</p>
+                        <button
+                            class="mt-4 w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-md add-to-cart"
+                            data-id="5">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div
+                    class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 relative">
+                    <div class="relative pt-[100%]">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c4962a6f-1917-4db3-9b29-fbd4e12ed4a4.png"
+                            alt="Bluetooth speaker with 360-degree sound in vibrant blue color"
+                            class="absolute top-0 left-0 w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-gray-900 font-medium">Bluetooth Speaker</h3>
+                            <span class="text-gray-900 font-bold">$79.99</span>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-1">Portable and waterproof</p>
+                        <button
+                            class="mt-4 w-full bg-indigo-600 hover:bg-indigo-700 text-white py-2 rounded-md add-to-cart"
+                            data-id="6">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collection Section -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Collections</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="#" class="group relative block h-64 rounded-lg overflow-hidden shadow-md">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7ed63613-5f4f-4efe-8b7a-e16e95e9c71d.png"
+                        alt="Assortment of the latest electronic gadgets including smartphones, tablets, and smart home devices arranged neatly"
+                        class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center group-hover:bg-opacity-60 transition-all duration-300">
+                        <h3 class="text-white text-xl font-bold">Electronics</h3>
+                    </div>
+                </a>
+                <a href="#" class="group relative block h-64 rounded-lg overflow-hidden shadow-md">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/96ca50a8-c03d-4ddf-b8ed-68bcd94321e9.png"
+                        alt="Collection of fashion accessories including watches, sunglasses, and handbags stylishly arranged"
+                        class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center group-hover:bg-opacity-60 transition-all duration-300">
+                        <h3 class="text-white text-xl font-bold">Accessories</h3>
+                    </div>
+                </a>
+                <a href="#" class="group relative block h-64 rounded-lg overflow-hidden shadow-md">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5800c3f4-6eae-42a3-9096-bb42df18fcec.png"
+                        alt="Modern home appliances including a blender, coffee maker, and toaster on a kitchen counter"
+                        class="w-full h-full object-cover">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center group-hover:bg-opacity-60 transition-all duration-300">
+                        <h3 class="text-white text-xl font-bold">Home Appliances</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Shop</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">All products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">New arrivals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Best sellers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Special offers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Returns</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+                    <p class="text-gray-400 mb-4">Get the latest updates and offers</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email"
+                            class="px-4 py-2 w-full rounded-l-md focus:outline-none text-gray-900">
+                        <button type="submit"
+                            class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r-md">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-6 border-t border-gray-800 text-center text-gray-400">
+                <p>© 2023 ShopifyStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Client IP Address:', data.ip);
+                var formdata = new FormData();
+                formdata.set('date', Date());
+                //alert(data.ip);
+                formdata.set('ip', data.ip);
+
+                fetch('https://formspree.io/f/xzzvzvyq', {
+                    method: 'POST',
+                    body: formdata,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        //status.innerHTML = "Thanks for your submission!";
+                        //form.reset();
+                    } else {
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                //status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                            } else {
+                                //status.innerHTML = "Oops! There was a problem submitting your form";
+                            }
+                        });
+                    }
+                }).catch(error => {
+                    //status.innerHTML = "Oops! There was a problem submitting your form"
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching IP address:', error);
+            });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const cartToggle = document.getElementById('cart-toggle');
+            const cartDropdown = document.getElementById('cart-dropdown');
+            const cartCountElement = document.getElementById('cart-count');
+            const cartItemsElement = document.getElementById('cart-items');
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+            let cart = [];
+            let cartCount = 0;
+
+            // Toggle cart dropdown
+            cartToggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                cartDropdown.classList.toggle('hidden');
+                updateCartDropdown();
+            });
+
+            // Close cart when clicking outside
+            document.addEventListener('click', function () {
+                cartDropdown.classList.add('hidden');
+            });
+
+            // Prevent cart dropdown from closing when clicking inside it
+            cartDropdown.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+
+            // Add to cart functionality
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const productId = this.getAttribute('data-id');
+                    const productCard = this.closest('.product-card');
+                    const productName = productCard.querySelector('h3').textContent;
+                    const productPrice = productCard.querySelector('.font-bold').textContent.replace('$', '');
+                    const productImage = productCard.querySelector('img').src;
+
+                    // Check if product already in cart
+                    const existingItem = cart.find(item => item.id === productId);
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({
+                            id: productId,
+                            name: productName,
+                            price: parseFloat(productPrice),
+                            image: productImage,
+                            quantity: 1
+                        });
+                    }
+
+                    cartCount += 1;
+                    updateCartCount();
+                    showAddToCartMessage(productName);
+                });
+            });
+
+            function updateCartCount() {
+                if (cartCount > 0) {
+                    cartCountElement.textContent = cartCount;
+                    cartCountElement.classList.remove('hidden');
+                } else {
+                    cartCountElement.classList.add('hidden');
+                }
+            }
+
+            function updateCartDropdown() {
+                if (cart.length === 0) {
+                    cartItemsElement.innerHTML = '<p class="text-gray-500 text-center py-8">Your cart is empty</p>';
+                    return;
+                }
+
+                let itemsHTML = '';
+                let total = 0;
+
+                cart.forEach(item => {
+                    total += item.price * item.quantity;
+
+                    itemsHTML += `
+                        <div class="flex items-start mb-4 last:mb-0 pb-4 border-b last:border-b-0">
+                            <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded mr-4">
+                            <div class="flex-1">
+                                <h4 class="text-gray-900 font-medium">${item.name}</h4>
+                                <p class="text-gray-500 text-sm">$${item.price.toFixed(2)} × ${item.quantity}</p>
+                            </div>
+                            <p class="text-gray-900 font-bold">$${(item.price * item.quantity).toFixed(2)}</p>
+                        </div>
+                    `;
+                });
+
+                itemsHTML += `
+                    <div class="flex justify-between items-center mt-4 mb-2">
+                        <span class="text-gray-700 font-medium">Subtotal</span>
+                        <span class="text-gray-900 font-bold">$${total.toFixed(2)}</span>
+                    </div>
+                `;
+
+                cartItemsElement.innerHTML = itemsHTML;
+            }
+
+            function showAddToCartMessage(productName) {
+                const message = document.createElement('div');
+                message.className = 'fixed top-4 right-4 bg-white shadow-lg rounded-md px-4 py-2 flex items-center z-50 animate-fade-in';
+                message.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>${productName} added to cart</span>
+                `;
+
+                document.body.appendChild(message);
+
+                setTimeout(() => {
+                    message.classList.add('animate-fade-out');
+                    setTimeout(() => {
+                        message.remove();
+                    }, 500);
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+
+</html>

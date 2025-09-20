@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعا نظامانی پوسٹر جنریٹر</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Nafees', 'Alvi Lahori Nastaleeq', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #e6f7ff, #f0f8ff);
+            color: #2c3e50;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c5c72;
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+        
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-section {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .form-section h3 {
+            color: #2c5c72;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #4a8ea5;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #2c5c72;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            border-color: #4a8ea5;
+            outline: none;
+            box-shadow: 0 0 5px rgba(74, 142, 165, 0.5);
+        }
+        
+        .service-item, .timing-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        .service-header, .timing-header {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .service-header input, .timing-header input {
+            flex: 1;
+        }
+        
+        .service-icon-preview {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #4a8ea5;
+            margin-left: 10px;
+        }
+        
+        .icon-upload {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        .timing-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .day-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .day-checkbox input {
+            width: auto;
+        }
+        
+        .timing-type {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .timing-type label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: normal;
+        }
+        
+        .timing-type input {
+            width: auto;
+        }
+        
+        button {
+            background: #2c5c72;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s;
+            display: block;
+            margin: 20px auto;
+        }
+        
+        button:hover {
+            background: #4a8ea5;
+        }
+        
+        .add-btn, .remove-btn {
+            padding: 8px 15px;
+            font-size: 14px;
+            background: #4a8ea5;
+        }
+        
+        .remove-btn {
+            background: #c23b22;
+        }
+        
+        .download-btn {
+            background: #d4af37;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        .download-btn:hover {
+            background: #c19b2e;
+        }
+        
+        .poster {
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            border: 2px solid #2c5c72;
+            display: none;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c5c72 0%, #4a8ea5 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            border-bottom: 5px solid #d4af37;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.1"><text x="50%" y="50%" font-size="20" text-anchor="middle" fill="white" dominant-baseline="middle">✿</text></svg>');
+            opacity: 0.1;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            /*letter-spacing: 1px;*/
+            color: white;
+            position: relative;
+        }
+        
+        .header h2 {
+            font-size: 3rem;
+            margin-bottom: 5px;
+            color: #ffd700;
+            position: relative;
+            font-weight: 600;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section h3 {
+            font-size: 28px;
+            color: #2c5c72;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #d4af37;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: #4a8ea5;
+        }
+        
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            direction: rtl;
+        }
+        
+        .service-box {
+            background: rgba(248, 249, 250, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            border-right: 4px solid #4a8ea5;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            flex: 1;
+            min-width: 200px;
+            /*max-width: 300px;*/
+            transition: transform 0.2s;
+        }
+        
+        .service-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-left: 12px;
+            border: 2px solid #4a8ea5;
+            flex-shrink: 0;
+        }
+        
+        .service-text {
+            font-size: 1.14rem;
+            text-align: right;
+            flex-grow: 1;
+        }
+        
+        .contact-info {
+            background: rgba(238, 247, 245, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+            border: 1px dashed #4a8ea5;
+            direction: rtl;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .contact-info h4 {
+            font-size: 24px;
+            color: #2c5c72;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #4a8ea5;
+            display: inline-block;
+        }
+        
+        .contact-details {
+            font-size: 20px;
+            line-height: 1.8;
+            text-align: right;
+        }
+        
+        .timings-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .timings-list li {
+            margin: 0;
+            padding: 15px;
+            background: rgba(212, 232, 240, 0.8);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 4px solid #2c5c72;
+        }
+        
+        .timing-info {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        
+        .timing-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #2c5c72;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .timing-details {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .day-badge {
+            background: #2c5c72;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .timing-badge {
+            background: #4a8ea5;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .address {
+            font-weight: bold;
+            color: #2c5c72;
+            font-size: 20px;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background: rgba(212, 232, 240, 0.8);
+            border-radius: 8px;
+            line-height: 1.5;
+            justify-content: center;
+        }
+        
+        .phone {
+            font-weight: bold;
+            color: #2c5c72;
+            font-size: 22px;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background: rgba(212, 232, 240, 0.8);
+            border-radius: 8px;
+            justify-content: center;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: white;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        
+        .bg-preview {
+            width: 100%;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+            border: 2px solid #4a8ea5;
+        }
+        
+        .time-inputs {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .time-inputs input {
+            flex: 1;
+        }
+        
+        .icon-with-text {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        @media (min-width: 992px) {
+            .container {
+                flex-direction: row;
+            }
+            
+            .form-container {
+                width: 40%;
+            }
+            
+            .poster {
+                /*width: 60%;*/
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>پوسٽر ٺاهيندڙ</h1>
+            
+            <form id="posterForm">
+                <div class="form-section">
+                    <h3>بنيادي معلومات</h3>
+                    <div class="form-group" hidden>
+                        <label for="centerName">مرڪز جو نالو</label>
+                        <input type="text" id="centerName" value="نظاماڻي ميڊيڪل سينٽر" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="healerName">ڊاڪٽر جو نالو</label>
+                        <input type="text" id="healerName" value="ڊاڪٽر جو نالو" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="healerSpecialization">ڊاڪٽر جي خاصيت</label>
+                        <input type="text" id="healerSpecialization" value="ايم بي بي ايس" required>
+                    </div>
+                    <div class="form-group" hidden>
+                        <label for="address">پتو</label>
+                        <textarea id="address" rows="3" required>نظاماڻي ميڊيڪل سينٽر، مين ٽنڊو غلام علي روڊ، ر ائو دلمير گارڊن جي سامهون، پراڻو ڪمپريهينسو بوائز هاءِ اسڪول، سليم ڪالوني</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="bgImage">پس منظر واري تصوير (اختياري)</label>
+                        <input type="file" id="bgImage" accept="image/*">
+                        <img id="bgPreview" class="bg-preview" src="" alt="پس منظر واري تصوير">
+                    </div>
+                </div>
+                
+                <div class="form-section" hidden>
+                    <h3>علاج جا تفصيل</h3>
+                    <div class="form-group">
+                        <label for="processTitle">ڊاڪٽر جون خدمتون</label>
+                        <input type="text" id="processTitle" value="ڊاڪٽر جون خدمتون" required>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>ڊاڪٽر جون خدمتون</h3>
+                    <div id="servicesContainer">
+                        <div class="service-item">
+                            <div class="service-header">
+                                <input type="text" class="service" value="شوگر" required>
+                                <button type="button" class="remove-btn">هٽايو</button>
+                            </div>
+                            <div class="icon-upload">
+                                <label>خدمت جو نشان</label>
+                                <input type="file" class="service-icon-input" accept="image/*">
+                                <img src="" class="service-icon-preview" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-header">
+                                <input type="text" class="service" value="بلڊ پريشر" required>
+                                <button type="button" class="remove-btn">هٽايو</button>
+                            </div>
+                            <div class="icon-upload">
+                                <label>خدمت جو نشان</label>
+                                <input type="file" class="service-icon-input" accept="image/*">
+                                <img src="" class="service-icon-preview" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-header">
+                                <input type="text" class="service" value="بخار" required>
+                                <button type="button" class="remove-btn">هٽايو</button>
+                            </div>
+                            <div class="icon-upload">
+                                <label>خدمت جو نشان</label>
+                                <input type="file" class="service-icon-input" accept="image/*">
+                                <img src="" class="service-icon-preview" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-header">
+                                <input type="text" class="service" value="جسم ۾ درد" required>
+                                <button type="button" class="remove-btn">هٽايو</button>
+                            </div>
+                            <div class="icon-upload">
+                                <label>خدمت جو نشان</label>
+                                <input type="file" class="service-icon-input" accept="image/*">
+                                <img src="" class="service-icon-preview" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-header">
+                                <input type="text" class="service" value="زڪام" required>
+                                <button type="button" class="remove-btn">هٽايو</button>
+                            </div>
+                            <div class="icon-upload">
+                                <label>خدمت جو نشان</label>
+                                <input type="file" class="service-icon-input" accept="image/*">
+                                <img src="" class="service-icon-preview" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="addService" class="add-btn">نئين خدمت شامل ڪريو</button>
+                </div>
+                
+                <div class="form-section">
+                    <h3>رابطي جي معلومات</h3>
+                    <div class="form-group">
+                        <label for="contactTitle">رابطي جو عنوان</label>
+                        <input type="text" id="contactTitle" value="اسان سان رابطو ڪرڻ لاء" required>
+                    </div>
+                    
+                    <h4 style="margin: 15px 0 10px; color: #2c5c72;">وقت جي ڄاڻ</h4>
+                    <div id="timingsContainer">
+                        <div class="timing-item">
+                            <div class="timing-header">
+                                <input type="text" class="timing-title" placeholder="وقت جو عنوان" value="صبح جو وقت" required>
+                                <button type="button" class="remove-btn">هٽايو</button>
+                            </div>
+                            <div class="time-inputs">
+                                <input type="text" class="timing-from" placeholder="شروعاتي وقت" value="2 وڳي" required>
+                                <input type="text" class="timing-to" placeholder="ختم ٿيڻ جو وقت" value="6 وڳي تائين" required>
+                            </div>
+                            
+                            <div class="timing-options">
+                                <label>ڏينهن چونڊيو:</label>
+                                <div class="day-checkbox"><input type="checkbox" name="day" value="سومر" checked> سومر</div>
+                                <div class="day-checkbox"><input type="checkbox" name="day" value="اڱارو"> اڱارو</div>
+                                <div class="day-checkbox"><input type="checkbox" name="day" value="اربع"> اربع</div>
+                                <div class="day-checkbox"><input type="checkbox" name="day" value="خميس"> خميس</div>
+                                <div class="day-checkbox"><input type="checkbox" name="day" value="جمع"> جمع</div>
+                                <div class="day-checkbox"><input type="checkbox" name="day" value="ڇنڇر"> ڇنڇر</div>
+                                <div class="day-checkbox"><input type="checkbox" name="day" value="آچر">آچر</div>
+                            </div>
+                            
+                            <div class="timing-type">
+                                <label>وقت کی قسم:</label>
+                                <label><input type="radio" name="timingType0" value="one-time" checked> هر هفتي</label>
+                                <label><input type="radio" name="timingType0" value="weekly"> هڪ دفعو</label>
+                            </div>
+                        </div>
+                        <div class="timing-item">
+                            <div class="timing-header">
+                                <input type="text" class="timing-title" placeholder="وقت کا عنوان" value="شام جو وقت" required>
+                                <button type="button" class="remove-btn">هٽايو</button>
+                            </div>
+                            <div class="time-inputs">
+                                <input type="text" class="timing-from" placeholder="شروعاتي وقت" value="12 وڳي" required>
+                                <input type="text" class="timing-to" placeholder="ختم ٿيڻ جو وقت" value="3 وڳي تائين" required>
+                            </div>
+                            
+                            <div class="timing-options">
+                                <label>ڏينهن چونڊيو:</label>
+                                <div class="day-checkbox"><input type="checkbox" name="day" value="سومر"> سومر</div>
+                                <div class="day-checkbox"><input type="checkbox" name="day" value="اڱارو" checked> اڱارو</div>
+                                <div class="day-checkbox"><input type="checkbox" name="day" value="اربع" checked> اربع</div>
+                                <div class="day-checkbox"><input type="checkbox" name="day" value="خميس"> خميس</div>
+                                <div class="day-checkbox"><input type="checkbox" name="day" value="جمع"> جمع</div>
+                                <div class="day-checkbox"><input type="checkbox" name="day" value=" ڇنڇر"> ڇنڇر</div>
+                                <div class="day-checkbox"><input type="checkbox" name="day" value="آچر">آچر</div>
+                            </div>
+                            
+                            <div class="timing-type">
+                                <label>وقت کی قسم:</label>
+                                <label><input type="radio" name="timingType1" value="one-time" checked> هر هفتي</label>
+                                <label><input type="radio" name="timingType1" value="weekly"> هڪ دفعو</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="addTiming" class="add-btn">نئون وقت شامل ڪريو</button>
+                    
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="phone">رابطو نمبر</label>
+                        <input type="text" id="phone" value="03103143842" required>
+                    </div>
+                </div>
+                
+                <button type="submit">پوسٹر جنریٹ کریں</button>
+            </form>
+        </div>
+        
+        <div class="poster-container">
+            <div class="poster" id="generatedPoster">
+                <div class="header">
+                    <h1 id="posterCenterName">نظامانی میڈیکل سینٹر</h1>
+                    <h2 id="posterHealerName">روحانی علاجگر دعا نظامانی</h2>
+                    <h3 id="posterHealerSpecialization">روحانی علاجگر دعا نظامانی</h3>
+                </div>
+                
+                <div class="content">
+                    <div class="section">
+                        <h3 id="posterProcessTitle">فزیم فرآیندسازی</h3>
+                        
+                        <div class="services-grid" id="posterServices">
+                            <!-- Services will be dynamically added here -->
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h4 id="posterContactTitle">کانیدنگ</h4>
+                        <div class="contact-details">
+                            <p class="address" id="posterAddress">
+                                <i class="fas fa-map-marker-alt"></i>
+                                شہر کراچی، علاقہ ناظم آباد، بلڈنگ نمبر 123
+                            </p>
+                            
+                            <ul class="timings-list" id="posterTimings">
+                                <li>
+                                    <div class="timing-info">
+                                        <span class="timing-title">
+                                            <i class="far fa-clock"></i>
+                                            صبح جو وقت:
+                                        </span> 
+                                        <span>2 وکی - 6 وکی</span>
+                                    </div>
+                                    <div class="timing-details">
+                                        <span class="day-badge">
+                                            <i class="far fa-calendar-alt"></i>
+                                            سومر, منگل
+                                        </span>
+                                        <span class="timing-badge">
+                                            <i class="fas fa-sync"></i>
+                                            هر هفتي
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="timing-info">
+                                        <span class="timing-title">
+                                            <i class="far fa-clock"></i>
+                                            شام جو وقت:
+                                        </span> 
+                                        <span>12 وکی - 3 وکی</span>
+                                    </div>
+                                    <div class="timing-details">
+                                        <span class="day-badge">
+                                            <i class="far fa-calendar-alt"></i>
+                                            اڱارو, اربع
+                                        </span>
+                                        <span class="timing-badge">
+                                            <i class="fas fa-redo"></i>
+                                            بار بار
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <p class="phone" id="posterPhone">
+                                <i class="fas fa-phone-alt"></i>
+                                رابطہ نمبر: 0310-3143842
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer">
+                    <p>© <span id="currentYear">2023</span> نظامانی میڈیکل سینٹر. تمام حقوق محفوظ ہیں۔</p>
+                </div>
+            </div>
+            
+            <button id="downloadBtn" class="download-btn" style="display: none;">
+                <i class="fas fa-download"></i> پوسٹر ڈاؤن لوڈ کریں
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('posterForm');
+            const addServiceBtn = document.getElementById('addService');
+            const addTimingBtn = document.getElementById('addTiming');
+            const servicesContainer = document.getElementById('servicesContainer');
+            const timingsContainer = document.getElementById('timingsContainer');
+            const bgImageInput = document.getElementById('bgImage');
+            const bgPreview = document.getElementById('bgPreview');
+            const downloadBtn = document.getElementById('downloadBtn');
+            const currentYearSpan = document.getElementById('currentYear');
+            
+            // موجودہ سال سیٹ کریں
+            currentYearSpan.textContent = new Date().getFullYear();
+            
+            // پس منظر کی تصویر کا پیش نظارہ
+            bgImageInput.addEventListener('change', function() {
+                if (this.files && this.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        bgPreview.src = e.target.result;
+                        bgPreview.style.display = 'block';
+                    }
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+            
+            // ڈاؤن لوڈ بٹن کے لیے فنکشن
+            downloadBtn.addEventListener('click', function() {
+                html2canvas(document.getElementById('generatedPoster')).then(function(canvas) {
+                    const link = document.createElement('a');
+                    link.download = 'نظامانی-میڈیکل-سینٹر-پوسٹر.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                });
+            });
+            
+            // خدمت شامل کرنے کا فنکشن
+            addServiceBtn.addEventListener('click', function() {
+                const serviceItem = document.createElement('div');
+                serviceItem.className = 'service-item';
+                serviceItem.innerHTML = `
+                    <div class="service-header">
+                        <input type="text" class="service" placeholder="خدمت درج کریں" required>
+                        <button type="button" class="remove-btn">هٽايو</button>
+                    </div>
+                    <div class="icon-upload">
+                        <label>خدمت جو نشان</label>
+                        <input type="file" class="service-icon-input" accept="image/*">
+                        <img src="" class="service-icon-preview" style="display: none;">
+                    </div>
+                `;
+                servicesContainer.appendChild(serviceItem);
+                
+                // آئیکن پیش نظارہ کا فنکشن
+                const iconInput = serviceItem.querySelector('.service-icon-input');
+                const iconPreview = serviceItem.querySelector('.service-icon-preview');
+                
+                iconInput.addEventListener('change', function() {
+                    if (this.files && this.files[0]) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            iconPreview.src = e.target.result;
+                            iconPreview.style.display = 'block';
+                        }
+                        reader.readAsDataURL(this.files[0]);
+                    }
+                });
+                
+                // حذف کرنے کے بٹن کو فعال بنائیں
+                serviceItem.querySelector('.remove-btn').addEventListener('click', function() {
+                    if (servicesContainer.children.length > 1) {
+                        servicesContainer.removeChild(serviceItem);
+                    } else {
+                        alert('آپ آخری خدمت کو حذف نہیں کر سکتے');
+                    }
+                });
+            });
+            
+            // وقت شامل کرنے کا فنکشن
+            addTimingBtn.addEventListener('click', function() {
+                const timingCount = document.querySelectorAll('.timing-item').length;
+                const timingItem = document.createElement('div');
+                timingItem.className = 'timing-item';
+                timingItem.innerHTML = `
+                    <div class="timing-header">
+                        <input type="text" class="timing-title" placeholder="وقت کا عنوان" required>
+                        <button type="button" class="remove-btn">هٽايو</button>
+                    </div>
+                    <div class="time-inputs">
+                        <input type="text" class="timing-from" placeholder="شروعاتي وقت" required>
+                        <input type="text" class="timing-to" placeholder="ختم ٿيڻ جو وقت" required>
+                    </div>
+                    
+                    <div class="timing-options">
+                        <label>ڏينهن چونڊيو:</label>
+                        <div class="day-checkbox"><input type="checkbox" name="day" value="سومر"> سومر</div>
+                        <div class="day-checkbox"><input type="checkbox" name="day" value="اڱارو"> اڱارو</div>
+                        <div class="day-checkbox"><input type="checkbox" name="day" value="اربع"> اربع</div>
+                        <div class="day-checkbox"><input type="checkbox" name="day" value="خميس"> خميس</div>
+                        <div class="day-checkbox"><input type="checkbox" name="day" value="جمع"> جمع</div>
+                        <div class="day-checkbox"><input type="checkbox" name="day" value="ڇنڇر"> ڇنڇر</div>
+                        <div class="day-checkbox"><input type="checkbox" name="day" value="آچر">آچر</div>
+                    </div>
+                    
+                    <div class="timing-type">
+                        <label>وقت کی قسم:</label>
+                        <label><input type="radio" name="timingType${timingCount}" value="one-time" checked> هر هفتي</label>
+                        <label><input type="radio" name="timingType${timingCount}" value="weekly"> هڪ دفعو</label>
+                    </div>
+                `;
+                timingsContainer.appendChild(timingItem);
+                
+                // حذف کرنے کے بٹن کو فعال بنائیں
+                timingItem.querySelector('.remove-btn').addEventListener('click', function() {
+                    if (timingsContainer.children.length > 1) {
+                        timingsContainer.removeChild(timingItem);
+                    } else {
+                        alert('آپ آخری وقت کو حذف نہیں کر سکتے');
+                    }
+                });
+            });
+            
+            // تمام موجودہ حذف بٹنوں کو فعال بنائیں
+            document.querySelectorAll('.remove-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const container = this.closest('.service-item') ? servicesContainer : timingsContainer;
+                    const item = this.closest('.service-item') || this.closest('.timing-item');
+                    
+                    if (container.children.length > 1) {
+                        container.removeChild(item);
+                    } else {
+                        alert('آپ آخری آئٹم کو حذف نہیں کر سکتے');
+                    }
+                });
+            });
+            
+            // آئیکن پیش نظارہ کے لیے موجودہ ان پٹس
+            document.querySelectorAll('.service-icon-input').forEach(input => {
+                const preview = input.nextElementSibling;
+                input.addEventListener('change', function() {
+                    if (this.files && this.files[0]) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            preview.src = e.target.result;
+                            preview.style.display = 'block';
+                        }
+                        reader.readAsDataURL(this.files[0]);
+                    }
+                });
+            });
+            
+            // فارم جمع کرانے پر
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // فارم کی قدریں حاصل کریں
+                const centerName = document.getElementById('centerName').value;
+                const healerName = document.getElementById('healerName').value;
+                const healerSpecialization = document.getElementById('healerSpecialization').value;
+                const address = document.getElementById('address').value;
+                const processTitle = document.getElementById('processTitle').value;
+                const contactTitle = document.getElementById('contactTitle').value;
+                const phone = document.getElementById('phone').value;
+                
+                // خدمات حاصل کریں
+                const services = [];
+                const serviceIcons = [];
+                
+                // پہلے تمام خدمات اور ان کی تصاویر جمع کریں
+                const servicePromises = [];
+                
+                document.querySelectorAll('.service-item').forEach((item, index) => {
+                    const serviceInput = item.querySelector('.service');
+                    const iconInput = item.querySelector('.service-icon-input');
+                    
+                    if (serviceInput.value.trim() !== '') {
+                        services.push(serviceInput.value);
+                        
+                        if (iconInput.files && iconInput.files[0]) {
+                            const promise = new Promise((resolve) => {
+                                const reader = new FileReader();
+                                reader.onload = function(e) {
+                                    serviceIcons[index] = e.target.result;
+                                    resolve();
+                                }
+                                reader.readAsDataURL(iconInput.files[0]);
+                            });
+                            servicePromises.push(promise);
+                        } else {
+                            serviceIcons[index] = null;
+                        }
+                    }
+                });
+                
+                // اوقات حاصل کریں
+                const timings = [];
+                
+                document.querySelectorAll('.timing-item').forEach((item, index) => {
+                    const timingTitle = item.querySelector('.timing-title').value;
+                    const timingFrom = item.querySelector('.timing-from').value;
+                    const timingTo = item.querySelector('.timing-to').value;
+                    const days = Array.from(item.querySelectorAll('input[name="day"]:checked')).map(cb => cb.value);
+                    const timingType = item.querySelector(`input[name="timingType${index}"]:checked`).value;
+                    
+                    if (timingFrom.trim() !== '' && timingTo.trim() !== '') {
+                        timings.push({
+                            title: timingTitle,
+                            from: timingFrom,
+                            to: timingTo,
+                            days: days,
+                            type: timingType
+                        });
+                    }
+                });
+                
+                // پس منظر کی تصویر حاصل کریں
+                let bgImage = null;
+                if (bgImageInput.files && bgImageInput.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        bgImage = e.target.result;
+                        
+                        // تمام تصاویر کے لوڈ ہونے کا انتظار کریں
+                        Promise.all(servicePromises).then(() => {
+                            updatePoster();
+                        });
+                    }
+                    reader.readAsDataURL(bgImageInput.files[0]);
+                } else {
+                    // تمام تصاویر کے لوڈ ہونے کا انتظار کریں
+                    Promise.all(servicePromises).then(() => {
+                        updatePoster();
+                    });
+                }
+                
+                // پوسٹر کو اپ ڈیٹ کریں
+                function updatePoster() {
+                    document.getElementById('posterCenterName').textContent = centerName;
+                    document.getElementById('posterHealerName').textContent = healerName;
+                    document.getElementById('posterHealerSpecialization').textContent = healerSpecialization;
+                    document.getElementById('posterAddress').innerHTML = `<i class="fas fa-map-marker-alt"></i> ${address}`;
+                    document.getElementById('posterProcessTitle').textContent = processTitle;
+                    document.getElementById('posterContactTitle').textContent = contactTitle;
+                    document.getElementById('posterPhone').innerHTML = `<i class="fas fa-phone-alt"></i> رابطہ نمبر: ${phone}`;
+                    
+                    // کاپی رائٹ کی تاریخ اپ ڈیٹ کریں
+                    document.getElementById('currentYear').textContent = new Date().getFullYear();
+                    
+                    // پس منظر کی تصویر شامل کریں
+                    if (bgImage) {
+                        document.getElementById('generatedPoster').style.backgroundImage = `url(${bgImage})`;
+                        document.getElementById('generatedPoster').style.backgroundSize = 'cover';
+                        document.getElementById('generatedPoster').style.backgroundPosition = 'center';
+                    }
+                    
+                    // خدمات کو اپ ڈیٹ کریں (گرڈ لیآؤٹ)
+                    const servicesGrid = document.getElementById('posterServices');
+                    servicesGrid.innerHTML = '';
+                    
+                    services.forEach((service, index) => {
+                        const serviceBox = document.createElement('div');
+                        serviceBox.className = 'service-box';
+                        
+                        if (serviceIcons[index]) {
+                            const icon = document.createElement('img');
+                            icon.src = serviceIcons[index];
+                            icon.className = 'service-icon';
+                            icon.style.display = 'block';
+                            serviceBox.appendChild(icon);
+                        }
+                        
+                        const serviceText = document.createElement('div');
+                        serviceText.className = 'service-text';
+                        serviceText.textContent = service;
+                        serviceBox.appendChild(serviceText);
+                        
+                        servicesGrid.appendChild(serviceBox);
+                    });
+                    
+                    // اوقات کو اپ ڈیٹ کریں
+                    const timingsList = document.getElementById('posterTimings');
+                    timingsList.innerHTML = '';
+                    
+                    timings.forEach(timing => {
+                        const li = document.createElement('li');
+                        
+                        const timingInfo = document.createElement('div');
+                        timingInfo.className = 'timing-info';
+                        
+                        const titleSpan = document.createElement('span');
+                        titleSpan.className = 'timing-title';
+                        titleSpan.innerHTML = `<i class="far fa-clock"></i> ${timing.title}:`;
+                        timingInfo.appendChild(titleSpan);
+                        
+                        const valueSpan = document.createElement('span');
+                        valueSpan.textContent = `${timing.from} - ${timing.to}`;
+                        timingInfo.appendChild(valueSpan);
+                        
+                        li.appendChild(timingInfo);
+                        
+                        const timingDetails = document.createElement('div');
+                        timingDetails.className = 'timing-details';
+                        
+                        if (timing.days.length > 0) {
+                            const dayBadge = document.createElement('span');
+                            dayBadge.className = 'day-badge';
+                            dayBadge.innerHTML = `<i class="far fa-calendar-alt"></i> ${timing.days.join(', ')}`;
+                            timingDetails.appendChild(dayBadge);
+                        }
+                        
+                        const typeBadge = document.createElement('span');
+                        typeBadge.className = 'timing-badge';
+                        
+                        if (timing.type === 'one-time') {
+                            typeBadge.innerHTML = `<i class="fas fa-sync"></i> هر هفتي`;
+                        } else if (timing.type === 'recursive') {
+                            typeBadge.innerHTML = `<i class="fas fa-redo"></i> بار بار`;
+                        } else if (timing.type === 'weekly') {
+                            typeBadge.innerHTML = `<i class="fas fa-calendar-week"></i> هڪ دفعو`;
+                        }
+                        
+                        timingDetails.appendChild(typeBadge);
+                        li.appendChild(timingDetails);
+                        
+                        timingsList.appendChild(li);
+                    });
+                    
+                    // پوسٹر دکھائیں
+                    document.getElementById('generatedPoster').style.display = 'block';
+                    downloadBtn.style.display = 'block';
+                    
+                    // پوسٹر پر سکرول کریں
+                    document.getElementById('generatedPoster').scrollIntoView({ behavior: 'smooth' });
+                    
+                    alert('پوسٽر ڪاميابي سان ٺاھيو ويو');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

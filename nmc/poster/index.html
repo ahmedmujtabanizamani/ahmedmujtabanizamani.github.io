@@ -6,7 +6,7 @@
     <title> نظامانی پوسٹر جنریٹر</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <style>
+     <style>
         * {
             margin: 0;
             padding: 0;
@@ -248,8 +248,11 @@
             margin-bottom: 25px;
         }
         
+        #posterHealerSpecialization {
+          font-size: 1.3rem;
+        }
         .section h3 {
-            font-size: 28px;
+            font-size: 1.2rem;
             color: #2c5c72;
             margin-bottom: 20px;
             padding-bottom: 10px;
@@ -307,7 +310,7 @@
         }
         
         .service-text {
-            font-size: 1.14rem;
+            font-size: 1.5rem;
             text-align: right;
             flex-grow: 1;
         }
@@ -480,6 +483,7 @@
             }
         }
     </style>
+
 </head>
 <body>
     <div class="container">
@@ -755,33 +759,164 @@
             const downloadBtn = document.getElementById('downloadBtn');
             const currentYearSpan = document.getElementById('currentYear');
             
-            // موجودہ سال سیٹ کریں
-            currentYearSpan.textContent = new Date().getFullYear();
+            // Cookie functions
+            function setCookie(name, value, days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                const expires = "expires=" + date.toUTCString();
+                document.cookie = name + "=" + encodeURIComponent(JSON.stringify(value)) + ";" + expires + ";path=/";
+            }
             
-            // پس منظر کی تصویر کا پیش نظارہ
-            bgImageInput.addEventListener('change', function() {
-                if (this.files && this.files[0]) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        bgPreview.src = e.target.result;
-                        bgPreview.style.display = 'block';
+            function getCookie(name) {
+                const nameEQ = name + "=";
+                const ca = document.cookie.split(';');
+                for(let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) === 0) {
+                        const cookieValue = c.substring(nameEQ.length, c.length);
+                        try {
+                            return JSON.parse(decodeURIComponent(cookieValue));
+                        } catch (e) {
+                            return null;
+                        }
                     }
-                    reader.readAsDataURL(this.files[0]);
                 }
-            });
+                return null;
+            }
             
-            // ڈاؤن لوڈ بٹن کے لیے فنکشن
-            downloadBtn.addEventListener('click', function() {
-                html2canvas(document.getElementById('generatedPoster')).then(function(canvas) {
-                    const link = document.createElement('a');
-                    link.download = 'نظامانی-میڈیکل-سینٹر-پوسٹر.png';
-                    link.href = canvas.toDataURL('image/png');
-                    link.click();
+            // Save form data to cookies
+            function saveFormData() {
+                const formData = {
+                    // Basic info
+                    healerName: document.getElementById('healerName').value,
+                    healerSpecialization: document.getElementById('healerSpecialization').value,
+                    address: document.getElementById('address').value,
+                    processTitle: document.getElementById('processTitle').value,
+                    contactTitle: document.getElementById('contactTitle').value,
+                    phone: document.getElementById('phone').value,
+                    
+                    // Services
+                    services: [],
+                    
+                    // Timings
+                    timings: []
+                };
+                
+                // Save services
+                document.querySelectorAll('.service-item').forEach(item => {
+                    const serviceInput = item.querySelector('.service');
+                    const iconInput = item.querySelector('.service-icon-input');
+                    
+                    // Get service icon as base64 if available
+                    let iconData = null;
+                    const preview = item.querySelector('.service-icon-preview');
+                    if (preview && preview.src && preview.style.display !== 'none') {
+                        iconData = preview.src;
+                    }
+                    
+                    formData.services.push({
+                        name: serviceInput.value,
+                        icon: iconData
+                    });
                 });
-            });
+                
+                // Save timings
+                document.querySelectorAll('.timing-item').forEach((item, index) => {
+                    const timingTitle = item.querySelector('.timing-title').value;
+                    const timingFrom = item.querySelector('.timing-from').value;
+                    const timingTo = item.querySelector('.timing-to').value;
+                    
+                    // Get selected days
+                    const days = [];
+                    item.querySelectorAll('input[name="day"]:checked').forEach(checkbox => {
+                        days.push(checkbox.value);
+                    });
+                    
+                    // Get timing type
+                    const timingType = item.querySelector(`input[name="timingType${index}"]:checked`).value;
+                    
+                    formData.timings.push({
+                        title: timingTitle,
+                        from: timingFrom,
+                        to: timingTo,
+                        days: days,
+                        type: timingType
+                    });
+                });
+                
+                // Save background image if available
+                if (bgPreview.src && bgPreview.style.display !== 'none') {
+                    formData.bgImage = bgPreview.src;
+                }
+                
+                // Save to cookie with 30 days expiration
+                setCookie('posterFormData', formData, 30);
+            }
             
-            // خدمت شامل کرنے کا فنکشن
-            addServiceBtn.addEventListener('click', function() {
+            // Load form data from cookies
+            function loadFormData() {
+                const formData = getCookie('posterFormData');
+                if (!formData) return;
+                
+                // Basic info
+                if (formData.healerName) document.getElementById('healerName').value = formData.healerName;
+                if (formData.healerSpecialization) document.getElementById('healerSpecialization').value = formData.healerSpecialization;
+                if (formData.address) document.getElementById('address').value = formData.address;
+                if (formData.processTitle) document.getElementById('processTitle').value = formData.processTitle;
+                if (formData.contactTitle) document.getElementById('contactTitle').value = formData.contactTitle;
+                if (formData.phone) document.getElementById('phone').value = formData.phone;
+                
+                // Background image
+                if (formData.bgImage) {
+                    bgPreview.src = formData.bgImage;
+                    bgPreview.style.display = 'block';
+                }
+                
+                // Services
+                if (formData.services && formData.services.length > 0) {
+                    // Clear existing services except the first one
+                    while (servicesContainer.children.length > 1) {
+                        servicesContainer.removeChild(servicesContainer.lastChild);
+                    }
+                    
+                    // Update first service
+                    const firstService = servicesContainer.children[0];
+                    firstService.querySelector('.service').value = formData.services[0].name;
+                    
+                    if (formData.services[0].icon) {
+                        const preview = firstService.querySelector('.service-icon-preview');
+                        preview.src = formData.services[0].icon;
+                        preview.style.display = 'block';
+                    }
+                    
+                    // Add additional services
+                    for (let i = 1; i < formData.services.length; i++) {
+                        const service = formData.services[i];
+                        addServiceItem(service.name, service.icon);
+                    }
+                }
+                
+                // Timings
+                if (formData.timings && formData.timings.length > 0) {
+                    // Clear existing timings except the first one
+                    while (timingsContainer.children.length > 1) {
+                        timingsContainer.removeChild(timingsContainer.lastChild);
+                    }
+                    
+                    // Update first timing
+                    const firstTiming = timingsContainer.children[0];
+                    updateTimingItem(firstTiming, formData.timings[0], 0);
+                    
+                    // Add additional timings
+                    for (let i = 1; i < formData.timings.length; i++) {
+                        addTimingItem(formData.timings[i], i);
+                    }
+                }
+            }
+            
+            // Helper function to add a service item with data
+            function addServiceItem(name, iconData) {
                 const serviceItem = document.createElement('div');
                 serviceItem.className = 'service-item';
                 serviceItem.innerHTML = `
@@ -797,7 +932,16 @@
                 `;
                 servicesContainer.appendChild(serviceItem);
                 
-                // آئیکن پیش نظارہ کا فنکشن
+                // Set values
+                serviceItem.querySelector('.service').value = name || '';
+                
+                if (iconData) {
+                    const preview = serviceItem.querySelector('.service-icon-preview');
+                    preview.src = iconData;
+                    preview.style.display = 'block';
+                }
+                
+                // Add event listeners
                 const iconInput = serviceItem.querySelector('.service-icon-input');
                 const iconPreview = serviceItem.querySelector('.service-icon-preview');
                 
@@ -812,7 +956,6 @@
                     }
                 });
                 
-                // حذف کرنے کے بٹن کو فعال بنائیں
                 serviceItem.querySelector('.remove-btn').addEventListener('click', function() {
                     if (servicesContainer.children.length > 1) {
                         servicesContainer.removeChild(serviceItem);
@@ -820,10 +963,10 @@
                         alert('آپ آخری خدمت کو حذف نہیں کر سکتے');
                     }
                 });
-            });
+            }
             
-            // وقت شامل کرنے کا فنکشن
-            addTimingBtn.addEventListener('click', function() {
+            // Helper function to add a timing item with data
+            function addTimingItem(timingData, index) {
                 const timingCount = document.querySelectorAll('.timing-item').length;
                 const timingItem = document.createElement('div');
                 timingItem.className = 'timing-item';
@@ -856,7 +999,10 @@
                 `;
                 timingsContainer.appendChild(timingItem);
                 
-                // حذف کرنے کے بٹن کو فعال بنائیں
+                // Update with data
+                updateTimingItem(timingItem, timingData, index);
+                
+                // Add event listener for remove button
                 timingItem.querySelector('.remove-btn').addEventListener('click', function() {
                     if (timingsContainer.children.length > 1) {
                         timingsContainer.removeChild(timingItem);
@@ -864,6 +1010,66 @@
                         alert('آپ آخری وقت کو حذف نہیں کر سکتے');
                     }
                 });
+            }
+            
+            // Helper function to update a timing item with data
+            function updateTimingItem(timingItem, timingData, index) {
+                timingItem.querySelector('.timing-title').value = timingData.title || '';
+                timingItem.querySelector('.timing-from').value = timingData.from || '';
+                timingItem.querySelector('.timing-to').value = timingData.to || '';
+                
+                // Set checked days
+                timingItem.querySelectorAll('input[name="day"]').forEach(checkbox => {
+                    checkbox.checked = timingData.days && timingData.days.includes(checkbox.value);
+                });
+                
+                // Set timing type
+                const typeInput = timingItem.querySelector(`input[name="timingType${index}"][value="${timingData.type || 'one-time'}"]`);
+                if (typeInput) typeInput.checked = true;
+            }
+            
+            // موجودہ سال سیٹ کریں
+            currentYearSpan.textContent = new Date().getFullYear();
+            
+            // Load saved form data on page load
+            loadFormData();
+            
+            // پس منظر کی تصویر کا پیش نظارہ
+            bgImageInput.addEventListener('change', function() {
+                if (this.files && this.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        bgPreview.src = e.target.result;
+                        bgPreview.style.display = 'block';
+                    }
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+            
+            // ڈاؤن لوڈ بٹن کے لیے فنکشن
+            downloadBtn.addEventListener('click', function() {
+                html2canvas(document.getElementById('generatedPoster')).then(function(canvas) {
+                    const link = document.createElement('a');
+                    link.download = 'نظامانی-میڈیکل-سینٹر-پوسٹر.png';
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                });
+            });
+            
+            // خدمت شامل کرنے کا فنکشن
+            addServiceBtn.addEventListener('click', function() {
+                addServiceItem('', null);
+            });
+            
+            // وقت شامل کرنے کا فنکشن
+            addTimingBtn.addEventListener('click', function() {
+                addTimingItem({
+                    title: '',
+                    from: '',
+                    to: '',
+                    days: [],
+                    type: 'one-time'
+                }, document.querySelectorAll('.timing-item').length);
             });
             
             // تمام موجودہ حذف بٹنوں کو فعال بنائیں
@@ -899,6 +1105,9 @@
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
+                // Save form data to cookies
+                saveFormData();
+                
                 // فارم کی قدریں حاصل کریں
                 const centerName = document.getElementById('centerName').value;
                 const healerName = document.getElementById('healerName').value;
@@ -933,7 +1142,13 @@
                             });
                             servicePromises.push(promise);
                         } else {
-                            serviceIcons[index] = null;
+                            // Check if there's a preview image (from cookie)
+                            const preview = item.querySelector('.service-icon-preview');
+                            if (preview && preview.src && preview.style.display !== 'none') {
+                                serviceIcons[index] = preview.src;
+                            } else {
+                                serviceIcons[index] = null;
+                            }
                         }
                     }
                 });
@@ -972,6 +1187,14 @@
                         });
                     }
                     reader.readAsDataURL(bgImageInput.files[0]);
+                } else if (bgPreview.src && bgPreview.style.display !== 'none') {
+                    // Use the preview image (from cookie)
+                    bgImage = bgPreview.src;
+                    
+                    // تمام تصاویر کے لوڈ ہونے کا انتظار کریں
+                    Promise.all(servicePromises).then(() => {
+                        updatePoster();
+                    });
                 } else {
                     // تمام تصاویر کے لوڈ ہونے کا انتظار کریں
                     Promise.all(servicePromises).then(() => {

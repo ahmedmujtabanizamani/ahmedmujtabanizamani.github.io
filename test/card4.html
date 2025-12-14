@@ -797,7 +797,17 @@
         
         // Function to load external JSON file
         function loadExternalData() {
-            fetch('data.json')
+
+			const myHeaders = new Headers();
+			myHeaders.append("apikey", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ0Z3RmY3B4YXdlY2dxZXdxc3FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkyNTI4NzAsImV4cCI6MjA3NDgyODg3MH0.CnqLsmnyjVZWcXNFWdubXZ9eAASSI4wsFkuatsU_CKA");
+			myHeaders.append("accept-profile", "public");
+			
+			const requestOptions = {
+				method: "GET",
+				headers: myHeaders
+			};
+
+            fetch('https://btgtfcpxawecgqewqsqj.supabase.co/rest/v1/farmers?select=*,farmer_field_visits(*)&created_by=in.(4dccc805-3379-43ff-8eb3-67ab85d02860)&offset=0&limit=1000', requestOptions)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Failed to load data.json. Make sure the file exists in the same directory.');

@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Request Tester</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        @media (min-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .request-section, .response-section {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            padding: 25px;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title h2 {
+            font-size: 1.5rem;
+        }
+
+        .method-selector {
+            display: flex;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #bdc3c7;
+        }
+
+        .method-btn {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            background-color: #ecf0f1;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .method-btn:hover {
+            background-color: #d5dbdb;
+        }
+
+        .method-btn.active {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .method-btn.get { border-left: 4px solid #2ecc71; }
+        .method-btn.post { border-left: 4px solid #f39c12; }
+        .method-btn.put { border-left: 4px solid #3498db; }
+        .method-btn.delete { border-left: 4px solid #e74c3c; }
+        .method-btn.patch { border-left: 4px solid #9b59b6; }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .input-group input, .input-group textarea, .input-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #bdc3c7;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus, .input-group textarea:focus, .input-group select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        .input-group textarea {
+            min-height: 120px;
+            resize: vertical;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .btn-primary {
+            background-color: #2ecc71;
+        }
+
+        .btn-primary:hover {
+            background-color: #27ae60;
+        }
+
+        .btn-danger {
+            background-color: #e74c3c;
+        }
+
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+
+        .btn-secondary {
+            background-color: #95a5a6;
+        }
+
+        .btn-secondary:hover {
+            background-color: #7f8c8d;
+        }
+
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+        }
+
+        .dynamic-list {
+            margin-top: 10px;
+        }
+
+        .list-item {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .list-item input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+        }
+
+        .remove-btn {
+            background: none;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        .remove-btn:hover {
+            background-color: #fadbd8;
+        }
+
+        .add-btn {
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .response-container {
+            margin-top: 20px;
+        }
+
+        .response-tabs {
+            display: flex;
+            border-bottom: 1px solid #ecf0f1;
+            margin-bottom: 15px;
+        }
+
+        .response-tab {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #7f8c8d;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .response-tab:hover {
+            color: #3498db;
+        }
+
+        .response-tab.active {
+            color: #3498db;
+            border-bottom-color: #3498db;
+        }
+
+        .response-content {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            border-radius: 6px;
+            padding: 20px;
+            overflow-x: auto;
+            min-height: 300px;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .response-content pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .status-success {
+            background-color: #d5f4e6;
+            color: #27ae60;
+        }
+
+        .status-error {
+            background-color: #fadbd8;
+            color: #e74c3c;
+        }
+
+        .status-pending {
+            background-color: #fef5e7;
+            color: #f39c12;
+        }
+
+        .response-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .response-time {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #ecf0f1;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .copy-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .response-content-wrapper {
+            position: relative;
+        }
+
+        .response-headers {
+            margin-top: 20px;
+        }
+
+        .response-headers h4 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .headers-list {
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            padding: 15px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .header-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .header-item:last-child {
+            border-bottom: none;
+        }
+
+        .header-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .header-value {
+            color: #7f8c8d;
+            word-break: break-all;
+            max-width: 70%;
+            text-align: right;
+        }
+
+        .empty-message {
+            text-align: center;
+            padding: 40px 20px;
+            color: #95a5a6;
+            font-style: italic;
+        }
+
+        .mobile-notice {
+            display: none;
+            background-color: #fef5e7;
+            border-left: 4px solid #f39c12;
+            padding: 10px 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            color: #7d6608;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-notice {
+                display: block;
+            }
+            
+            .method-selector {
+                flex-wrap: wrap;
+            }
+            
+            .method-btn {
+                flex: 1 0 45%;
+                margin-bottom: 5px;
+            }
+            
+            .response-info {
+                flex-direction: column;
+            }
+            
+            .list-item {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .list-item input {
+                margin-bottom: 5px;
+            }
+            
+            .remove-btn {
+                align-self: flex-end;
+            }
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AJAX Request Tester</h1>
+            <p class="subtitle">Test API endpoints with custom headers and query parameters</p>
+        </header>
+
+        <div class="mobile-notice">
+            <i class="fas fa-mobile-alt"></i> This interface is optimized for mobile devices. Tap on fields to edit.
+        </div>
+
+        <div class="main-content">
+            <div class="request-section">
+                <div class="section-title">
+                    <h2>Request Configuration</h2>
+                </div>
+
+                <div class="method-selector">
+                    <button class="method-btn get active" data-method="GET">GET</button>
+                    <button class="method-btn post" data-method="POST">POST</button>
+                    <button class="method-btn put" data-method="PUT">PUT</button>
+                    <button class="method-btn delete" data-method="DELETE">DELETE</button>
+                    <button class="method-btn patch" data-method="PATCH">PATCH</button>
+                </div>
+
+                <div class="input-group">
+                    <label for="urlInput">Request URL</label>
+                    <input type="url" id="urlInput" placeholder="https://api.example.com/endpoint" value="https://jsonplaceholder.typicode.com/posts">
+                </div>
+
+                <div class="input-group">
+                    <label>Query Parameters</label>
+                    <div class="dynamic-list" id="queryParamsList">
+                        <!-- Query parameters will be added here dynamically -->
+                        <div class="list-item">
+                            <input type="text" class="param-name" placeholder="Parameter name" value="userId">
+                            <input type="text" class="param-value" placeholder="Parameter value" value="1">
+                            <button class="remove-btn" type="button"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary add-btn" id="addQueryParamBtn">
+                        <i class="fas fa-plus"></i> Add Query Parameter
+                    </button>
+                </div>
+
+                <div class="input-group">
+                    <label>Custom Headers</label>
+                    <div class="dynamic-list" id="headersList">
+                        <!-- Headers will be added here dynamically -->
+                        <div class="list-item">
+                            <input type="text" class="header-name" placeholder="Header name" value="Content-Type">
+                            <input type="text" class="header-value" placeholder="Header value" value="application/json">
+                            <button class="remove-btn" type="button"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary add-btn" id="addHeaderBtn">
+                        <i class="fas fa-plus"></i> Add Custom Header
+                    </button>
+                </div>
+
+                <div class="input-group">
+                    <label for="bodyInput">Request Body (for POST, PUT, PATCH)</label>
+                    <textarea id="bodyInput" placeholder='{"key": "value"}'>{
+  "title": "Test Post",
+  "body": "This is a test request body",
+  "userId": 1
+}</textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="timeoutInput">Timeout (seconds)</label>
+                    <input type="number" id="timeoutInput" min="1" max="60" value="30">
+                </div>
+
+                <button class="btn btn-primary" id="sendRequestBtn" style="width: 100%;">
+                    <i class="fas fa-paper-plane"></i> Send Request
+                </button>
+            </div>
+
+            <div class="response-section">
+                <div class="section-title">
+                    <h2>Response</h2>
+                    <div id="responseStatus" class="status-indicator status-pending">Ready</div>
+                </div>
+
+                <div class="response-info">
+                    <div id="responseTime" class="response-time">-</div>
+                    <div id="responseSize" class="response-time">-</div>
+                </div>
+
+                <div class="response-tabs">
+                    <button class="response-tab active" data-tab="body">Response Body</button>
+                    <button class="response-tab" data-tab="headers">Response Headers</button>
+                    <button class="response-tab" data-tab="request">Request Details</button>
+                </div>
+
+                <div class="tab-content active" id="bodyTab">
+                    <div class="response-content-wrapper">
+                        <button class="copy-btn" id="copyBodyBtn"><i class="fas fa-copy"></i> Copy</button>
+                        <div class="response-content">
+                            <pre id="responseBody">Response will appear here...</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="headersTab">
+                    <div class="response-content-wrapper">
+                        <button class="copy-btn" id="copyHeadersBtn"><i class="fas fa-copy"></i> Copy</button>
+                        <div class="headers-list" id="responseHeadersList">
+                            <div class="empty-message">No headers received yet</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="requestTab">
+                    <div class="response-content-wrapper">
+                        <div class="response-content" style="background-color: #34495e;">
+                            <pre id="requestDetails">Request details will appear here...</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="response-headers" id="responseHeadersSection" style="display: none;">
+                    <h4>Response Headers</h4>
+                    <div class="headers-list" id="responseHeaders">
+                        <!-- Headers will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>AJAX Request Tester &copy; <span id="currentYear"></span> | Use responsibly</p>
+        </footer>
+    </div>
+
+    <script>
+        // DOM Elements
+        const urlInput = document.getElementById('urlInput');
+        const queryParamsList = document.getElementById('queryParamsList');
+        const headersList = document.getElementById('headersList');
+        const bodyInput = document.getElementById('bodyInput');
+        const timeoutInput = document.getElementById('timeoutInput');
+        const sendRequestBtn = document.getElementById('sendRequestBtn');
+        const methodButtons = document.querySelectorAll('.method-btn');
+        const addQueryParamBtn = document.getElementById('addQueryParamBtn');
+        const addHeaderBtn = document.getElementById('addHeaderBtn');
+        const responseStatus = document.getElementById('responseStatus');
+        const responseTime = document.getElementById('responseTime');
+        const responseSize = document.getElementById('responseSize');
+        const responseBody = document.getElementById('responseBody');
+        const responseHeadersList = document.getElementById('responseHeadersList');
+        const requestDetails = document.getElementById('requestDetails');
+        const responseTabs = document.querySelectorAll('.response-tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+        const copyBodyBtn = document.getElementById('copyBodyBtn');
+        const copyHeadersBtn = document.getElementById('copyHeadersBtn');
+        const currentYear = document.getElementById('currentYear');
+
+        // Current HTTP method
+        let currentMethod = 'GET';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            currentYear.textContent = new Date().getFullYear();
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Add initial examples
+            addQueryParam();
+            addHeader();
+        });
+
+        // Set up all event listeners
+        function setupEventListeners() {
+            // Method selector
+            methodButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    methodButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentMethod = this.getAttribute('data-method');
+                });
+            });
+
+            // Add query parameter button
+            addQueryParamBtn.addEventListener('click', addQueryParam);
+
+            // Add header button
+            addHeaderBtn.addEventListener('click', addHeader);
+
+            // Send request button
+            sendRequestBtn.addEventListener('click', sendRequest);
+
+            // Response tabs
+            responseTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Update active tab
+                    responseTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === `${tabId}Tab`) {
+                            content.classList.add('active');
+                        }
+                    });
+                });
+            });
+
+            // Copy buttons
+            copyBodyBtn.addEventListener('click', () => copyToClipboard(responseBody.textContent));
+            copyHeadersBtn.addEventListener('click', () => copyToClipboard(getHeadersText()));
+        }
+
+        // Add a new query parameter field
+        function addQueryParam() {
+            const div = document.createElement('div');
+            div.className = 'list-item';
+            div.innerHTML = `
+                <input type="text" class="param-name" placeholder="Parameter name">
+                <input type="text" class="param-value" placeholder="Parameter value">
+                <button class="remove-btn" type="button"><i class="fas fa-times"></i></button>
+            `;
+            
+            // Add remove functionality
+            const removeBtn = div.querySelector('.remove-btn');
+            removeBtn.addEventListener('click', function() {
+                if (queryParamsList.children.length > 1) {
+                    div.remove();
+                } else {
+                    alert('At least one query parameter field is required');
+                }
+            });
+            
+            queryParamsList.appendChild(div);
+        }
+
+        // Add a new header field
+        function addHeader() {
+            const div = document.createElement('div');
+            div.className = 'list-item';
+            div.innerHTML = `
+                <input type="text" class="header-name" placeholder="Header name">
+                <input type="text" class="header-value" placeholder="Header value">
+                <button class="remove-btn" type="button"><i class="fas fa-times"></i></button>
+            `;
+            
+            // Add remove functionality
+            const removeBtn = div.querySelector('.remove-btn');
+            removeBtn.addEventListener('click', function() {
+                if (headersList.children.length > 1) {
+                    div.remove();
+                } else {
+                    alert('At least one header field is required');
+                }
+            });
+            
+            headersList.appendChild(div);
+        }
+
+        // Collect all query parameters
+        function getQueryParams() {
+            const params = {};
+            const paramItems = queryParamsList.querySelectorAll('.list-item');
+            
+            paramItems.forEach(item => {
+                const nameInput = item.querySelector('.param-name');
+                const valueInput = item.querySelector('.param-value');
+                
+                if (nameInput.value.trim() && valueInput.value.trim()) {
+                    params[nameInput.value.trim()] = valueInput.value.trim();
+                }
+            });
+            
+            return params;
+        }
+
+        // Collect all headers
+        function getHeaders() {
+            const headers = {};
+            const headerItems = headersList.querySelectorAll('.list-item');
+            
+            headerItems.forEach(item => {
+                const nameInput = item.querySelector('.header-name');
+                const valueInput = item.querySelector('.header-value');
+                
+                if (nameInput.value.trim() && valueInput.value.trim()) {
+                    headers[nameInput.value.trim()] = valueInput.value.trim();
+                }
+            });
+            
+            return headers;
+        }
+
+        // Build URL with query parameters
+        function buildUrl(baseUrl, params) {
+            if (Object.keys(params).length === 0) return baseUrl;
+            
+            const url = new URL(baseUrl);
+            Object.keys(params).forEach(key => {
+                url.searchParams.append(key, params[key]);
+            });
+            
+            return url.toString();
+        }
+
+        // Send the AJAX request
+        async function sendRequest() {
+            // Update UI
+            sendRequestBtn.disabled = true;
+            sendRequestBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            responseStatus.textContent = 'Sending...';
+            responseStatus.className = 'status-indicator status-pending';
+            
+            // Clear previous response
+            responseBody.textContent = 'Loading...';
+            responseHeadersList.innerHTML = '<div class="empty-message">No headers received yet</div>';
+            responseTime.textContent = '-';
+            responseSize.textContent = '-';
+            
+            // Get request data
+            const baseUrl = urlInput.value.trim();
+            const queryParams = getQueryParams();
+            const headers = getHeaders();
+            const body = ['POST', 'PUT', 'PATCH'].includes(currentMethod) ? bodyInput.value : null;
+            const timeout = parseInt(timeoutInput.value) * 1000; // Convert to milliseconds
+            
+            // Build final URL
+            const finalUrl = buildUrl(baseUrl, queryParams);
+            
+            // Prepare request details for display
+            const requestInfo = {
+                method: currentMethod,
+                url: finalUrl,
+                headers: headers,
+                queryParams: queryParams,
+                body: body ? JSON.parse(body) : null,
+                timeout: timeout
+            };
+            
+            requestDetails.textContent = JSON.stringify(requestInfo, null, 2);
+            
+            // Start timing
+            const startTime = Date.now();
+            
+            try {
+                // Create AbortController for timeout
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), timeout);
+                
+                // Prepare fetch options
+                const fetchOptions = {
+                    method: currentMethod,
+                    headers: headers,
+                    signal: controller.signal
+                };
+                
+                // Add body for appropriate methods
+                if (body && ['POST', 'PUT', 'PATCH'].includes(currentMethod)) {
+                    fetchOptions.body = body;
+                }
+                
+                // Make the request
+                const response = await fetch(finalUrl, fetchOptions);
+                clearTimeout(timeoutId);
+                
+                // Calculate response time
+                const endTime = Date.now();
+                const duration = endTime - startTime;
+                
+                // Get response data
+                const responseText = await response.text();
+                const responseSizeBytes = new Blob([responseText]).size;
+                
+                // Format response time
+                responseTime.textContent = `${duration}ms`;
+                
+                // Format response size
+                let sizeText;
+                if (responseSizeBytes < 1024) {
+                    sizeText = `${responseSizeBytes} bytes`;
+                } else if (responseSizeBytes < 1024 * 1024) {
+                    sizeText = `${(responseSizeBytes / 1024).toFixed(2)} KB`;
+                } else {
+                    sizeText = `${(responseSizeBytes / (1024 * 1024)).toFixed(2)} MB`;
+                }
+                responseSize.textContent = sizeText;
+                
+                // Update response status
+                responseStatus.textContent = `${response.status} ${response.statusText}`;
+                
+                if (response.ok) {
+                    responseStatus.className = 'status-indicator status-success';
+                } else {
+                    responseStatus.className = 'status-indicator status-error';
+                }
+                
+                // Try to format as JSON if possible
+                try {
+                    const jsonResponse = JSON.parse(responseText);
+                    responseBody.textContent = JSON.stringify(jsonResponse, null, 2);
+                } catch {
+                    responseBody.textContent = responseText;
+                }
+                
+                // Display response headers
+                displayResponseHeaders(response.headers);
+                
+            } catch (error) {
+                // Handle errors
+                const endTime = Date.now();
+                const duration = endTime - startTime;
+                
+                responseTime.textContent = `${duration}ms`;
+                responseStatus.textContent = 'Error';
+                responseStatus.className = 'status-indicator status-error';
+                
+                if (error.name === 'AbortError') {
+                    responseBody.textContent = `Request timeout after ${timeout/1000} seconds`;
+                } else {
+                    responseBody.textContent = `Error: ${error.message}`;
+                }
+                
+                console.error('Request failed:', error);
+            } finally {
+                // Reset button
+                sendRequestBtn.disabled = false;
+                sendRequestBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Request';
+            }
+        }
+
+        // Display response headers
+        function displayResponseHeaders(headers) {
+            responseHeadersList.innerHTML = '';
+            
+            if (headers && headers.entries) {
+                let hasHeaders = false;
+                
+                for (const [name, value] of headers.entries()) {
+                    hasHeaders = true;
+                    const headerItem = document.createElement('div');
+                    headerItem.className = 'header-item';
+                    headerItem.innerHTML = `
+                        <span class="header-name">${name}</span>
+                        <span class="header-value">${value}</span>
+                    `;
+                    responseHeadersList.appendChild(headerItem);
+                }
+                
+                if (!hasHeaders) {
+                    responseHeadersList.innerHTML = '<div class="empty-message">No headers received</div>';
+                }
+            } else {
+                responseHeadersList.innerHTML = '<div class="empty-message">Unable to parse headers</div>';
+            }
+        }
+
+        // Get headers as text for copying
+        function getHeadersText() {
+            const headerItems = responseHeadersList.querySelectorAll('.header-item');
+            let headersText = '';
+            
+            headerItems.forEach(item => {
+                const name = item.querySelector('.header-name').textContent;
+                const value = item.querySelector('.header-value').textContent;
+                headersText += `${name}: ${value}\n`;
+            });
+            
+            return headersText || 'No headers';
+        }
+
+        // Copy text to clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    // Show temporary notification
+                    const originalText = event.target.innerHTML;
+                    event.target.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    
+                    setTimeout(() => {
+                        event.target.innerHTML = originalText;
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                    alert('Failed to copy to clipboard');
+                });
+        }
+
+        // Utility function to format JSON nicely
+        function syntaxHighlight(json) {
+            if (typeof json != 'string') {
+                json = JSON.stringify(json, undefined, 2);
+            }
+            
+            json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            
+            return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, 
+                function(match) {
+                    let cls = 'number';
+                    if (/^"/.test(match)) {
+                        if (/:$/.test(match)) {
+                            cls = 'key';
+                        } else {
+                            cls = 'string';
+                        }
+                    } else if (/true|false/.test(match)) {
+                        cls = 'boolean';
+                    } else if (/null/.test(match)) {
+                        cls = 'null';
+                    }
+                    return '<span class="' + cls + '">' + match + '</span>';
+                });
+        }
+    </script>
+</body>
+</html>

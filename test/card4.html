@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Data Viewer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1700px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .view-toggle, .search-box, .data-source, .filter-options {
+            margin: 5px 0;
+        }
+
+        .view-toggle button, .data-source button {
+            padding: 8px 15px;
+            margin-right: 10px;
+            background-color: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .view-toggle button.active, .data-source button:hover {
+            background-color: #3498db;
+            color: white;
+            border-color: #2980b9;
+        }
+
+        .search-box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .search-box input {
+            padding: 10px 15px;
+            width: 300px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        .stats {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        .filter-options {
+            display: flex;
+            align-items: center;
+        }
+
+        .filter-checkbox {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .filter-checkbox input {
+            margin-right: 8px;
+            transform: scale(1.2);
+        }
+
+        .filter-checkbox label {
+            font-size: 0.9rem;
+            color: #2c3e50;
+            cursor: pointer;
+        }
+
+        .filter-checkbox input:checked + label {
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        /* Table View Styles */
+        .table-container {
+            overflow-x: auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        .table-container.active {
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th {
+            background-color: #2c3e50;
+            color: white;
+            text-align: left;
+            padding: 15px;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+
+        table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .nested-row {
+            background-color: #f8f9fa;
+        }
+
+        .nested-row td {
+            padding-left: 40px;
+        }
+
+        .collapse-btn {
+            background: none;
+            border: none;
+            color: #3498db;
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 2px 8px;
+            border-radius: 3px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .collapse-btn i {
+            margin-right: 5px;
+            font-size: 0.8rem;
+        }
+
+        .collapse-btn:hover {
+            background-color: #ecf0f1;
+        }
+
+        .address-cell, .system-reason-cell {
+            max-width: 200px;
+            word-wrap: break-word;
+        }
+
+        .collapsed-content {
+            max-height: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .expanded-content {
+            max-height: none;
+            overflow: visible;
+        }
+
+        .image-link {
+            color: #e74c3c;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+
+        .image-link i {
+            margin-right: 5px;
+        }
+
+        .image-link:hover {
+            text-decoration: underline;
+        }
+
+        .wheat-acres-cell {
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .wheat-acres-high {
+            color: #27ae60;
+            background-color: #d5f4e6;
+            padding: 3px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .wheat-acres-medium {
+            color: #f39c12;
+            background-color: #fef5e7;
+            padding: 3px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .wheat-acres-low {
+            color: #e74c3c;
+            background-color: #fadbd8;
+            padding: 3px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        /* Card View Styles */
+        .card-container {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 25px;
+        }
+
+        .card-container.active {
+            display: grid;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+
+        .card-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            position: relative;
+        }
+
+        .card-header h3 {
+            margin-bottom: 5px;
+            padding-right: 30px;
+        }
+
+        .card-header p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .card-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-field {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-field label {
+            font-weight: 600;
+            color: #7f8c8d;
+            font-size: 0.85rem;
+            margin-bottom: 3px;
+        }
+
+        .card-field span {
+            color: #2c3e50;
+            word-break: break-word;
+        }
+
+        .card-field .wheat-acres-value {
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        .card-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .nested-section {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+
+        .nested-section h4 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nested-section .collapse-btn {
+            font-size: 0.8rem;
+        }
+
+        .nested-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .address-section, .system-reason-section {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f0f7ff;
+            border-radius: 5px;
+            border-left: 3px solid #5dade2;
+        }
+
+        .address-section h5, .system-reason-section h5 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .address-content, .system-reason-content {
+            max-height: 60px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .address-content.expanded, .system-reason-content.expanded {
+            max-height: 500px;
+        }
+
+        .field-visit-indicator {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+        
+        .field-visit-yes {
+            background-color: #d5f4e6;
+            color: #27ae60;
+        }
+        
+        .field-visit-no {
+            background-color: #fadbd8;
+            color: #e74c3c;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .search-box input {
+                width: 100%;
+                margin-top: 10px;
+            }
+            
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+            
+            table {
+                font-size: 0.9rem;
+            }
+            
+            table th, table td {
+                padding: 10px 8px;
+            }
+            
+            .card-header h3 {
+                padding-right: 0;
+                margin-right: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JSON Data Viewer</h1>
+            <p class="subtitle">View and search through farmer records with image links and nested data</p>
+        </header>
+        
+        <div class="controls">
+            <div class="view-toggle">
+                <button id="tableViewBtn" class="active"><i class="fas fa-table"></i> Table View</button>
+                <button id="cardViewBtn"><i class="fas fa-th-large"></i> Card View</button>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search by name, CNIC, or address...">
+                <div class="filter-checkbox">
+                    <input type="checkbox" id="nullFieldVisitsCheckbox">
+                    <label for="nullFieldVisitsCheckbox">Show only records with NO Field Visits</label>
+                </div>
+                <div class="stats">Showing <span id="recordCount">0</span> records</div>
+            </div>
+            
+            <div class="data-source">
+                <button id="loadSampleBtn">Load Sample Data</button>
+                <button id="loadExternalBtn">Load from data.json</button>
+            </div>
+        </div>
+        
+        <div id="tableContainer" class="table-container active">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th style="width: 50px;">#</th>
+                        <th>Name</th>
+                        <th>Father/Husband</th>
+                        <th>CNIC</th>
+                        <th>Address</th>
+                        <th>Mobile</th>
+                        <th>Total Land (acres)</th>
+                        <th>Wheat Acres</th>
+                        <th>Status</th>
+                        <th>System Unverified Reason</th>
+                        <th>Images</th>
+                        <th>Field Visits</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div id="cardContainer" class="card-container">
+            <!-- Cards will be populated here -->
+        </div>
+        
+        <footer>
+            <p>JSON Data Viewer &copy; <span id="currentYear"></span> | Click on image icons to view full size</p>
+        </footer>
+    </div>
+
+    <script>
+        // Sample data (same as provided in the question)
+        const sampleData = [
+            {
+                "id": "a400c9af-5b05-48da-a3fa-615cd8acb891",
+                "name": "Hamid Ai shah",
+                "father_husband_name": "Syed Yar Muhammad ",
+                "cnic_no": "41103-7338104-1",
+                "cnic_status": "Life Time",
+                "cnic_issue_date": "2023-01-10",
+                "cnic_expiry_date": null,
+                "mobile_no": "0314 2939527",
+                "district_id": "c1253941-3419-4ce5-9842-9e359a346129",
+                "taluka_id": "9db3cd4d-431d-424f-8ec9-ad2120b34920",
+                "union_council_id": "18d102ed-9d3e-4aad-8f23-964bc5fe238a",
+                "tappa_id": "089c0d23-1326-4cca-8a9a-1cc07ae14b67",
+                "gender": "Male",
+                "landholding_acres_total": 19.00,
+                "survey_nos": null,
+                "form_viib_no": null,
+                "iban_no": null,
+                "account_title": "Hamid Ali shah",
+                "mother_name": "Noor bibi",
+                "correspondence_address": "Ahmed Dars Rahi Po Talk Matli Dist Badin",
+                "permanent_address": "Village Ahmed Dars Rahi Po Talk Matli Dist Badin",
+                "gps_latitude": null,
+                "gps_longitude": null,
+                "cnic_front_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/cnic/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1761710892995-6f71c9d0-950c-466a-ab3f-592878c523d5.jpg",
+                "cnic_back_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/cnic/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1761710899856-9fb40c17-2fa5-43ad-8bb4-5618ae55aef5.jpg",
+                "photo_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/picture/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1761710905929-b462995f-4ad2-4a5a-80f3-6dc64fccb638.jpg",
+                "form_vii_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/FormVII/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1761710922117-732f9dcf-d578-4c6c-9cfe-07facbfff20a.jpg",
+                "created_at": "2025-10-29T04:08:56.741866+00:00",
+                "updated_at": "2025-10-29T20:01:31.416849+00:00",
+                "created_by": "4dccc805-3379-43ff-8eb3-67ab85d02860",
+                "source_local_id": null,
+                "bank_name": "Easypaisa",
+                "bank_account_no": "03142939527",
+                "wheat_acres": 5,
+                "verify_status": "verified",
+                "rejection_reason": "Form VII Land Area: 19 acres",
+                "verified_by": "69319882-718b-4c7d-9222-6eaa2ba9318c",
+                "verified_at": "2025-10-29T20:01:30.555+00:00",
+                "dap_lifted": false,
+                "affidavit_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/afidavit/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1761710909451-0b9585b4-4b96-4f8a-a65a-38c592d7c916.jpg",
+                "form_vii_urls": null,
+                "affidavit_urls": null,
+                "formViiLandArea": "19",
+                "action_ts": "2025-10-29T20:01:30.555+00:00",
+                "created_on": "2025-10-29",
+                "bank_norm": "easypaisa",
+                "cnic_norm": "4110373381041",
+                "system_unverified": false,
+                "system_unverified_reason": "Data verification pending from external source",
+                "effective_status": "verified",
+                "farmer_field_visits": {
+                    "id": "16b78fd5-f1ab-49b4-af9d-e3e0257b0d47",
+                    "notes": null,
+                    "dap_brand": "FFC Sona DAP",
+                    "farmer_id": "a400c9af-5b05-48da-a3fa-615cd8acb891",
+                    "created_at": "2025-12-13T13:03:59.031369+00:00",
+                    "created_by": "4dccc805-3379-43ff-8eb3-67ab85d02860",
+                    "visit_type": "sowing_verification",
+                    "iban_number": null,
+                    "vendor_name": null,
+                    "gps_latitude": 25.0209595,
+                    "gps_longitude": 68.7598624,
+                    "sowing_status": "Wheat Sown",
+                    "date_of_sowing": "2025-11-11",
+                    "gps_accuracy_m": 6.300000190734863,
+                    "field_photo_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/picture/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1765630761138-a416acfb-4721-41e2-ba51-6e9081ee7bee.jpg",
+                    "reason_not_sown": null,
+                    "sowing_verified": true,
+                    "actual_sown_area": 5,
+                    "dap_price_per_bag": null,
+                    "dap_purchase_date": "2025-11-09",
+                    "solar_pump_status": false,
+                    "verification_date": "2025-12-13T09:54:08.267+00:00",
+                    "water_course_type": "Katcha",
+                    "dap_receipt_number": "45",
+                    "amount_received_pkr": 70000,
+                    "cash_withdrawn_status": false,
+                    "dap_purchase_location": null,
+                    "device_time_at_submit": "2025-12-13T10:01:18.506+00:00",
+                    "solar_tubewell_status": false,
+                    "evidence_photo_crop_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/picture/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1765630761138-a416acfb-4721-41e2-ba51-6e9081ee7bee.jpg",
+                    "subsidy_received_status": false,
+                    "evidence_cheque_book_url": null,
+                    "evidence_dap_receipt_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/picture/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1765631012725-cf043751-e02c-428e-8227-1e298b7a29b0.jpg",
+                    "evidence_water_course_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/picture/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1765631018862-54cae0fb-9458-467a-aecf-4d8cef30b06e.jpg",
+                    "bank_message_received_status": false,
+                    "evidence_photo_crop_latitude": 25.021,
+                    "evidence_cheque_book_latitude": null,
+                    "evidence_dap_receipt_latitude": 25.0210283,
+                    "evidence_photo_crop_longitude": 68.760005,
+                    "evidence_cheque_book_longitude": null,
+                    "evidence_dap_receipt_longitude": 68.759885,
+                    "evidence_water_course_latitude": 25.0209417,
+                    "evidence_photo_crop_captured_at": "2025-12-13T10:00:01.642+00:00",
+                    "evidence_water_course_longitude": 68.7598517,
+                    "evidence_cheque_book_captured_at": null,
+                    "evidence_dap_receipt_captured_at": "2025-12-13T10:01:11.769+00:00",
+                    "evidence_water_course_captured_at": "2025-12-13T10:01:54.846+00:00"
+                }
+            },
+            {
+                "id": "5a29641b-f76c-4926-8db4-c61554522d29",
+                "name": "Noor Muhammad ",
+                "father_husband_name": "Ahmed Khan ",
+                "cnic_no": "41103-2651620-5",
+                "cnic_status": "Life Time",
+                "cnic_issue_date": "2019-10-14",
+                "cnic_expiry_date": null,
+                "mobile_no": "0312 3987109",
+                "district_id": "c1253941-3419-4ce5-9842-9e359a346129",
+                "taluka_id": "9db3cd4d-431d-424f-8ec9-ad2120b34920",
+                "union_council_id": "18d102ed-9d3e-4aad-8f23-964bc5fe238a",
+                "tappa_id": "089c0d23-1326-4cca-8a9a-1cc07ae14b67",
+                "gender": "Male",
+                "landholding_acres_total": 5.00,
+                "survey_nos": null,
+                "form_viib_no": null,
+                "iban_no": null,
+                "account_title": "Noor Muhammad",
+                "mother_name": "Bhari",
+                "correspondence_address": "Village Baran Laghari Po Matli Baran Talk Matli Dist Badin",
+                "permanent_address": "Village Baran Laghari Po Ma Talk Matli Dist Badin tli",
+                "gps_latitude": null,
+                "gps_longitude": null,
+                "cnic_front_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/cnic/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1761710270654-1f372959-c690-4213-a7a5-cc71b9110195.jpg",
+                "cnic_back_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/cnic/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1761710279437-e81e14d0-dc24-46ff-88de-733b50c09fcc.jpg",
+                "photo_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/picture/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1761710287542-c782475a-585f-4e50-b71c-f7df0e721f18.jpg",
+                "form_vii_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/FormVII/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1761710291509-2fb172c5-b28a-43d3-83c4-38b136494ca1.jpg",
+                "created_at": "2025-10-29T03:58:26.191684+00:00",
+                "updated_at": "2025-10-29T20:01:43.58847+00:00",
+                "created_by": "4dccc805-3379-43ff-8eb3-67ab85d02860",
+                "source_local_id": null,
+                "bank_name": "Easypaisa",
+                "bank_account_no": "03123987109",
+                "wheat_acres": 3,
+                "verify_status": "verified",
+                "rejection_reason": "Form VII Land Area: 5 acres",
+                "verified_by": "69319882-718b-4c7d-9222-6eaa2ba9318c",
+                "verified_at": "2025-10-29T20:01:42.72+00:00",
+                "dap_lifted": false,
+                "affidavit_url": null,
+                "form_vii_urls": null,
+                "affidavit_urls": null,
+                "formViiLandArea": "5",
+                "action_ts": "2025-10-29T20:01:42.72+00:00",
+                "created_on": "2025-10-29",
+                "bank_norm": "easypaisa",
+                "cnic_norm": "4110326516205",
+                "system_unverified": true,
+                "system_unverified_reason": "CNIC verification failed - document unclear",
+                "effective_status": "verified",
+                "farmer_field_visits": null
+            },
+            {
+                "id": "678bea04-e34f-41f2-b6c0-0cf54259d15b",
+                "name": "Khan Muhammad ",
+                "father_husband_name": "Malika ",
+                "cnic_no": "41601-0618717-9",
+                "cnic_status": "Valid Till",
+                "cnic_issue_date": "2022-04-25",
+                "cnic_expiry_date": "2032-04-25",
+                "mobile_no": "0343 3532447",
+                "district_id": "c1253941-3419-4ce5-9842-9e359a346129",
+                "taluka_id": "9db3cd4d-431d-424f-8ec9-ad2120b34920",
+                "union_council_id": "18d102ed-9d3e-4aad-8f23-964bc5fe238a",
+                "tappa_id": "089c0d23-1326-4cca-8a9a-1cc07ae14b67",
+                "gender": "Male",
+                "landholding_acres_total": 5.36,
+                "survey_nos": null,
+                "form_viib_no": null,
+                "iban_no": null,
+                "account_title": "Kham Muhammad",
+                "mother_name": "Amnat",
+                "correspondence_address": "Village Mir Muhammad Laghari Po T MKhan talk Dist TMKhan",
+                "permanent_address": "Mir Muhammad Laghari Po Talk tand MKahan Dist TMKhan",
+                "gps_latitude": null,
+                "gps_longitude": null,
+                "cnic_front_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/cnic/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1761650712356-ab7596e6-4db1-42d1-94c7-33b49131d1c7.jpg",
+                "cnic_back_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/cnic/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1761650721280-2c28ec58-35da-46d0-b4bf-51aee96680c2.jpg",
+                "photo_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/picture/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1761650732209-924c4fad-fb7e-4f1e-acee-44412e42e898.jpg",
+                "form_vii_url": "https://pub-fc911087c4d84ae79bc4e8b487e4c23f.r2.dev/FormVII/images/4dccc805-3379-43ff-8eb3-67ab85d02860/1761650747845-6b890ebe-39b7-4dc1-a224-75eb930bba75.jpg",
+                "created_at": "2025-10-28T11:26:00.600831+00:00",
+                "updated_at": "2025-10-29T21:18:08.165567+00:00",
+                "created_by": "4dccc805-3379-43ff-8eb3-67ab85d02860",
+                "source_local_id": null,
+                "bank_name": "Easypaisa",
+                "bank_account_no": "03433532447",
+                "wheat_acres": 3,
+                "verify_status": "verified",
+                "rejection_reason": "Form VII Land Area: 5.36 acres",
+                "verified_by": "69319882-718b-4c7d-9222-6eaa2ba9318c",
+                "verified_at": "2025-10-29T21:18:07.291+00:00",
+                "dap_lifted": false,
+                "affidavit_url": null,
+                "form_vii_urls": null,
+                "affidavit_urls": null,
+                "formViiLandArea": "5.36",
+                "action_ts": "2025-10-29T21:18:07.291+00:00",
+                "created_on": "2025-10-28",
+                "bank_norm": "easypaisa",
+                "cnic_norm": "4160106187179",
+                "system_unverified": false,
+                "system_unverified_reason": null,
+                "effective_status": "verified",
+                "farmer_field_visits": null
+            }
+        ];
+
+        let currentData = [];
+        let filteredData = [];
+        
+        // DOM elements
+        const tableViewBtn = document.getElementById('tableViewBtn');
+        const cardViewBtn = document.getElementById('cardViewBtn');
+        const tableContainer = document.getElementById('tableContainer');
+        const cardContainer = document.getElementById('cardContainer');
+        const tableBody = document.getElementById('tableBody');
+        const searchInput = document.getElementById('searchInput');
+        const nullFieldVisitsCheckbox = document.getElementById('nullFieldVisitsCheckbox');
+        const recordCount = document.getElementById('recordCount');
+        const loadSampleBtn = document.getElementById('loadSampleBtn');
+        const loadExternalBtn = document.getElementById('loadExternalBtn');
+        const currentYear = document.getElementById('currentYear');
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            currentYear.textContent = new Date().getFullYear();
+            loadSampleData();
+            
+            // Event listeners
+            tableViewBtn.addEventListener('click', () => switchView('table'));
+            cardViewBtn.addEventListener('click', () => switchView('card'));
+            searchInput.addEventListener('input', filterData);
+            nullFieldVisitsCheckbox.addEventListener('change', filterData);
+            loadSampleBtn.addEventListener('click', loadSampleData);
+            loadExternalBtn.addEventListener('click', loadExternalData);
+        });
+        
+        // Function to switch between table and card views
+        function switchView(view) {
+            if (view === 'table') {
+                tableViewBtn.classList.add('active');
+                cardViewBtn.classList.remove('active');
+                tableContainer.classList.add('active');
+                cardContainer.classList.remove('active');
+            } else {
+                tableViewBtn.classList.remove('active');
+                cardViewBtn.classList.add('active');
+                tableContainer.classList.remove('active');
+                cardContainer.classList.add('active');
+            }
+        }
+        
+        // Function to load sample data
+        function loadSampleData() {
+            currentData = [...sampleData];
+            filteredData = [...currentData];
+            renderData();
+            updateRecordCount();
+        }
+        
+        // Function to load external JSON file
+        function loadExternalData() {
+            fetch('data.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to load data.json. Make sure the file exists in the same directory.');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    currentData = data;
+                    filteredData = [...currentData];
+                    renderData();
+                    updateRecordCount();
+                    alert('Data loaded successfully from data.json');
+                })
+                .catch(error => {
+                    console.error('Error loading external JSON:', error);
+                    alert(`Error: ${error.message}. Using sample data instead.`);
+                    loadSampleData();
+                });
+        }
+        
+        // Function to filter data based on search input and checkbox
+        function filterData() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            const onlyNullFieldVisits = nullFieldVisitsCheckbox.checked;
+            
+            if (searchTerm === '' && !onlyNullFieldVisits) {
+                filteredData = [...currentData];
+            } else {
+                filteredData = currentData.filter(item => {
+                    // Apply text search filter
+                    let matchesSearch = true;
+                    if (searchTerm !== '') {
+                        const name = item.name ? item.name.toLowerCase() : '';
+                        const cnic = item.cnic_no ? item.cnic_no.toLowerCase() : '';
+                        const address = item.correspondence_address ? item.correspondence_address.toLowerCase() : '';
+                        
+                        matchesSearch = name.includes(searchTerm) || cnic.includes(searchTerm) || address.includes(searchTerm);
+                    }
+                    
+                    // Apply field visits filter
+                    let matchesFieldVisitsFilter = true;
+                    if (onlyNullFieldVisits) {
+                        matchesFieldVisitsFilter = !item.farmer_field_visits;
+                    }
+                    
+                    return matchesSearch && matchesFieldVisitsFilter;
+                });
+            }
+            
+            renderData();
+            updateRecordCount();
+        }
+        
+        // Function to update record count
+        function updateRecordCount() {
+            recordCount.textContent = filteredData.length;
+        }
+        
+        // Function to check if a value is a URL
+        function isURL(str) {
+            try {
+                new URL(str);
+                return true;
+            } catch (_) {
+                return false;
+            }
+        }
+        
+        // Function to check if a URL is likely an image
+        function isImageURL(url) {
+            const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'];
+            return imageExtensions.some(ext => url.toLowerCase().includes(ext));
+        }
+        
+        // Function to render image links
+        function renderImageLinks(url, label) {
+            if (!url || !isURL(url)) return '';
+            
+            if (isImageURL(url)) {
+                return `<a href="${url}" target="_blank" class="image-link" title="${label}">
+                    <i class="fas fa-image"></i>${label}
+                </a>`;
+            }
+            
+            return '';
+        }
+        
+        // Function to get wheat acres styling class
+        function getWheatAcresClass(wheatAcres) {
+            if (wheatAcres >= 5) {
+                return 'wheat-acres-high';
+            } else if (wheatAcres >= 3) {
+                return 'wheat-acres-medium';
+            } else {
+                return 'wheat-acres-low';
+            }
+        }
+        
+        // Function to render nested object as expandable content
+        function renderNestedObject(obj, level = 0) {
+            if (!obj || typeof obj !== 'object') return '';
+            
+            let html = '';
+            for (const [key, value] of Object.entries(obj)) {
+                if (value === null || value === undefined || value === '') continue;
+                
+                if (typeof value === 'object') {
+                    html += `<div class="nested-row" style="padding-left: ${level * 20}px;">
+                        <strong>${key}:</strong> ${renderNestedObject(value, level + 1)}
+                    </div>`;
+                } else if (isURL(value) && isImageURL(value)) {
+                    html += `<div class="nested-row" style="padding-left: ${level * 20}px;">
+                        <strong>${key}:</strong> ${renderImageLinks(value, key)}
+                    </div>`;
+                } else {
+                    html += `<div class="nested-row" style="padding-left: ${level * 20}px;">
+                        <strong>${key}:</strong> ${value}
+                    </div>`;
+                }
+            }
+            
+            return html;
+        }
+        
+        // Function to toggle address expansion (for table view)
+        window.toggleAddress = function(id) {
+            const element = document.getElementById(`address-content-${id}`);
+            const button = document.getElementById(`address-btn-${id}`);
+            
+            if (element.classList.contains('collapsed-content')) {
+                element.classList.remove('collapsed-content');
+                element.classList.add('expanded-content');
+                button.innerHTML = '<i class="fas fa-chevron-up"></i> Show Less';
+            } else {
+                element.classList.remove('expanded-content');
+                element.classList.add('collapsed-content');
+                button.innerHTML = '<i class="fas fa-chevron-down"></i> Show More';
+            }
+        };
+        
+        // Function to toggle system reason expansion (for table view)
+        window.toggleSystemReason = function(id) {
+            const element = document.getElementById(`system-reason-content-${id}`);
+            const button = document.getElementById(`system-reason-btn-${id}`);
+            
+            if (element.classList.contains('collapsed-content')) {
+                element.classList.remove('collapsed-content');
+                element.classList.add('expanded-content');
+                button.innerHTML = '<i class="fas fa-chevron-up"></i> Show Less';
+            } else {
+                element.classList.remove('expanded-content');
+                element.classList.add('collapsed-content');
+                button.innerHTML = '<i class="fas fa-chevron-down"></i> Show More';
+            }
+        };
+        
+        // Function to toggle address expansion (for card view)
+        window.toggleCardAddress = function(id) {
+            const element = document.getElementById(`card-address-content-${id}`);
+            const button = document.getElementById(`card-address-btn-${id}`);
+            
+            if (element.classList.contains('expanded')) {
+                element.classList.remove('expanded');
+                button.innerHTML = '<i class="fas fa-chevron-down"></i> Show More';
+            } else {
+                element.classList.add('expanded');
+                button.innerHTML = '<i class="fas fa-chevron-up"></i> Show Less';
+            }
+        };
+        
+        // Function to toggle system reason expansion (for card view)
+        window.toggleCardSystemReason = function(id) {
+            const element = document.getElementById(`card-system-reason-content-${id}`);
+            const button = document.getElementById(`card-system-reason-btn-${id}`);
+            
+            if (element.classList.contains('expanded')) {
+                element.classList.remove('expanded');
+                button.innerHTML = '<i class="fas fa-chevron-down"></i> Show More';
+            } else {
+                element.classList.add('expanded');
+                button.innerHTML = '<i class="fas fa-chevron-up"></i> Show Less';
+            }
+        };
+        
+        // Function to render data in table view
+        function renderTableView() {
+            tableBody.innerHTML = '';
+            
+            filteredData.forEach((item, index) => {
+                const row = document.createElement('tr');
+                
+                // Number column
+                const numberCell = document.createElement('td');
+                numberCell.textContent = index + 1;
+                numberCell.style.fontWeight = 'bold';
+                row.appendChild(numberCell);
+                
+                // Name
+                const nameCell = document.createElement('td');
+                nameCell.textContent = item.name || 'N/A';
+                row.appendChild(nameCell);
+                
+                // Father/Husband Name
+                const fatherCell = document.createElement('td');
+                fatherCell.textContent = item.father_husband_name || 'N/A';
+                row.appendChild(fatherCell);
+                
+                // CNIC
+                const cnicCell = document.createElement('td');
+                cnicCell.textContent = item.cnic_no || 'N/A';
+                row.appendChild(cnicCell);
+                
+                // Address (with collapsible functionality)
+                const addressCell = document.createElement('td');
+                addressCell.className = 'address-cell';
+                
+                if (item.correspondence_address) {
+                    const addressId = `address-content-${item.id}`;
+                    const buttonId = `address-btn-${item.id}`;
+                    
+                    addressCell.innerHTML = `
+                        <div id="${addressId}" class="collapsed-content">
+                            ${item.correspondence_address}
+                        </div>
+                        <button id="${buttonId}" class="collapse-btn" onclick="toggleAddress('${item.id}')">
+                            <i class="fas fa-chevron-down"></i> Show More
+                        </button>
+                    `;
+                } else {
+                    addressCell.textContent = 'N/A';
+                }
+                row.appendChild(addressCell);
+                
+                // Mobile
+                const mobileCell = document.createElement('td');
+                mobileCell.textContent = item.mobile_no || 'N/A';
+                row.appendChild(mobileCell);
+                
+                // Total Land Area
+                const landCell = document.createElement('td');
+                landCell.textContent = item.landholding_acres_total || 'N/A';
+                row.appendChild(landCell);
+                
+                // Wheat Acres
+                const wheatCell = document.createElement('td');
+                wheatCell.className = 'wheat-acres-cell';
+                
+                if (item.wheat_acres !== null && item.wheat_acres !== undefined) {
+                    const wheatClass = getWheatAcresClass(item.wheat_acres);
+                    wheatCell.innerHTML = `<span class="${wheatClass}">${item.wheat_acres} acres</span>`;
+                } else {
+                    wheatCell.textContent = 'N/A';
+                }
+                row.appendChild(wheatCell);
+                
+                // Status
+                const statusCell = document.createElement('td');
+                statusCell.textContent = item.effective_status || 'N/A';
+                statusCell.style.color = item.effective_status === 'verified' ? '#27ae60' : '#e74c3c';
+                row.appendChild(statusCell);
+                
+                // System Unverified Reason (with collapsible functionality)
+                const systemReasonCell = document.createElement('td');
+                systemReasonCell.className = 'system-reason-cell';
+                
+                if (item.system_unverified_reason) {
+                    const reasonId = `system-reason-content-${item.id}`;
+                    const buttonId = `system-reason-btn-${item.id}`;
+                    
+                    systemReasonCell.innerHTML = `
+                        <div id="${reasonId}" class="collapsed-content">
+                            ${item.system_unverified_reason}
+                        </div>
+                        <button id="${buttonId}" class="collapse-btn" onclick="toggleSystemReason('${item.id}')">
+                            <i class="fas fa-chevron-down"></i> Show More
+                        </button>
+                    `;
+                } else {
+                    systemReasonCell.textContent = 'N/A';
+                }
+                row.appendChild(systemReasonCell);
+                
+                // Images
+                const imagesCell = document.createElement('td');
+                let imagesHtml = '';
+                
+                if (item.cnic_front_url) imagesHtml += renderImageLinks(item.cnic_front_url, 'CNIC Front');
+                if (item.cnic_back_url) imagesHtml += renderImageLinks(item.cnic_back_url, 'CNIC Back');
+                if (item.photo_url) imagesHtml += renderImageLinks(item.photo_url, 'Photo');
+                if (item.form_vii_url) imagesHtml += renderImageLinks(item.form_vii_url, 'Form VII');
+                if (item.affidavit_url) imagesHtml += renderImageLinks(item.affidavit_url, 'Affidavit');
+                
+                imagesCell.innerHTML = imagesHtml || 'No images';
+                row.appendChild(imagesCell);
+                
+                // Field Visits
+                const visitsCell = document.createElement('td');
+                if (item.farmer_field_visits) {
+                    const collapseId = `collapse-${item.id}`;
+                    visitsCell.innerHTML = `
+                        <span class="field-visit-indicator field-visit-yes">
+                            <i class="fas fa-check-circle"></i> Has Visits
+                        </span>
+                        <button class="collapse-btn" onclick="toggleCollapse('${collapseId}')">
+                            <i class="fas fa-eye"></i> View Details
+                        </button>
+                        <div id="${collapseId}" class="nested-content" style="display: none; margin-top: 10px;">
+                            ${renderNestedObject(item.farmer_field_visits, 1)}
+                        </div>
+                    `;
+                } else {
+                    visitsCell.innerHTML = `
+                        <span class="field-visit-indicator field-visit-no">
+                            <i class="fas fa-times-circle"></i> No Visits
+                        </span>
+                    `;
+                }
+                row.appendChild(visitsCell);
+                
+                tableBody.appendChild(row);
+            });
+        }
+        
+        // Function to render data in card view
+        function renderCardView() {
+            cardContainer.innerHTML = '';
+            
+            filteredData.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                
+                // Card header
+                const cardHeader = document.createElement('div');
+                cardHeader.className = 'card-header';
+                
+                // Field visits indicator in header
+                let fieldVisitIndicator = '';
+                if (item.farmer_field_visits) {
+                    fieldVisitIndicator = '<span class="field-visit-indicator field-visit-yes" style="position: absolute; top: 10px; left: 10px;"><i class="fas fa-check-circle"></i> Has Visits</span>';
+                } else {
+                    fieldVisitIndicator = '<span class="field-visit-indicator field-visit-no" style="position: absolute; top: 10px; left: 10px;"><i class="fas fa-times-circle"></i> No Visits</span>';
+                }
+                
+                cardHeader.innerHTML = `
+                    ${fieldVisitIndicator}
+                    <h3>${item.name || 'N/A'}</h3>
+                    <p>${item.cnic_no || 'N/A'} | ${item.father_husband_name || 'N/A'}</p>
+                    <div class="card-number">${index + 1}</div>
+                `;
+                
+                // Card body
+                const cardBody = document.createElement('div');
+                cardBody.className = 'card-body';
+                
+                // Basic fields
+                const fields = [
+                    {label: 'Mobile', value: item.mobile_no},
+                    {label: 'Gender', value: item.gender},
+                    {label: 'Total Land Area (acres)', value: item.landholding_acres_total},
+                    {label: 'Created On', value: item.created_on},
+                    {label: 'Status', value: item.effective_status},
+                    {label: 'Bank', value: item.bank_name},
+                    {label: 'Account No', value: item.bank_account_no}
+                ];
+                
+                fields.forEach(field => {
+                    if (field.value) {
+                        const fieldDiv = document.createElement('div');
+                        fieldDiv.className = 'card-field';
+                        fieldDiv.innerHTML = `
+                            <label>${field.label}</label>
+                            <span>${field.value}</span>
+                        `;
+                        cardBody.appendChild(fieldDiv);
+                    }
+                });
+                
+                // Wheat Acres field with styling
+                if (item.wheat_acres !== null && item.wheat_acres !== undefined) {
+                    const wheatClass = getWheatAcresClass(item.wheat_acres);
+                    const wheatField = document.createElement('div');
+                    wheatField.className = 'card-field';
+                    wheatField.innerHTML = `
+                        <label>Wheat Acres</label>
+                        <span class="wheat-acres-value ${wheatClass}">${item.wheat_acres} acres</span>
+                    `;
+                    cardBody.appendChild(wheatField);
+                }
+                
+                // Address section (collapsible)
+                if (item.correspondence_address) {
+                    const addressSection = document.createElement('div');
+                    addressSection.className = 'address-section';
+                    addressSection.innerHTML = `
+                        <h5>Address 
+                            <button id="card-address-btn-${item.id}" class="collapse-btn" onclick="toggleCardAddress('${item.id}')">
+                                <i class="fas fa-chevron-down"></i> Show More
+                            </button>
+                        </h5>
+                        <div id="card-address-content-${item.id}" class="address-content">
+                            ${item.correspondence_address}
+                        </div>
+                    `;
+                    cardBody.appendChild(addressSection);
+                }
+                
+                // System Unverified Reason section (collapsible)
+                if (item.system_unverified_reason) {
+                    const systemReasonSection = document.createElement('div');
+                    systemReasonSection.className = 'system-reason-section';
+                    systemReasonSection.innerHTML = `
+                        <h5>System Unverified Reason 
+                            <button id="card-system-reason-btn-${item.id}" class="collapse-btn" onclick="toggleCardSystemReason('${item.id}')">
+                                <i class="fas fa-chevron-down"></i> Show More
+                            </button>
+                        </h5>
+                        <div id="card-system-reason-content-${item.id}" class="system-reason-content">
+                            ${item.system_unverified_reason}
+                        </div>
+                    `;
+                    cardBody.appendChild(systemReasonSection);
+                }
+                
+                // Image links
+                let imagesHtml = '';
+                if (item.cnic_front_url || item.cnic_back_url || item.photo_url || item.form_vii_url || item.affidavit_url) {
+                    imagesHtml += '<div class="card-field"><label>Images</label><div class="card-images">';
+                    
+                    if (item.cnic_front_url) imagesHtml += renderImageLinks(item.cnic_front_url, 'CNIC Front');
+                    if (item.cnic_back_url) imagesHtml += renderImageLinks(item.cnic_back_url, 'CNIC Back');
+                    if (item.photo_url) imagesHtml += renderImageLinks(item.photo_url, 'Photo');
+                    if (item.form_vii_url) imagesHtml += renderImageLinks(item.form_vii_url, 'Form VII');
+                    if (item.affidavit_url) imagesHtml += renderImageLinks(item.affidavit_url, 'Affidavit');
+                    
+                    imagesHtml += '</div></div>';
+                }
+                
+                // Nested field visits section (only if visits exist)
+                if (item.farmer_field_visits) {
+                    const collapseId = `card-collapse-${item.id}`;
+                    imagesHtml += `
+                        <div class="nested-section">
+                            <h4>Field Visit Details 
+                                <button class="collapse-btn" onclick="toggleCollapse('${collapseId}')">
+                                    <i class="fas fa-chevron-down"></i> Show/Hide
+                                </button>
+                            </h4>
+                            <div id="${collapseId}" class="nested-content" style="display: none;">
+                                ${renderNestedObject(item.farmer_field_visits, 0)}
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                cardBody.innerHTML += imagesHtml;
+                
+                // Assemble card
+                card.appendChild(cardHeader);
+                card.appendChild(cardBody);
+                cardContainer.appendChild(card);
+            });
+        }
+        
+        // Function to render data in both views
+        function renderData() {
+            renderTableView();
+            renderCardView();
+        }
+        
+        // Function to toggle collapse of nested content
+        window.toggleCollapse = function(id) {
+            const element = document.getElementById(id);
+            if (element.style.display === 'none') {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>

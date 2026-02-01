@@ -121,99 +121,53 @@
 </div>
 
 <script>
-    let groceryList = JSON.parse(localStorage.getItem('gm_house_groceries')) || [];
-    let currentFilter = 'All';
-    let editIndex = -1;
+    // PREPOPULATED DATA
+    const initialData = [
+        {name:"Mother Care Shampoo",qty:"1 Bottle",cat:"Shower",important:false},
+        {name:"Daal Chini",qty:"50 Rs.",cat:"Gharam Masala",important:false},
+        {name:"Ajwain",qty:"50 Rs.",cat:"Gharam Masala",important:false},
+        {name:"Laung",qty:"50 Rs.",cat:"Gharam Masala",important:false},
+        {name:"Gidamri (imli)",qty:"250 Gram",cat:"Food",important:false},
+        {name:"Lahori Namak",qty:"6 pack",cat:"Food",important:false},
+        {name:"Till",qty:"100 Rs.",cat:"General Food",important:false},
+        {name:"Pulao jeeri",qty:"100 Rs.",cat:"Gharam Masala",important:false},
+        {name:"Suki Methi",qty:"2 Pack",cat:"Food",important:false},
+        {name:"Masoor Daal",qty:"0.5 KG",cat:"Food",important:false},
+        {name:"SunLight Surf",qty:"2 pack (0.5 KG)",cat:"Cloth Wash",important:false},
+        {name:"Moom Daal",qty:"0.5 KG",cat:"Food",important:false},
+        {name:"Alu Bukhara",qty:"200 Rs.",cat:"Gharam Masala",important:false},
+        {name:"lal mirch kuti hui",qty:"3 pack",cat:"Gharam Masala",important:false},
+        {name:"Mother Care Soap",qty:"1 Soap",cat:"Shower",important:false},
+        {name:"Merry Biscuit",qty:"1 full Pack",cat:"General Food",important:false},
+        {name:"Himali Facewash",qty:"1 Pouch",cat:"Shower",important:false},
+        {name:"Kala Mirch",qty:"125 Gram",cat:"Gharam Masala",important:false},
+        {name:"lemon max",qty:"20 soaps",cat:"Kitchen",important:false},
+        {name:"Chana",qty:"1 KG",cat:"Food",important:false},
+        {name:"Sabid Dhania",qty:"1 KG",cat:"Food",important:false},
+        {name:"Zeera",qty:"250 Gram",cat:"Gharam Masala",important:false},
+        {name:"Hand Wash",qty:"1 Bottle",cat:"Shower",important:false},
+        {name:"Coconut Oil",qty:"250 Gram",cat:"Misc",important:false},
+        {name:"Click Biscuit",qty:"1 full Pack",cat:"General Food",important:false},
+        {name:"Dove Lotion",qty:"1 bottle",cat:"Misc",important:false},
+        {name:"Safeguard",qty:"4 Medium",cat:"Shower",important:false},
+        {name:"Dove Soap",qty:"1 Soap",cat:"Shower",important:false},
+        {name:"Kohinoor Soap",qty:"8 Soaps",cat:"Cloth Wash",important:false},
+        {name:"Head & Shoulders",qty:"1 Bottle",cat:"Shower",important:false},
+        {name:"Gala Biscuit",qty:"1 full Pack",cat:"General Food",important:false},
+        {name:"Ponds Facewash",qty:"1 Pouch",cat:"Shower",important:false},
+        {name:"Sugar",qty:"8 KG",cat:"Food",important:true},
+        {name:"Tissue",qty:"2 Pack",cat:"Misc",important:false},
+        {name:"Brit Surf",qty:"5 pack",cat:"Cloth Wash",important:false},
+        {name:"Red Rice",qty:"15 KG",cat:"Food",important:false},
+        {name:"Super Basmati",qty:"6 KG",cat:"Food",important:false},
+        {name:"Mezban Tea",qty:"1.5 KG",cat:"Food",important:false},
+        {name:"Oil",qty:"20 Litre",cat:"Food",important:true},
+        {name:"Tez pata",qty:"30 Rs.",cat:"Gharam Masala",important:false},
+        {name:"Badyan k phool",qty:"50 Rs.",cat:"Gharam Masala",important:false},
+        {name:"lal mirch pisi",qty:"1 pack",cat:"Gharam Masala",important:false},
+        {name:"Hing",qty:"100 Rs.",cat:"Gharam Masala",important:false},
+        {name:"Sonf",qty:"125 Gram",cat:"Gharam Masala",important:false},
+        {name:"Dove Shampoo",qty:"1 Bottle",cat:"Shower",important:false}
+    ];
 
-    function renderList() {
-        groceryList.sort((a, b) => a.cat.localeCompare(b.cat));
-        const container = document.getElementById('listBody');
-        container.innerHTML = '';
-        groceryList.forEach((item, index) => {
-            if (currentFilter !== 'All' && item.cat !== currentFilter) return;
-            const card = document.createElement('div');
-            card.className = `item-card ${item.important ? 'important-row' : ''}`;
-            card.innerHTML = `
-                <div class="sn-badge">${index + 1}</div>
-                <div class="card-content">
-                    <div class="item-header"><span class="item-title">${item.name} ${item.important ? '⭐' : ''}</span><span class="item-qty">${item.qty || '-'}</span></div>
-                    <div class="item-meta"><span class="cat-tag">${item.cat}</span>
-                        <div class="action-btns">
-                            <button class="btn-icon" style="background:var(--edit)" onclick="editItem(${index})">✎</button>
-                            <button class="btn-icon" style="background:var(--danger)" onclick="deleteItem(${index})">✕</button>
-                        </div>
-                    </div>
-                </div>`;
-            container.appendChild(card);
-        });
-        localStorage.setItem('gm_house_groceries', JSON.stringify(groceryList));
-        document.getElementById('displayDate').innerText = "Last Updated: " + new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
-    }
-
-    function filterList(category, btn) {
-        currentFilter = category;
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        renderList();
-    }
-
-    function addItem() {
-        const name = document.getElementById('itemName').value;
-        const qty = document.getElementById('itemQty').value;
-        const cat = document.getElementById('itemCat').value;
-        const imp = document.getElementById('isImportant').checked;
-        if(!name.trim()) return;
-        if(editIndex === -1) { groceryList.push({ name, qty, cat, important: imp }); } 
-        else { groceryList[editIndex] = { name, qty, cat, important: imp }; editIndex = -1; document.getElementById('submitBtn').innerText = "Add to List"; }
-        document.getElementById('itemName').value = ''; document.getElementById('itemQty').value = ''; document.getElementById('isImportant').checked = false;
-        renderList();
-    }
-
-    function editItem(index) {
-        const item = groceryList[index];
-        document.getElementById('itemName').value = item.name; document.getElementById('itemQty').value = item.qty; document.getElementById('itemCat').value = item.cat;
-        document.getElementById('isImportant').checked = item.important; editIndex = index;
-        document.getElementById('submitBtn').innerText = "Update Item"; window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function deleteItem(index) { if(confirm("Remove?")) { groceryList.splice(index, 1); renderList(); } }
-
-    function exportPDF() {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
-        const dateStr = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
-        
-        doc.setFontSize(20);
-        doc.text("GM House Groceries", 14, 22);
-        doc.setFontSize(11);
-        doc.setTextColor(100);
-        doc.text(`Grocery Period: ${dateStr}`, 14, 30);
-
-        const tableData = groceryList.map((item, index) => [
-            index + 1,
-            item.name + (item.important ? ' (PRIORITY)' : ''),
-            item.qty,
-            item.cat
-        ]);
-
-        doc.autoTable({
-            startY: 38,
-            head: [['SN', 'Item Name', 'Qty', 'Category']],
-            body: tableData,
-            theme: 'grid',
-            headStyles: { fillColor: [39, 174, 96] },
-            didParseCell: function(data) {
-                if (data.section === 'body' && groceryList[data.row.index].important) {
-                    data.cell.styles.fillColor = [255, 249, 219];
-                }
-            }
-        });
-
-        // Save with dynamic date in filename
-        doc.save(`GM_Groceries_${dateStr.replace(/ /g, '-')}.pdf`);
-    }
-
-    renderList();
-</script>
-</body>
-</html>
+    let groceryList =

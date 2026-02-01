@@ -13,10 +13,10 @@
             --bg: #f4f6f8; --white: #ffffff;
         }
 
-        body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 10px; background: var(--bg); color: var(--dark); padding-bottom: 80px; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 10px; background: var(--bg); color: var(--dark); padding-bottom: 90px; }
         .container { max-width: 550px; margin: auto; }
 
-        .header-area { text-align: center; margin-bottom: 15px; background: var(--dark); padding: 15px; border-radius: 12px; color: white; }
+        .header-area { text-align: center; margin-bottom: 15px; background: var(--dark); padding: 15px; border-radius: 12px; color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
         .date-label { font-size: 0.75rem; opacity: 0.8; margin-top: 4px; }
 
         /* Floating Action Button */
@@ -31,23 +31,25 @@
         /* Modal Styles */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6); display: none; /* Hidden by default */
+            background: rgba(0,0,0,0.7); display: none;
             align-items: center; justify-content: center; z-index: 1000;
         }
         .modal-content {
-            background: white; width: 90%; max-width: 400px;
+            background: white; width: 85%; max-width: 400px;
             padding: 25px; border-radius: 15px; display: flex; flex-direction: column; gap: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
-        .modal-header { font-weight: bold; font-size: 1.2rem; margin-bottom: 5px; }
+        .modal-header { font-weight: bold; font-size: 1.2rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+
         input, select { width: 100%; box-sizing: border-box; padding: 14px; border: 1px solid #d1d9e0; border-radius: 8px; font-size: 16px; }
 
+        /* Filter UI */
         .filter-wrapper { position: sticky; top: 0; z-index: 100; background: var(--bg); padding: 10px 0; border-bottom: 1px solid #ddd; }
         .filter-container { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 5px; }
         .filter-container::-webkit-scrollbar { display: none; }
         .filter-btn { white-space: nowrap; padding: 7px 14px; border-radius: 20px; border: 1.5px solid var(--primary); background: white; color: var(--primary); font-weight: 600; cursor: pointer; font-size: 12px; }
         .filter-btn.active { background: var(--primary); color: white; }
 
+        /* Card UI */
         .item-card { 
             display: block; background: var(--white); margin-bottom: 12px; padding: 15px; 
             border-radius: 12px; position: relative; border: 1px solid #eef0f2;
@@ -56,7 +58,7 @@
         
         .pulse-highlight { animation: pulse-green 1.2s ease-out; }
         @keyframes pulse-green {
-            0% { background-color: #d4edda; }
+            0% { background-color: #d4edda; border-color: #28a745; }
             100% { background-color: var(--white); }
         }
 
@@ -95,14 +97,14 @@
 
     <div id="listBody"></div>
 
-    <button class="btn-main" style="background:var(--dark); width:100%; margin: 20px 0;" onclick="exportPDF()">📥 DOWNLOAD PDF</button>
+    <button class="btn-main" style="background:var(--dark); width:100%; margin: 20px 0;" onclick="exportPDF()">📥 DOWNLOAD PDF WITH DATE</button>
 </div>
 
 <div class="modal-overlay" id="itemModal">
     <div class="modal-content">
-        <div class="modal-header" id="modalTitle">Add New Item</div>
+        <div class="modal-header" id="modalTitle">Add Item</div>
         <input type="text" id="itemName" placeholder="Item Name">
-        <input type="text" id="itemQty" placeholder="Qty">
+        <input type="text" id="itemQty" placeholder="Quantity">
         <select id="itemCat">
             <option value="Food">🍲 Food</option>
             <option value="Gharam Masala">🌶️ Masala</option>
@@ -115,9 +117,9 @@
         <label style="display:flex; align-items:center; gap:10px; cursor:pointer;">
             <input type="checkbox" id="isImportant"> ⚠️ Priority Item
         </label>
-        <div style="display:flex; gap:10px;">
-            <button class="btn-main" id="submitBtn" onclick="addItem()" style="flex:2;">Save Item</button>
-            <button class="btn-main" onclick="closeModal()" style="background:#ccc; flex:1;">Cancel</button>
+        <div style="display:flex; gap:10px; margin-top:10px;">
+            <button class="btn-main" id="submitBtn" onclick="addItem()" style="flex:2;">Save</button>
+            <button class="btn-main" onclick="closeModal()" style="background:#888; flex:1;">Cancel</button>
         </div>
     </div>
 </div>
@@ -208,18 +210,14 @@
         document.getElementById('displayDate').innerText = "Last Updated: " + new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
     }
 
-    function openModal() {
-        document.getElementById('itemModal').style.display = 'flex';
-        document.getElementById('modalTitle').innerText = editIndex === -1 ? 'Add New Item' : 'Update Item';
-        document.getElementById('submitBtn').innerText = editIndex === -1 ? 'Save Item' : 'Update Item';
-    }
-
+    function openModal() { document.getElementById('itemModal').style.display = 'flex'; }
     function closeModal() {
         document.getElementById('itemModal').style.display = 'none';
         editIndex = -1;
         document.getElementById('itemName').value = '';
         document.getElementById('itemQty').value = '';
         document.getElementById('isImportant').checked = false;
+        document.getElementById('modalTitle').innerText = 'Add Item';
     }
 
     function filterList(category, btn) {
@@ -235,13 +233,8 @@
         const cat = document.getElementById('itemCat').value;
         const imp = document.getElementById('isImportant').checked;
         if(!name.trim()) return;
-
-        if(editIndex === -1) {
-            groceryList.push({ name, qty, cat, important: imp });
-        } else {
-            groceryList[editIndex] = { name, qty, cat, important: imp };
-        }
-        
+        if(editIndex === -1) { groceryList.push({ name, qty, cat, important: imp }); } 
+        else { groceryList[editIndex] = { name, qty, cat, important: imp }; }
         closeModal();
         renderList(name);
     }
@@ -253,6 +246,7 @@
         document.getElementById('itemQty').value = item.qty;
         document.getElementById('itemCat').value = item.cat;
         document.getElementById('isImportant').checked = item.important;
+        document.getElementById('modalTitle').innerText = 'Update Item';
         openModal();
     }
 
@@ -262,10 +256,39 @@
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
         const dateStr = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
-        doc.setFontSize(20);
-        doc.text("GM House Groceries", 14, 22);
-        const tableData = groceryList.map((item, index) => [index + 1, item.name + (item.important ? ' (PRI)' : ''), item.qty, item.cat]);
-        doc.autoTable({ startY: 38, head: [['SN', 'Item', 'Qty', 'Category']], body: tableData, theme: 'grid' });
+        
+        // PDF Heading
+        doc.setFontSize(22);
+        doc.setTextColor(40);
+        doc.text("GM House Groceries", 14, 20);
+        
+        // Date Information in PDF
+        doc.setFontSize(11);
+        doc.setTextColor(100);
+        doc.text(`List Generated On: ${dateStr}`, 14, 28);
+        doc.text(`Total Items: ${groceryList.length}`, 14, 34);
+
+        const tableData = groceryList.map((item, index) => [
+            index + 1, 
+            item.name + (item.important ? ' (PRIORITY)' : ''), 
+            item.qty, 
+            item.cat
+        ]);
+
+        doc.autoTable({
+            startY: 40,
+            head: [['SN', 'Item Description', 'Qty', 'Category']],
+            body: tableData,
+            theme: 'grid',
+            headStyles: { fillColor: [39, 174, 96] },
+            didParseCell: function(data) {
+                if (data.section === 'body' && groceryList[data.row.index].important) {
+                    data.cell.styles.fillColor = [255, 249, 219];
+                }
+            }
+        });
+
+        // Filename includes date
         doc.save(`GM_Groceries_${dateStr.replace(/ /g, '-')}.pdf`);
     }
 

@@ -5,155 +5,157 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GM House Groceries 🏠</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
     <style>
         :root { 
-            --primary: #2ecc71; --edit: #f39c12; --danger: #e74c3c; --important: #fff3cd; --imp-border: #ffc107; --dark: #2c3e50;
+            --primary: #27ae60; --edit: #f39c12; --danger: #e74c3c; 
+            --important: #fff9db; --imp-border: #f1c40f; --dark: #2c3e50;
+            --bg: #f0f2f5; --white: #ffffff;
         }
 
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 10px; background: #f4f7f6; color: var(--dark); }
-        .container { max-width: 700px; margin: auto; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-
-        .header-area { text-align: center; margin-bottom: 20px; border-bottom: 2px solid var(--primary); padding-bottom: 10px; }
-        h2 { margin: 0; color: var(--dark); font-weight: 800; }
-        .date-label { font-size: 14px; color: #7f8c8d; font-weight: bold; margin-top: 5px; }
-
-        .controls { display: flex; flex-direction: column; gap: 10px; background: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #eee; }
-        input, select, .btn-main { width: 100%; box-sizing: border-box; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; }
-        
-        .checkbox-group { display: flex; align-items: center; gap: 10px; padding: 5px; font-weight: bold; color: #d35400; }
-        #isImportant { width: 22px; height: 22px; cursor: pointer; }
-
-        .btn-main { background: var(--primary); color: white; border: none; font-weight: bold; cursor: pointer; }
-        
-        .important-row { background-color: var(--important) !important; border-left: 5px solid var(--imp-border) !important; }
-        .imp-badge { background: var(--imp-border); color: #856404; font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: bold; margin-left: 5px; text-transform: uppercase; }
-
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
-        
-        @media (max-width: 480px) {
-            thead { display: none; }
-            tr { display: block; border: 1px solid #eee; margin-bottom: 12px; padding: 12px; border-radius: 10px; position: relative; background: #fff; }
-            td { display: block; text-align: right; padding: 6px 0; border: none; font-size: 14px; }
-            td[data-label="SN"] { position: absolute; top: -10px; left: -10px; background: var(--dark); color: white; width: 25px; height: 25px; text-align: center; line-height: 25px; border-radius: 50%; font-size: 12px; }
-            td:not([data-label="SN"])::before { content: attr(data-label); float: left; font-weight: bold; color: #7f8c8d; }
-            .action-cell { text-align: center; border-top: 1px solid #eee; margin-top: 8px; padding-top: 12px; }
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            margin: 0; padding: 15px; background: var(--bg); color: var(--dark); 
         }
 
-        .cat-tag { background: #eee; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: bold; }
-        .btn-action { padding: 8px 12px; border-radius: 6px; border: none; color: white; font-size: 12px; margin: 2px; cursor: pointer; }
+        .container { 
+            max-width: 600px; margin: auto; 
+        }
+
+        /* Header UI */
+        .header-area { 
+            text-align: center; margin-bottom: 25px; 
+            background: linear-gradient(135deg, var(--primary), #2ecc71);
+            padding: 20px; border-radius: 15px; color: white;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+        }
+        h2 { margin: 0; font-size: 1.6rem; letter-spacing: 1px; }
+        .date-label { font-size: 0.85rem; opacity: 0.9; margin-top: 5px; font-weight: 300; }
+
+        /* Input Form UI */
+        .controls { 
+            background: var(--white); padding: 20px; border-radius: 15px; 
+            margin-bottom: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            display: flex; flex-direction: column; gap: 12px;
+        }
         
-        .export-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
-        .btn-img { background: #3498db; }
-        .btn-pdf { background: var(--dark); }
+        input, select { 
+            width: 100%; box-sizing: border-box; padding: 14px; 
+            border: 2px solid #edf2f7; border-radius: 10px; font-size: 16px;
+            transition: all 0.3s; background: #fafafa;
+        }
+        input:focus, select:focus { 
+            border-color: var(--primary); outline: none; background: white;
+            box-shadow: 0 0 0 4px rgba(46, 204, 113, 0.1);
+        }
+        
+        .checkbox-group { 
+            display: flex; align-items: center; gap: 12px; 
+            padding: 10px; background: #fff5f5; border-radius: 10px;
+            border: 1px dashed #feb2b2; cursor: pointer;
+        }
+        #isImportant { width: 20px; height: 20px; accent-color: var(--danger); }
+        .checkbox-group label { font-size: 14px; font-weight: 600; color: #c53030; }
+
+        .btn-main { 
+            background: var(--primary); color: white; border: none; 
+            padding: 15px; border-radius: 10px; font-weight: bold; 
+            font-size: 16px; cursor: pointer; transition: 0.3s;
+        }
+        .btn-main:hover { filter: brightness(1.1); }
+
+        /* Mobile Card UI */
+        table { width: 100%; border-collapse: collapse; }
+        thead { display: none; }
+        tr { 
+            display: block; background: var(--white); margin-bottom: 20px; 
+            padding: 20px; border-radius: 15px; position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #f0f0f0;
+        }
+        
+        /* Floating SN Badge */
+        td[data-label="SN"] { 
+            position: absolute; top: -12px; left: -12px; 
+            background: var(--dark); color: white; width: 32px; height: 32px; 
+            display: flex !important; align-items: center; justify-content: center;
+            border-radius: 10px; font-size: 14px; font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        td { display: block; text-align: right; padding: 10px 0; font-size: 15px; border-bottom: 1px solid #f7fafc; }
+        td:last-child { border: none; }
+        td:not([data-label="SN"])::before { 
+            content: attr(data-label); float: left; font-weight: 700; color: #a0aec0; text-transform: uppercase; font-size: 11px; margin-top: 3px;
+        }
+        
+        .important-row { 
+            background-color: var(--important) !important; 
+            border: 1px solid var(--imp-border) !important;
+        }
+
+        /* Category Color Coding */
+        .cat-tag { 
+            background: #edf2f7; color: #4a5568; padding: 5px 12px; 
+            border-radius: 8px; font-size: 12px; font-weight: bold; 
+        }
+        
+        /* Actions UX */
+        .action-cell { 
+            display: flex; justify-content: flex-end; gap: 10px; 
+            margin-top: 10px; padding-top: 15px;
+        }
+        .btn-circle { 
+            width: 40px; height: 40px; border-radius: 10px; border: none; 
+            color: white; cursor: pointer; display: flex; align-items: center; justify-content: center;
+            font-size: 18px; transition: 0.2s;
+        }
+        .btn-circle:active { transform: scale(0.9); }
+
+        .btn-pdf { 
+            background: var(--dark); margin-top: 10px; 
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
     </style>
 </head>
 <body>
 
-<div class="container" id="app-content">
+<div class="container">
     <div class="header-area">
         <h2>🏠 GM House Groceries</h2>
         <div id="displayDate" class="date-label"></div>
     </div>
     
-    <div class="controls no-export">
-        <input type="text" id="itemName" placeholder="Item Name">
-        <input type="text" id="itemQty" placeholder="Quantity">
+    <div class="controls">
+        <input type="text" id="itemName" placeholder="What do we need? (e.g. Sugar)">
+        <input type="text" id="itemQty" placeholder="How much? (e.g. 5 KG)">
         <select id="itemCat">
-            <option value="Food">🍲 Food</option>
+            <option value="Food">🍲 Food Items</option>
             <option value="Gharam Masala">🌶️ Gharam Masala</option>
-            <option value="Shower">🚿 Shower</option>
-            <option value="Cloth Wash">🧼 Cloth Wash</option>
-            <option value="General Food">🍿 General Food</option>
-            <option value="Kitchen">🍳 Kitchen</option>
-            <option value="Misc">📦 Misc</option>
+            <option value="Shower">🚿 Personal Care</option>
+            <option value="Cloth Wash">🧼 Laundry & Wash</option>
+            <option value="General Food">🍿 Snacks & Biscuits</option>
+            <option value="Kitchen">🍳 Kitchen Tools</option>
+            <option value="Misc">📦 Miscellaneous</option>
         </select>
-        <div class="checkbox-group">
+        <div class="checkbox-group" onclick="document.getElementById('isImportant').click()">
             <input type="checkbox" id="isImportant"> 
-            <label for="isImportant">⚠️ Mark as Important</label>
+            <label>⚠️ MARK AS VERY IMPORTANT</label>
         </div>
         <button class="btn-main" id="submitBtn" onclick="addItem()">Add to List</button>
     </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>SN</th>
-                <th>Item</th>
-                <th>Qty</th>
-                <th>Category</th>
-                <th class="no-export">Actions</th>
-            </tr>
-        </thead>
+    <table id="groceryTable">
         <tbody id="listBody"></tbody>
     </table>
 
-    <div class="export-group no-export">
-        <button class="btn-main btn-img" onclick="exportImage()">🖼️ Export Image</button>
-        <button class="btn-main btn-pdf" onclick="exportPDF()">📥 Export PDF</button>
-    </div>
+    <button class="btn-main btn-pdf" onclick="exportPDF()">
+        <span>📥</span> DOWNLOAD SHOPPING PDF
+    </button>
 </div>
 
 <script>
-    const icons = { "Food": "🍲", "Gharam Masala": "🌶️", "Shower": "🚿", "Cloth Wash": "🧼", "General Food": "🍿", "Kitchen": "🍳", "Misc": "📦" };
-    
-    // Complete Data from your Excel
-    const fullPreload = [
-        {name:"Mother Care Shampoo",qty:"1 Bottle",cat:"Shower",important:false},
-        {name:"Daal Chini",qty:"50 Rs.",cat:"Gharam Masala",important:false},
-        {name:"Ajwain",qty:"50 Rs.",cat:"Gharam Masala",important:false},
-        {name:"Laung",qty:"50 Rs.",cat:"Gharam Masala",important:false},
-        {name:"Gidamri (imli)",qty:"250 Gram",cat:"Food",important:false},
-        {name:"Lahori Namak",qty:"6 pack",cat:"Food",important:false},
-        {name:"Till",qty:"100 Rs.",cat:"General Food",important:false},
-        {name:"Pulao jeeri",qty:"100 Rs.",cat:"Gharam Masala",important:false},
-        {name:"Suki Methi",qty:"2 Pack",cat:"Food",important:false},
-        {name:"Masoor Daal",qty:"0.5 KG",cat:"Food",important:false},
-        {name:"SunLight Surf",qty:"2 pack (0.5 KG)",cat:"Cloth Wash",important:false},
-        {name:"Moom Daal",qty:"0.5 KG",cat:"Food",important:false},
-        {name:"Alu Bukhara",qty:"200 Rs.",cat:"Gharam Masala",important:false},
-        {name:"lal mirch kuti hui",qty:"3 pack",cat:"Gharam Masala",important:false},
-        {name:"Mother Care Soap",qty:"1 Soap",cat:"Shower",important:false},
-        {name:"Merry Biscuit",qty:"1 full Pack",cat:"General Food",important:false},
-        {name:"Himali Facewash",qty:"1 Pouch",cat:"Shower",important:false},
-        {name:"Kala Mirch",qty:"125 Gram",cat:"Gharam Masala",important:false},
-        {name:"lemon max",qty:"20 soaps",cat:"Kitchen",important:false},
-        {name:"Chana",qty:"1 KG",cat:"Food",important:false},
-        {name:"Sabid Dhania",qty:"1 KG",cat:"Food",important:false},
-        {name:"Zeera",qty:"250 Gram",cat:"Gharam Masala",important:false},
-        {name:"Hand Wash",qty:"1 Bottle",cat:"Shower",important:false},
-        {name:"Coconut Oil",qty:"250 Gram",cat:"Misc",important:false},
-        {name:"Click Biscuit",qty:"1 full Pack",cat:"General Food",important:false},
-        {name:"Dove Lotion",qty:"1 bottle",cat:"Misc",important:false},
-        {name:"Safeguard",qty:"4 Medium",cat:"Shower",important:false},
-        {name:"Dove Soap",qty:"1 Soap",cat:"Shower",important:false},
-        {name:"Kohinoor Soap",qty:"8 Soaps",cat:"Cloth Wash",important:false},
-        {name:"Head & Shoulders",qty:"1 Bottle",cat:"Shower",important:false},
-        {name:"Gala Biscuit",qty:"1 full Pack",cat:"General Food",important:false},
-        {name:"Ponds Facewash",qty:"1 Pouch",cat:"Shower",important:false},
-        {name:"Sugar",qty:"8 KG",cat:"Food",important:true},
-        {name:"Tissue",qty:"2 Pack",cat:"Misc",important:false},
-        {name:"Brit Surf",qty:"5 pack",cat:"Cloth Wash",important:false},
-        {name:"Red Rice",qty:"15 KG",cat:"Food",important:false},
-        {name:"Super Basmati",qty:"6 KG",cat:"Food",important:false},
-        {name:"Mezban Tea",qty:"1.5 KG",cat:"Food",important:false},
-        {name:"Oil",qty:"20 Litre",cat:"Food",important:true},
-        {name:"Tez pata",qty:"30 Rs.",cat:"Gharam Masala",important:false},
-        {name:"Badyan k phool",qty:"50 Rs.",cat:"Gharam Masala",important:false},
-        {name:"lal mirch pisi",qty:"1 pack",cat:"Gharam Masala",important:false},
-        {name:"Hing",qty:"100 Rs.",cat:"Gharam Masala",important:false},
-        {name:"Sonf",qty:"125 Gram",cat:"Gharam Masala",important:false},
-        {name:"Dove Shampoo",qty:"1 Bottle",cat:"Shower",important:false}
-    ];
-
-    let groceryList = JSON.parse(localStorage.getItem('gm_house_groceries')) || fullPreload;
+    let groceryList = JSON.parse(localStorage.getItem('gm_house_groceries')) || [];
     let editIndex = -1;
-
-    function updateDate() {
-        const now = new Date();
-        document.getElementById('displayDate').innerText = "List Date: " + now.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
-    }
 
     function renderList() {
         groceryList.sort((a, b) => a.cat.localeCompare(b.cat));
@@ -161,24 +163,21 @@
         body.innerHTML = '';
         
         groceryList.forEach((item, index) => {
-            const icon = icons[item.cat] || "🛒";
             const importantClass = item.important ? 'important-row' : '';
-            const impBadge = item.important ? '<span class="imp-badge">Priority</span>' : '';
-            
             body.innerHTML += `
                 <tr class="${importantClass}">
                     <td data-label="SN">${index + 1}</td>
-                    <td data-label="Item"><strong>${item.name}</strong>${impBadge}</td>
-                    <td data-label="Qty">${item.qty}</td>
-                    <td data-label="Category"><span class="cat-tag">${icon} ${item.cat}</span></td>
-                    <td class="action-cell no-export">
-                        <button class="btn-action" style="background:var(--edit)" onclick="editItem(${index})">Edit</button>
-                        <button class="btn-action" style="background:var(--danger)" onclick="deleteItem(${index})">Del</button>
+                    <td data-label="Item"><strong>${item.name}</strong> ${item.important ? '🔥' : ''}</td>
+                    <td data-label="Qty">${item.qty || '-'}</td>
+                    <td data-label="Category"><span class="cat-tag">${item.cat}</span></td>
+                    <td class="action-cell">
+                        <button class="btn-circle" style="background:var(--edit)" onclick="editItem(${index})">✎</button>
+                        <button class="btn-circle" style="background:var(--danger)" onclick="deleteItem(${index})">✕</button>
                     </td>
                 </tr>`;
         });
         localStorage.setItem('gm_house_groceries', JSON.stringify(groceryList));
-        updateDate();
+        document.getElementById('displayDate').innerText = "Last Updated: " + new Date().toLocaleDateString('en-GB');
     }
 
     function addItem() {
@@ -186,7 +185,6 @@
         const qty = document.getElementById('itemQty').value;
         const cat = document.getElementById('itemCat').value;
         const imp = document.getElementById('isImportant').checked;
-
         if(!name.trim()) return;
 
         if(editIndex === -1) {
@@ -197,7 +195,7 @@
             document.getElementById('submitBtn').innerText = "Add to List";
             document.getElementById('submitBtn').style.background = "var(--primary)";
         }
-
+        
         document.getElementById('itemName').value = '';
         document.getElementById('itemQty').value = '';
         document.getElementById('isImportant').checked = false;
@@ -211,39 +209,51 @@
         document.getElementById('itemCat').value = item.cat;
         document.getElementById('isImportant').checked = item.important;
         editIndex = index;
-        document.getElementById('submitBtn').innerText = "Update Item";
+        document.getElementById('submitBtn').innerText = "Update Item Info";
         document.getElementById('submitBtn').style.background = "var(--edit)";
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function deleteItem(index) {
-        if(confirm("Remove item?")) { groceryList.splice(index, 1); renderList(); }
-    }
-
-    async function capture(type) {
-        const elements = document.querySelectorAll('.no-export');
-        elements.forEach(el => el.style.display = 'none');
-        const canvas = await html2canvas(document.getElementById('app-content'), { scale: 2 });
-        elements.forEach(el => el.style.display = '');
-
-        if(type === 'pdf') {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF('p', 'pt', 'a4');
-            const imgData = canvas.toDataURL('image/png');
-            const pdfWidth = doc.internal.pageSize.getWidth();
-            const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-            doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-            doc.save("GM_House_Groceries.pdf");
-        } else {
-            const link = document.createElement('a');
-            link.download = 'GM_House_Groceries.png';
-            link.href = canvas.toDataURL();
-            link.click();
+        if(confirm("Remove this item?")) {
+            groceryList.splice(index, 1);
+            renderList();
         }
     }
 
-    function exportPDF() { capture('pdf'); }
-    function exportImage() { capture('img'); }
+    function exportPDF() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        doc.setFontSize(20);
+        doc.setTextColor(40);
+        doc.text("GM House Groceries", 14, 22);
+        
+        doc.setFontSize(10);
+        doc.setTextColor(100);
+        doc.text(`Generated: ${new Date().toLocaleString()}`, 14, 30);
+
+        const tableData = groceryList.map((item, index) => [
+            index + 1,
+            item.name + (item.important ? ' (PRIORITY)' : ''),
+            item.qty,
+            item.cat
+        ]);
+
+        doc.autoTable({
+            startY: 38,
+            head: [['SN', 'Item Description', 'Qty', 'Department']],
+            body: tableData,
+            theme: 'grid',
+            headStyles: { fillColor: [39, 174, 96], fontSize: 11 },
+            didParseCell: function(data) {
+                if (data.section === 'body' && groceryList[data.row.index].important) {
+                    data.cell.styles.fillColor = [255, 249, 219];
+                    data.cell.styles.fontStyle = 'bold';
+                }
+            }
+        });
+        doc.save(`GM_Groceries_${new Date().toLocaleDateString()}.pdf`);
+    }
 
     renderList();
 </script>

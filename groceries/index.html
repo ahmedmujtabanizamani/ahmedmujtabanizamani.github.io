@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GM House Groceries 🏠</title>
@@ -8,291 +8,1042 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
     <style>
-        :root { 
-            --primary: #2ecc71; --primary-dark: #27ae60;
-            --edit: #f39c12; --danger: #e74c3c; 
-            --important: #fffbe6; --imp-border: #f1c40f; 
-            --dark: #1a1a2e; --light-text: #636e72;
-            --bg: #f8f9fa; --white: #ffffff; --checked: #f1f2f6;
-            --whatsapp: #25D366; --shadow: 0 4px 12px rgba(0,0,0,0.08);
-            --accent-purple: #9b59b6;
+      :root {
+        --primary: #2ecc71;
+        --primary-dark: #27ae60;
+        --edit: #f39c12;
+        --danger: #e74c3c;
+        --important: #fffbe6;
+        --imp-border: #f1c40f;
+        --dark: #1a1a2e;
+        --light-text: #636e72;
+        --bg: #f8f9fa;
+        --white: #ffffff;
+        --checked: #f1f2f6;
+        --whatsapp: #25D366;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        --accent-purple: #9b59b6;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, sans-serif;
+        margin: 0;
+        padding: 12px;
+        background: var(--bg);
+        color: var(--dark);
+        padding-bottom: 110px;
+        -webkit-tap-highlight-color: transparent;
+        scroll-behavior: smooth;
+      }
+
+      body.shopping-active {
+        background: #f0fff4;
+        padding-bottom: 20px;
+      }
+
+      .container {
+        max-width: 500px;
+        margin: auto;
+      }
+
+      .header-area {
+        text-align: left;
+        margin-bottom: 15px;
+        background: var(--dark);
+        padding: 20px;
+        border-radius: 16px;
+        color: white;
+        position: relative;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .header-area h2 {
+        margin: 0;
+        font-size: 22px;
+        letter-spacing: -0.5px;
+      }
+
+      .mode-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 10px;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .top-tools {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+
+      .shop-toggle {
+        flex: 1;
+        background: var(--white);
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        font-weight: 700;
+        padding: 12px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: 0.2s;
+        font-size: 15px;
+      }
+
+      .shop-toggle.active {
+        background: var(--primary);
+        color: white;
+        box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+      }
+
+      .search-bar {
+        width: 100%;
+        padding: 14px 18px;
+        border-radius: 12px;
+        border: 1px solid #e1e4e8;
+        font-size: 16px;
+        box-sizing: border-box;
+        outline: none;
+        background: var(--white);
+        margin-bottom: 5px;
+      }
+
+      .filter-wrapper {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: inherit;
+        padding: 12px 0;
+      }
+
+      .filter-container {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        scrollbar-width: none;
+      }
+
+      .filter-container::-webkit-scrollbar {
+        display: none;
+      }
+
+      .filter-btn {
+        white-space: nowrap;
+        padding: 8px 16px;
+        border-radius: 25px;
+        border: 1px solid #dfe6e9;
+        background: var(--white);
+        color: var(--light-text);
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 13px;
+      }
+
+      .filter-btn.active {
+        background: var(--dark);
+        color: white;
+        border-color: var(--dark);
+      }
+
+      /* Highlight Animation */
+      @keyframes highlightGlow {
+        0% {
+          box-shadow: 0 0 0 0px var(--edit);
+          transform: scale(1);
         }
 
-        body { font-family: 'Inter', -apple-system, sans-serif; margin: 0; padding: 12px; background: var(--bg); color: var(--dark); padding-bottom: 110px; -webkit-tap-highlight-color: transparent; scroll-behavior: smooth; }
-        body.shopping-active { background: #f0fff4; padding-bottom: 20px; }
-        .container { max-width: 500px; margin: auto; }
-
-        .header-area { 
-            text-align: left; margin-bottom: 15px; background: var(--dark); 
-            padding: 20px; border-radius: 16px; color: white; position: relative;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        50% {
+          box-shadow: 0 0 20px 2px var(--edit);
+          transform: scale(1.02);
         }
-        .header-area h2 { margin: 0; font-size: 22px; letter-spacing: -0.5px; }
-        .mode-badge { position: absolute; top: 20px; right: 20px; font-size: 10px; background: rgba(255,255,255,0.15); padding: 5px 10px; border-radius: 20px; font-weight: 700; text-transform: uppercase; }
 
-        .top-tools { display: flex; gap: 10px; margin-bottom: 12px; }
-        .shop-toggle { flex: 1; background: var(--white); border: 2px solid var(--primary); color: var(--primary); font-weight: 700; padding: 12px; border-radius: 12px; cursor: pointer; transition: 0.2s; font-size: 15px; }
-        .shop-toggle.active { background: var(--primary); color: white; box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3); }
-
-        .search-bar { width: 100%; padding: 14px 18px; border-radius: 12px; border: 1px solid #e1e4e8; font-size: 16px; box-sizing: border-box; outline: none; background: var(--white); margin-bottom: 5px; }
-
-        .filter-wrapper { position: sticky; top: 0; z-index: 100; background: inherit; padding: 12px 0; }
-        .filter-container { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 5px; scrollbar-width: none; }
-        .filter-container::-webkit-scrollbar { display: none; }
-        .filter-btn { white-space: nowrap; padding: 8px 16px; border-radius: 25px; border: 1px solid #dfe6e9; background: var(--white); color: var(--light-text); font-weight: 600; cursor: pointer; font-size: 13px; }
-        .filter-btn.active { background: var(--dark); color: white; border-color: var(--dark); }
-
-        /* Highlight Animation */
-        @keyframes highlightGlow {
-            0% { box-shadow: 0 0 0 0px var(--edit); transform: scale(1); }
-            50% { box-shadow: 0 0 20px 2px var(--edit); transform: scale(1.02); }
-            100% { box-shadow: var(--shadow); transform: scale(1); }
+        100% {
+          box-shadow: var(--shadow);
+          transform: scale(1);
         }
-        .item-card.just-changed { animation: highlightGlow 1.5s ease-out; border: 1px solid var(--edit) !important; z-index: 10; }
+      }
 
-        .item-card { background: var(--white); margin-bottom: 12px; padding: 16px; border-radius: 16px; position: relative; border: 1px solid rgba(0,0,0,0.03); box-shadow: var(--shadow); transition: transform 0.2s; }
-        .item-card.checked { background: var(--checked); opacity: 0.7; border: 1px dashed #ccc; box-shadow: none; }
-        .important-row { background-color: var(--important) !important; border-left: 5px solid var(--imp-border) !important; }
-        
-        .sn-badge { position: absolute; top: -8px; left: -8px; background: var(--dark); color: white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 11px; font-weight: 800; }
-        .item-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
-        .item-title { font-weight: 700; font-size: 16px; color: #2d3436; max-width: 70%; }
-        .item-qty { color: var(--primary-dark); font-size: 13px; font-weight: 700; background: #e8f5e9; padding: 2px 8px; border-radius: 6px; }
+      .item-card.just-changed {
+        animation: highlightGlow 1.5s ease-out;
+        border: 1px solid var(--edit) !important;
+        z-index: 10;
+      }
 
-        .cat-badge { font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; background: #f1f2f6; color: #7f8c8d; text-transform: uppercase; }
+      .item-card {
+        background: var(--white);
+        margin-bottom: 12px;
+        padding: 16px;
+        border-radius: 16px;
+        position: relative;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        box-shadow: var(--shadow);
+        transition: transform 0.2s;
+      }
 
-        .card-actions { display: flex; gap: 12px; margin-top: 10px; padding-top: 10px; border-top: 1px solid #f1f2f6; justify-content: flex-end; }
-        .action-icon { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 14px; cursor: pointer; border: none; }
+      .item-card.checked {
+        background: var(--checked);
+        opacity: 0.7;
+        border: 1px dashed #ccc;
+        box-shadow: none;
+      }
 
-        .voice-btn { background: var(--accent-purple); color: white; border: none; width: 44px; height: 44px; border-radius: 12px; font-size: 18px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
-        .voice-btn.listening { background: var(--danger); animation: pulse 1.5s infinite; }
-        @keyframes pulse { 0% { transform: scale(1); } 70% { transform: scale(1.1); } 100% { transform: scale(1); } }
+      .important-row {
+        background-color: var(--important) !important;
+        border-left: 5px solid var(--imp-border) !important;
+      }
 
-        .bottom-nav { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--dark); padding: 10px 20px; border-radius: 30px; display: flex; gap: 15px; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1000; width: fit-content; transition: 0.3s ease; }
-        .nav-icon { background: none; border: none; font-size: 20px; cursor: pointer; padding: 5px; color: white; }
-        .fab { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; border: none; box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4); }
+      .sn-badge {
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        background: var(--dark);
+        color: white;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        font-size: 11px;
+        font-weight: 800;
+      }
 
-        /* Suggestions */
-        .suggestion-row { display: flex; gap: 8px; overflow-x: auto; padding: 5px 0; margin-bottom: 5px; scrollbar-width: none; }
-        .suggest-chip { background: #f1f2f6; padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 700; cursor: pointer; white-space: nowrap; color: var(--dark); border: 1px solid #dfe6e9; }
+      .item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 6px;
+      }
 
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 2000; }
-        .modal-content { background: white; width: 90%; max-width: 400px; padding: 25px; border-radius: 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-        .modal-content input, .modal-content select { width: 100%; padding: 12px 15px; border-radius: 12px; border: 1.5px solid #eceff1; font-size: 15px; outline: none; box-sizing: border-box; }
+      .item-title {
+        font-weight: 700;
+        font-size: 16px;
+        color: #2d3436;
+        max-width: 70%;
+      }
 
-        .btn-save { background: var(--primary); color: white; border: none; padding: 15px; border-radius: 12px; font-weight: 800; font-size: 16px; cursor: pointer; }
-        .btn-danger { background: var(--danger); color: white; border: none; padding: 12px; border-radius: 12px; font-weight: 800; cursor: pointer; width: 100%; margin-top: 10px; }
-        .btn-cancel { background: #f1f2f6; color: #2d3436; border: none; padding: 12px; border-radius: 12px; font-weight: 700; cursor: pointer; }
-        
-        .hidden { display: none !important; }
-        .nav-hidden { opacity: 0; pointer-events: none; transform: translate(-50%, 100px); }
+      .item-qty {
+        color: var(--primary-dark);
+        font-size: 13px;
+        font-weight: 700;
+        background: #e8f5e9;
+        padding: 2px 8px;
+        border-radius: 6px;
+      }
+
+      .cat-badge {
+        font-size: 10px;
+        font-weight: 800;
+        padding: 3px 8px;
+        border-radius: 6px;
+        background: #f1f2f6;
+        color: #7f8c8d;
+        text-transform: uppercase;
+      }
+
+      .card-actions {
+        display: flex;
+        gap: 12px;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid #f1f2f6;
+        justify-content: flex-end;
+      }
+
+      .action-icon {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+        border: none;
+      }
+
+      .voice-btn {
+        background: var(--accent-purple);
+        color: white;
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .voice-btn.listening {
+        background: var(--danger);
+        animation: pulse 1.5s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+
+        70% {
+          transform: scale(1.1);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .bottom-nav {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--dark);
+        padding: 10px 20px;
+        border-radius: 30px;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        width: fit-content;
+        transition: 0.3s ease;
+      }
+
+      .nav-icon {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 5px;
+        color: white;
+      }
+
+      .fab {
+        width: 50px;
+        height: 50px;
+        background: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        border: none;
+        box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+      }
+
+      /* Suggestions */
+      .suggestion-row {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 5px 0;
+        margin-bottom: 5px;
+        scrollbar-width: none;
+      }
+
+      .suggest-chip {
+        background: #f1f2f6;
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 11px;
+        font-weight: 700;
+        cursor: pointer;
+        white-space: nowrap;
+        color: var(--dark);
+        border: 1px solid #dfe6e9;
+      }
+
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+      }
+
+      .modal-content {
+        background: white;
+        width: 90%;
+        max-width: 400px;
+        padding: 25px;
+        border-radius: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .modal-content input,
+      .modal-content select {
+        width: 100%;
+        padding: 12px 15px;
+        border-radius: 12px;
+        border: 1.5px solid #eceff1;
+        font-size: 15px;
+        outline: none;
+        box-sizing: border-box;
+      }
+
+      .btn-save {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 12px;
+        font-weight: 800;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .btn-danger {
+        background: var(--danger);
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 12px;
+        font-weight: 800;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .btn-cancel {
+        background: #f1f2f6;
+        color: #2d3436;
+        border: none;
+        padding: 12px;
+        border-radius: 12px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      .nav-hidden {
+        opacity: 0;
+        pointer-events: none;
+        transform: translate(-50%, 100px);
+      }
+
+      .pulse-highlight {
+        animation: pulse-green 1.2s ease-out;
+      }
+
+      @keyframes pulse-green {
+        0% {
+          background-color: #d4edda;
+          border-color: #28a745;
+        }
+
+        100% {
+          background-color: var(--white);
+        }
+      }
     </style>
-</head>
-<body>
-
-<div class="container">
-    <div class="header-area">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-area">
         <div id="modeLabel" class="mode-badge">Planning</div>
         <h2>GM House Groceries</h2>
         <div id="displayDate" style="font-size: 12px; opacity: 0.6; margin-top: 4px;"></div>
-    </div>
-
-    <div class="top-tools">
+      </div>
+      <div class="top-tools">
         <button id="shopBtn" class="shop-toggle" onclick="toggleShoppingMode()">🛒 Start Shopping</button>
         <button class="shop-toggle" style="flex:0; padding: 0 15px; border-color: #dfe6e9; color: #b2bec3;" onclick="resetChecks()">🔄</button>
-    </div>
-
-    <input type="text" id="searchInput" class="search-bar" placeholder="Search for items..." oninput="renderList()">
-
-    <div class="filter-wrapper">
+      </div>
+      <input type="text" id="searchInput" class="search-bar" placeholder="Search for items..." oninput="renderList()">
+      <div class="filter-wrapper">
         <div class="filter-container" id="filterBar"></div>
+      </div>
+      <div id="listBody"></div>
+      <button id="pdfBtn" class="btn-save" style="background:var(--dark); width: 100%; margin: 20px 0 40px;" onclick="exportPDF()">📥 Download PDF Report</button>
     </div>
-
-    <div id="listBody"></div>
-
-    <button id="pdfBtn" class="btn-save" style="background:var(--dark); width: 100%; margin: 20px 0 40px;" onclick="exportPDF()">📥 Download PDF Report</button>
-</div>
-
-<div class="bottom-nav" id="bottomNav">
-    <button class="nav-icon" onclick="shareWhatsApp()" style="color:var(--whatsapp)">📱</button>
-    <button class="nav-icon" onclick="backupData()" style="color:#3498db">💾</button>
-    <button id="fabBtn" class="fab" onclick="openModal()">+</button>
-    <label class="nav-icon" style="color:var(--accent-purple); cursor:pointer;">
-        📂<input type="file" style="display:none" onchange="restoreData(event)">
-    </label>
-    <button class="nav-icon" onclick="openSettings()" style="color:#aaa">⚙️</button>
-</div>
-
-<div class="modal-overlay" id="itemModal">
-    <div class="modal-content">
+    <div class="bottom-nav" id="bottomNav">
+      <button class="nav-icon" onclick="shareWhatsApp()" style="color:var(--whatsapp)">📱</button>
+      <button class="nav-icon" onclick="backupData()" style="color:#3498db">💾</button>
+      <button id="fabBtn" class="fab" onclick="openModal()">+</button>
+      <label class="nav-icon" style="color:var(--accent-purple); cursor:pointer;"> 📂 <input type="file" style="display:none" onchange="restoreData(event)">
+      </label>
+      <button class="nav-icon" onclick="openSettings()" style="color:#aaa">⚙️</button>
+    </div>
+    <div class="modal-overlay" id="itemModal">
+      <div class="modal-content">
         <div style="display:flex; justify-content: space-between; align-items:center;">
-            <h3 style="margin:0;">Item Details</h3>
-            <button id="voiceBtn" class="voice-btn" onclick="startVoiceRecognition()">🎙️</button>
+          <h3 style="margin:0;">Item Details</h3>
+          <button id="voiceBtn" class="voice-btn" onclick="startVoiceRecognition()">🎙️</button>
         </div>
         <input type="text" id="itemName" placeholder="Item Name">
-        
         <div class="suggestion-row">
-            <div class="suggest-chip" onclick="setQty('1 KG')">1 KG</div>
-            <div class="suggest-chip" onclick="setQty('2 KG')">2 KG</div>
-            <div class="suggest-chip" onclick="setQty('500 Gram')">500g</div>
-            <div class="suggest-chip" onclick="setQty('1 Pack')">1 Pack</div>
-            <div class="suggest-chip" onclick="setQty('1 Litre')">1 Ltr</div>
-            <div class="suggest-chip" onclick="setQty('50 Rs.')">50 Rs</div>
+          <div class="suggest-chip" onclick="setQty('1 KG')">1 KG</div>
+          <div class="suggest-chip" onclick="setQty('2 KG')">2 KG</div>
+          <div class="suggest-chip" onclick="setQty('500 Gram')">500g</div>
+          <div class="suggest-chip" onclick="setQty('1 Pack')">1 Pack</div>
+          <div class="suggest-chip" onclick="setQty('1 Litre')">1 Ltr</div>
+          <div class="suggest-chip" onclick="setQty('50 Rs.')">50 Rs</div>
         </div>
         <input type="text" id="itemQty" placeholder="Quantity">
-
         <select id="itemCat">
-            <option value="Food">🍲 Food</option>
-            <option value="Gharam Masala">🌶️ Masala</option>
-            <option value="Shower">🚿 Personal Care</option>
-            <option value="Cloth Wash">🧼 Laundry</option>
-            <option value="General Food">🍿 Snacks</option>
-            <option value="Kitchen">🍳 Kitchen</option>
-            <option value="Misc">📦 Misc</option>
+          <option value="Food">🍲 Food</option>
+          <option value="Gharam Masala">🌶️ Masala</option>
+          <option value="Shower">🚿 Personal Care</option>
+          <option value="Cloth Wash">🧼 Laundry</option>
+          <option value="General Food">🍿 Snacks</option>
+          <option value="Kitchen">🍳 Kitchen</option>
+          <option value="Misc">📦 Misc</option>
         </select>
         <label style="display:flex; align-items:center; gap:10px; font-weight:700;">
-            <input type="checkbox" id="isImportant"> ⭐ Urgent
-        </label>
+          <input type="checkbox" id="isImportant"> ⭐ Urgent </label>
         <button class="btn-save" onclick="addItem()">Save Item</button>
         <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+      </div>
     </div>
-</div>
-
-<div class="modal-overlay" id="settingsModal">
-    <div class="modal-content">
+    <div class="modal-overlay" id="settingsModal">
+      <div class="modal-content">
         <h3 style="margin:0;">Settings ⚙️</h3>
         <button class="btn-save" style="background:#34495e;" onclick="resetToMaster()">♻️ Restore Master List (45 items)</button>
         <button class="btn-danger" onclick="clearAllItems()">🗑️ Delete All Permanent</button>
         <button class="btn-cancel" onclick="closeSettings()">Close</button>
+      </div>
     </div>
-</div>
+    <script>
+      const catIcons = {
+        "Food": "🍲",
+        "Gharam Masala": "🌶️",
+        "Shower": "🚿",
+        "Cloth Wash": "🧼",
+        "General Food": "🍿",
+        "Kitchen": "🍳",
+        "Misc": "📦"
+      };
+      const masterData = [{
+        name: "Sugar",
+        qty: "8 KG",
+        cat: "Food",
+        important: true,
+        checked: false
+      }, {
+        name: "Oil",
+        qty: "20 Litre",
+        cat: "Food",
+        important: true,
+        checked: false
+      }, {
+        name: "Mother Care Shampoo",
+        qty: "1 Bottle",
+        cat: "Shower",
+        important: false,
+        checked: false
+      }, {
+        name: "Daal Chini",
+        qty: "50 Rs.",
+        cat: "Gharam Masala",
+        important: false,
+        checked: false
+      }, {
+        name: "Ajwain",
+        qty: "50 Rs.",
+        cat: "Gharam Masala",
+        important: false,
+        checked: false
+      }, {
+        name: "Laung",
+        qty: "50 Rs.",
+        cat: "Gharam Masala",
+        important: false,
+        checked: false
+      }, {
+        name: "Gidamri (imli)",
+        qty: "250 Gram",
+        cat: "Food",
+        important: false,
+        checked: false
+      }, {
+        name: "Lahori Namak",
+        qty: "6 pack",
+        cat: "Food",
+        important: false,
+        checked: false
+      }, {
+        name: "Till",
+        qty: "100 Rs.",
+        cat: "General Food",
+        important: false,
+        checked: false
+      }, {
+        name: "Pulao jeeri",
+        qty: "100 Rs.",
+        cat: "Gharam Masala",
+        important: false,
+        checked: false
+      }, {
+        name: "Suki Methi",
+        qty: "2 Pack",
+        cat: "Food",
+        important: false,
+        checked: false
+      }, {
+        name: "Masoor Daal",
+        qty: "0.5 KG",
+        cat: "Food",
+        important: false,
+        checked: false
+      }, {
+        name: "SunLight Surf",
+        qty: "2 pack",
+        cat: "Cloth Wash",
+        important: false,
+        checked: false
+      }, {
+        name: "Moom Daal",
+        qty: "0.5 KG",
+        cat: "Food",
+        important: false,
+        checked: false
+      }, {
+        name: "Alu Bukhara",
+        qty: "200 Rs.",
+        cat: "Gharam Masala",
+        important: false,
+        checked: false
+      }, {
+        name: "lal mirch kuti hui",
+        qty: "3 pack",
+        cat: "Gharam Masala",
+        important: false,
+        checked: false
+      }, {
+        name: "Mother Care Soap",
+        qty: "1 Soap",
+        cat: "Shower",
+        important: false,
+        checked: false
+      }, {
+        name: "Merry Biscuit",
+        qty: "1 Pack",
+        cat: "General Food",
+        important: false,
+        checked: false
+      }, {
+        name: "Himali Facewash",
+        qty: "1 Pouch",
+        cat: "Shower",
+        important: false,
+        checked: false
+      }, {
+        name: "Kala Mirch",
+        qty: "125 Gram",
+        cat: "Gharam Masala",
+        important: false,
+        checked: false
+      }, {
+        name: "lemon max",
+        qty: "20 soaps",
+        cat: "Kitchen",
+        important: false,
+        checked: false
+      }, {
+        name: "Chana",
+        qty: "1 KG",
+        cat: "Food",
+        important: false,
+        checked: false
+      }, {
+        name: "Sabid Dhania",
+        qty: "1 KG",
+        cat: "Food",
+        important: false,
+        checked: false
+      }, {
+        name: "Zeera",
+        qty: "250 Gram",
+        cat: "Gharam Masala",
+        important: false,
+        checked: false
+      }, {
+        name: "Hand Wash",
+        qty: "1 Bottle",
+        cat: "Shower",
+        important: false,
+        checked: false
+      }, {
+        name: "Coconut Oil",
+        qty: "250 Gram",
+        cat: "Misc",
+        important: false,
+        checked: false
+      }, {
+        name: "Click Biscuit",
+        qty: "1 Pack",
+        cat: "General Food",
+        important: false,
+        checked: false
+      }, {
+        name: "Dove Lotion",
+        qty: "1 bottle",
+        cat: "Misc",
+        important: false,
+        checked: false
+      }, {
+        name: "Safeguard",
+        qty: "4 Medium",
+        cat: "Shower",
+        important: false,
+        checked: false
+      }, {
+        name: "Dove Soap",
+        qty: "1 Soap",
+        cat: "Shower",
+        important: false,
+        checked: false
+      }, {
+        name: "Kohinoor Soap",
+        qty: "8 Soaps",
+        cat: "Cloth Wash",
+        important: false,
+        checked: false
+      }, {
+        name: "Head & Shoulders",
+        qty: "1 Bottle",
+        cat: "Shower",
+        important: false,
+        checked: false
+      }, {
+        name: "Gala Biscuit",
+        qty: "1 Pack",
+        cat: "General Food",
+        important: false,
+        checked: false
+      }, {
+        name: "Ponds Facewash",
+        qty: "1 Pouch",
+        cat: "Shower",
+        important: false,
+        checked: false
+      }, {
+        name: "Tissue",
+        qty: "2 Pack",
+        cat: "Misc",
+        important: false,
+        checked: false
+      }, {
+        name: "Brit Surf",
+        qty: "5 pack",
+        cat: "Cloth Wash",
+        important: false,
+        checked: false
+      }, {
+        name: "Red Rice",
+        qty: "15 KG",
+        cat: "Food",
+        important: false,
+        checked: false
+      }, {
+        name: "Super Basmati",
+        qty: "6 KG",
+        cat: "Food",
+        important: false,
+        checked: false
+      }, {
+        name: "Mezban Tea",
+        qty: "1.5 KG",
+        cat: "Food",
+        important: false,
+        checked: false
+      }, {
+        name: "Tez pata",
+        qty: "30 Rs.",
+        cat: "Gharam Masala",
+        important: false,
+        checked: false
+      }, {
+        name: "Badyan k phool",
+        qty: "50 Rs.",
+        cat: "Gharam Masala",
+        important: false,
+        checked: false
+      }, {
+        name: "lal mirch pisi",
+        qty: "1 pack",
+        cat: "Gharam Masala",
+        important: false,
+        checked: false
+      }, {
+        name: "Hing",
+        qty: "100 Rs.",
+        cat: "Gharam Masala",
+        important: false,
+        checked: false
+      }, {
+        name: "Sonf",
+        qty: "125 Gram",
+        cat: "Gharam Masala",
+        important: false,
+        checked: false
+      }, {
+        name: "Dove Shampoo",
+        qty: "1 Bottle",
+        cat: "Shower",
+        important: false,
+        checked: false
+      }];
+      let groceryList = JSON.parse(localStorage.getItem('gm_house_groceries')) || JSON.parse(JSON.stringify(masterData));
+      let isShoppingMode = false;
+      let currentFilter = 'All';
+      let editIndex = -1;
+      let lastModifiedId = null;
 
-<script>
-    const catIcons = { "Food": "🍲", "Gharam Masala": "🌶️", "Shower": "🚿", "Cloth Wash": "🧼", "General Food": "🍿", "Kitchen": "🍳", "Misc": "📦" };
-    
-    const masterData = [
-        {name:"Sugar",qty:"8 KG",cat:"Food",important:true,checked:false}, {name:"Oil",qty:"20 Litre",cat:"Food",important:true,checked:false}, {name:"Mother Care Shampoo",qty:"1 Bottle",cat:"Shower",important:false,checked:false}, {name:"Daal Chini",qty:"50 Rs.",cat:"Gharam Masala",important:false,checked:false}, {name:"Ajwain",qty:"50 Rs.",cat:"Gharam Masala",important:false,checked:false}, {name:"Laung",qty:"50 Rs.",cat:"Gharam Masala",important:false,checked:false}, {name:"Gidamri (imli)",qty:"250 Gram",cat:"Food",important:false,checked:false}, {name:"Lahori Namak",qty:"6 pack",cat:"Food",important:false,checked:false}, {name:"Till",qty:"100 Rs.",cat:"General Food",important:false,checked:false}, {name:"Pulao jeeri",qty:"100 Rs.",cat:"Gharam Masala",important:false,checked:false}, {name:"Suki Methi",qty:"2 Pack",cat:"Food",important:false,checked:false}, {name:"Masoor Daal",qty:"0.5 KG",cat:"Food",important:false,checked:false}, {name:"SunLight Surf",qty:"2 pack",cat:"Cloth Wash",important:false,checked:false}, {name:"Moom Daal",qty:"0.5 KG",cat:"Food",important:false,checked:false}, {name:"Alu Bukhara",qty:"200 Rs.",cat:"Gharam Masala",important:false,checked:false}, {name:"lal mirch kuti hui",qty:"3 pack",cat:"Gharam Masala",important:false,checked:false}, {name:"Mother Care Soap",qty:"1 Soap",cat:"Shower",important:false,checked:false}, {name:"Merry Biscuit",qty:"1 Pack",cat:"General Food",important:false,checked:false}, {name:"Himali Facewash",qty:"1 Pouch",cat:"Shower",important:false,checked:false}, {name:"Kala Mirch",qty:"125 Gram",cat:"Gharam Masala",important:false,checked:false}, {name:"lemon max",qty:"20 soaps",cat:"Kitchen",important:false,checked:false}, {name:"Chana",qty:"1 KG",cat:"Food",important:false,checked:false}, {name:"Sabid Dhania",qty:"1 KG",cat:"Food",important:false,checked:false}, {name:"Zeera",qty:"250 Gram",cat:"Gharam Masala",important:false,checked:false}, {name:"Hand Wash",qty:"1 Bottle",cat:"Shower",important:false,checked:false}, {name:"Coconut Oil",qty:"250 Gram",cat:"Misc",important:false,checked:false}, {name:"Click Biscuit",qty:"1 Pack",cat:"General Food",important:false,checked:false}, {name:"Dove Lotion",qty:"1 bottle",cat:"Misc",important:false,checked:false}, {name:"Safeguard",qty:"4 Medium",cat:"Shower",important:false,checked:false}, {name:"Dove Soap",qty:"1 Soap",cat:"Shower",important:false,checked:false}, {name:"Kohinoor Soap",qty:"8 Soaps",cat:"Cloth Wash",important:false,checked:false}, {name:"Head & Shoulders",qty:"1 Bottle",cat:"Shower",important:false,checked:false}, {name:"Gala Biscuit",qty:"1 Pack",cat:"General Food",important:false,checked:false}, {name:"Ponds Facewash",qty:"1 Pouch",cat:"Shower",important:false,checked:false}, {name:"Tissue",qty:"2 Pack",cat:"Misc",important:false,checked:false}, {name:"Brit Surf",qty:"5 pack",cat:"Cloth Wash",important:false,checked:false}, {name:"Red Rice",qty:"15 KG",cat:"Food",important:false,checked:false}, {name:"Super Basmati",qty:"6 KG",cat:"Food",important:false,checked:false}, {name:"Mezban Tea",qty:"1.5 KG",cat:"Food",important:false,checked:false}, {name:"Tez pata",qty:"30 Rs.",cat:"Gharam Masala",important:false,checked:false}, {name:"Badyan k phool",qty:"50 Rs.",cat:"Gharam Masala",important:false,checked:false}, {name:"lal mirch pisi",qty:"1 pack",cat:"Gharam Masala",important:false,checked:false}, {name:"Hing",qty:"100 Rs.",cat:"Gharam Masala",important:false,checked:false}, {name:"Sonf",qty:"125 Gram",cat:"Gharam Masala",important:false,checked:false}, {name:"Dove Shampoo",qty:"1 Bottle",cat:"Shower",important:false,checked:false}
-    ];
+      function getFormattedDate() {
+        return new Date().toLocaleDateString('en-GB', {
+          day: '2-digit',
+          month: 'short',
+          year: 'numeric'
+        });
+      }
 
-    let groceryList = JSON.parse(localStorage.getItem('gm_house_groceries')) || JSON.parse(JSON.stringify(masterData));
-    let isShoppingMode = false;
-    let currentFilter = 'All';
-    let editIndex = -1;
-    let lastModifiedId = null;
+      function setQty(val) {
+        document.getElementById('itemQty').value = val;
+      }
 
-    function getFormattedDate() { return new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }); }
-    function setQty(val) { document.getElementById('itemQty').value = val; }
-
-    function renderList() {
+      function renderList(highlightName = null) {
         const query = document.getElementById('searchInput').value.toLowerCase();
         const container = document.getElementById('listBody');
         container.innerHTML = '';
         let currentViewSN = 1;
-
-        groceryList.sort((a,b) => (isShoppingMode && a.checked !== b.checked) ? (a.checked ? 1 : -1) : a.cat.localeCompare(b.cat));
-
+        groceryList.sort((a, b) => (isShoppingMode && a.checked !== b.checked) ? (a.checked ? 1 : -1) : a.cat.localeCompare(b.cat));
         groceryList.forEach((item, originalIdx) => {
-            if (currentFilter !== 'All' && item.cat !== currentFilter) return;
-            if (query && !item.name.toLowerCase().includes(query)) return;
-
-            const card = document.createElement('div');
-            card.id = `item-${originalIdx}`;
-            card.className = `item-card ${item.important && !item.checked ? 'important-row' : ''} ${item.checked ? 'checked' : ''}`;
-            if (lastModifiedId === originalIdx) card.classList.add('just-changed');
-
-            card.onclick = () => { if(isShoppingMode) { item.checked = !item.checked; renderList(); } };
-            card.innerHTML = `<div class="sn-badge">${currentViewSN}</div><div class="item-header"><span class="item-title">${item.name} ${item.important && !item.checked ? '⭐' : ''}</span><span class="item-qty">${item.qty}</span></div><span class="cat-badge">${catIcons[item.cat]} ${item.cat}</span><div class="card-actions ${isShoppingMode ? 'hidden' : ''}"><button class="action-icon" style="background:#fff9db; color:#f1c40f;" onclick="editItem(${originalIdx})">✎</button><button class="action-icon" style="background:#fff5f5; color:#e74c3c;" onclick="deleteItem(${originalIdx})">🗑</button></div>`;
-            container.appendChild(card);
-            currentViewSN++;
-        });
-
-        if (lastModifiedId !== null) {
-            const el = document.getElementById(`item-${lastModifiedId}`);
-            if (el) {
-                setTimeout(() => {
-                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    setTimeout(() => { lastModifiedId = null; }, 2000);
-                }, 100);
+          if (currentFilter !== 'All' && item.cat !== currentFilter) return;
+          if (query && !item.name.toLowerCase().includes(query)) return;
+          const card = document.createElement('div');
+          card.id = `item-${originalIdx}`;
+          card.className = `item-card ${item.important && !item.checked ? 'important-row' : ''} ${item.checked ? 'checked' : ''}`;
+          if (highlightName && item.name === highlightName) card.classList.add('pulse-highlight');
+          card.onclick = () => {
+            if (isShoppingMode) {
+              item.checked = !item.checked;
+              renderList();
             }
-        }
-
+          };
+          card.innerHTML = `
+											
+											<div class="sn-badge">${currentViewSN}</div>
+											<div class="item-header">
+												<span class="item-title">${item.name} ${item.important && !item.checked ? '⭐' : ''}</span>
+												<span class="item-qty">${item.qty}</span>
+											</div>
+											<span class="cat-badge">${catIcons[item.cat]} ${item.cat}</span>
+											<div class="card-actions ${isShoppingMode ? 'hidden' : ''}">
+												<button class="action-icon" style="background:#fff9db; color:#f1c40f;" onclick="editItem(${originalIdx})">✎</button>
+												<button class="action-icon" style="background:#fff5f5; color:#e74c3c;" onclick="deleteItem(${originalIdx})">🗑</button>
+											</div>`;
+          container.appendChild(card);
+          currentViewSN++;
+          if (highlightName && item.name === highlightName) {
+            setTimeout(() => card.scrollIntoView({
+              behavior: 'smooth',
+              block: 'center'
+            }), 100);
+          }
+        });
         localStorage.setItem('gm_house_groceries', JSON.stringify(groceryList));
         updateFilterBar();
         document.getElementById('displayDate').innerText = "Today: " + getFormattedDate();
-    }
+      }
 
-    function updateFilterBar() {
+      function updateFilterBar() {
         const cats = ['All', 'Food', 'Gharam Masala', 'Shower', 'Cloth Wash', 'General Food', 'Kitchen', 'Misc'];
         const bar = document.getElementById('filterBar');
         bar.innerHTML = '';
         cats.forEach(c => {
-            const count = c === 'All' ? groceryList.filter(i => !i.checked).length : groceryList.filter(i => i.cat === c && !i.checked).length;
-            const btn = document.createElement('button');
-            btn.className = `filter-btn ${currentFilter === c ? 'active' : ''}`;
-            btn.innerText = `${catIcons[c] || ''} ${c} (${count})`;
-            btn.onclick = () => { currentFilter = c; renderList(); };
-            bar.appendChild(btn);
+          const count = c === 'All' ? groceryList.filter(i => !i.checked).length : groceryList.filter(i => i.cat === c && !i.checked).length;
+          const btn = document.createElement('button');
+          btn.className = `filter-btn ${currentFilter === c ? 'active' : ''}`;
+          btn.innerText = `${catIcons[c] || ''} ${c} (${count})`;
+          btn.onclick = () => {
+            currentFilter = c;
+            renderList();
+          };
+          bar.appendChild(btn);
         });
-    }
+      }
 
-    function exportPDF() {
-        const { jsPDF } = window.jspdf;
+      function exportPDF() {
+        const {
+          jsPDF
+        } = window.jspdf;
         const doc = new jsPDF();
         const dateStr = getFormattedDate();
-        doc.setFontSize(22); doc.text("GM House Groceries", 14, 20);
-        doc.setFontSize(12); doc.setTextColor(100); doc.text("List Date: " + dateStr, 14, 30);
-        const data = groceryList.map((i, index) => [index+1, i.name, i.qty, i.cat]);
-        doc.autoTable({ startY: 38, head: [['#', 'Item Name', 'Qty', 'Category']], body: data, headStyles: { fillColor: [26, 26, 46] } });
+        doc.setFontSize(22);
+        doc.text("GM House Groceries", 14, 20);
+        doc.setFontSize(12);
+        doc.setTextColor(100);
+        doc.text("List Date: " + dateStr, 14, 30);
+        const data = groceryList.map((i, index) => [index + 1, i.name, i.qty, i.cat]);
+        doc.autoTable({
+          startY: 38,
+          head: [
+            ['#', 'Item Name', 'Qty', 'Category']
+          ],
+          body: data,
+          headStyles: {
+            fillColor: [26, 26, 46]
+          }
+        });
         doc.save(`GM_Groceries_${dateStr}.pdf`);
-    }
+      }
 
-    function resetToMaster() { if(confirm("Restore master 45 items?")) { groceryList = JSON.parse(JSON.stringify(masterData)); renderList(); closeSettings(); } }
-    
-    function startVoiceRecognition() {
+      function resetToMaster() {
+        if (confirm("Restore master 45 items?")) {
+          groceryList = JSON.parse(JSON.stringify(masterData));
+          renderList();
+          closeSettings();
+        }
+      }
+
+      function startVoiceRecognition() {
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
         if (!SpeechRecognition) return;
         const rec = new SpeechRecognition();
         document.getElementById('voiceBtn').classList.add('listening');
-        rec.onresult = (e) => { document.getElementById('itemName').value = e.results[0][0].transcript; };
+        rec.onresult = (e) => {
+          document.getElementById('itemName').value = e.results[0][0].transcript;
+        };
         rec.onend = () => document.getElementById('voiceBtn').classList.remove('listening');
         rec.start();
-    }
+      }
 
-    function toggleShoppingMode() { 
-        isShoppingMode = !isShoppingMode; 
-        document.body.classList.toggle('shopping-active', isShoppingMode); 
-        document.getElementById('bottomNav').classList.toggle('nav-hidden', isShoppingMode); 
-        document.getElementById('pdfBtn').classList.toggle('hidden', isShoppingMode); 
-        document.getElementById('shopBtn').innerText = isShoppingMode ? "✅ Done Shopping" : "🛒 Start Shopping"; 
-        document.getElementById('modeLabel').innerText = isShoppingMode ? "Shopping" : "Planning"; 
-        renderList(); 
-    }
+      function toggleShoppingMode() {
+        isShoppingMode = !isShoppingMode;
+        document.body.classList.toggle('shopping-active', isShoppingMode);
+        document.getElementById('bottomNav').classList.toggle('nav-hidden', isShoppingMode);
+        document.getElementById('pdfBtn').classList.toggle('hidden', isShoppingMode);
+        document.getElementById('shopBtn').innerText = isShoppingMode ? "✅ Done Shopping" : "🛒 Start Shopping";
+        document.getElementById('modeLabel').innerText = isShoppingMode ? "Shopping" : "Planning";
+        renderList();
+      }
 
-    function addItem() {
-        const name = document.getElementById('itemName').value; 
-        const qty = document.getElementById('itemQty').value; 
-        const cat = document.getElementById('itemCat').value; 
+      function addItem() {
+        const name = document.getElementById('itemName').value;
+        const qty = document.getElementById('itemQty').value;
+        const cat = document.getElementById('itemCat').value;
         const imp = document.getElementById('isImportant').checked;
-        if(!name) return;
-        if(editIndex > -1) { groceryList[editIndex] = {name, qty, cat, important: imp, checked: false}; lastModifiedId = editIndex; }
-        else { groceryList.push({name, qty, cat, important: imp, checked: false}); lastModifiedId = groceryList.length - 1; }
-        closeModal(); renderList();
-    }
+        if (!name) return;
+        if (editIndex > -1) {
+          groceryList[editIndex] = {
+            name,
+            qty,
+            cat,
+            important: imp,
+            checked: false
+          };
+        } else {
+          groceryList.push({
+            name,
+            qty,
+            cat,
+            important: imp,
+            checked: false
+          });
+        }
+        closeModal();
+        renderList(name);
+      }
 
-    function editItem(idx) { event.stopPropagation(); editIndex = idx; const i = groceryList[idx]; document.getElementById('itemName').value = i.name; document.getElementById('itemQty').value = i.qty; document.getElementById('itemCat').value = i.cat; document.getElementById('isImportant').checked = i.important; openModal(); }
-    function deleteItem(idx) { event.stopPropagation(); if(confirm("Delete?")) { groceryList.splice(idx,1); renderList(); } }
-    function clearAllItems() { if(confirm("Clear all?")) { groceryList = []; renderList(); closeSettings(); } }
-    function resetChecks() { if(confirm("New trip?")) { groceryList.forEach(i => i.checked = false); renderList(); } }
-    function shareWhatsApp() { let t = "*GM House Groceries*\n"; groceryList.forEach(i => t += `• ${i.name} (${i.qty})\n`); window.open(`https://wa.me/?text=${encodeURIComponent(t)}`); }
-    function backupData() { const blob = new Blob([JSON.stringify(groceryList)], {type:"application/json"}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download="GM_Backup.json"; a.click(); }
-    function restoreData(e) { const r = new FileReader(); r.onload = (ev) => { groceryList = JSON.parse(ev.target.result); renderList(); }; r.readAsText(e.target.files[0]); }
-    function openModal() { document.getElementById('itemModal').style.display = 'flex'; }
-    function closeModal() { document.getElementById('itemModal').style.display = 'none'; editIndex = -1; document.getElementById('itemName').value=''; document.getElementById('itemQty').value=''; }
-    function openSettings() { document.getElementById('settingsModal').style.display = 'flex'; }
-    function closeSettings() { document.getElementById('settingsModal').style.display = 'none'; }
+      function editItem(idx) {
+        event.stopPropagation();
+        editIndex = idx;
+        const i = groceryList[idx];
+        document.getElementById('itemName').value = i.name;
+        document.getElementById('itemQty').value = i.qty;
+        document.getElementById('itemCat').value = i.cat;
+        document.getElementById('isImportant').checked = i.important;
+        openModal();
+      }
 
-    renderList();
-</script>
-</body>
+      function deleteItem(idx) {
+        event.stopPropagation();
+        if (confirm("Delete?")) {
+          groceryList.splice(idx, 1);
+          renderList();
+        }
+      }
+
+      function clearAllItems() {
+        if (confirm("Clear all?")) {
+          groceryList = [];
+          renderList();
+          closeSettings();
+        }
+      }
+
+      function resetChecks() {
+        if (confirm("New trip?")) {
+          groceryList.forEach(i => i.checked = false);
+          renderList();
+        }
+      }
+
+      function shareWhatsApp() {
+        let t = "*GM House Groceries*\n";
+        groceryList.forEach(i => t += `• ${i.name} (${i.qty})\n`);
+        window.open(`https://wa.me/?text=${encodeURIComponent(t)}`);
+      }
+
+      function backupData() {
+        const blob = new Blob([JSON.stringify(groceryList)], {
+          type: "application/json"
+        });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = "GM_Backup.json";
+        a.click();
+      }
+
+      function restoreData(e) {
+        const r = new FileReader();
+        r.onload = (ev) => {
+          groceryList = JSON.parse(ev.target.result);
+          renderList();
+        };
+        r.readAsText(e.target.files[0]);
+      }
+
+      function openModal() {
+        document.getElementById('itemModal').style.display = 'flex';
+      }
+
+      function closeModal() {
+        document.getElementById('itemModal').style.display = 'none';
+        editIndex = -1;
+        document.getElementById('itemName').value = '';
+        document.getElementById('itemQty').value = '';
+      }
+
+      function openSettings() {
+        document.getElementById('settingsModal').style.display = 'flex';
+      }
+
+      function closeSettings() {
+        document.getElementById('settingsModal').style.display = 'none';
+      }
+      renderList();
+    </script>
+  </body>
 </html>
-

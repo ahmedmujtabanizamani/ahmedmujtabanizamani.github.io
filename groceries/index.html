@@ -441,21 +441,11 @@
         pointer-events: none;
         transform: translate(-50%, 100px);
       }
-
-      .pulse-highlight {
-        animation: pulse-green 1.2s ease-out;
-      }
-
-      @keyframes pulse-green {
-        0% {
-          background-color: #d4edda;
-          border-color: #28a745;
+.pulse-highlight { animation: pulse-green 1.2s ease-out; }
+        @keyframes pulse-green {
+            0% { background-color: #d4edda; border-color: #28a745; }
+            100% { background-color: var(--white); }
         }
-
-        100% {
-          background-color: var(--white);
-        }
-      }
     </style>
   </head>
   <body>
@@ -834,7 +824,7 @@
           const card = document.createElement('div');
           card.id = `item-${originalIdx}`;
           card.className = `item-card ${item.important && !item.checked ? 'important-row' : ''} ${item.checked ? 'checked' : ''}`;
-          if (highlightName && item.name === highlightName) card.classList.add('pulse-highlight');
+		  if (highlightName && item.name === highlightName) card.classList.add('pulse-highlight');
           card.onclick = () => {
             if (isShoppingMode) {
               item.checked = !item.checked;
@@ -842,7 +832,6 @@
             }
           };
           card.innerHTML = `
-											
 											<div class="sn-badge">${currentViewSN}</div>
 											<div class="item-header">
 												<span class="item-title">${item.name} ${item.important && !item.checked ? '⭐' : ''}</span>
@@ -855,13 +844,11 @@
 											</div>`;
           container.appendChild(card);
           currentViewSN++;
-          if (highlightName && item.name === highlightName) {
-            setTimeout(() => card.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center'
-            }), 100);
-          }
+		  if (highlightName && item.name === highlightName) {
+             setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
+            }
         });
+
         localStorage.setItem('gm_house_groceries', JSON.stringify(groceryList));
         updateFilterBar();
         document.getElementById('displayDate').innerText = "Today: " + getFormattedDate();
@@ -919,7 +906,11 @@
 
       function startVoiceRecognition() {
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        if (!SpeechRecognition) return;
+        // Specific check for Firefox/Unsupported browsers
+		if (!SpeechRecognition) {
+			alert("Voice-to-Text is not supported by your browser. Please use Chrome or Edge for voice features!");
+			return;
+			}
         const rec = new SpeechRecognition();
         document.getElementById('voiceBtn').classList.add('listening');
         rec.onresult = (e) => {

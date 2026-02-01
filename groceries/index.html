@@ -201,7 +201,7 @@
             if (lastModifiedId === originalIdx) card.classList.add('just-changed');
 
             card.onclick = () => { if(isShoppingMode) { item.checked = !item.checked; renderList(); } };
-            card.innerHTML = `<div class="sn-badge">${currentViewSN}</div><div class="item-header"><span class="item-title">${item.name} ${item.important && !item.checked ? '⭐' : ''}</span><span class="item-qty">${item.qty}</span></div><span class="cat-badge">${catIcons[item.cat]} ${item.cat}</span><div class="card-actions ${isShoppingMode ? 'hidden' : ''}"><button class="action-icon" style="background:#fff9db;" onclick="editItem(${originalIdx})">✎</button><button class="action-icon" style="background:#fff5f5;" onclick="deleteItem(${originalIdx})">🗑</button></div>`;
+            card.innerHTML = `<div class="sn-badge">${currentViewSN}</div><div class="item-header"><span class="item-title">${item.name} ${item.important && !item.checked ? '⭐' : ''}</span><span class="item-qty">${item.qty}</span></div><span class="cat-badge">${catIcons[item.cat]} ${item.cat}</span><div class="card-actions ${isShoppingMode ? 'hidden' : ''}"><button class="action-icon" style="background:#fff9db; color:#f1c40f;" onclick="editItem(${originalIdx})">✎</button><button class="action-icon" style="background:#fff5f5; color:#e74c3c;" onclick="deleteItem(${originalIdx})">🗑</button></div>`;
             container.appendChild(card);
             currentViewSN++;
         });
@@ -295,3 +295,4 @@
 </script>
 </body>
 </html>
+

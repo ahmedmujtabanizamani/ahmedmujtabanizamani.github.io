@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GM House Groceries 🏠</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        :root { 
+            --primary: #2ecc71; --edit: #f39c12; --danger: #e74c3c; --important: #fff3cd; --imp-border: #ffc107; --dark: #2c3e50;
+        }
+
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 10px; background: #f4f7f6; color: var(--dark); }
+        .container { max-width: 700px; margin: auto; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+        .header-area { text-align: center; margin-bottom: 20px; border-bottom: 2px solid var(--primary); padding-bottom: 10px; }
+        h2 { margin: 0; color: var(--dark); font-weight: 800; }
+        .date-label { font-size: 14px; color: #7f8c8d; font-weight: bold; margin-top: 5px; }
+
+        .controls { display: flex; flex-direction: column; gap: 10px; background: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #eee; }
+        input, select, .btn-main { width: 100%; box-sizing: border-box; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; }
+        
+        .checkbox-group { display: flex; align-items: center; gap: 10px; padding: 5px; font-weight: bold; color: #d35400; }
+        #isImportant { width: 22px; height: 22px; cursor: pointer; }
+
+        .btn-main { background: var(--primary); color: white; border: none; font-weight: bold; cursor: pointer; }
+        
+        .important-row { background-color: var(--important) !important; border-left: 5px solid var(--imp-border) !important; }
+        .imp-badge { background: var(--imp-border); color: #856404; font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: bold; margin-left: 5px; text-transform: uppercase; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+        
+        @media (max-width: 480px) {
+            thead { display: none; }
+            tr { display: block; border: 1px solid #eee; margin-bottom: 12px; padding: 12px; border-radius: 10px; position: relative; background: #fff; }
+            td { display: block; text-align: right; padding: 6px 0; border: none; font-size: 14px; }
+            td[data-label="SN"] { position: absolute; top: -10px; left: -10px; background: var(--dark); color: white; width: 25px; height: 25px; text-align: center; line-height: 25px; border-radius: 50%; font-size: 12px; }
+            td:not([data-label="SN"])::before { content: attr(data-label); float: left; font-weight: bold; color: #7f8c8d; }
+            .action-cell { text-align: center; border-top: 1px solid #eee; margin-top: 8px; padding-top: 12px; }
+        }
+
+        .cat-tag { background: #eee; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: bold; }
+        .btn-action { padding: 8px 12px; border-radius: 6px; border: none; color: white; font-size: 12px; margin: 2px; cursor: pointer; }
+        
+        .export-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+        .btn-img { background: #3498db; }
+        .btn-pdf { background: var(--dark); }
+    </style>
+</head>
+<body>
+
+<div class="container" id="app-content">
+    <div class="header-area">
+        <h2>🏠 GM House Groceries</h2>
+        <div id="displayDate" class="date-label"></div>
+    </div>
+    
+    <div class="controls no-export">
+        <input type="text" id="itemName" placeholder="Item Name">
+        <input type="text" id="itemQty" placeholder="Quantity">
+        <select id="itemCat">
+            <option value="Food">🍲 Food</option>
+            <option value="Gharam Masala">🌶️ Gharam Masala</option>
+            <option value="Shower">🚿 Shower</option>
+            <option value="Cloth Wash">🧼 Cloth Wash</option>
+            <option value="General Food">🍿 General Food</option>
+            <option value="Kitchen">🍳 Kitchen</option>
+            <option value="Misc">📦 Misc</option>
+        </select>
+        <div class="checkbox-group">
+            <input type="checkbox" id="isImportant"> 
+            <label for="isImportant">⚠️ Mark as Important</label>
+        </div>
+        <button class="btn-main" id="submitBtn" onclick="addItem()">Add to List</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>SN</th>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Category</th>
+                <th class="no-export">Actions</th>
+            </tr>
+        </thead>
+        <tbody id="listBody"></tbody>
+    </table>
+
+    <div class="export-group no-export">
+        <button class="btn-main btn-img" onclick="exportImage()">🖼️ Export Image</button>
+        <button class="btn-main btn-pdf" onclick="exportPDF()">📥 Export PDF</button>
+    </div>
+</div>
+
+<script>
+    const icons = { "Food": "🍲", "Gharam Masala": "🌶️", "Shower": "🚿", "Cloth Wash": "🧼", "General Food": "🍿", "Kitchen": "🍳", "Misc": "📦" };
+    
+    // Complete Data from your Excel
+    const fullPreload = [
+        {name:"Mother Care Shampoo",qty:"1 Bottle",cat:"Shower",important:false},
+        {name:"Daal Chini",qty:"50 Rs.",cat:"Gharam Masala",important:false},
+        {name:"Ajwain",qty:"50 Rs.",cat:"Gharam Masala",important:false},
+        {name:"Laung",qty:"50 Rs.",cat:"Gharam Masala",important:false},
+        {name:"Gidamri (imli)",qty:"250 Gram",cat:"Food",important:false},
+        {name:"Lahori Namak",qty:"6 pack",cat:"Food",important:false},
+        {name:"Till",qty:"100 Rs.",cat:"General Food",important:false},
+        {name:"Pulao jeeri",qty:"100 Rs.",cat:"Gharam Masala",important:false},
+        {name:"Suki Methi",qty:"2 Pack",cat:"Food",important:false},
+        {name:"Masoor Daal",qty:"0.5 KG",cat:"Food",important:false},
+        {name:"SunLight Surf",qty:"2 pack (0.5 KG)",cat:"Cloth Wash",important:false},
+        {name:"Moom Daal",qty:"0.5 KG",cat:"Food",important:false},
+        {name:"Alu Bukhara",qty:"200 Rs.",cat:"Gharam Masala",important:false},
+        {name:"lal mirch kuti hui",qty:"3 pack",cat:"Gharam Masala",important:false},
+        {name:"Mother Care Soap",qty:"1 Soap",cat:"Shower",important:false},
+        {name:"Merry Biscuit",qty:"1 full Pack",cat:"General Food",important:false},
+        {name:"Himali Facewash",qty:"1 Pouch",cat:"Shower",important:false},
+        {name:"Kala Mirch",qty:"125 Gram",cat:"Gharam Masala",important:false},
+        {name:"lemon max",qty:"20 soaps",cat:"Kitchen",important:false},
+        {name:"Chana",qty:"1 KG",cat:"Food",important:false},
+        {name:"Sabid Dhania",qty:"1 KG",cat:"Food",important:false},
+        {name:"Zeera",qty:"250 Gram",cat:"Gharam Masala",important:false},
+        {name:"Hand Wash",qty:"1 Bottle",cat:"Shower",important:false},
+        {name:"Coconut Oil",qty:"250 Gram",cat:"Misc",important:false},
+        {name:"Click Biscuit",qty:"1 full Pack",cat:"General Food",important:false},
+        {name:"Dove Lotion",qty:"1 bottle",cat:"Misc",important:false},
+        {name:"Safeguard",qty:"4 Medium",cat:"Shower",important:false},
+        {name:"Dove Soap",qty:"1 Soap",cat:"Shower",important:false},
+        {name:"Kohinoor Soap",qty:"8 Soaps",cat:"Cloth Wash",important:false},
+        {name:"Head & Shoulders",qty:"1 Bottle",cat:"Shower",important:false},
+        {name:"Gala Biscuit",qty:"1 full Pack",cat:"General Food",important:false},
+        {name:"Ponds Facewash",qty:"1 Pouch",cat:"Shower",important:false},
+        {name:"Sugar",qty:"8 KG",cat:"Food",important:true},
+        {name:"Tissue",qty:"2 Pack",cat:"Misc",important:false},
+        {name:"Brit Surf",qty:"5 pack",cat:"Cloth Wash",important:false},
+        {name:"Red Rice",qty:"15 KG",cat:"Food",important:false},
+        {name:"Super Basmati",qty:"6 KG",cat:"Food",important:false},
+        {name:"Mezban Tea",qty:"1.5 KG",cat:"Food",important:false},
+        {name:"Oil",qty:"20 Litre",cat:"Food",important:true},
+        {name:"Tez pata",qty:"30 Rs.",cat:"Gharam Masala",important:false},
+        {name:"Badyan k phool",qty:"50 Rs.",cat:"Gharam Masala",important:false},
+        {name:"lal mirch pisi",qty:"1 pack",cat:"Gharam Masala",important:false},
+        {name:"Hing",qty:"100 Rs.",cat:"Gharam Masala",important:false},
+        {name:"Sonf",qty:"125 Gram",cat:"Gharam Masala",important:false},
+        {name:"Dove Shampoo",qty:"1 Bottle",cat:"Shower",important:false}
+    ];
+
+    let groceryList = JSON.parse(localStorage.getItem('gm_house_groceries')) || fullPreload;
+    let editIndex = -1;
+
+    function updateDate() {
+        const now = new Date();
+        document.getElementById('displayDate').innerText = "List Date: " + now.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' });
+    }
+
+    function renderList() {
+        groceryList.sort((a, b) => a.cat.localeCompare(b.cat));
+        const body = document.getElementById('listBody');
+        body.innerHTML = '';
+        
+        groceryList.forEach((item, index) => {
+            const icon = icons[item.cat] || "🛒";
+            const importantClass = item.important ? 'important-row' : '';
+            const impBadge = item.important ? '<span class="imp-badge">Priority</span>' : '';
+            
+            body.innerHTML += `
+                <tr class="${importantClass}">
+                    <td data-label="SN">${index + 1}</td>
+                    <td data-label="Item"><strong>${item.name}</strong>${impBadge}</td>
+                    <td data-label="Qty">${item.qty}</td>
+                    <td data-label="Category"><span class="cat-tag">${icon} ${item.cat}</span></td>
+                    <td class="action-cell no-export">
+                        <button class="btn-action" style="background:var(--edit)" onclick="editItem(${index})">Edit</button>
+                        <button class="btn-action" style="background:var(--danger)" onclick="deleteItem(${index})">Del</button>
+                    </td>
+                </tr>`;
+        });
+        localStorage.setItem('gm_house_groceries', JSON.stringify(groceryList));
+        updateDate();
+    }
+
+    function addItem() {
+        const name = document.getElementById('itemName').value;
+        const qty = document.getElementById('itemQty').value;
+        const cat = document.getElementById('itemCat').value;
+        const imp = document.getElementById('isImportant').checked;
+
+        if(!name.trim()) return;
+
+        if(editIndex === -1) {
+            groceryList.push({ name, qty, cat, important: imp });
+        } else {
+            groceryList[editIndex] = { name, qty, cat, important: imp };
+            editIndex = -1;
+            document.getElementById('submitBtn').innerText = "Add to List";
+            document.getElementById('submitBtn').style.background = "var(--primary)";
+        }
+
+        document.getElementById('itemName').value = '';
+        document.getElementById('itemQty').value = '';
+        document.getElementById('isImportant').checked = false;
+        renderList();
+    }
+
+    function editItem(index) {
+        const item = groceryList[index];
+        document.getElementById('itemName').value = item.name;
+        document.getElementById('itemQty').value = item.qty;
+        document.getElementById('itemCat').value = item.cat;
+        document.getElementById('isImportant').checked = item.important;
+        editIndex = index;
+        document.getElementById('submitBtn').innerText = "Update Item";
+        document.getElementById('submitBtn').style.background = "var(--edit)";
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function deleteItem(index) {
+        if(confirm("Remove item?")) { groceryList.splice(index, 1); renderList(); }
+    }
+
+    async function capture(type) {
+        const elements = document.querySelectorAll('.no-export');
+        elements.forEach(el => el.style.display = 'none');
+        const canvas = await html2canvas(document.getElementById('app-content'), { scale: 2 });
+        elements.forEach(el => el.style.display = '');
+
+        if(type === 'pdf') {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'pt', 'a4');
+            const imgData = canvas.toDataURL('image/png');
+            const pdfWidth = doc.internal.pageSize.getWidth();
+            const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+            doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+            doc.save("GM_House_Groceries.pdf");
+        } else {
+            const link = document.createElement('a');
+            link.download = 'GM_House_Groceries.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+    }
+
+    function exportPDF() { capture('pdf'); }
+    function exportImage() { capture('img'); }
+
+    renderList();
+</script>
+</body>
+</html>

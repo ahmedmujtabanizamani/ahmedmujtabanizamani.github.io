@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GM Video Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans min-h-screen md:h-screen flex flex-col md:overflow-hidden">
+
+    <!-- Top Header Bar -->
+    <header class="bg-gray-800 border-b border-gray-700 px-4 md:px-6 py-3 flex items-center justify-between shrink-0 z-10">
+        <div class="flex items-center space-x-2">
+            <i data-lucide="play-circle" class="text-indigo-500 w-6 h-6 md:w-8 md:h-8"></i>
+            <h1 class="text-md md:text-xl font-bold tracking-tight">GM Portal</h1>
+        </div>
+        <div class="flex items-center space-x-2 md:space-x-4">
+            <button id="sync-btn" class="flex items-center space-x-1 text-xs bg-gray-700 hover:bg-gray-600 px-2.5 py-1.5 rounded-lg border border-gray-600 transition">
+                <i data-lucide="rotate-cw" class="w-3.5 h-3.5" id="sync-icon"></i>
+                <span class="hidden sm:inline">Sync Data</span>
+            </button>
+            <div id="storage-status" class="text-[10px] md:text-xs text-gray-400 bg-gray-950 px-2 py-1.5 rounded-md border border-gray-800 max-w-[120px] md:max-w-none truncate">
+                Init DB...
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Workspace: Uses normal block stream flow on mobile so items stack naturally -->
+    <div class="block md:flex flex-1 overflow-y-auto md:overflow-hidden relative w-full">
+        
+        <!-- Left Sidebar (Desktop Only) -->
+        <aside class="hidden md:flex w-72 bg-gray-800/50 border-r border-gray-700 flex-col overflow-hidden shrink-0">
+            <!-- Course Block -->
+            <div class="p-4 border-b border-gray-700 bg-gray-800 space-y-2">
+                <div class="flex items-center justify-between">
+                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400">Select Course</label>
+                    <button id="edit-course-btn" class="text-gray-400 hover:text-indigo-400 transition" title="Rename Active Course">
+                        <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+                
+                <div id="course-select-wrapper" class="relative">
+                    <select id="course-selector" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500 appearance-none cursor-pointer"></select>
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
+                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <div id="course-edit-wrapper" class="hidden flex items-center space-x-2">
+                    <input type="text" id="course-rename-input" class="flex-1 bg-gray-900 border border-indigo-500 rounded-lg px-3 py-1.5 text-sm text-white focus:outline-none">
+                    <button id="save-course-btn" class="bg-indigo-600 hover:bg-indigo-500 p-1.5 rounded-lg text-white"><i data-lucide="check" class="w-4 h-4"></i></button>
+                </div>
+            </div>
+
+            <!-- Desktop Sections Workspace Title Block -->
+            <div class="p-4 bg-gray-800/30 flex items-center justify-between border-b border-gray-800">
+                <span class="text-xs font-bold uppercase tracking-wider text-gray-500">Sections</span>
+                <button id="edit-section-btn" class="text-gray-400 hover:text-emerald-400 transition" title="Rename Active Section">
+                    <i data-lucide="edit-2" class="w-3.5 h-3.5"></i>
+                </button>
+            </div>
+
+            <div id="section-edit-wrapper" class="hidden px-4 py-2 border-b border-gray-800 bg-gray-900/50 flex items-center space-x-2">
+                <input type="text" id="section-rename-input" class="flex-1 bg-gray-900 border border-emerald-500 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none">
+                <button id="save-section-btn" class="bg-emerald-600 hover:bg-emerald-500 p-1.5 rounded-lg text-white"><i data-lucide="check" class="w-3.5 h-3.5"></i></button>
+            </div>
+
+            <div class="flex-1 overflow-y-auto p-4 space-y-3" id="sections-container"></div>
+        </aside>
+
+        <!-- Core Main Content Area -->
+        <main class="block md:flex flex-1 flex-col lg:flex-row overflow-y-auto md:overflow-hidden bg-gray-950 w-full">
+            
+            <!-- Video Stage Area -->
+            <div class="w-full lg:flex-1 p-4 md:p-6 flex flex-col space-y-4 shrink-0">
+                
+                <!-- Mobile Navigation Bar -->
+                <div class="flex md:hidden gap-2 w-full items-center bg-gray-800/60 p-2 rounded-xl border border-gray-800">
+                    <div class="flex-1 relative">
+                        <select id="mobile-course-selector" class="w-full bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-xs text-white appearance-none"></select>
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none text-gray-400"><i data-lucide="chevron-down" class="w-3.5 h-3.5"></i></div>
+                    </div>
+                    <button id="mobile-sections-trigger" class="bg-gray-900 border border-gray-700 px-3 py-2 rounded-lg text-xs flex items-center space-x-1">
+                        <i data-lucide="folder" class="w-3.5 h-3.5"></i><span>Sections</span>
+                    </button>
+                    <button id="mobile-rename-trigger" class="bg-gray-700 hover:bg-gray-600 px-2.5 py-2 rounded-lg text-xs text-gray-300">
+                        <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+
+                <!-- Aspect Ratio Video Player Container -->
+                <div class="relative w-full bg-black rounded-xl overflow-hidden shadow-2xl border border-gray-800" style="padding-top: 56.25%;">
+
+
+                    <iframe id="video-player" class="absolute top-0 left-0 w-full h-full" src="" allowfullscreen allow="autoplay;"></iframe>
+                </div>
+                
+                <!-- Video Metadata Block -->
+                <div class="bg-gray-800/40 border border-gray-800 p-4 md:p-5 rounded-xl space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div class="space-y-1 min-w-0 flex-1">
+                            <div class="flex flex-wrap items-center gap-1.5">
+                                <span id="meta-course" class="text-[10px] font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-2 py-0.5 rounded-full truncate max-w-[200px]">Course</span>
+                                <span id="meta-section" class="text-[10px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded-full truncate max-w-[200px]">Section</span>
+                            </div>
+                            <h2 id="meta-title" class="text-base md:text-xl font-bold text-white tracking-tight line-clamp-2">Select a video to begin</h2>
+                        </div>
+                        
+                        <div class="shrink-0">
+                            <button id="progress-toggle-btn" class="w-full sm:w-auto flex items-center justify-center space-x-2 text-xs font-semibold px-4 py-2 rounded-lg border transition shadow-sm bg-gray-800 border-gray-700 text-gray-300">
+                                <i data-lucide="circle" class="w-4 h-4" id="progress-icon"></i>
+                                <span id="progress-text">Mark Unwatched</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4 text-xs text-gray-400 pt-2 border-t border-gray-800/60">
+                        <span class="flex items-center space-x-1"><i data-lucide="clock" class="w-3.5 h-3.5"></i> <span id="meta-length">0</span> mins</span>
+                        <span class="flex items-center space-x-1"><i data-lucide="hash" class="w-3.5 h-3.5"></i> ID: <span id="meta-id">-</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Playlist Panel: Removed problematic structural layout sizing layers -->
+            <div id="playlist-sidebar" class="w-full lg:w-80 bg-gray-900 border-t lg:border-t-0 lg:border-l border-gray-800 flex flex-col shrink-0">
+                <div class="p-3 md:p-4 border-b border-gray-800 bg-gray-900/50 flex items-center justify-between">
+                    <h3 class="font-semibold text-xs tracking-wide text-gray-400 uppercase">Videos List</h3>
+                    <span id="video-count" class="text-xs bg-gray-800 text-gray-400 px-2 py-0.5 rounded-full">0</span>
+                </div>
+                <!-- Core Scroll Container: Handled naturally on mobile devices -->
+                <div class="flex-1 p-2 space-y-1 overflow-y-auto max-h-[400px] lg:max-h-none" id="playlist-container"></div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Mobile Sections Drawer -->
+    <div id="mobile-drawer-backdrop" class="hidden fixed inset-0 bg-black/60 z-30 transition-opacity"></div>
+    <div id="mobile-sections-drawer" class="hidden fixed bottom-0 left-0 right-0 max-h-[70vh] bg-gray-900 border-t border-gray-800 rounded-t-2xl p-4 overflow-y-auto z-40 transform translate-y-full transition-transform duration-300">
+        <div class="w-12 h-1 bg-gray-700 rounded-full mx-auto mb-4"></div>
+        <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">Choose Section</h3>
+        <div id="mobile-sections-list" class="space-y-2"></div>
+    </div>
+
+    <!-- Mobile Global Custom Rename Modal Overlay -->
+    <div id="mobile-rename-modal" class="hidden fixed inset-0 flex items-center justify-center p-4 bg-black/80 z-50">
+        <div class="bg-gray-800 border border-gray-700 rounded-2xl p-5 w-full max-w-sm space-y-4 shadow-2xl">
+            <h3 class="text-sm font-bold text-gray-200 uppercase tracking-wide flex items-center space-x-2"><i data-lucide="edit-3" class="w-4 h-4 text-indigo-400"></i> <span>Rename Headers</span></h3>
+            
+            <div class="space-y-1">
+                <label class="text-[11px] text-gray-400 font-medium uppercase">Active Course Name</label>
+                <input type="text" id="modal-course-input" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
+            </div>
+
+            <div class="space-y-1">
+                <label class="text-[11px] text-gray-400 font-medium uppercase">Active Section Name</label>
+                <input type="text" id="modal-section-input" class="w-full bg-gray-900 border border-gray-700 rounded-xl px-3 py-2 text-sm text-white focus:outline-none focus:border-emerald-500">
+            </div>
+
+            <div class="flex items-center space-x-2 pt-2">
+                <button id="modal-cancel-btn" class="flex-1 bg-gray-700 hover:bg-gray-600 py-2 rounded-xl text-xs font-semibold">Cancel</button>
+                <button id="modal-save-btn" class="flex-1 bg-indigo-600 hover:bg-indigo-500 py-2 rounded-xl text-xs font-semibold text-white">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const JSON_URL = 'structured_videos.json'; 
+		const prePopulatedCourseNames = {
+    5: "First Aid Step-1 Video Lectures",
+    6: "First Aid Step 2 - Ck Video Lectures",
+    7: "3. KAPLAN Surgery Video Lectures",
+    8: "M.B.B.S - 1st Year Video Lectures",
+    9: "2. FCPS PAST PAPERS VIDEO LECTURES",
+    10: "M.B.B.S - 2nd Year Video Lectures",
+    11: "M.B.B.S - 3rd Year Video Lectures",
+    12: "M.B.B.S - 4th Year Video Lectures",
+    13: "M.B.B.S - FINAL Year Video Lectures",
+    14: "Ophthalmology Video Lectures ( JATOI )",
+    15: "4. NRE MOCK TEST VIDEO LECTURES",
+    16: "OPHTHALMOLOGY ( HIGH YIELD ) VIDEO LECTURES",
+    17: "Otorhinolaryngology ( E.N.T HIGH YIELD ) VIDEO LECTURES",
+    18: "ANATOMY SHELF NOTES",
+    19: "COVID - 19 VIDEO LECTURES",
+    20: "Obstetrics & Gynecology VIDEO LECTURES",
+    21: "Obstetrics & Gynecology ( UWORD Q-BANK ) VIDEO LECTURES",
+    22: "GENERAL PATHOLOGY ( PATHOMA )",
+    23: "Special Pathology VIDEO LECTURES",
+    24: "Pediatric Medicine Video Lectures",
+    25: "Medicine Video Lectures",
+    26: "Community Medicine Video Lectures",
+    27: "Mock Test - 5 Days Free Trial",
+    28: "1. FIRST AID STEP 1 LECTURES for FCPS",
+    29: "First Aid Step 2 - Ck Video Lectures (N)",
+    30: "CNS and Respiratory system",
+    31: "First Aid Step-1 (J)",
+    32: "First Aid Step-2 (J)",
+    33: "Repid Review First Aid Step 1",
+    34: "MRCS course by Dr. Kashif",
+    35: "Bio-chemistery",
+    36: "MD Paper 2",
+    37: "MS Paper 2",
+    38: "Anaesthesiology Video Lectures",
+    39: "Short Snell Anatomy",
+    40: "Breast Surgery",
+    41: "Cardiology",
+    42: "Critical Care",
+    43: "Dermatology",
+    44: "Plab",
+    45: "Endocrinology",
+    46: "ENT",
+    47: "Epidemiology",
+    48: "Ethics",
+    49: "Gastroenterology",
+    50: "Palliative Care",
+    51: "Perioperative Medicine",
+    52: "Pharmacology",
+    53: "Psychiatry",
+    54: "Radiology",
+    55: "Respiratory Medicine",
+    56: "Rheumatology",
+    57: "Urology",
+    58: "Vascular Surgery",
+    59: "General Surgery",
+    60: "Genetics",
+    61: "Genitourinary Medicine",
+    62: "Geriatric Medicine",
+    63: "Haematology",
+    64: "Human Factors and Quality Improvement",
+    65: "Infectious Disease",
+    66: "Maxillofacial Surgery",
+    67: "Nephrology",
+    68: "Neurology",
+    69: "Obstetrics and Gynaecology",
+    70: "Oncology",
+    71: "Ophthalmology",
+    72: "Orthopaedics",
+    73: "Paediatrics",
+    74: "Psychiatry",
+    75: "CNS",
+    76: "RENAL LECTURE",
+    77: "PLAB - Video Lectures",
+    78: "Plab Lectures (NRE)",
+    79: "First Aid Step 1 - 9 Organ systems Only - FAME Free Subscription",
+    80: "PLAB | Paediatric + ENT + Gyne Obs - FAME Free Subscription",
+    81: "NRE -2 Medicine"
+};
+        
+        let appData = [];
+        let state = { activeCourse: null, activeSection: null, activeVideo: null };
+        let progressMap = {}; 
+        let customNames = { courses: prePopulatedCourseNames, sections: {} }; 
+
+        const DB_NAME = 'GMPortalDB';
+        const DB_VERSION = 2; 
+        const STRUCT_STORE = 'payloadStore';
+        const META_STORE = 'metaNameStore'; 
+        const KEY_NAME = 'jsonPayload';
+
+        const courseSelector = document.getElementById('course-selector');
+        const mobileCourseSelector = document.getElementById('mobile-course-selector');
+        const sectionsContainer = document.getElementById('sections-container');
+        const playlistContainer = document.getElementById('playlist-container');
+        const videoPlayer = document.getElementById('video-player');
+        const syncBtn = document.getElementById('sync-btn');
+        const syncIcon = document.getElementById('sync-icon');
+        const storageStatus = document.getElementById('storage-status');
+        
+        const editCourseBtn = document.getElementById('edit-course-btn');
+        const courseSelectWrapper = document.getElementById('course-select-wrapper');
+        const courseEditWrapper = document.getElementById('course-edit-wrapper');
+        const courseRenameInput = document.getElementById('course-rename-input');
+        const saveCourseBtn = document.getElementById('save-course-btn');
+
+        const editSectionBtn = document.getElementById('edit-section-btn');
+        const sectionEditWrapper = document.getElementById('section-edit-wrapper');
+        const sectionRenameInput = document.getElementById('section-rename-input');
+        const saveSectionBtn = document.getElementById('save-section-btn');
+
+        const sectionsTrigger = document.getElementById('mobile-sections-trigger');
+        const drawerBackdrop = document.getElementById('mobile-drawer-backdrop');
+        const sectionsDrawer = document.getElementById('mobile-sections-drawer');
+        const mobileSectionsList = document.getElementById('mobile-sections-list');
+        const playlistSidebar = document.getElementById('playlist-sidebar');
+        
+        const mobileRenameTrigger = document.getElementById('mobile-rename-trigger');
+        const mobileRenameModal = document.getElementById('mobile-rename-modal');
+        const modalCourseInput = document.getElementById('modal-course-input');
+        const modalSectionInput = document.getElementById('modal-section-input');
+        const modalCancelBtn = document.getElementById('modal-cancel-btn');
+        const modalSaveBtn = document.getElementById('modal-save-btn');
+
+        const metaCourse = document.getElementById('meta-course');
+        const metaSection = document.getElementById('meta-section');
+        const metaTitle = document.getElementById('meta-title');
+        const metaLength = document.getElementById('meta-length');
+        const metaId = document.getElementById('meta-id');
+        const videoCount = document.getElementById('video-count');
+        const progressToggleBtn = document.getElementById('progress-toggle-btn');
+        const progressIcon = document.getElementById('progress-icon');
+        const progressText = document.getElementById('progress-text');
+
+        const getCourseName = (id) => customNames.courses[id] || `Course ID: ${id}`;
+        const getSectionName = (id) => customNames.sections[id] || `Section ID: ${id}`;
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await initDatabaseSetup();
+            loadStateFromStorage();
+            await loadCustomNamesFromDB();
+            await initData();
+            renderCourses();
+            setupEventListeners();
+            lucide.createIcons();
+        });
+
+        function initDatabaseSetup() {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open(DB_NAME, DB_VERSION);
+                request.onupgradeneeded = (e) => {
+                    const db = e.target.result;
+                    if (!db.objectStoreNames.contains(STRUCT_STORE)) {
+                        db.createObjectStore(STRUCT_STORE);
+                    }
+                    if (!db.objectStoreNames.contains(META_STORE)) {
+                        db.createObjectStore(META_STORE);
+                    }
+                };
+                request.onsuccess = () => resolve();
+                request.onerror = (e) => reject(e.target.error);
+            });
+        }
+
+        function openDBConnection() {
+            return indexedDB.open(DB_NAME, DB_VERSION);
+        }
+
+        function getCachedPayload() {
+            return new Promise((resolve, reject) => {
+                const request = openDBConnection();
+                request.onsuccess = (e) => {
+                    const db = e.target.result;
+                    const transaction = db.transaction(STRUCT_STORE, 'readonly');
+                    const store = transaction.objectStore(STRUCT_STORE);
+                    const getReq = store.get(KEY_NAME);
+                    getReq.onsuccess = () => resolve(getReq.result);
+                    getReq.onerror = () => reject(getReq.error);
+                };
+            });
+        }
+
+        function savePayloadToDB(data) {
+            return new Promise((resolve, reject) => {
+                const request = openDBConnection();
+                request.onsuccess = (e) => {
+                    const db = e.target.result;
+                    const transaction = db.transaction(STRUCT_STORE, 'readwrite');
+                    const store = transaction.objectStore(STRUCT_STORE);
+                    const putReq = store.put(data, KEY_NAME);
+                    putReq.onsuccess = () => resolve();
+                    putReq.onerror = () => reject(putReq.error);
+                };
+            });
+        }
+
+        function loadCustomNamesFromDB() {
+            return new Promise((resolve) => {
+                const request = openDBConnection();
+                request.onsuccess = (e) => {
+                    const db = e.target.result;
+                    const transaction = db.transaction(META_STORE, 'readonly');
+                    const store = transaction.objectStore(META_STORE);
+                    const getReq = store.get('custom_metadata_dictionary');
+                    getReq.onsuccess = () => {
+                        if (getReq.result) customNames = getReq.result;
+                        resolve();
+                    };
+                    getReq.onerror = () => resolve();
+                };
+            });
+        }
+
+        function saveCustomNamesToDB() {
+            return new Promise((resolve, reject) => {
+                const request = openDBConnection();
+                request.onsuccess = (e) => {
+                    const db = e.target.result;
+                    const transaction = db.transaction(META_STORE, 'readwrite');
+                    const store = transaction.objectStore(META_STORE);
+                    const putReq = store.put(customNames, 'custom_metadata_dictionary');
+                    putReq.onsuccess = () => resolve();
+                    putReq.onerror = () => reject(putReq.error);
+                };
+            });
+        }
+
+        async function initData(forceRefresh = false) {
+            let cachedData = null;
+            try { cachedData = await getCachedPayload(); } catch (e) {}
+            
+            if (cachedData && !forceRefresh) {
+                appData = cachedData;
+                updateStorageMetrics('Database Connected', JSON.stringify(appData).length);
+            } else {
+                updateStorageMetrics('Fetching JSON...', 0);
+                try {
+                    syncIcon.classList.add('animate-spin');
+                    const response = await fetch(JSON_URL);
+                    let data = await response.json();
+                    await savePayloadToDB(data);
+                    appData = data;
+                    updateStorageMetrics('Sync Successful', JSON.stringify(appData).length);
+                } catch (error) {
+                    console.error("Fetch Fallback Triggered:", error);
+                    updateStorageMetrics('Load Fallback', 0);
+                    if(!appData.length) appData = getMockDataFallback();
+                } finally {
+                    syncIcon.classList.remove('animate-spin');
+                }
+            }
+        }
+
+        function updateStorageMetrics(statusText, stringLength) {
+            const mb = ((stringLength * 2) / (1024 * 1024)).toFixed(2);
+            storageStatus.innerHTML = `<span class="text-indigo-400 font-semibold">${statusText}</span> | ${mb} MB`;
+        }
+
+        function renderCourses() {
+            const optionsHtml = appData.map(course => `<option value="${course.Course_Fid}">${getCourseName(course.Course_Fid)}</option>`).join('');
+            courseSelector.innerHTML = optionsHtml;
+            mobileCourseSelector.innerHTML = optionsHtml;
+
+            if (state.activeCourse && appData.some(c => c.Course_Fid == state.activeCourse)) {
+                courseSelector.value = state.activeCourse;
+                mobileCourseSelector.value = state.activeCourse;
+            } else if (appData.length > 0) {
+                state.activeCourse = appData[0].Course_Fid;
+                courseSelector.value = state.activeCourse;
+                mobileCourseSelector.value = state.activeCourse;
+            }
+            renderSections();
+        }
+
+        function renderSections() {
+            const currentCourseData = appData.find(c => c.Course_Fid == state.activeCourse);
+            if (!currentCourseData || !currentCourseData.Sections) return;
+
+            const html = currentCourseData.Sections.map(section => {
+                const isSelected = section.Section_Fid == state.activeSection;
+                return `
+                    <button data-section-id="${section.Section_Fid}" class="section-tab w-full text-left flex items-center justify-between p-3 rounded-xl border transition ${
+                        isSelected ? 'bg-indigo-600 border-indigo-500 text-white shadow-md font-medium' : 'bg-gray-800/40 border-gray-700/60 text-gray-300 hover:bg-gray-800'
+                    }">
+                        <div class="flex items-center space-x-3 truncate">
+                            <i data-lucide="folder" class="w-4 h-4 shrink-0 ${isSelected ? 'text-white' : 'text-indigo-400'}"></i>
+                            <span class="truncate text-sm">${getSectionName(section.Section_Fid)}</span>
+                        </div>
+                        <span class="text-xs px-1.5 py-0.5 rounded ${isSelected ? 'bg-indigo-700 text-indigo-200' : 'bg-gray-900 text-gray-500'}">${section.Videos ? section.Videos.length : 0}</span>
+                    </button>
+                `;
+            }).join('');
+
+            sectionsContainer.innerHTML = html;
+            mobileSectionsList.innerHTML = html;
+            lucide.createIcons();
+            
+            if (!state.activeSection && currentCourseData.Sections.length > 0) {
+                state.activeSection = currentCourseData.Sections[0].Section_Fid;
+                renderSections();
+                return;
+            }
+            renderPlaylist();
+        }
+
+        function getProgressIconMarkup(status) {
+            if (status === 'completed') return `<i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>`;
+            if (status === 'watching') return `<i data-lucide="clock" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>`;
+            return `<i data-lucide="circle" class="w-4 h-4 text-gray-600 shrink-0 mt-0.5"></i>`;
+        }
+
+        function renderPlaylist() {
+            const currentCourseData = appData.find(c => c.Course_Fid == state.activeCourse);
+            const currentSectionData = currentCourseData?.Sections?.find(s => s.Section_Fid == state.activeSection);
+            
+            if (!currentSectionData || !currentSectionData.Videos || currentSectionData.Videos.length === 0) {
+                playlistContainer.innerHTML = '<p class="text-xs text-gray-500 p-4">No videos available</p>';
+                videoCount.innerText = '0';
+                return;
+            }
+
+            videoCount.innerText = currentSectionData.Videos.length;
+
+            playlistContainer.innerHTML = currentSectionData.Videos.map(video => {
+                const isSelected = video.VideoID == state.activeVideo;
+                const progressStatus = progressMap[video.VideoID] || 'unwatched';
+                return `
+                    <button data-video-id="${video.VideoID}" class="video-item w-full text-left flex items-start space-x-3 p-3 rounded-lg border transition ${
+                        isSelected ? 'bg-indigo-500/10 border-indigo-500/40 text-indigo-400 font-medium' : 'bg-transparent border-transparent text-gray-400 hover:bg-gray-800/40'
+                    }">
+                        <div class="mt-0.5 shrink-0">${getProgressIconMarkup(progressStatus)}</div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm line-clamp-2 leading-snug ${isSelected ? 'text-indigo-400' : 'text-gray-200'}">${video.Video_Name}</p>
+                            <span class="text-[11px] text-gray-500 block mt-0.5">${video.Video_Length || 0} mins</span>
+                        </div>
+                    </button>
+                `;
+            }).join('');
+
+            lucide.createIcons();
+
+            if (state.activeVideo) {
+                const targetVideo = currentSectionData.Videos.find(v => v.VideoID == state.activeVideo);
+                if (targetVideo) { loadVideoIntoPlayer(targetVideo); return; }
+            }
+            if(currentSectionData.Videos.length > 0) {
+                state.activeVideo = currentSectionData.Videos[0].VideoID;
+                loadVideoIntoPlayer(currentSectionData.Videos[0]);
+            }
+        }
+
+        function loadVideoIntoPlayer(video) {
+            if (videoPlayer.src !== video.Video_Path) videoPlayer.src = video.Video_Path;
+
+            metaTitle.innerText = video.Video_Name;
+            metaLength.innerText = video.Video_Length || '0';
+            metaId.innerText = video.VideoID;
+            metaCourse.innerText = getCourseName(state.activeCourse);
+            metaSection.innerText = getSectionName(state.activeSection);
+
+            if (!progressMap[video.VideoID] || progressMap[video.VideoID] === 'unwatched') {
+                updateProgressState(video.VideoID, 'watching', false);
+            } else {
+                renderProgressButtonUI(progressMap[video.VideoID]);
+            }
+
+            saveStateToStorage();
+        }
+
+        function updateProgressState(videoId, status, triggerPlaylistRender = true) {
+            progressMap[videoId] = status;
+            localStorage.setItem('gm_video_progress', JSON.stringify(progressMap));
+            renderProgressButtonUI(status);
+            if(triggerPlaylistRender) renderPlaylist();
+        }
+
+        function renderProgressButtonUI(status) {
+            progressToggleBtn.className = "w-full sm:w-auto flex items-center justify-center space-x-2 text-xs font-semibold px-4 py-2 rounded-lg border transition shadow-sm ";
+            if (status === 'completed') {
+                progressToggleBtn.classList.add("bg-emerald-500/10", "border-emerald-500/30", "text-emerald-400");
+                progressText.innerText = "Completed";
+                progressIcon.setAttribute('data-lucide', 'check-circle-2');
+            } else if (status === 'watching') {
+                progressToggleBtn.classList.add("bg-amber-500/10", "border-amber-500/30", "text-amber-400");
+                progressText.innerText = "In Progress";
+                progressIcon.setAttribute('data-lucide', 'clock');
+            } else {
+                progressToggleBtn.classList.add("bg-gray-800", "border-gray-700", "text-gray-400");
+                progressText.innerText = "Mark Unwatched";
+                progressIcon.setAttribute('data-lucide', 'circle');
+            }
+            lucide.createIcons();
+        }
+
+        function saveStateToStorage() {
+            localStorage.setItem('gm_video_state', JSON.stringify(state));
+        }
+
+        function loadStateFromStorage() {
+            const savedState = localStorage.getItem('gm_video_state');
+            if (savedState) state = JSON.parse(savedState);
+            const savedProgress = localStorage.getItem('gm_video_progress');
+            if (savedProgress) progressMap = JSON.parse(savedProgress);
+        }
+
+        function openSectionsDrawer() {
+            drawerBackdrop.classList.remove('hidden');
+            sectionsDrawer.classList.remove('hidden');
+            setTimeout(() => { sectionsDrawer.classList.remove('translate-y-full'); }, 10);
+        }
+
+        function closeDrawers() {
+            sectionsDrawer.classList.add('translate-y-full');
+            setTimeout(() => {
+                drawerBackdrop.classList.add('hidden');
+                sectionsDrawer.classList.add('hidden');
+            }, 300);
+        }
+
+        function setupEventListeners() {
+            const handleCourseChange = (e) => {
+                state.activeCourse = e.target.value;
+                state.activeSection = null;
+                state.activeVideo = null;
+                courseSelector.value = state.activeCourse;
+                mobileCourseSelector.value = state.activeCourse;
+                renderSections();
+            };
+
+            courseSelector.addEventListener('change', handleCourseChange);
+            mobileCourseSelector.addEventListener('change', handleCourseChange);
+            sectionsTrigger.addEventListener('click', openSectionsDrawer);
+            drawerBackdrop.addEventListener('click', closeDrawers);
+
+            editCourseBtn.addEventListener('click', () => {
+                if(!state.activeCourse) return;
+                courseRenameInput.value = getCourseName(state.activeCourse);
+                courseSelectWrapper.classList.add('hidden');
+                courseEditWrapper.classList.remove('hidden');
+                courseRenameInput.focus();
+            });
+
+            saveCourseBtn.addEventListener('click', async () => {
+                const newTitle = courseRenameInput.value.trim();
+                if(newTitle && state.activeCourse) {
+                    customNames.courses[state.activeCourse] = newTitle;
+                    await saveCustomNamesToDB();
+                    renderCourses();
+                }
+                courseEditWrapper.classList.add('hidden');
+                courseSelectWrapper.classList.remove('hidden');
+            });
+
+            editSectionBtn.addEventListener('click', () => {
+                if(!state.activeSection) return;
+                sectionRenameInput.value = getSectionName(state.activeSection);
+                sectionEditWrapper.classList.remove('hidden');
+                sectionRenameInput.focus();
+            });
+
+            saveSectionBtn.addEventListener('click', async () => {
+                const newSecTitle = sectionRenameInput.value.trim();
+                if(newSecTitle && state.activeSection) {
+                    customNames.sections[state.activeSection] = newSecTitle;
+                    await saveCustomNamesToDB();
+                    renderSections();
+                }
+                sectionEditWrapper.classList.add('hidden');
+            });
+
+            mobileRenameTrigger.addEventListener('click', () => {
+                modalCourseInput.value = state.activeCourse ? getCourseName(state.activeCourse) : '';
+                modalSectionInput.value = state.activeSection ? getSectionName(state.activeSection) : '';
+                mobileRenameModal.classList.remove('hidden');
+            });
+
+            modalCancelBtn.addEventListener('click', () => mobileRenameModal.classList.add('hidden'));
+
+            modalSaveBtn.addEventListener('click', async () => {
+                const updatedCourse = modalCourseInput.value.trim();
+                const updatedSection = modalSectionInput.value.trim();
+
+                if(updatedCourse && state.activeCourse) customNames.courses[state.activeCourse] = updatedCourse;
+                if(updatedSection && state.activeSection) customNames.sections[state.activeSection] = updatedSection;
+
+                await saveCustomNamesToDB();
+                mobileRenameModal.classList.add('hidden');
+                renderCourses();
+            });
+
+            const handleSectionClick = (e) => {
+                const btn = e.target.closest('.section-tab');
+                if (!btn) return;
+                state.activeSection = btn.getAttribute('data-section-id');
+                state.activeVideo = null;
+                renderSections();
+                closeDrawers();
+            };
+
+            sectionsContainer.addEventListener('click', handleSectionClick);
+            mobileSectionsList.addEventListener('click', handleSectionClick);
+
+            playlistContainer.addEventListener('click', (e) => {
+                const btn = e.target.closest('.video-item');
+                if (!btn) return;
+                const vId = btn.getAttribute('data-video-id');
+                state.activeVideo = vId;
+                
+                const currentCourseData = appData.find(c => c.Course_Fid == state.activeCourse);
+                const currentSectionData = currentCourseData?.Sections?.find(s => s.Section_Fid == state.activeSection);
+                const videoData = currentSectionData?.Videos?.find(v => v.VideoID == vId);
+                if (videoData) loadVideoIntoPlayer(videoData);
+            });
+
+            progressToggleBtn.addEventListener('click', () => {
+                if (!state.activeVideo) return;
+                const currentStatus = progressMap[state.activeVideo] || 'unwatched';
+                let nextStatus = 'unwatched';
+                
+                if (currentStatus === 'unwatched') nextStatus = 'watching';
+                else if (currentStatus === 'watching') nextStatus = 'completed';
+                
+                updateProgressState(state.activeVideo, nextStatus, true);
+            });
+
+            syncBtn.addEventListener('click', async () => {
+                await initData(true);
+                renderCourses();
+            });
+        }
+
+        function getMockDataFallback() {
+            return [
+              {
+                "Course_Fid": 4,
+                "Sections": [
+                  {
+                    "Section_Fid": 18,
+                    "Videos": [
+                      { "VideoID": 397, "Video_Name": "REGULATION OF ARTERIAL PRESSURE", "Video_Path": "https://player.mediadelivery.net/embed/14161/8a5ed762-a7b2-464f-9412-02b04125d910", "Video_Length": 25 }
+                    ]
+                  }
+                ]
+              }
+            ];
+        }
+    </script>
+    <style>
+        .animate-spin-slow { animation: spin 4s linear infinite; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
+        ::-webkit-scrollbar-track { background: #111827; }
+        ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+    </style>
+</body>
+</html>

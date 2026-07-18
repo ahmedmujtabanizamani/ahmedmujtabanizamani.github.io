@@ -1,0 +1,61 @@
+{
+	"global_test": {
+		"exp": ""
+	},
+	"global_status": true,
+	"tab_info_throttle": 500,
+	"popup_auto_close": true,
+	"exp_verify_syntax": true,
+	"search_parse_js_object": false,
+	"request_verbose": 1,
+	"theme_mode": "auto",
+	"init": {
+		"exp": "self.WR = {\n\t/**\n\t * @param {URL|string} url\n\t * @param {string|RegExp|(string|RegExp)[]} domain\n\t * @return {boolean}\n\t */\n\tisDomain: (url, domain) => {\n\t\tlet hostname = url instanceof URL ? url.hostname : (url.includes('/') ? (new URL(url)).hostname : url.toLowerCase());\n\t\tif (!Array.isArray(domain)) domain = [domain];\n\t\tfor (let pattern of domain) {\n\t\t\tif (pattern instanceof RegExp ? pattern.test(hostname) : (\n\t\t\t\tpattern[0] === '.' ? hostname.endsWith(pattern) : (hostname === pattern || hostname.endsWith('.' + pattern))\n\t\t\t)) return true;\n\t\t}\n\t\treturn false;\n\t},\n\t/**\n\t * @param {string} url\n\t * @param {browser.cookies._GetAllDetails} options\n\t * @return {Promise<string>}\n\t */\n\tgetCookie: async (url, options = {}) => {\n\t\toptions[/^[^/]+:\\/\\//i.test(url) ? 'url' : 'domain'] = url;\n\t\treturn (await browser.cookies.getAll(options)).\n\t\t\tfilter(n => n.session || n.expirationDate * 1000 > Date.now()).\n\t\t\tmap((c) => c.name + '=' + c.value).join('; ');\n\t},\n\t/**\n\t * @param {string} encoding\n\t * @return {TextEncoder}\n\t */\n\ttextEncoder: (encoding) => {\n\t\tif ('string' === typeof encoding && !/^utf-?8$/i.test(encoding)) {\n\t\t\t// https://github.com/inexorabletash/text-encoding\n\t\t\treturn new self._legacyTextEncoder(encoding, { NONSTANDARD_allowLegacyEncoding: true });\n\t\t}\n\t\treturn new self.TextEncoder();\n\t},\n\tHeaders: class {\n\t\t/**\n\t\t * @param {HeadersInit|browser.webRequest.HttpHeaders} init\n\t\t */\n\t\tconstructor(init) {\n\t\t\t/** @type {object[]} */\n\t\t\tthis._headers = [];\n\t\t\tif (!init) return;\n\t\t\tif (init instanceof this.constructor) {\n\t\t\t\tthis._headers = JSON.parse(JSON.stringify(init._headers));\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tif (init instanceof Headers) init = [...init.entries()];\n\t\t\tif (Array.isArray(init)) {\n\t\t\t\tif (init[0] && 'string' == typeof init[0].name) init = init.map(i => [i.name, i.value]);\n\t\t\t} else {\n\t\t\t\tinit = Object.entries(init);\n\t\t\t}\n\t\t\tinit.forEach(i => this.append(i[0], i[1]));\n\t\t}\n\t\t/**\n\t\t * @param {string} name\n\t\t * @param {string} value\n\t\t */\n\t\tappend(name, value) {\n\t\t\tthis._headers.push({ key: name.toLowerCase(), name, value });\n\t\t\treturn this;\n\t\t}\n\t\t/**\n\t\t * @param {string} name\n\t\t */\n\t\tdelete(name) {\n\t\t\tlet key = name.toLowerCase();\n\t\t\tthis._headers = this._headers.filter(e => e.key != key);\n\t\t\treturn this;\n\t\t}\n\t\t/**\n\t\t * @param {string} name\n\t\t * @param {string|null} value\n\t\t */\n\t\tset(name, value) {\n\t\t\tthis.delete(name);\n\t\t\tif (value != null) this.append(name, value);\n\t\t\treturn this;\n\t\t}\n\t\t/**\n\t\t * @param {string} name\n\t\t */\n\t\tgetAll(name) {\n\t\t\tlet key = name.toLowerCase();\n\t\t\treturn this._headers.filter(e => e.key == key).map(i => i.value);\n\t\t}\n\t\tgetSetCookie() {\n\t\t\treturn this.getAll('Set-Cookie');\n\t\t}\n\t\t/**\n\t\t * @param {string} name\n\t\t */\n\t\tget(name) {\n\t\t\tlet values = this.getAll(name);\n\t\t\treturn values.length > 0 ? values.join(', ') : null;\n\t\t}\n\t\t/**\n\t\t * @param {string} name\n\t\t */\n\t\thas(name) {\n\t\t\tlet key = name.toLowerCase();\n\t\t\treturn this._headers.some(i => i.key == key);\n\t\t}\n\t\tforEach(callbackFn, thisArg) {\n\t\t\treturn this._headers.forEach(i => callbackFn.call(thisArg, i.value, i.name));\n\t\t}\n\t\tvalueOf() {\n\t\t\treturn this._headers.map(i => ({ name: i.name, value: '' + i.value }));\n\t\t}\n\t\t*entries() {\n\t\t\tfor (let item of this._headers) yield [item.name, item.value];\n\t\t}\n\t\t*keys() {\n\t\t\tfor (let item of this._headers) yield item.name;\n\t\t}\n\t\t*values() {\n\t\t\tfor (let item of this._headers) yield item.value;\n\t\t}\n\t},\n};"
+	},
+	"template": {},
+	"code_editor": false,
+	"code_editor_init": "",
+	"code_editor_idle_timeout": 10,
+	"options_group_rules": false,
+	"rules": [
+		{
+			"enable": true,
+			"id": 1784382312260,
+			"test": {
+				"exp": "let hostnames = ['player.mediadelivery.net','iframe.mediadelivery.net'];\nlet urlObj = new URL(details.url);\nreturn hostnames.includes(urlObj.hostname);"
+			},
+			"beforeRequest": {
+				"exp": ""
+			},
+			"beforeSendHeaders": {
+				"exp": "let customHeaders = {\n\t\"user-agent\": \"Mozilla/5.0\",\n\t\"referer\": \"https://firstaidmadeeasy.com.pk\",\n};\nlet headers = Object.entries(customHeaders)\n\t.filter(([k, v]) => v !== null)\n\t.map(([k, v]) => ({ name: k, value: v }));\nfor (let header of details.requestHeaders) {\n\tlet name = header.name.toLowerCase();\n\tif (name in customHeaders) continue;\n\theaders.push(header);\n}\nreturn { requestHeaders: headers };"
+			},
+			"sendHeaders": {
+				"exp": ""
+			},
+			"headersReceived": {
+				"exp": ""
+			},
+			"authRequired": {
+				"exp": ""
+			},
+			"beforeRedirect": {
+				"exp": ""
+			},
+			"responseStarted": {
+				"exp": ""
+			},
+			"completed": {
+				"exp": ""
+			},
+			"error": {
+				"exp": ""
+			},
+			"filterResponse": {
+				"exp": ""
+			},
+			"name": "GM",
+			"updateTime": 1784384941094
+		}
+	]
+}

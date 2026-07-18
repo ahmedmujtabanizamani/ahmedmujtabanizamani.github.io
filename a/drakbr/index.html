@@ -91,26 +91,20 @@
 
                 <!-- Aspect Ratio Video Player Container -->
                 <!-- Video Wrapper Container that handles full-viewport expansion -->
-<!-- Video Wrapper Container -->
-<div id="video-wrapper" class="relative w-full bg-black rounded-xl overflow-hidden shadow-2xl border border-gray-800" style="padding-top: 56.25%;">
+<!-- Video Wrapper Container (Keeps dashboard aspect ratio) -->
+<div id="video-wrapper" class="relative w-full bg-black rounded-xl overflow-hidden shadow-2xl border border-gray-800 clear-both" style="padding-top: 56.25%;">
+    <!-- Added explicit cursor and pointer management classes directly to the iframe -->
     <iframe 
         id="video-player" 
-        class="absolute top-0 left-0 w-full h-full" 
+        class="absolute top-0 left-0 w-full h-full cursor-pointer pointer-events-auto" 
         src="" 
         allowfullscreen="true"
         webkitallowfullscreen="true"
         mozallowfullscreen="true"
-        allow="autoplay; encrypted-media; fullscreen *; picture-in-picture">
+        allow="autoplay; accelerometer; gyroscope; encrypted-media; picture-in-picture"
+        style="z-index: 10;">
     </iframe>
-</div>
-
-<!-- Simple Fullscreen Control Button -->
-<div class="mt-2 flex justify-end">
-    <button id="app-fullscreen-btn" class="flex items-center space-x-2 bg-slate-800 text-slate-200 text-xs font-semibold px-4 py-2 rounded-lg border border-slate-700 hover:bg-slate-700 active:bg-slate-600 transition">
-        <span>Maximize Player</span>
-    </button>
-</div>
-                
+</div>          
                 <!-- Video Metadata Block -->
                 <div class="bg-gray-800/40 border border-gray-800 p-4 md:p-5 rounded-xl space-y-4">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -534,7 +528,7 @@
         }
 
         function loadVideoIntoPlayer(video) {
-            if (videoPlayer.src !== video.Video_Path) videoPlayer.src = video.Video_Path;
+            if (videoPlayer.src !== video.Video_Path) videoPlayer.src = video.Video_Path.replace('player.mediadelivery.net', 'iframe.mediadelivery.net');
 
             metaTitle.innerText = video.Video_Name;
             metaLength.innerText = video.Video_Length || '0';
@@ -729,55 +723,6 @@
             ];
         }
     </script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const videoWrapper = document.getElementById('video-wrapper');
-    const fullscreenBtn = document.getElementById('app-fullscreen-btn');
-
-    function toggleCustomFullscreen() {
-        if (!document.fullscreenElement && 
-            !document.webkitFullscreenElement && 
-            !document.mozFullScreenElement && 
-            !document.msFullscreenElement) {
-            
-            if (videoWrapper.requestFullscreen) {
-                videoWrapper.requestFullscreen();
-            } else if (videoWrapper.webkitRequestFullscreen) { /* iOS / Safari support */
-                videoWrapper.webkitRequestFullscreen();
-            } else if (videoWrapper.mozRequestFullScreen) {
-                videoWrapper.mozRequestFullScreen();
-            } else if (videoWrapper.msRequestFullscreen) {
-                videoWrapper.msRequestFullscreen();
-            }
-            fullscreenBtn.querySelector('span').textContent = "Exit Fullscreen";
-        } else {
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.webkitExitFullscreen) {
-                document.webkitExitFullscreen();
-            } else if (document.mozCancelFullScreen) {
-                document.mozCancelFullScreen();
-            } else if (document.msExitFullscreen) {
-                document.msExitFullscreen();
-            }
-            fullscreenBtn.querySelector('span').textContent = "Maximize Player";
-        }
-    }
-
-    // Trigger on standard click/tap element interactions safely
-    fullscreenBtn.addEventListener('click', toggleCustomFullscreen);
-
-    // Optional: Sync UI text if user exits fullscreen using system keys (like Esc)
-    document.addEventListener('fullscreenchange', handleFullscreenStateChange);
-    document.addEventListener('webkitfullscreenchange', handleFullscreenStateChange);
-    document.addEventListener('mozfullscreenchange', handleFullscreenStateChange);
-
-    function handleFullscreenStateChange() {
-        const isCurrentlyFull = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement;
-        fullscreenBtn.querySelector('span').textContent = isCurrentlyFull ? "Exit Fullscreen" : "Maximize Player";
-    }
-});
-</script>
     <style>
         .animate-spin-slow { animation: spin 4s linear infinite; }
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }

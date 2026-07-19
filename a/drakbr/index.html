@@ -175,7 +175,7 @@
     </div>
 
     <script>
-        const JSON_URL = 'structured_videos.json';
+        const JSON_URL = 'https://ahmedmujtabanizamani.github.io/a/drakbr/structured_videos.json';
         
         let appData = [];
         let state = { activeCourse: null, activeSection: null, activeVideo: null };
@@ -686,9 +686,9 @@
 
 async function loadCourseConfig() {
   try {
-    const sectionResponse = await fetch('sections.json');
+    const sectionResponse = await fetch('https://ahmedmujtabanizamani.github.io/a/drakbr/sections.json');
     const sections = await sectionResponse.json();
-	const courseResponse = await fetch('courses.json');
+	const courseResponse = await fetch('https://ahmedmujtabanizamani.github.io/a/drakbr/courses.json');
     const courses = await courseResponse.json();
 
 	customNames = { courses: courses, sections: sections }; 

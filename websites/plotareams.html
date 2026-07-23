@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All-in-One Multi-Side Plot Area Calculator</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f1f5f9;
+      color: #0f172a;
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .header h1 {
+      font-size: 1.8rem;
+      color: #1e293b;
+    }
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    @media (max-width: 850px) {
+      .layout-grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      color: #334155;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 8px;
+    }
+    .control-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+    }
+    .input-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #475569;
+    }
+    input, select {
+      padding: 8px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    input:focus, select:focus { border-color: #2563eb; }
+    
+    .section-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 12px 0 6px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .inputs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .input-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .input-card label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #64748b;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .btn-primary { background: #2563eb; color: #ffffff; }
+    .btn-success { background: #16a34a; color: #ffffff; }
+    .btn-danger { background: #dc2626; color: #ffffff; }
+    .btn-sm { padding: 4px 8px; font-size: 0.8rem; }
+    
+    #errorMsg {
+      color: #dc2626;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      margin-top: 10px;
+      display: none;
+    }
+    #resultSummary {
+      margin-top: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0369a1;
+      background: #e0f2fe;
+      padding: 10px 14px;
+      border-radius: 6px;
+    }
+    canvas {
+      width: 100%;
+      height: 380px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      border-radius: 8px;
+      display: block;
+    }
+    .history-card {
+      max-width: 1200px;
+      margin: 20px auto 0 auto;
+    }
+    .saved-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    .saved-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>All-in-One Multi-Side Plot Calculator</h1>
+  </div>
+
+  <div class="layout-grid">
+    <!-- Configuration Panel -->
+    <div class="card">
+      <h2>1. Entire Plot Dimensions</h2>
+      
+      <div class="control-row">
+        <div class="input-group">
+          <label for="numSides">Number of Sides</label>
+          <select id="numSides" onchange="buildInputs()">
+            <option value="4" selected>4-Sided Plot (Quadrilateral)</option>
+            <option value="5">5-Sided Plot (Pentagon)</option>
+            <option value="6">6-Sided Plot (Hexagon)</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="unitSelect">Unit</label>
+          <select id="unitSelect" onchange="calculateAndDraw()">
+            <option value="ft">Feet (ft)</option>
+            <option value="m">Meters (m)</option>
+            <option value="yd">Yards (yd)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="section-title">Outer Perimeter Sides</div>
+      <div class="inputs-grid" id="sidesContainer"></div>
+
+      <div class="section-title">Internal Diagonals (From V1)</div>
+      <div class="inputs-grid" id="diagonalsContainer"></div>
+
+      <div id="errorMsg"></div>
+      <div id="resultSummary">Total Plot Area: 0.00 sq ft</div>
+
+      <div class="btn-group">
+        <button class="btn-primary" onclick="calculateAndDraw()">Calculate & Draw Plot</button>
+        <button class="btn-success" onclick="savePlot()">Save Plot</button>
+      </div>
+    </div>
+
+    <!-- Canvas Preview Panel -->
+    <div class="card">
+      <h2>2. Reconstructed Plot Map</h2>
+      <canvas id="plotCanvas" width="500" height="380"></canvas>
+      <p style="font-size:0.8rem; color:#64748b; margin-top:8px;">
+        * Entire plot rendered from measured perimeter and internal diagonals.
+      </p>
+    </div>
+  </div>
+
+  <!-- Saved Items Panel -->
+  <div class="card history-card">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+      <h2>Saved Plots</h2>
+      <button class="btn-danger btn-sm" onclick="clearHistory()">Clear History</button>
+    </div>
+    <ul id="savedList" class="saved-list"></ul>
+  </div>
+
+  <script>
+    let currentPlotData = null;
+
+    window.onload = function() {
+      buildInputs();
+      renderHistory();
+    };
+
+    function buildInputs() {
+      const n = parseInt(document.getElementById('numSides').value);
+      const sidesContainer = document.getElementById('sidesContainer');
+      const diagContainer = document.getElementById('diagonalsContainer');
+      
+      sidesContainer.innerHTML = '';
+      diagContainer.innerHTML = '';
+
+      // Default presets for 4, 5, 6 sides
+      const defaults = {
+        4: { sides: [40, 50, 45, 55], diags: [65] },
+        5: { sides: [40, 50, 45, 35, 50], diags: [65, 60] },
+        6: { sides: [40, 50, 45, 35, 40, 50], diags: [65, 60, 70] }
+      }[n];
+
+      // Build outer sides inputs
+      for (let i = 0; i < n; i++) {
+        const div = document.createElement('div');
+        div.className = 'input-card';
+        div.innerHTML = `
+          <label>Side S${i + 1} (V${i + 1}-V${(i + 1) % n + 1})</label>
+          <input type="number" class="side-input" value="${defaults.sides[i]}" step="any" min="0.1">
+        `;
+        sidesContainer.appendChild(div);
+      }
+
+      // Build diagonal inputs (N-3 diagonals from V1)
+      for (let i = 0; i < n - 3; i++) {
+        const div = document.createElement('div');
+        div.className = 'input-card';
+        div.innerHTML = `
+          <label>Diagonal D${i + 1} (V1-V${i + 3})</label>
+          <input type="number" class="diag-input" value="${defaults.diags[i]}" step="any" min="0.1">
+        `;
+        diagContainer.appendChild(div);
+      }
+
+      calculateAndDraw();
+    }
+
+    function calculateHeron(a, b, c) {
+      if (a + b <= c || a + c <= b || b + c <= a) return null;
+      const s = (a + b + c) / 2;
+      return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+
+    function getUnitLabel(unit) {
+      if (unit === 'm') return 'sq m';
+      if (unit === 'yd') return 'sq yd';
+      return 'sq ft';
+    }
+
+    function calculateAndDraw() {
+      const errBox = document.getElementById('errorMsg');
+      errBox.style.display = 'none';
+      errBox.innerText = '';
+
+      const n = parseInt(document.getElementById('numSides').value);
+      const unit = document.getElementById('unitSelect').value;
+      const areaUnit = getUnitLabel(unit);
+
+      const sideInputs = document.querySelectorAll('.side-input');
+      const diagInputs = document.querySelectorAll('.diag-input');
+
+      let sides = [];
+      let diags = [];
+
+      for (let input of sideInputs) {
+        let v = parseFloat(input.value);
+        if (isNaN(v) || v <= 0) return showError('All side lengths must be positive numbers.');
+        sides.push(v);
+      }
+
+      for (let input of diagInputs) {
+        let v = parseFloat(input.value);
+        if (isNaN(v) || v <= 0) return showError('All diagonal lengths must be positive numbers.');
+        diags.push(v);
+      }
+
+      // Form internal sub-triangles radiating from V1
+      // Triangle 1: (V1-V2 [S1], V2-V3 [S2], V1-V3 [D1])
+      // Triangle 2: (V1-V3 [D1], V3-V4 [S3], V1-V4 [D2]) ... etc.
+      let totalArea = 0;
+      let triangles = [];
+
+      let prevDiag = sides[0]; // First side S1 acts as starting bound
+      for (let i = 0; i < n - 2; i++) {
+        let sideA = (i === 0) ? sides[0] : diags[i - 1];
+        let sideB = sides[i + 1];
+        let sideC = (i === n - 3) ? sides[n - 1] : diags[i];
+
+        let area = calculateHeron(sideA, sideB, sideC);
+        if (area === null) {
+          return showError(`Triangle T${i + 1} with sides (${sideA.toFixed(1)}, ${sideB.toFixed(1)}, ${sideC.toFixed(1)}) is geometrically impossible.`);
+        }
+        totalArea += area;
+        triangles.push({ a: sideA, b: sideB, c: sideC, area: area });
+      }
+
+      document.getElementById('resultSummary').innerText = `Total Plot Area: ${totalArea.toFixed(2)} ${areaUnit}`;
+
+      // Construct Vertex Coordinates (V1 at 0,0)
+      let vertices = [{ x: 0, y: 0 }, { x: sides[0], y: 0 }];
+      let currentAngle = 0;
+
+      for (let i = 0; i < n - 2; i++) {
+        let a = triangles[i].a;
+        let b = triangles[i].b;
+        let c = triangles[i].c;
+
+        // Angle at base point using Law of Cosines
+        let cosA = (a * a + c * c - b * b) / (2 * a * c);
+        cosA = Math.max(-1, Math.min(1, cosA)); // Clamp
+        let alpha = Math.acos(cosA);
+
+        currentAngle += alpha;
+
+        let nextX = c * Math.cos(currentAngle);
+        let nextY = c * Math.sin(currentAngle);
+        vertices.push({ x: nextX, y: nextY });
+      }
+
+      currentPlotData = {
+        n: n,
+        sides: sides,
+        diags: diags,
+        unit: unit,
+        totalArea: totalArea.toFixed(2),
+        vertices: vertices,
+        date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      };
+
+      drawPlot(vertices, areaUnit, totalArea);
+    }
+
+    function showError(msg) {
+      const errBox = document.getElementById('errorMsg');
+      errBox.innerText = msg;
+      errBox.style.display = 'block';
+    }
+
+    function drawPlot(vertices, areaUnit, totalArea) {
+      const canvas = document.getElementById('plotCanvas');
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Auto-scale to fit plot in canvas
+      let minX = Math.min(...vertices.map(v => v.x));
+      let maxX = Math.max(...vertices.map(v => v.x));
+      let minY = Math.min(...vertices.map(v => v.y));
+      let maxY = Math.max(...vertices.map(v => v.y));
+
+      let plotWidth = maxX - minX || 1;
+      let plotHeight = maxY - minY || 1;
+      let padding = 50;
+
+      let scaleX = (canvas.width - padding * 2) / plotWidth;
+      let scaleY = (canvas.height - padding * 2) / plotHeight;
+      let scale = Math.min(scaleX, scaleY);
+
+      function mapPoint(p) {
+        return {
+          x: padding + (p.x - minX) * scale,
+          y: canvas.height - padding - (p.y - minY) * scale
+        };
+      }
+
+      let mapped = vertices.map(mapPoint);
+
+      // 1. Draw Inner Diagonals (Dashed lines)
+      ctx.setLineDash([5, 5]);
+      ctx.strokeStyle = '#94a3b8';
+      ctx.lineWidth = 1.5;
+
+      for (let i = 2; i < mapped.length - 1; i++) {
+        ctx.beginPath();
+        ctx.moveTo(mapped[0].x, mapped[0].y);
+        ctx.lineTo(mapped[i].x, mapped[i].y);
+        ctx.stroke();
+      }
+      ctx.setLineDash([]); // Reset dashed
+
+      // 2. Fill Outer Polygon Shape
+      ctx.beginPath();
+      ctx.moveTo(mapped[0].x, mapped[0].y);
+      for (let i = 1; i < mapped.length; i++) {
+        ctx.lineTo(mapped[i].x, mapped[i].y);
+      }
+      ctx.closePath();
+
+      ctx.fillStyle = '#93c5fd';
+      ctx.fill();
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = '#1e3a8a';
+      ctx.stroke();
+
+      // 3. Draw Vertices & Labels
+      mapped.forEach((pt, idx) => {
+        ctx.beginPath();
+        ctx.arc(pt.x, pt.y, 5, 0, Math.PI * 2);
+        ctx.fillStyle = '#0f172a';
+        ctx.fill();
+
+        ctx.font = 'bold 12px sans-serif';
+        ctx.fillText(`V${idx + 1}`, pt.x + 8, pt.y - 8);
+      });
+
+      // 4. Center Area Tag
+      let centerX = mapped.reduce((a, b) => a + b.x, 0) / mapped.length;
+      let centerY = mapped.reduce((a, b) => a + b.y, 0) / mapped.length;
+
+      ctx.fillStyle = '#0f172a';
+      ctx.font = 'bold 13px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(`${totalArea.toFixed(2)} ${areaUnit}`, centerX, centerY);
+    }
+
+    // LocalStorage Functions
+    function savePlot() {
+      if (!currentPlotData) return;
+      let saved = JSON.parse(localStorage.getItem('all_in_one_plots')) || [];
+      saved.push(currentPlotData);
+      localStorage.setItem('all_in_one_plots', JSON.stringify(saved));
+      renderHistory();
+    }
+
+    function renderHistory() {
+      const list = document.getElementById('savedList');
+      list.innerHTML = '';
+      let saved = JSON.parse(localStorage.getItem('all_in_one_plots')) || [];
+
+      if (saved.length === 0) {
+        list.innerHTML = '<li style="color:#64748b;">No saved plots.</li>';
+        return;
+      }
+
+      saved.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.className = 'saved-item';
+        li.innerHTML = `
+          <div>
+            <strong>Plot #${index + 1} (${item.n}-Sided)</strong>
+            <div>${item.totalArea} ${getUnitLabel(item.unit)}</div>
+            <small style="color:#64748b;">Saved at ${item.date}</small>
+          </div>
+          <div style="display:flex; gap:6px;">
+            <button class="btn-primary btn-sm" onclick="loadPlot(${index})">Load</button>
+            <button class="btn-danger btn-sm" onclick="deletePlot(${index})">Delete</button>
+          </div>
+        `;
+        list.appendChild(li);
+      });
+    }
+
+    function loadPlot(index) {
+      let saved = JSON.parse(localStorage.getItem('all_in_one_plots')) || [];
+      const item = saved[index];
+      if (!item) return;
+
+      document.getElementById('numSides').value = item.n;
+      document.getElementById('unitSelect').value = item.unit;
+      buildInputs();
+
+      const sideInputs = document.querySelectorAll('.side-input');
+      const diagInputs = document.querySelectorAll('.diag-input');
+
+      item.sides.forEach((val, i) => { if (sideInputs[i]) sideInputs[i].value = val; });
+      item.diags.forEach((val, i) => { if (diagInputs[i]) diagInputs[i].value = val; });
+
+      calculateAndDraw();
+    }
+
+    function deletePlot(index) {
+      let saved = JSON.parse(localStorage.getItem('all_in_one_plots')) || [];
+      saved.splice(index, 1);
+      localStorage.setItem('all_in_one_plots', JSON.stringify(saved));
+      renderHistory();
+    }
+
+    function clearHistory() {
+      localStorage.removeItem('all_in_one_plots');
+      renderHistory();
+    }
+  </script>
+</body>
+</html>

@@ -51,12 +51,14 @@
       display: flex;
       gap: 12px;
       margin-bottom: 16px;
+      flex-wrap: wrap;
     }
     .input-group {
       display: flex;
       flex-direction: column;
       gap: 4px;
       flex: 1;
+      min-width: 130px;
     }
     .input-group label {
       font-size: 0.85rem;
@@ -182,10 +184,16 @@
       <div class="control-row">
         <div class="input-group">
           <label for="numSides">Number of Sides</label>
-          <select id="numSides" onchange="buildInputs()">
+          <select id="numSides" onchange="updateOriginDropdown()">
             <option value="4" selected>4-Sided Plot (Quadrilateral)</option>
             <option value="5">5-Sided Plot (Pentagon)</option>
             <option value="6">6-Sided Plot (Hexagon)</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="originVertex">Diagonal Origin Vertex</label>
+          <select id="originVertex" onchange="buildInputs()">
+            <!-- Populated dynamically based on number of sides -->
           </select>
         </div>
         <div class="input-group">
@@ -201,7 +209,7 @@
       <div class="section-title">Outer Perimeter Sides</div>
       <div class="inputs-grid" id="sidesContainer"></div>
 
-      <div class="section-title">Internal Diagonals (From V1)</div>
+      <div class="section-title" id="diagTitle">Internal Diagonals</div>
       <div class="inputs-grid" id="diagonalsContainer"></div>
 
       <div id="errorMsg"></div>
@@ -236,19 +244,38 @@
     let currentPlotData = null;
 
     window.onload = function() {
-      buildInputs();
+      updateOriginDropdown();
       renderHistory();
     };
 
+    function updateOriginDropdown() {
+      const n = parseInt(document.getElementById('numSides').value);
+      const originSelect = document.getElementById('originVertex');
+      const currentVal = parseInt(originSelect.value) || 1;
+      
+      originSelect.innerHTML = '';
+      for (let i = 1; i <= n; i++) {
+        const opt = document.createElement('option');
+        opt.value = i;
+        opt.innerText = `Vertex V${i}`;
+        if (i === (currentVal > n ? 1 : currentVal)) opt.selected = true;
+        originSelect.appendChild(opt);
+      }
+      buildInputs();
+    }
+
     function buildInputs() {
       const n = parseInt(document.getElementById('numSides').value);
+      const origin = parseInt(document.getElementById('originVertex').value) || 1;
       const sidesContainer = document.getElementById('sidesContainer');
       const diagContainer = document.getElementById('diagonalsContainer');
       
       sidesContainer.innerHTML = '';
       diagContainer.innerHTML = '';
 
-      // Default presets for 4, 5, 6 sides
+      document.getElementById('diagTitle').innerText = `Internal Diagonals (From V${origin})`;
+
+      // Default presets
       const defaults = {
         4: { sides: [40, 50, 45, 55], diags: [65] },
         5: { sides: [40, 50, 45, 35, 50], diags: [65, 60] },
@@ -257,21 +284,24 @@
 
       // Build outer sides inputs
       for (let i = 0; i < n; i++) {
+        const vStart = i + 1;
+        const vEnd = (i + 1) % n + 1;
         const div = document.createElement('div');
         div.className = 'input-card';
         div.innerHTML = `
-          <label>Side S${i + 1} (V${i + 1}-V${(i + 1) % n + 1})</label>
+          <label>Side S${i + 1} (V${vStart}-V${vEnd})</label>
           <input type="number" class="side-input" value="${defaults.sides[i]}" step="any" min="0.1">
         `;
         sidesContainer.appendChild(div);
       }
 
-      // Build diagonal inputs (N-3 diagonals from V1)
+      // Build diagonal inputs (N-3 diagonals from chosen Origin)
       for (let i = 0; i < n - 3; i++) {
+        const targetV = ((origin - 1 + i + 2) % n) + 1;
         const div = document.createElement('div');
         div.className = 'input-card';
         div.innerHTML = `
-          <label>Diagonal D${i + 1} (V1-V${i + 3})</label>
+          <label>Diagonal D${i + 1} (V${origin}-V${targetV})</label>
           <input type="number" class="diag-input" value="${defaults.diags[i]}" step="any" min="0.1">
         `;
         diagContainer.appendChild(div);
@@ -298,19 +328,20 @@
       errBox.innerText = '';
 
       const n = parseInt(document.getElementById('numSides').value);
+      const origin = parseInt(document.getElementById('originVertex').value) || 1;
       const unit = document.getElementById('unitSelect').value;
       const areaUnit = getUnitLabel(unit);
 
       const sideInputs = document.querySelectorAll('.side-input');
       const diagInputs = document.querySelectorAll('.diag-input');
 
-      let sides = [];
+      let rawSides = [];
       let diags = [];
 
       for (let input of sideInputs) {
         let v = parseFloat(input.value);
         if (isNaN(v) || v <= 0) return showError('All side lengths must be positive numbers.');
-        sides.push(v);
+        rawSides.push(v);
       }
 
       for (let input of diagInputs) {
@@ -319,17 +350,19 @@
         diags.push(v);
       }
 
-      // Form internal sub-triangles radiating from V1
-      // Triangle 1: (V1-V2 [S1], V2-V3 [S2], V1-V3 [D1])
-      // Triangle 2: (V1-V3 [D1], V3-V4 [S3], V1-V4 [D2]) ... etc.
+      // Shift sides array so origin vertex sits at index 0 for triangulation math
+      let shiftedSides = [];
+      for (let i = 0; i < n; i++) {
+        shiftedSides.push(rawSides[(origin - 1 + i) % n]);
+      }
+
       let totalArea = 0;
       let triangles = [];
 
-      let prevDiag = sides[0]; // First side S1 acts as starting bound
       for (let i = 0; i < n - 2; i++) {
-        let sideA = (i === 0) ? sides[0] : diags[i - 1];
-        let sideB = sides[i + 1];
-        let sideC = (i === n - 3) ? sides[n - 1] : diags[i];
+        let sideA = (i === 0) ? shiftedSides[0] : diags[i - 1];
+        let sideB = shiftedSides[i + 1];
+        let sideC = (i === n - 3) ? shiftedSides[n - 1] : diags[i];
 
         let area = calculateHeron(sideA, sideB, sideC);
         if (area === null) {
@@ -341,8 +374,8 @@
 
       document.getElementById('resultSummary').innerText = `Total Plot Area: ${totalArea.toFixed(2)} ${areaUnit}`;
 
-      // Construct Vertex Coordinates (V1 at 0,0)
-      let vertices = [{ x: 0, y: 0 }, { x: sides[0], y: 0 }];
+      // Construct Local Vertex Coordinates relative to Origin Vertex
+      let shiftedVertices = [{ x: 0, y: 0 }, { x: shiftedSides[0], y: 0 }];
       let currentAngle = 0;
 
       for (let i = 0; i < n - 2; i++) {
@@ -350,21 +383,28 @@
         let b = triangles[i].b;
         let c = triangles[i].c;
 
-        // Angle at base point using Law of Cosines
         let cosA = (a * a + c * c - b * b) / (2 * a * c);
-        cosA = Math.max(-1, Math.min(1, cosA)); // Clamp
+        cosA = Math.max(-1, Math.min(1, cosA));
         let alpha = Math.acos(cosA);
 
         currentAngle += alpha;
 
         let nextX = c * Math.cos(currentAngle);
         let nextY = c * Math.sin(currentAngle);
-        vertices.push({ x: nextX, y: nextY });
+        shiftedVertices.push({ x: nextX, y: nextY });
+      }
+
+      // Map shifted vertices back to original vertex indices (V1..Vn)
+      let vertices = new Array(n);
+      for (let i = 0; i < n; i++) {
+        let origIdx = (origin - 1 + i) % n;
+        vertices[origIdx] = shiftedVertices[i];
       }
 
       currentPlotData = {
         n: n,
-        sides: sides,
+        origin: origin,
+        sides: rawSides,
         diags: diags,
         unit: unit,
         totalArea: totalArea.toFixed(2),
@@ -372,7 +412,7 @@
         date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
 
-      drawPlot(vertices, areaUnit, totalArea);
+      drawPlot(vertices, areaUnit, totalArea, origin);
     }
 
     function showError(msg) {
@@ -381,12 +421,11 @@
       errBox.style.display = 'block';
     }
 
-    function drawPlot(vertices, areaUnit, totalArea) {
+    function drawPlot(vertices, areaUnit, totalArea, origin) {
       const canvas = document.getElementById('plotCanvas');
       const ctx = canvas.getContext('2d');
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Auto-scale to fit plot in canvas
       let minX = Math.min(...vertices.map(v => v.x));
       let maxX = Math.max(...vertices.map(v => v.x));
       let minY = Math.min(...vertices.map(v => v.y));
@@ -408,19 +447,22 @@
       }
 
       let mapped = vertices.map(mapPoint);
+      let n = vertices.length;
+      let originIdx = origin - 1;
 
-      // 1. Draw Inner Diagonals (Dashed lines)
+      // 1. Draw Inner Diagonals from chosen origin vertex (Dashed lines)
       ctx.setLineDash([5, 5]);
       ctx.strokeStyle = '#94a3b8';
       ctx.lineWidth = 1.5;
 
-      for (let i = 2; i < mapped.length - 1; i++) {
+      for (let i = 0; i < n - 3; i++) {
+        let targetIdx = (originIdx + i + 2) % n;
         ctx.beginPath();
-        ctx.moveTo(mapped[0].x, mapped[0].y);
-        ctx.lineTo(mapped[i].x, mapped[i].y);
+        ctx.moveTo(mapped[originIdx].x, mapped[originIdx].y);
+        ctx.lineTo(mapped[targetIdx].x, mapped[targetIdx].y);
         ctx.stroke();
       }
-      ctx.setLineDash([]); // Reset dashed
+      ctx.setLineDash([]);
 
       // 2. Fill Outer Polygon Shape
       ctx.beginPath();
@@ -439,11 +481,12 @@
       // 3. Draw Vertices & Labels
       mapped.forEach((pt, idx) => {
         ctx.beginPath();
-        ctx.arc(pt.x, pt.y, 5, 0, Math.PI * 2);
-        ctx.fillStyle = '#0f172a';
+        ctx.arc(pt.x, pt.y, 6, 0, Math.PI * 2);
+        ctx.fillStyle = (idx === originIdx) ? '#dc2626' : '#0f172a';
         ctx.fill();
 
         ctx.font = 'bold 12px sans-serif';
+        ctx.fillStyle = (idx === originIdx) ? '#dc2626' : '#0f172a';
         ctx.fillText(`V${idx + 1}`, pt.x + 8, pt.y - 8);
       });
 
@@ -483,7 +526,7 @@
           <div>
             <strong>Plot #${index + 1} (${item.n}-Sided)</strong>
             <div>${item.totalArea} ${getUnitLabel(item.unit)}</div>
-            <small style="color:#64748b;">Saved at ${item.date}</small>
+            <small style="color:#64748b;">Saved at ${item.date} (Origin: V${item.origin || 1})</small>
           </div>
           <div style="display:flex; gap:6px;">
             <button class="btn-primary btn-sm" onclick="loadPlot(${index})">Load</button>
@@ -500,6 +543,8 @@
       if (!item) return;
 
       document.getElementById('numSides').value = item.n;
+      updateOriginDropdown();
+      document.getElementById('originVertex').value = item.origin || 1;
       document.getElementById('unitSelect').value = item.unit;
       buildInputs();
 

@@ -140,6 +140,36 @@
       padding: 10px 14px;
       border-radius: 6px;
     }
+
+    .canvas-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      background: #f8fafc;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+    .rotation-control {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      max-width: 260px;
+    }
+    .rotation-control label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+      white-space: nowrap;
+    }
+    .rotation-control input[type="range"] {
+      flex: 1;
+      cursor: pointer;
+      padding: 0;
+    }
+
     canvas {
       width: 100%;
       height: 380px;
@@ -193,7 +223,7 @@
         <div class="input-group">
           <label for="originVertex">Diagonal Origin Vertex</label>
           <select id="originVertex" onchange="buildInputs()">
-            <!-- Populated dynamically based on number of sides -->
+            <!-- Populated dynamically -->
           </select>
         </div>
         <div class="input-group">
@@ -224,9 +254,18 @@
     <!-- Canvas Preview Panel -->
     <div class="card">
       <h2>2. Reconstructed Plot Map</h2>
+      
+      <div class="canvas-header">
+        <div class="rotation-control">
+          <label for="rotationAngle">Rotate: <span id="rotVal">0</span>°</label>
+          <input type="range" id="rotationAngle" min="0" max="360" value="0" oninput="onRotateInput(this.value)">
+        </div>
+        <button class="btn-sm btn-primary" onclick="resetRotation()">Reset Rotation</button>
+      </div>
+
       <canvas id="plotCanvas" width="500" height="380"></canvas>
       <p style="font-size:0.8rem; color:#64748b; margin-top:8px;">
-        * Entire plot rendered from measured perimeter and internal diagonals.
+        * Edge/diagonal lengths are labeled directly on the canvas. Adjust the slider to match real-world alignment.
       </p>
     </div>
   </div>
@@ -242,11 +281,26 @@
 
   <script>
     let currentPlotData = null;
+    let rotationAngle = 0;
 
     window.onload = function() {
       updateOriginDropdown();
       renderHistory();
     };
+
+    function onRotateInput(val) {
+      rotationAngle = parseInt(val) || 0;
+      document.getElementById('rotVal').innerText = rotationAngle;
+      if (currentPlotData) {
+        currentPlotData.rotation = rotationAngle;
+        drawPlot(currentPlotData.rawVertices, currentPlotData.unit, currentPlotData.totalAreaVal, currentPlotData.origin);
+      }
+    }
+
+    function resetRotation() {
+      document.getElementById('rotationAngle').value = 0;
+      onRotateInput(0);
+    }
 
     function updateOriginDropdown() {
       const n = parseInt(document.getElementById('numSides').value);
@@ -275,14 +329,12 @@
 
       document.getElementById('diagTitle').innerText = `Internal Diagonals (From V${origin})`;
 
-      // Default presets
       const defaults = {
         4: { sides: [40, 50, 45, 55], diags: [65] },
         5: { sides: [40, 50, 45, 35, 50], diags: [65, 60] },
         6: { sides: [40, 50, 45, 35, 40, 50], diags: [65, 60, 70] }
       }[n];
 
-      // Build outer sides inputs
       for (let i = 0; i < n; i++) {
         const vStart = i + 1;
         const vEnd = (i + 1) % n + 1;
@@ -295,7 +347,6 @@
         sidesContainer.appendChild(div);
       }
 
-      // Build diagonal inputs (N-3 diagonals from chosen Origin)
       for (let i = 0; i < n - 3; i++) {
         const targetV = ((origin - 1 + i + 2) % n) + 1;
         const div = document.createElement('div');
@@ -350,7 +401,6 @@
         diags.push(v);
       }
 
-      // Shift sides array so origin vertex sits at index 0 for triangulation math
       let shiftedSides = [];
       for (let i = 0; i < n; i++) {
         shiftedSides.push(rawSides[(origin - 1 + i) % n]);
@@ -374,7 +424,6 @@
 
       document.getElementById('resultSummary').innerText = `Total Plot Area: ${totalArea.toFixed(2)} ${areaUnit}`;
 
-      // Construct Local Vertex Coordinates relative to Origin Vertex
       let shiftedVertices = [{ x: 0, y: 0 }, { x: shiftedSides[0], y: 0 }];
       let currentAngle = 0;
 
@@ -394,11 +443,10 @@
         shiftedVertices.push({ x: nextX, y: nextY });
       }
 
-      // Map shifted vertices back to original vertex indices (V1..Vn)
-      let vertices = new Array(n);
+      let rawVertices = new Array(n);
       for (let i = 0; i < n; i++) {
         let origIdx = (origin - 1 + i) % n;
-        vertices[origIdx] = shiftedVertices[i];
+        rawVertices[origIdx] = shiftedVertices[i];
       }
 
       currentPlotData = {
@@ -407,12 +455,14 @@
         sides: rawSides,
         diags: diags,
         unit: unit,
+        totalAreaVal: totalArea,
         totalArea: totalArea.toFixed(2),
-        vertices: vertices,
+        rawVertices: rawVertices,
+        rotation: rotationAngle,
         date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       };
 
-      drawPlot(vertices, areaUnit, totalArea, origin);
+      drawPlot(rawVertices, unit, totalArea, origin);
     }
 
     function showError(msg) {
@@ -421,19 +471,40 @@
       errBox.style.display = 'block';
     }
 
-    function drawPlot(vertices, areaUnit, totalArea, origin) {
+    function rotatePoint(p, cx, cy, angleDeg) {
+      const rad = (angleDeg * Math.PI) / 180;
+      const cos = Math.cos(rad);
+      const sin = Math.sin(rad);
+      const dx = p.x - cx;
+      const dy = p.y - cy;
+      return {
+        x: cx + dx * cos - dy * sin,
+        y: cy + dx * sin + dy * cos
+      };
+    }
+
+    function drawPlot(rawVertices, unit, totalArea, origin) {
       const canvas = document.getElementById('plotCanvas');
       const ctx = canvas.getContext('2d');
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      let minX = Math.min(...vertices.map(v => v.x));
-      let maxX = Math.max(...vertices.map(v => v.x));
-      let minY = Math.min(...vertices.map(v => v.y));
-      let maxY = Math.max(...vertices.map(v => v.y));
+      const n = rawVertices.length;
+      const areaUnit = getUnitLabel(unit);
+
+      // 1. Rotate vertices around centroid
+      const cx = rawVertices.reduce((sum, v) => sum + v.x, 0) / n;
+      const cy = rawVertices.reduce((sum, v) => sum + v.y, 0) / n;
+      const rotatedVertices = rawVertices.map(v => rotatePoint(v, cx, cy, rotationAngle));
+
+      // 2. Calculate scale and bounding box
+      let minX = Math.min(...rotatedVertices.map(v => v.x));
+      let maxX = Math.max(...rotatedVertices.map(v => v.x));
+      let minY = Math.min(...rotatedVertices.map(v => v.y));
+      let maxY = Math.max(...rotatedVertices.map(v => v.y));
 
       let plotWidth = maxX - minX || 1;
       let plotHeight = maxY - minY || 1;
-      let padding = 50;
+      let padding = 60; // Extra room for side labels
 
       let scaleX = (canvas.width - padding * 2) / plotWidth;
       let scaleY = (canvas.height - padding * 2) / plotHeight;
@@ -446,11 +517,10 @@
         };
       }
 
-      let mapped = vertices.map(mapPoint);
-      let n = vertices.length;
+      let mapped = rotatedVertices.map(mapPoint);
       let originIdx = origin - 1;
 
-      // 1. Draw Inner Diagonals from chosen origin vertex (Dashed lines)
+      // 3. Draw Inner Diagonals (Dashed lines)
       ctx.setLineDash([5, 5]);
       ctx.strokeStyle = '#94a3b8';
       ctx.lineWidth = 1.5;
@@ -461,10 +531,15 @@
         ctx.moveTo(mapped[originIdx].x, mapped[originIdx].y);
         ctx.lineTo(mapped[targetIdx].x, mapped[targetIdx].y);
         ctx.stroke();
+
+        // Label Diagonals
+        let mx = (mapped[originIdx].x + mapped[targetIdx].x) / 2;
+        let my = (mapped[originIdx].y + mapped[targetIdx].y) / 2;
+        drawTextBadge(ctx, `D${i + 1}: ${currentPlotData.diags[i]} ${unit}`, mx, my, '#f1f5f9', '#64748b', true);
       }
       ctx.setLineDash([]);
 
-      // 2. Fill Outer Polygon Shape
+      // 4. Fill Outer Polygon Shape
       ctx.beginPath();
       ctx.moveTo(mapped[0].x, mapped[0].y);
       for (let i = 1; i < mapped.length; i++) {
@@ -472,13 +547,24 @@
       }
       ctx.closePath();
 
-      ctx.fillStyle = '#93c5fd';
+      ctx.fillStyle = 'rgba(147, 197, 253, 0.4)';
       ctx.fill();
       ctx.lineWidth = 3;
       ctx.strokeStyle = '#1e3a8a';
       ctx.stroke();
 
-      // 3. Draw Vertices & Labels
+      // 5. Outer Side Length Badges
+      for (let i = 0; i < n; i++) {
+        let p1 = mapped[i];
+        let p2 = mapped[(i + 1) % n];
+        let mx = (p1.x + p2.x) / 2;
+        let my = (p1.y + p2.y) / 2;
+        let sideLength = currentPlotData.sides[i];
+
+        drawTextBadge(ctx, `S${i + 1}: ${sideLength} ${unit}`, mx, my, '#ffffff', '#1e293b', false);
+      }
+
+      // 6. Vertices & Labels
       mapped.forEach((pt, idx) => {
         ctx.beginPath();
         ctx.arc(pt.x, pt.y, 6, 0, Math.PI * 2);
@@ -487,17 +573,41 @@
 
         ctx.font = 'bold 12px sans-serif';
         ctx.fillStyle = (idx === originIdx) ? '#dc2626' : '#0f172a';
-        ctx.fillText(`V${idx + 1}`, pt.x + 8, pt.y - 8);
+        ctx.fillText(`V${idx + 1}`, pt.x + 10, pt.y - 10);
       });
 
-      // 4. Center Area Tag
-      let centerX = mapped.reduce((a, b) => a + b.x, 0) / mapped.length;
-      let centerY = mapped.reduce((a, b) => a + b.y, 0) / mapped.length;
+      // 7. Center Area Tag
+      let centerMappedX = mapped.reduce((a, b) => a + b.x, 0) / mapped.length;
+      let centerMappedY = mapped.reduce((a, b) => a + b.y, 0) / mapped.length;
 
-      ctx.fillStyle = '#0f172a';
-      ctx.font = 'bold 13px sans-serif';
+      drawTextBadge(ctx, `${totalArea.toFixed(2)} ${areaUnit}`, centerMappedX, centerMappedY, '#0284c7', '#ffffff', false, true);
+    }
+
+    // Badge Drawing Helper for readability on canvas
+    function drawTextBadge(ctx, text, x, y, bgColor, textColor, isItalic = false, isBold = false) {
+      ctx.save();
+      ctx.font = `${isBold ? 'bold ' : ''}${isItalic ? 'italic ' : ''}11px sans-serif`;
+      const textMetrics = ctx.measureText(text);
+      const padX = 6;
+      const padY = 3;
+      const w = textMetrics.width + padX * 2;
+      const h = 16 + padY;
+
+      ctx.fillStyle = bgColor;
+      ctx.strokeStyle = '#cbd5e1';
+      ctx.lineWidth = 1;
+
+      // Draw rounded rectangle badge
+      ctx.beginPath();
+      ctx.roundRect(x - w / 2, y - h / 2, w, h, 4);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = textColor;
       ctx.textAlign = 'center';
-      ctx.fillText(`${totalArea.toFixed(2)} ${areaUnit}`, centerX, centerY);
+      ctx.textBaseline = 'middle';
+      ctx.fillText(text, x, y);
+      ctx.restore();
     }
 
     // LocalStorage Functions
@@ -553,6 +663,11 @@
 
       item.sides.forEach((val, i) => { if (sideInputs[i]) sideInputs[i].value = val; });
       item.diags.forEach((val, i) => { if (diagInputs[i]) diagInputs[i].value = val; });
+
+      if (item.rotation !== undefined) {
+        document.getElementById('rotationAngle').value = item.rotation;
+        onRotateInput(item.rotation);
+      }
 
       calculateAndDraw();
     }

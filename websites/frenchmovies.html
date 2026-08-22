@@ -2,205 +2,291 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>French Media Learning Roadmap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>French Media Immersion Catalog</title>
   <style>
     :root {
-      --bg: #0d1117;
-      --card-bg: #161b22;
-      --border: #30363d;
-      --text-main: #f0f6fc;
-      --text-muted: #8b949e;
-      --accent: #58a6ff;
+      --bg: #090d16;
+      --card-bg: rgba(22, 30, 46, 0.85);
+      --card-hover: rgba(30, 41, 59, 0.95);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(56, 189, 248, 0.4);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --badge-bg: rgba(56, 189, 248, 0.12);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg);
-      color: var(--text-main);
-      padding: 2rem 1rem;
-      line-height: 1.5;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.06) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.05) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text);
+      padding: 1rem 0.75rem;
+      line-height: 1.4;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .container { max-width: 1000px; margin: 0 auto; }
+    .container { max-width: 1200px; margin: 0 auto; }
 
     header {
       text-align: center;
-      margin-bottom: 3rem;
+      padding: 1rem 0.5rem 1.5rem;
     }
 
     header h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #ffffff 30%, var(--muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.3rem;
     }
 
     header p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      max-width: 500px;
+      margin: 0 auto;
     }
 
-    .level-group {
-      margin-bottom: 2.5rem;
-    }
-
-    .level-header {
+    /* Sticky Mobile Section Title */
+    .section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      padding: 0.75rem 0.5rem;
+      margin: 1rem 0 0.75rem 0;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
+      justify-content: space-between;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 0.5rem;
+      position: sticky;
+      top: 0;
+      background: rgba(9, 13, 22, 0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 10;
     }
 
-    .level-title {
-      font-size: 1.1rem;
+    .badge {
+      font-size: 0.68rem;
       font-weight: 600;
-    }
-
-    .level-badge {
-      font-size: 0.75rem;
-      padding: 0.15rem 0.5rem;
+      padding: 2px 8px;
       border-radius: 12px;
-      background: rgba(88, 166, 255, 0.15);
+      background: var(--badge-bg);
       color: var(--accent);
-      font-weight: 600;
+      border: 1px solid rgba(56, 189, 248, 0.2);
     }
 
+    /* Mobile First Compact List View */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
     }
 
+    /* Responsive shift for larger displays */
+    @media (min-width: 640px) {
+      body { padding: 2rem 1.5rem; }
+      .grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 0.85rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      }
+    }
+
+    /* Mobile Compact Card Design */
     .card {
       background: var(--card-bg);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 10px;
       overflow: hidden;
       display: flex;
-      flex-direction: column;
-      transition: transform 0.15s ease, border-color 0.15s ease;
+      flex-direction: row; /* Horizontal layout on mobile */
+      align-items: center;
       cursor: pointer;
+      transition: all 0.2s ease;
+      height: 84px;
     }
 
-    .card:hover {
-      transform: translateY(-2px);
-      border-color: #8b949e;
+    .card:active, .card:hover {
+      background: var(--card-hover);
+      border-color: var(--border-hover);
+      transform: scale(0.99);
     }
 
     .poster-box {
-      width: 100%;
-      aspect-ratio: 2 / 3;
-      background: #21262d;
-      position: relative;
+      width: 56px;
+      height: 84px;
+      min-width: 56px;
+      background: #0f172a;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      position: relative;
     }
 
     .poster-box img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    .poster-fallback {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 1rem;
-      color: var(--text-muted);
-      gap: 0.5rem;
-    }
-
-    .poster-fallback svg {
-      width: 32px;
-      height: 32px;
-      fill: currentColor;
-      opacity: 0.5;
+      display: block;
     }
 
     .card-body {
-      padding: 0.85rem;
+      padding: 0.5rem 0.85rem;
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
+      justify-content: center;
+      gap: 0.2rem;
+      overflow: hidden;
+      width: 100%;
     }
 
     .card-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-main);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .card-type {
-      font-size: 0.75rem;
-      color: var(--text-muted);
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 500;
     }
 
-    /* Simple Modal */
+    .card-action {
+      font-size: 0.7rem;
+      color: var(--accent);
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    /* Touch-Optimized Modal */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.75);
+      background: rgba(4, 7, 13, 0.88);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       display: flex;
-      align-items: center;
+      align-items: flex-end; /* Sheet style on mobile */
       justify-content: center;
-      padding: 1rem;
-      z-index: 1000;
-      visibility: hidden;
+      z-index: 100;
       opacity: 0;
-      transition: opacity 0.15s ease;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
     }
 
-    .modal-overlay.open {
-      visibility: visible;
+    @media (min-width: 640px) {
+      .modal-overlay {
+        align-items: center;
+        padding: 1rem;
+      }
+    }
+
+    .modal-overlay.active {
       opacity: 1;
+      pointer-events: auto;
     }
 
-    .modal-content {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      max-width: 440px;
+    .modal {
+      background: #111827;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
       width: 100%;
+      max-width: 500px;
+      max-height: 85vh;
+      overflow-y: auto;
       padding: 1.5rem;
       position: relative;
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+      transform: translateY(100%);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .modal-close {
+    @media (min-width: 640px) {
+      .modal {
+        border-radius: 16px;
+        transform: scale(0.95);
+        max-height: 90vh;
+      }
+    }
+
+    .modal-overlay.active .modal {
+      transform: translateY(0);
+    }
+
+    @media (min-width: 640px) {
+      .modal-overlay.active .modal {
+        transform: scale(1);
+      }
+    }
+
+    .close-btn {
       position: absolute;
       top: 1rem;
       right: 1rem;
-      background: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
       border: none;
-      color: var(--text-muted);
-      font-size: 1.25rem;
+      color: var(--text);
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
     }
 
-    .modal-section {
-      margin-top: 1rem;
+    .modal-section { 
+      margin-top: 0.85rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .modal-section:first-of-type {
+      border-top: none;
+      padding-top: 0;
     }
 
     .modal-section h4 {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
+      font-weight: 700;
       text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
       letter-spacing: 0.05em;
-      color: var(--text-muted);
-      margin-bottom: 0.25rem;
     }
 
-    .modal-section p {
-      font-size: 0.9rem;
-      color: var(--text-main);
+    .modal-section p { 
+      font-size: 0.88rem; 
+      color: #cbd5e1;
+      line-height: 1.45;
     }
   </style>
 </head>
@@ -208,194 +294,299 @@
 
   <div class="container">
     <header>
-      <h1>French Media Roadmap</h1>
-      <p>Select a title to reveal listening notes and study strategies.</p>
+      <h1>French Media Catalog</h1>
+      <p>Tap any title to unlock learning insights, CEFR levels, and study tips.</p>
     </header>
 
     <div id="roadmap"></div>
   </div>
 
-  <div class="modal-overlay" id="modal">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeModal()">&times;</button>
-      <div id="modalType" class="card-type"></div>
-      <h2 id="modalTitle" style="font-size: 1.25rem; margin-top: 0.25rem;"></h2>
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <div class="card-type" id="mType" style="color: var(--accent);"></div>
+      <h2 id="mTitle" style="font-size: 1.2rem; font-weight: 700; margin-top: 0.2rem; padding-right: 2rem;"></h2>
       
       <div class="modal-section">
-        <h4>Overview</h4>
-        <p id="modalSynopsis"></p>
+        <h4>Synopsis</h4>
+        <p id="mSynopsis"></p>
       </div>
       <div class="modal-section">
-        <h4>Level Suitability</h4>
-        <p id="modalReason"></p>
+        <h4>Why it fits this level</h4>
+        <p id="mReason"></p>
       </div>
       <div class="modal-section">
-        <h4>Study Strategy</h4>
-        <p id="modalTip"></p>
+        <h4>Listening Tip</h4>
+        <p id="mTip"></p>
       </div>
     </div>
   </div>
 
   <script>
+    function createFallbackPoster(title) {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="120" height="180" viewBox="0 0 120 180"><rect width="100%" height="100%" fill="%230f172a"/><text x="50%" y="50%" fill="%2338bdf8" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">${encodeURIComponent(title.substring(0, 10))}</text></svg>`;
+      return `data:image/svg+xml;utf8,${svg}`;
+    }
+
     const data = [
       {
-        level: "Beginner",
-        badge: "A2–B1",
+        level: "Level 1: Beginner",
+        badge: "A1–A2",
         items: [
           {
-            title: "Persepolis",
-            type: "Animated Film",
-            img: "https://image.tmdb.org/t/p/w500/A31I1OqfB1x3G2j1X7Yw7p9K9.jpg",
-            synopsis: "A coming-of-age story set during the Iranian Revolution.",
-            reason: "Clear studio audio with minimal background noise interference.",
-            tip: "Use French subtitles to map spoken sounds directly to written text."
+            title: "Le Petit Nicolas",
+            type: "Family / Animation",
+            wikiPage: "Le_Petit_Nicolas_(film)",
+            synopsis: "The misadventures of a young Parisian boy and his school friends in 1950s France.",
+            reason: "Uses straightforward child vocabulary, short sentences, and highly visual situational context.",
+            tip: "Focus on simple present-tense verb conjugations and basic everyday nouns."
+          },
+          {
+            title: "Trotro",
+            type: "Animated Series",
+            wikiPage: "Trotro",
+            synopsis: "A little donkey navigates everyday childhood activities and small routines.",
+            reason: "Repetitive sentence structures and slow speech ideal for complete beginners.",
+            tip: "Great for listening to daily routine verbs without needing subtitles."
+          },
+          {
+            title: "Kirikou et la Sorcière",
+            type: "Animated Feature",
+            wikiPage: "Kirikou_and_the_Sorceress",
+            synopsis: "A miniature newborn boy saves his West African village from a wicked sorceress.",
+            reason: "Enunciated storytelling voiceovers and simple narrative progression.",
+            tip: "Listen carefully to basic past-tense storytelling verbs (passé composé)."
           },
           {
             title: "Les Choristes",
             type: "Drama Film",
-            img: "https://image.tmdb.org/t/p/w500/q3U7S7A0K5V1Z2Y3X4W5V6U7.jpg",
-            synopsis: "A music teacher transforms a strict boarding school through choral singing.",
-            reason: "Features formal mid-century enunciation and structured dialogue.",
-            tip: "Pay attention to formal addressing patterns (vouvoiement)."
+            wikiPage: "Les_Choristes",
+            synopsis: "A music teacher transforms a strict boarding school through choral music.",
+            reason: "Clear mid-century formal dialogue spoken with slow, clear articulation.",
+            tip: "Pay attention to polite speech patterns and school-related vocabulary."
+          },
+          {
+            title: "Astérix: Le Domaine des Dieux",
+            type: "Animation / Comedy",
+            wikiPage: "Asterix:_The_Mansions_of_the_Gods",
+            synopsis: "Julius Caesar tries to absorb the invincible Gauls by building a Roman estate nearby.",
+            reason: "Visual comedy balances fast jokes, making it easy to follow the storyline.",
+            tip: "Use French subtitles to catch puns and humor playing on words."
           }
         ]
       },
       {
-        level: "Intermediate",
+        level: "Level 2: Intermediate",
         badge: "B1–B2",
         items: [
           {
+            title: "Persepolis",
+            type: "Animated Film",
+            wikiPage: "Persepolis_(film)",
+            synopsis: "A rebellious young girl grows up during the Iranian Revolution.",
+            reason: "Clear studio voiceovers with balanced conversational pacing and low background noise.",
+            tip: "Keep French subtitles on to map written words directly to natural spoken sounds."
+          },
+          {
             title: "Lupin",
             type: "TV Series • Netflix",
-            img: "https://image.tmdb.org/t/p/w500/1S21al2I3P2S3X4W5V6U7T8.jpg",
-            synopsis: "A gentleman thief uses charisma and clever disguises to avenge his father.",
-            reason: "Action-driven scenes provide strong visual context for conversational dialogue.",
-            tip: "Keep French subtitles active to track fast conversational transitions."
+            wikiPage: "Lupin_(TV_series)",
+            synopsis: "A gentleman thief draws inspiration from Arsène Lupin to avenge his father.",
+            reason: "High action and heist suspense provide continuous visual context.",
+            tip: "Focus on global comprehension instead of pausing for individual slang words."
           },
           {
             title: "Dix Pour Cent",
             type: "TV Series • Netflix",
-            img: "https://image.tmdb.org/t/p/w500/2S31al3I4P3S4X5W6V7U8T9.jpg",
-            synopsis: "Parisian talent agents navigate celebrity demands and workplace drama.",
-            reason: "Standard modern workplace vocabulary combined with contemporary Parisian pacing.",
-            tip: "Note frequent conversational fillers like 'du coup' and 'en fait'."
-          }
-        ]
-      },
-      {
-        level: "Upper-Intermediate",
-        badge: "B2",
-        items: [
+            wikiPage: "Call_My_Agent!",
+            synopsis: "Talent agents in Paris scramble to keep their high-profile celebrity clients happy.",
+            reason: "Modern workplace dialogue featuring fast-paced professional banter.",
+            tip: "Listen for common spoken filler words like 'du coup', 'en fait', and 'bref'."
+          },
           {
-            title: "Amélie",
+            title: "Le Fabuleux Destin d'Amélie Poulain",
             type: "Romance / Comedy",
-            img: "https://upload.wikimedia.org/wikipedia/en/5/53/Amelie_poster.jpg",
-            synopsis: "An imaginative Parisian waitress orchestrates small acts of kindness.",
-            reason: "Fast voiceover narration paired with expressive, non-standard vocabulary.",
-            tip: "Focus on broad narrative context rather than translating individual words."
+            wikiPage: "Amélie",
+            synopsis: "An eccentric Parisian waitress orchestrates small acts of kindness for others.",
+            reason: "Rich poetic voiceover narration combined with vivid visual storytelling.",
+            tip: "Let the narrator's speed wash over you without over-analyzing adjective placement."
+          },
+          {
+            title: "Intouchables",
+            type: "Comedy / Drama",
+            wikiPage: "The_Intouchables",
+            synopsis: "An aristocratic quadriplegic forms an unlikely bond with his ex-con caregiver.",
+            reason: "Highlights contrast between formal high-society French and casual everyday speech.",
+            tip: "Notice how speech patterns differ dramatically between the two main characters."
           },
           {
             title: "Family Business",
-            type: "TV Series • Netflix",
-            img: "https://image.tmdb.org/t/p/w500/3S41al4I5P4S5X6W7V8U9T0.jpg",
-            synopsis: "A Parisian family converts their struggling butcher shop into a coffee shop.",
-            reason: "Fast, informal family bickering rich in modern French slang (*verlan*).",
-            tip: "Try short 5-minute listening blocks with subtitles disabled."
+            type: "Comedy Series • Netflix",
+            wikiPage: "Family_Business_(French_TV_series)",
+            synopsis: "A Parisian family converts their struggling butcher shop into France's first coffeeshop.",
+            reason: "Energetic family dynamic using accessible contemporary humor and modern slang.",
+            tip: "Pay attention to rapid conversational turn-taking in casual settings."
           }
         ]
       },
       {
-        level: "Advanced",
-        badge: "C1+",
+        level: "Level 3: Upper-Intermediate",
+        badge: "B2–C1",
+        items: [
+          {
+            title: "Portrait de la jeune fille en feu",
+            type: "Drama / Romance",
+            wikiPage: "Portrait_of_a_Lady_on_Fire",
+            synopsis: "An 18th-century painter is commissioned to paint a wedding portrait of a young woman.",
+            reason: "Slow, deliberate, and deeply articulate classical phrasing and literary French.",
+            tip: "Great practice for hearing formal tenses and quiet, emotive dialogue."
+          },
+          {
+            title: "Un Prophète",
+            type: "Crime / Drama",
+            wikiPage: "A_Prophet",
+            synopsis: "A young Algerian man rises through the ranks of a corrupt prison system.",
+            reason: "Realistic prison dialogue combining slang, regional accents, and mumbled delivery.",
+            tip: "Rely on French closed captions to decipher fast-talking underground dialect."
+          },
+          {
+            title: "Au Service de la France",
+            type: "Satire Series • Netflix",
+            wikiPage: "A_Very_Secret_Service",
+            synopsis: "A young officer joins the French Secret Service during the height of the Cold War.",
+            reason: "Satirical bureaucratic jargon and dry humor with 1960s administrative phrasing.",
+            tip: "Excellent for practicing subtle ironies and high-level formal vocabulary."
+          },
+          {
+            title: "Le Bureau des Légendes",
+            type: "Espionage Thriller",
+            wikiPage: "The_Bureau_(TV_series)",
+            synopsis: "Intelligence officers train and manage deep-cover undercover agents across the globe.",
+            reason: "Realistic political speech, geopolitical terminology, and understated tone.",
+            tip: "Ideal for learning professional, military, and diplomatic vocabulary."
+          },
+          {
+            title: "L'Auberge Espagnole",
+            type: "Comedy / Drama",
+            wikiPage: "L%27Auberge_Espagnole",
+            synopsis: "A French economics student moves to Barcelona and shares an apartment with international students.",
+            reason: "Natural student conversations mixing French with European language influences.",
+            tip: "Notice how native speakers naturally switch between casual slang and standard French."
+          }
+        ]
+      },
+      {
+        level: "Level 4: Native Mastery",
+        badge: "C1–C2",
         items: [
           {
             title: "La Haine",
             type: "Crime / Drama",
-            img: "https://upload.wikimedia.org/wikipedia/en/2/26/La_haine_poster.jpg",
-            synopsis: "24 hours in the lives of three young men living in the Parisian suburbs.",
-            reason: "Heavy reliance on authentic 1990s street dialogue and reversed slang.",
-            tip: "Serves as an ideal benchmark for unedited, authentic native speech."
+            wikiPage: "La_Haine",
+            synopsis: "Three young men navigate 24 tense hours in the impoverished Parisian suburbs.",
+            reason: "Unfiltered 1990s street French featuring heavy *verlan* (backwards slang) and fast speech.",
+            tip: "Essential benchmark for understanding authentic suburban sociolects."
           },
           {
-            title: "Chez les Ch'tis",
+            title: "Bienvenue chez les Ch'tis",
             type: "Comedy Film",
-            img: "https://upload.wikimedia.org/wikipedia/en/7/7d/Bienvenue_chez_les_Ch%27tis_Poster.jpg",
-            synopsis: "A southern postal worker is relocated to a small northern town.",
-            reason: "Built entirely around regional dialects, accents, and phonetic humor.",
-            tip: "Identify how regional vowel shifts differ from standard Parisian pronunciation."
+            wikiPage: "Bienvenue_chez_les_Ch%27tis",
+            synopsis: "A southern postal official is reassigned to a small town in northern France.",
+            reason: "Revolves around northern regional dialects (*Ch'ti*), accents, and phonetic misunderstandings.",
+            tip: "Analyze how regional accents alter vowel sounds compared to standard Parisian French."
+          },
+          {
+            title: "Kaamelott",
+            type: "Historical Comedy",
+            wikiPage: "Kaamelott",
+            synopsis: "A humorous, cynical retelling of King Arthur and the Knights of the Round Table.",
+            reason: "Blends medieval concepts with ultra-fast modern slang, idioms, and fast-paced delivery.",
+            tip: "Test your listening comprehension against overlapping dialogue and rapid-fire insults."
+          },
+          {
+            title: "OSS 117: Le Caire, nid d'espions",
+            type: "Spy Comedy",
+            wikiPage: "OSS_117:_Cairo,_Nest_of_Spies",
+            synopsis: "A bumbling, arrogant French spy is sent to 1955 Cairo to investigate a missing agent.",
+            reason: "Packed with cultural parodies, double meanings, and mid-20th century speech mannerisms.",
+            tip: "Challenge yourself to identify wordplay, historical puns, and political ironies."
           }
         ]
       }
     ];
 
-    function handleImageError(img, title) {
-      const container = img.parentElement;
-      container.innerHTML = `
-        <div class="poster-fallback">
-          <svg viewBox="0 0 24 24"><path d="M18 3H6c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-6 2c1.38 0 2.5 1.12 2.5 2.5S13.38 10 12 10s-2.5-1.12-2.5-2.5S10.62 5 12 5zm6 14H6v-.5c0-2 4-3.1 6-3.1s6 1.1 6 3.1v.5z"/></svg>
-          <span style="font-size: 0.8rem; font-weight: 600;">${title}</span>
-        </div>
-      `;
+    async function loadWikipediaPoster(wikiPage, imgElement, title) {
+      try {
+        const response = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${wikiPage}`);
+        if (!response.ok) throw new Error("Fetch failed");
+        const json = await response.json();
+        
+        if (json.thumbnail && json.thumbnail.source) {
+          imgElement.src = json.thumbnail.source;
+        } else {
+          imgElement.src = createFallbackPoster(title);
+        }
+      } catch (err) {
+        imgElement.src = createFallbackPoster(title);
+      }
     }
 
-    const roadmapContainer = document.getElementById('roadmap');
+    const container = document.getElementById('roadmap');
 
     data.forEach(sec => {
-      const group = document.createElement('div');
-      group.className = 'level-group';
+      const sectionHeader = document.createElement('div');
+      sectionHeader.className = 'section-title';
+      sectionHeader.innerHTML = `<span>${sec.level}</span> <span class="badge">${sec.badge}</span>`;
+      container.appendChild(sectionHeader);
 
-      group.innerHTML = `
-        <div class="level-header">
-          <span class="level-title">${sec.level}</span>
-          <span class="level-badge">${sec.badge}</span>
-        </div>
-        <div class="grid" id="grid-${sec.level.replace(/\s+/g, '')}"></div>
-      `;
-
-      roadmapContainer.appendChild(group);
-
-      const grid = group.querySelector('.grid');
+      const grid = document.createElement('div');
+      grid.className = 'grid';
 
       sec.items.forEach(item => {
         const card = document.createElement('div');
         card.className = 'card';
         card.onclick = () => openModal(item);
 
-        const imgEl = document.createElement('img');
-        imgEl.src = item.img;
-        imgEl.alt = item.title;
-        imgEl.onerror = () => handleImageError(imgEl, item.title);
+        const imgId = `img-${item.title.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`;
 
         card.innerHTML = `
-          <div class="poster-box"></div>
+          <div class="poster-box">
+            <img id="${imgId}" src="${createFallbackPoster(item.title)}" alt="${item.title}" loading="lazy">
+          </div>
           <div class="card-body">
             <div class="card-title">${item.title}</div>
             <div class="card-type">${item.type}</div>
+            <div class="card-action">View details &rarr;</div>
           </div>
         `;
-
-        card.querySelector('.poster-box').appendChild(imgEl);
         grid.appendChild(card);
+
+        setTimeout(() => {
+          const imgEl = document.getElementById(imgId);
+          if (imgEl) loadWikipediaPoster(item.wikiPage, imgEl, item.title);
+        }, 80);
       });
+
+      container.appendChild(grid);
     });
 
-    const modal = document.getElementById('modal');
+    const overlay = document.getElementById('modalOverlay');
 
     function openModal(item) {
-      document.getElementById('modalTitle').textContent = item.title;
-      document.getElementById('modalType').textContent = item.type;
-      document.getElementById('modalSynopsis').textContent = item.synopsis;
-      document.getElementById('modalReason').textContent = item.reason;
-      document.getElementById('modalTip').textContent = item.tip;
-      modal.classList.add('open');
+      document.getElementById('mTitle').textContent = item.title;
+      document.getElementById('mType').textContent = item.type;
+      document.getElementById('mSynopsis').textContent = item.synopsis;
+      document.getElementById('mReason').textContent = item.reason;
+      document.getElementById('mTip').textContent = item.tip;
+      overlay.classList.add('active');
     }
 
     function closeModal() {
-      modal.classList.remove('open');
+      overlay.classList.remove('active');
     }
 
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal();
     });
   </script>
 </body>

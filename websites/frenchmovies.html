@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>French Media Roadmap</title>
+  <title>French Media Learning Roadmap</title>
   <style>
     :root {
       --bg: #0b0f19;
       --card-bg: #151c2c;
-      --border: rgba(255, 255, 255, 0.1);
+      --border: rgba(255, 255, 255, 0.08);
       --text: #f1f5f9;
       --muted: #94a3b8;
       
@@ -21,27 +21,30 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      padding: 1rem 0.75rem;
+      padding: 1.25rem 0.75rem;
       line-height: 1.5;
     }
 
-    .container { max-width: 1100px; margin: 0 auto; }
+    .container { max-width: 1200px; margin: 0 auto; }
 
-    header { text-align: center; margin-bottom: 2rem; }
+    header { text-align: center; margin-bottom: 2rem; padding: 0 0.5rem; }
     header h1 {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      background: linear-gradient(135deg, #a5b4fc, #6366f1);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    header p { color: var(--muted); font-size: 0.95rem; margin-top: 0.25rem; }
+    header p { color: var(--muted); font-size: clamp(0.9rem, 2vw, 1.1rem); }
 
     .section-title {
-      font-size: clamp(1.1rem, 3vw, 1.3rem);
-      margin: 2rem 0 1rem;
+      font-size: clamp(1.1rem, 3vw, 1.35rem);
+      font-weight: 700;
+      margin: 2.25rem 0 1rem 0;
     }
 
     /* Mobile First Grid */
@@ -50,65 +53,95 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 0.85rem;
     }
-    @media (min-width: 640px) { .grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
-    @media (min-width: 1024px) { .grid { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; } }
+
+    @media (min-width: 640px) {
+      .grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    }
+
+    @media (min-width: 1024px) {
+      .grid { grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    }
 
     .card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
-      cursor: pointer;
       display: flex;
       flex-direction: column;
+      cursor: pointer;
       transition: transform 0.2s ease, border-color 0.2s ease;
     }
+
     .card:hover {
       transform: translateY(-4px);
       border-color: rgba(255, 255, 255, 0.25);
     }
 
-    .poster-box {
+    /* Pure CSS Poster Card Design */
+    .poster-art {
       position: relative;
       width: 100%;
       aspect-ratio: 2 / 3;
-      background: linear-gradient(145deg, #1e293b, #0f172a);
-      overflow: hidden;
+      padding: 1rem;
       display: flex;
-      align-items: flex-end;
-      padding: 0.75rem;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
     }
 
-    .poster-box img {
+    .poster-art::after {
+      content: '';
       position: absolute;
       inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: opacity 0.3s ease;
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.15), transparent 70%);
+      pointer-events: none;
     }
 
-    /* Fallback layout when image is broken */
-    .poster-box img.broken {
-      display: none;
+    .poster-icon {
+      width: 28px;
+      height: 28px;
+      fill: rgba(255, 255, 255, 0.8);
     }
 
-    .fallback-title {
-      font-size: 1.1rem;
+    .poster-title {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
       font-weight: 800;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+      color: #ffffff;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
       z-index: 1;
     }
 
+    /* Dynamic Gradients for Posters */
+    .grad-persepolis { background: linear-gradient(135deg, #1e1b4b, #312e81, #4338ca); }
+    .grad-nicolas { background: linear-gradient(135deg, #064e3b, #047857, #10b981); }
+    .grad-choristes { background: linear-gradient(135deg, #451a03, #78350f, #b45309); }
+    .grad-mixte { background: linear-gradient(135deg, #831843, #be185d, #db2777); }
+    
+    .grad-dix { background: linear-gradient(135deg, #1e293b, #334155, #64748b); }
+    .grad-lupin { background: linear-gradient(135deg, #0f172a, #1e293b, #3b82f6); }
+    .grad-belier { background: linear-gradient(135deg, #14532d, #15803d, #22c55e); }
+    .grad-diner { background: linear-gradient(135deg, #701a75, #a21caf, #c026d3); }
+
+    .grad-amelie { background: linear-gradient(135deg, #881337, #e11d48, #fb7185); }
+    .grad-auberge { background: linear-gradient(135deg, #164e63, #0891b2, #06b6d4); }
+    .grad-family { background: linear-gradient(135deg, #365314, #4d7c0f, #65a30d); }
+
+    .grad-skam { background: linear-gradient(135deg, #581c87, #7e22ce, #9333ea); }
+    .grad-chtis { background: linear-gradient(135deg, #1e3a8a, #1d4ed8, #3b82f6); }
+    .grad-kaamelott { background: linear-gradient(135deg, #78350f, #b45309, #f59e0b); }
+    .grad-haine { background: linear-gradient(135deg, #18181b, #27272a, #3f3f46); }
+
     .badge {
       position: absolute;
-      top: 8px;
-      right: 8px;
+      top: 10px;
+      right: 10px;
       padding: 3px 8px;
       border-radius: 6px;
       font-size: 0.7rem;
       font-weight: 700;
-      color: #fff;
+      color: #ffffff;
       z-index: 2;
     }
 
@@ -117,16 +150,35 @@
     .badge-l3 { background: var(--l3); }
     .badge-l4 { background: var(--l4); }
 
-    .card-info { padding: 0.75rem; }
-    .media-type { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; }
-    .card-title { font-size: 0.95rem; font-weight: 700; margin: 0.2rem 0; }
+    .card-info {
+      padding: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
 
-    /* Modal Overlay */
+    .media-type {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .card-summary {
+      font-size: 0.825rem;
+      color: var(--muted);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Modal Styling */
     .modal-overlay {
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -136,6 +188,7 @@
       pointer-events: none;
       transition: opacity 0.2s ease;
     }
+
     .modal-overlay.active { opacity: 1; pointer-events: auto; }
 
     .modal {
@@ -146,9 +199,13 @@
       max-width: 480px;
       padding: 1.5rem;
       position: relative;
+      transform: scale(0.95);
+      transition: transform 0.2s ease;
       max-height: 85vh;
       overflow-y: auto;
     }
+
+    .modal-overlay.active .modal { transform: scale(1); }
 
     .close-btn {
       position: absolute;
@@ -157,16 +214,25 @@
       background: rgba(255, 255, 255, 0.1);
       border: none;
       color: var(--text);
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       cursor: pointer;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .modal-section { margin-top: 1rem; }
-    .modal-section h4 { font-size: 0.75rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
-    .modal-section p { font-size: 0.9rem; color: var(--text); }
+    .modal-section h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.05em;
+    }
+    .modal-section p { font-size: 0.925rem; color: var(--text); line-height: 1.45; }
   </style>
 </head>
 <body>
@@ -174,34 +240,38 @@
   <div class="container">
     <header>
       <h1>French Media Learning Roadmap</h1>
-      <p>Tap any title to view details and listening tips</p>
+      <p>Tap any title to view listening difficulty & study tips</p>
     </header>
 
-    <div id="app"></div>
+    <div id="roadmap"></div>
   </div>
 
+  <!-- Interactive Modal Window -->
   <div class="modal-overlay" id="modalOverlay">
     <div class="modal">
       <button class="close-btn" onclick="closeModal()">&times;</button>
       <span class="media-type" id="mType"></span>
-      <h2 id="mTitle" style="margin-top: 0.2rem;"></h2>
+      <h2 id="mTitle" style="margin-top: 0.25rem; font-size: 1.5rem;"></h2>
       
       <div class="modal-section">
         <h4>Synopsis</h4>
         <p id="mSynopsis"></p>
       </div>
       <div class="modal-section">
-        <h4>Listening Fit</h4>
+        <h4>Why it fits this level</h4>
         <p id="mReason"></p>
       </div>
       <div class="modal-section">
-        <h4>Pro Tip</h4>
+        <h4>Listening Tip</h4>
         <p id="mTip"></p>
       </div>
     </div>
   </div>
 
   <script>
+    const filmIcon = `<svg class="poster-icon" viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg>`;
+    const tvIcon = `<svg class="poster-icon" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>`;
+
     const data = [
       {
         level: "Level 1: Beginner (A2–B1)",
@@ -211,18 +281,42 @@
           {
             title: "Persepolis",
             type: "Film (Animation)",
-            img: "https://m.media-amazon.com/images/M/MV5BMjA4MTI5NzAyNV5BMl5BanBnXkFtZTcwMjI4NzcyMw@@._V1_.jpg",
+            gradient: "grad-persepolis",
+            icon: filmIcon,
+            summary: "Studio animation with clear, deliberate voiceover.",
             synopsis: "A coming-of-age story of a young girl growing up during the Iranian Revolution.",
-            reason: "Studio voiceover removes background noise and articulates words deliberately.",
-            tip: "Use French subtitles to easily link written spelling with spoken sounds."
+            reason: "Studio-recorded audio removes background noise and provides clear articulation.",
+            tip: "Watch with French subtitles to easily link written words with spoken sounds."
+          },
+          {
+            title: "Le Petit Nicolas",
+            type: "Film (Family)",
+            gradient: "grad-nicolas",
+            icon: filmIcon,
+            summary: "Narrated from a child's view with basic vocabulary.",
+            synopsis: "Nicolas lives a peaceful life until he misinterprets a conversation and thinks he is getting a baby brother.",
+            reason: "Childhood vocabulary and simple sentence structures keep dialogue easy to follow.",
+            tip: "Pay attention to everyday family vocabulary and basic past tense forms."
           },
           {
             title: "Les Choristes",
             type: "Film (Drama)",
-            img: "https://m.media-amazon.com/images/M/MV5BN2E1Mjc5YmItNDkyNC00NTFiLWIxOWEtYmJjNTViM2U0YmI1XkEyXkFqcGdeQXVyMjA3NzE4NjE@._V1_.jpg",
-            synopsis: "A music teacher transforms a strict boarding school through choral music.",
-            reason: "Teachers use formal, clear, and steady mid-century dialogue.",
-            tip: "Great for listening to formal addresses (vouvoiement)."
+            gradient: "grad-choristes",
+            icon: filmIcon,
+            summary: "Formal 1940s boarding school dialogue.",
+            synopsis: "A new music teacher at a strict boys' boarding school affects the students' lives through choral music.",
+            reason: "Teachers speak with deliberate, formal mid-century enunciation.",
+            tip: "Focus on formal address conventions (vouvoiement) used by adults."
+          },
+          {
+            title: "Mixte",
+            type: "Show • Prime Video",
+            gradient: "grad-mixte",
+            icon: tvIcon,
+            summary: "1960s high school drama with clear speech.",
+            synopsis: "A French high school opens its doors to female students for the first time in 1963.",
+            reason: "Mid-century setting avoids fast modern street slang in favor of structured speech.",
+            tip: "Great for practicing conversational basics in a slow-paced format."
           }
         ]
       },
@@ -232,12 +326,44 @@
         badgeText: "B1–B2",
         items: [
           {
+            title: "Dix Pour Cent",
+            type: "Show • Netflix",
+            gradient: "grad-dix",
+            icon: tvIcon,
+            summary: "Standard Parisian French in professional settings.",
+            synopsis: "Agents at a top Parisian talent agency juggle personal lives and demanding celebrity clients.",
+            reason: "Natural conversational flow using modern workplace language and light slang.",
+            tip: "Notice modern filler phrases (*du coup*, *en fait*)."
+          },
+          {
             title: "Lupin",
             type: "Show • Netflix",
-            img: "https://m.media-amazon.com/images/M/MV5BZjA0MTM4MTQtNzYyYS00NDM1LWIxMGItN2JjMTAzMjc4YjBmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
-            synopsis: "Assane Diop sets out to avenge his father using skills inspired by gentleman thief Arsène Lupin.",
-            reason: "Visual action carries the narrative, making spoken dialogue easier to parse.",
+            gradient: "grad-lupin",
+            icon: tvIcon,
+            summary: "Action-driven plots that clarify spoken context.",
+            synopsis: "Inspired by Arsène Lupin, gentleman thief Assane Diop sets out to avenge his father.",
+            reason: "High visual context balances fast-paced dialogue, aiding overall comprehension.",
             tip: "Watch with French subtitles to catch natural speech drops."
+          },
+          {
+            title: "La Famille Bélier",
+            type: "Film (Comedy/Drama)",
+            gradient: "grad-belier",
+            icon: filmIcon,
+            summary: "Natural rephrasing built into the storyline.",
+            synopsis: "A girl with deaf parents discovers she has a talent for singing and wants to join a competition.",
+            reason: "The protagonist interprets for her family, causing key concepts to be rephrased clearly.",
+            tip: "Observe how spoken French adapts when communicating ideas across different contexts."
+          },
+          {
+            title: "Le Dîner de Cons",
+            type: "Film (Comedy)",
+            gradient: "grad-diner",
+            icon: filmIcon,
+            summary: "Stage adaptation with explicit, theatrical delivery.",
+            synopsis: "A publisher invites an unsuspecting guest to a dinner where guests compete to bring the biggest idiot.",
+            reason: "Adapted from a stage play; dialogue is explicit, distinct, and articulated.",
+            tip: "A great exercise in French comedic timing and ironic humor."
           }
         ]
       },
@@ -249,22 +375,91 @@
           {
             title: "Amélie",
             type: "Film (Romance)",
-            img: "https://m.media-amazon.com/images/M/MV5BNDg4NjM1YjMtYmNhZC00MjM0LWFiZmItNzk1YmJiNmJhZmE2XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
-            synopsis: "An imaginative Parisian waitress decides to secretly change the lives of people around her.",
-            reason: "Features fast-paced voiceover narration and rich French wordplay.",
-            tip: "Don't pause on unknown words; let the visual storytelling guide you."
+            gradient: "grad-amelie",
+            icon: filmIcon,
+            summary: "Fast voiceover narration and whimsical wordplay.",
+            synopsis: "An innocent Parisian waitress decides to secretly change the lives of people around her.",
+            reason: "Fast-paced poetic narration tests listening speed and vocabulary breadth.",
+            tip: "Don't pause on unknown words; let visual storytelling bridge the gaps."
+          },
+          {
+            title: "L'Auberge Espagnole",
+            type: "Film (Comedy)",
+            gradient: "grad-auberge",
+            icon: filmIcon,
+            summary: "Casual student speech with 2000s slang and mumbling.",
+            synopsis: "A French economics student moves to Barcelona for an exchange program in a shared apartment.",
+            reason: "Features casual, overlapping student conversations and informal speech rhythms.",
+            tip: "Listen for spoken contractions (e.g., *'t'as'* instead of *'tu as'*)."
+          },
+          {
+            title: "Family Business",
+            type: "Show • Netflix",
+            gradient: "grad-family",
+            icon: tvIcon,
+            summary: "Fast Parisian comedy with rapid family bickering.",
+            synopsis: "Learning cannabis is about to be legalized, a family converts their butcher shop.",
+            reason: "Rapid family arguments packed with modern Parisian slang (*verlan*).",
+            tip: "Try turning off subtitles during short scenes to test raw listening speed."
+          }
+        ]
+      },
+      {
+        level: "Level 4: Advanced Native (C1+)",
+        badgeClass: "badge-l4",
+        badgeText: "C1+",
+        items: [
+          {
+            title: "Skam France",
+            type: "Show (Teen Drama)",
+            gradient: "grad-skam",
+            icon: tvIcon,
+            summary: "Authentic Gen-Z speech and heavy contractions.",
+            synopsis: "Follows a group of teenagers through high school, tackling real-world relationships.",
+            reason: "Unfiltered adolescent speech patterns, slurred words, and current slang.",
+            tip: "Use this to study authentic everyday spoken French as used by young natives."
+          },
+          {
+            title: "Chez les Ch'tis",
+            type: "Film (Comedy)",
+            gradient: "grad-chtis",
+            icon: filmIcon,
+            summary: "Northern regional dialect and phonetic jokes.",
+            synopsis: "A post office manager from the South is reassigned to a small town in Northern France.",
+            reason: "Relies heavily on the *Ch'ti* regional dialect and phonetic wordplay.",
+            tip: "Challenge yourself to spot differences between standard French and regional accents."
+          },
+          {
+            title: "Kaamelott",
+            type: "Show / Film",
+            gradient: "grad-kaamelott",
+            icon: tvIcon,
+            summary: "Fast modern slang blended with medieval themes.",
+            synopsis: "A humorous retelling of Arthurian legend featuring incompetent knights.",
+            reason: "Rapid, overlapping dialogue blending contemporary slang with formal phrasing.",
+            tip: "Understanding this show indicates near-native cultural and linguistic fluency."
+          },
+          {
+            title: "La Haine",
+            type: "Film (Drama)",
+            gradient: "grad-haine",
+            icon: filmIcon,
+            summary: "1990s banlieue street slang and rapid delivery.",
+            synopsis: "24 hours in the lives of three young men in the French suburbs after a riot.",
+            reason: "Heavy use of *verlan* (backwards slang) and authentic street dialogue.",
+            tip: "The ultimate benchmark for French listening comprehension."
           }
         ]
       }
     ];
 
-    const app = document.getElementById('app');
+    const container = document.getElementById('roadmap');
 
     data.forEach(sec => {
-      const h2 = document.createElement('h2');
-      h2.className = 'section-title';
-      h2.textContent = sec.level;
-      app.appendChild(h2);
+      const title = document.createElement('h2');
+      title.className = 'section-title';
+      title.textContent = sec.level;
+      container.appendChild(title);
 
       const grid = document.createElement('div');
       grid.className = 'grid';
@@ -275,20 +470,20 @@
         card.onclick = () => openModal(item);
 
         card.innerHTML = `
-          <div class="poster-box">
+          <div class="poster-art ${item.gradient}">
             <span class="badge ${sec.badgeClass}">${sec.badgeText}</span>
-            <img src="${item.img}" alt="${item.title}" onerror="this.classList.add('broken')">
-            <span class="fallback-title">${item.title}</span>
+            <div>${item.icon}</div>
+            <div class="poster-title">${item.title}</div>
           </div>
           <div class="card-info">
             <span class="media-type">${item.type}</span>
-            <div class="card-title">${item.title}</div>
+            <p class="card-summary">${item.summary}</p>
           </div>
         `;
         grid.appendChild(card);
       });
 
-      app.appendChild(grid);
+      container.appendChild(grid);
     });
 
     const overlay = document.getElementById('modalOverlay');

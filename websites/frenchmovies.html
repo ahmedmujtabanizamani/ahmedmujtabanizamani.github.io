@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>French Media Learning Roadmap</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      
+      /* Difficulty Badges */
+      --badge-l1: #10b981;
+      --badge-l2: #3b82f6;
+      --badge-l3: #f59e0b;
+      --badge-l4: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      padding: 2rem 1rem;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .poster-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      overflow: hidden;
+      background-color: #1e293b;
+    }
+
+    .poster-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    .badge-l1 { background-color: var(--badge-l1); }
+    .badge-l2 { background-color: var(--badge-l2); }
+    .badge-l3 { background-color: var(--badge-l3); }
+    .badge-l4 { background-color: var(--badge-l4); }
+
+    .card-content {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .media-type {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-description {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>French Media Learning Roadmap</h1>
+      <p>Ordered from beginner-friendly listening to advanced native speed</p>
+    </header>
+
+    <!-- Level 1 -->
+    <h2 class="section-title">Level 1: Beginner / Early Intermediate (A2–B1)</h2>
+    <div class="grid">
+      
+      <div class="card">
+        <div class="poster-wrapper">
+          <img src="https://http2.mlstatic.com/D_NQ_NP_908320-MLA48099684126_112021-O.webp" alt="Persepolis">
+          <span class="badge badge-l1">A2–B1</span>
+        </div>
+        <div class="card-content">
+          <span class="media-type">Film</span>
+          <h3 class="card-title">Persepolis</h3>
+          <p class="card-description">Studio-dubbed animation featuring zero background noise, crisp articulation, and deliberate speech pacing.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="poster-wrapper">
+          <img src="https://www.cinematerial.com/p/297x/5scyyxvb/le-petit-nicolas-french-movie-poster-md.jpg?v=1456754410" alt="Le Petit Nicolas">
+          <span class="badge badge-l1">A2–B1</span>
+        </div>
+        <div class="card-content">
+          <span class="media-type">Film</span>
+          <h3 class="card-title">Le Petit Nicolas</h3>
+          <p class="card-description">Narrated from a child's perspective with short, clear sentence structures and everyday vocabulary.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="poster-wrapper">
+          <img src="https://alternativemovieposters.com/wp-content/uploads/2013/01/leschoristesbg.jpg" alt="Les Choristes">
+          <span class="badge badge-l1">A2–B1</span>
+        </div>
+        <div class="card-content">
+          <span class="media-type">Film</span>
+          <h3 class="card-title">Les Choristes</h3>
+          <p class="card-description">Set in a 1940s boarding school; features formal, clear, and unhurried dialogue spoken by teachers.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="poster-wrapper">
+          <img src="http://www.impawards.com/intl/france/tv/posters/mixte.jpg" alt="Mixte">
+          <span class="badge badge-l1">A2–B1</span>
+        </div>
+        <div class="card-content">
+          <span class="media-type">Show • Prime Video</span>
+          <h3 class="card-title">Mixte</h3>
+          <p class="card-description">1960s high school setting with mid-century French that enunciates clearly and avoids modern slang.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Level 2 -->
+    <h2 class="section-title">Level 2: Solid Intermediate (B1–B2)</h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="poster-wrapper">
+          <img src="https://resizing.flixster.com/JXKrr-BAgV4BA8v56lLEJnq8GkI=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjgyNzU3Mi53ZWJw" alt="Call My Agent!">
+          <span class="badge badge-l2">B1–B2</span>
+        </div>
+        <div class="card-content">
+          <span class="media-type">Show • Netflix</span>
+          <h3 class="card-title">Dix Pour Cent</h3>
+          <p class="card-description">Standard Parisian French used in professional settings with natural dialogue flow and light slang.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="poster-wrapper">
+          <img src="http://www.impawards.com/tv/posters/lupin.jpg" alt="Lupin">
+          <span class="badge badge-l2">B1–B2</span>
+        </div>
+        <div class="card-content">
+          <span class="media-type">Show • Netflix</span>
+          <h3 class="card-title">Lupin</h3>
+          <p class="card-description">Action-driven plots assist context while mixing formal register with modern casual speech.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="poster-wrapper">
+          <img src="https://www.researchgate.net/publication/377839427/figure/fig4/AS:11431281241561313@1715176194037/The-French-poster-for-La-Famille-Belier-promising-feel-good-comedy.ppm" alt="La Famille Bélier">
+          <span class="badge badge-l2">B1–B2</span>
+        </div>
+        <div class="card-content">
+          <span class="media-type">Film</span>
+          <h3 class="card-title">La Famille Bélier</h3>
+          <p class="card-description">Spoken interpretation within the plot forces natural rephrasing and clear visual contexts.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="poster-wrapper">
+          <img src="http://www.impawards.com/intl/france/1998/posters/le_diner_de_cons.jpg" alt="Le Dîner de Cons">
+          <span class="badge badge-l2">B1–B2</span>
+        </div>
+        <div class="card-content">
+          <span class="media-type">Film</span>
+          <h3 class="card-title">Le Dîner de Cons</h3>
+          <p class="card-description">Adapted from a stage play, relying on explicit dialogue delivered with theatrical clarity.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Level 3 -->
+    <h2 class="section-title">Level 3: Upper-Intermediate (B2)</h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="poster-wrapper">
+          <img src="https://i.ebayimg.com/00/s/MTYwMFgxMTY2/z/juwAAOSwip1mUtgc/$_57.JPG?set_id=8800005007" alt="Amélie">
+          <span class="badge badge-l3">B2</span>
+        </div>
+        <div class="card-content">
+          <span class="media-type">Film</span>
+          <h3 class="card-title">Amélie Poulain</h3>
+          <p class="card-description">Features rapid voiceover narration, fast-paced dialogue, and whimsical French wordplay.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="poster-wrapper">
+          <img src="http://www.impawards.com/2003/posters/auberge_espagnole.jpg" alt="L'Auberge Espagnole">
+          <span class="badge badge-l3">B2</span>
+        </div>
+        <div class="card-content">
+          <span class="media-type">Film</span>
+          <h3 class="card-title">L'Auberge Espagnole</h3>
+          <p class="card-description">Natural student dialogue packed with 2000s slang, informal mumbling, and fast exchanges.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="poster-wrapper">
+          <img src="https://upload.wikimedia.org/wikipedia/en/e/e9/Family_Business_TV_final_season_poster.jpg" alt="Family Business">
+          <span class="badge badge-l3">B2</span>
+        </div>
+        <div class="card-content">
+          <span class="media-type">Show • Netflix</span>
+          <h3 class="card-title">Family Business</h3>
+          <p class="card-description">Fast Parisian comedy with rapid-fire family bickering and modern colloquial slang (verlan).</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Level 4 -->
+    <h2 class="section-title">Level 4: Advanced Native / Hardcore (C1+)</h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="poster-wrapper">
+          <img src="https://image.pmgstatic.com/cache/resized/w663/files/images/film/posters/163/192/163192039_189218.jpg" alt="Skam France">
+          <span class="badge badge-l4">C1+</span>
+        </div>
+        <div class="card-content">
+          <span class="media-type">Show</span>
+          <h3 class="card-title">Skam France</h3>
+          <p class="card-description">Authentic Gen-Z youth speech, text-speak, modern slang, mumbling, and heavy contractions.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="poster-wrapper">
+          <img src="http://www.impawards.com/intl/france/2008/posters/bienvenue_chez_les_chtis.jpg" alt="Bienvenue chez les Ch'tis">
+          <span class="badge badge-l4">C1+</span>
+        </div>
+        <div class="card-content">
+          <span class="media-type">Film</span>
+          <h3 class="card-title">Chez les Ch'tis</h3>
+          <p class="card-description">Heavy northern French (Ch'ti) regional accents, dialect vocabulary, and phonetic jokes.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="poster-wrapper">
+          <img src="http://kaamelott.store/cdn/shop/products/VIGNETTES_POSTER_FILM_DROP3_KAAMELOTT.jpg?v=1666602105" alt="Kaamelott">
+          <span class="badge badge-l4">C1+</span>
+        </div>
+        <div class="card-content">
+          <span class="media-type">Show / Film</span>
+          <h3 class="card-title">Kaamelott</h3>
+          <p class="card-description">Blends fast modern slang with medieval themes, complex wordplay, and rapid shouting.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="poster-wrapper">
+          <img src="https://cdn.posteritati.com/posters/000/000/064/590/la-haine-md-web.jpg" alt="La Haine">
+          <span class="badge badge-l4">C1+</span>
+        </div>
+        <div class="card-content">
+          <span class="media-type">Film</span>
+          <h3 class="card-title">La Haine</h3>
+          <p class="card-description">Authentic 90s banlieue street slang, verlan (backwards words), and fast-paced dialogue.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

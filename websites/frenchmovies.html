@@ -78,60 +78,20 @@
       border-color: rgba(255, 255, 255, 0.25);
     }
 
-    /* Pure CSS Poster Card Design */
-    .poster-art {
+    .poster-wrapper {
       position: relative;
       width: 100%;
       aspect-ratio: 2 / 3;
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      background-color: #1e293b;
       overflow: hidden;
     }
 
-    .poster-art::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(255,255,255,0.15), transparent 70%);
-      pointer-events: none;
+    .poster-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
-
-    .poster-icon {
-      width: 28px;
-      height: 28px;
-      fill: rgba(255, 255, 255, 0.8);
-    }
-
-    .poster-title {
-      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1.2;
-      letter-spacing: -0.01em;
-      z-index: 1;
-    }
-
-    /* Dynamic Gradients for Posters */
-    .grad-persepolis { background: linear-gradient(135deg, #1e1b4b, #312e81, #4338ca); }
-    .grad-nicolas { background: linear-gradient(135deg, #064e3b, #047857, #10b981); }
-    .grad-choristes { background: linear-gradient(135deg, #451a03, #78350f, #b45309); }
-    .grad-mixte { background: linear-gradient(135deg, #831843, #be185d, #db2777); }
-    
-    .grad-dix { background: linear-gradient(135deg, #1e293b, #334155, #64748b); }
-    .grad-lupin { background: linear-gradient(135deg, #0f172a, #1e293b, #3b82f6); }
-    .grad-belier { background: linear-gradient(135deg, #14532d, #15803d, #22c55e); }
-    .grad-diner { background: linear-gradient(135deg, #701a75, #a21caf, #c026d3); }
-
-    .grad-amelie { background: linear-gradient(135deg, #881337, #e11d48, #fb7185); }
-    .grad-auberge { background: linear-gradient(135deg, #164e63, #0891b2, #06b6d4); }
-    .grad-family { background: linear-gradient(135deg, #365314, #4d7c0f, #65a30d); }
-
-    .grad-skam { background: linear-gradient(135deg, #581c87, #7e22ce, #9333ea); }
-    .grad-chtis { background: linear-gradient(135deg, #1e3a8a, #1d4ed8, #3b82f6); }
-    .grad-kaamelott { background: linear-gradient(135deg, #78350f, #b45309, #f59e0b); }
-    .grad-haine { background: linear-gradient(135deg, #18181b, #27272a, #3f3f46); }
 
     .badge {
       position: absolute;
@@ -143,6 +103,7 @@
       font-weight: 700;
       color: #ffffff;
       z-index: 2;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
 
     .badge-l1 { background: var(--l1); }
@@ -155,6 +116,12 @@
       display: flex;
       flex-direction: column;
       gap: 0.25rem;
+    }
+
+    .card-title-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
     }
 
     .media-type {
@@ -269,9 +236,6 @@
   </div>
 
   <script>
-    const filmIcon = `<svg class="poster-icon" viewBox="0 0 24 24"><path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/></svg>`;
-    const tvIcon = `<svg class="poster-icon" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>`;
-
     const data = [
       {
         level: "Level 1: Beginner (A2–B1)",
@@ -281,42 +245,20 @@
           {
             title: "Persepolis",
             type: "Film (Animation)",
-            gradient: "grad-persepolis",
-            icon: filmIcon,
+            img: "https://upload.wikimedia.org/wikipedia/en/e/e7/Persepolis_poster.jpg",
             summary: "Studio animation with clear, deliberate voiceover.",
             synopsis: "A coming-of-age story of a young girl growing up during the Iranian Revolution.",
             reason: "Studio-recorded audio removes background noise and provides clear articulation.",
             tip: "Watch with French subtitles to easily link written words with spoken sounds."
           },
           {
-            title: "Le Petit Nicolas",
-            type: "Film (Family)",
-            gradient: "grad-nicolas",
-            icon: filmIcon,
-            summary: "Narrated from a child's view with basic vocabulary.",
-            synopsis: "Nicolas lives a peaceful life until he misinterprets a conversation and thinks he is getting a baby brother.",
-            reason: "Childhood vocabulary and simple sentence structures keep dialogue easy to follow.",
-            tip: "Pay attention to everyday family vocabulary and basic past tense forms."
-          },
-          {
             title: "Les Choristes",
             type: "Film (Drama)",
-            gradient: "grad-choristes",
-            icon: filmIcon,
+            img: "https://upload.wikimedia.org/wikipedia/en/2/23/Les_choristes_poster.jpg",
             summary: "Formal 1940s boarding school dialogue.",
             synopsis: "A new music teacher at a strict boys' boarding school affects the students' lives through choral music.",
             reason: "Teachers speak with deliberate, formal mid-century enunciation.",
             tip: "Focus on formal address conventions (vouvoiement) used by adults."
-          },
-          {
-            title: "Mixte",
-            type: "Show • Prime Video",
-            gradient: "grad-mixte",
-            icon: tvIcon,
-            summary: "1960s high school drama with clear speech.",
-            synopsis: "A French high school opens its doors to female students for the first time in 1963.",
-            reason: "Mid-century setting avoids fast modern street slang in favor of structured speech.",
-            tip: "Great for practicing conversational basics in a slow-paced format."
           }
         ]
       },
@@ -326,44 +268,22 @@
         badgeText: "B1–B2",
         items: [
           {
-            title: "Dix Pour Cent",
-            type: "Show • Netflix",
-            gradient: "grad-dix",
-            icon: tvIcon,
-            summary: "Standard Parisian French in professional settings.",
-            synopsis: "Agents at a top Parisian talent agency juggle personal lives and demanding celebrity clients.",
-            reason: "Natural conversational flow using modern workplace language and light slang.",
-            tip: "Notice modern filler phrases (*du coup*, *en fait*)."
-          },
-          {
             title: "Lupin",
             type: "Show • Netflix",
-            gradient: "grad-lupin",
-            icon: tvIcon,
+            img: "https://upload.wikimedia.org/wikipedia/en/0/03/Lupin_TV_series_poster.jpg",
             summary: "Action-driven plots that clarify spoken context.",
             synopsis: "Inspired by Arsène Lupin, gentleman thief Assane Diop sets out to avenge his father.",
             reason: "High visual context balances fast-paced dialogue, aiding overall comprehension.",
             tip: "Watch with French subtitles to catch natural speech drops."
           },
           {
-            title: "La Famille Bélier",
-            type: "Film (Comedy/Drama)",
-            gradient: "grad-belier",
-            icon: filmIcon,
-            summary: "Natural rephrasing built into the storyline.",
-            synopsis: "A girl with deaf parents discovers she has a talent for singing and wants to join a competition.",
-            reason: "The protagonist interprets for her family, causing key concepts to be rephrased clearly.",
-            tip: "Observe how spoken French adapts when communicating ideas across different contexts."
-          },
-          {
-            title: "Le Dîner de Cons",
-            type: "Film (Comedy)",
-            gradient: "grad-diner",
-            icon: filmIcon,
-            summary: "Stage adaptation with explicit, theatrical delivery.",
-            synopsis: "A publisher invites an unsuspecting guest to a dinner where guests compete to bring the biggest idiot.",
-            reason: "Adapted from a stage play; dialogue is explicit, distinct, and articulated.",
-            tip: "A great exercise in French comedic timing and ironic humor."
+            title: "Dix Pour Cent",
+            type: "Show • Netflix",
+            img: "https://upload.wikimedia.org/wikipedia/en/2/24/Call_My_Agent%21_title_card.jpg",
+            summary: "Standard Parisian French in professional settings.",
+            synopsis: "Agents at a top Parisian talent agency juggle personal lives and demanding celebrity clients.",
+            reason: "Natural conversational flow using modern workplace language and light slang.",
+            tip: "Notice modern filler phrases (*du coup*, *en fait*)."
           }
         ]
       },
@@ -375,28 +295,16 @@
           {
             title: "Amélie",
             type: "Film (Romance)",
-            gradient: "grad-amelie",
-            icon: filmIcon,
+            img: "https://upload.wikimedia.org/wikipedia/en/5/53/Amelie_poster.jpg",
             summary: "Fast voiceover narration and whimsical wordplay.",
             synopsis: "An innocent Parisian waitress decides to secretly change the lives of people around her.",
             reason: "Fast-paced poetic narration tests listening speed and vocabulary breadth.",
             tip: "Don't pause on unknown words; let visual storytelling bridge the gaps."
           },
           {
-            title: "L'Auberge Espagnole",
-            type: "Film (Comedy)",
-            gradient: "grad-auberge",
-            icon: filmIcon,
-            summary: "Casual student speech with 2000s slang and mumbling.",
-            synopsis: "A French economics student moves to Barcelona for an exchange program in a shared apartment.",
-            reason: "Features casual, overlapping student conversations and informal speech rhythms.",
-            tip: "Listen for spoken contractions (e.g., *'t'as'* instead of *'tu as'*)."
-          },
-          {
             title: "Family Business",
             type: "Show • Netflix",
-            gradient: "grad-family",
-            icon: tvIcon,
+            img: "https://upload.wikimedia.org/wikipedia/en/e/e9/Family_Business_TV_final_season_poster.jpg",
             summary: "Fast Parisian comedy with rapid family bickering.",
             synopsis: "Learning cannabis is about to be legalized, a family converts their butcher shop.",
             reason: "Rapid family arguments packed with modern Parisian slang (*verlan*).",
@@ -410,44 +318,22 @@
         badgeText: "C1+",
         items: [
           {
-            title: "Skam France",
-            type: "Show (Teen Drama)",
-            gradient: "grad-skam",
-            icon: tvIcon,
-            summary: "Authentic Gen-Z speech and heavy contractions.",
-            synopsis: "Follows a group of teenagers through high school, tackling real-world relationships.",
-            reason: "Unfiltered adolescent speech patterns, slurred words, and current slang.",
-            tip: "Use this to study authentic everyday spoken French as used by young natives."
-          },
-          {
-            title: "Chez les Ch'tis",
-            type: "Film (Comedy)",
-            gradient: "grad-chtis",
-            icon: filmIcon,
-            summary: "Northern regional dialect and phonetic jokes.",
-            synopsis: "A post office manager from the South is reassigned to a small town in Northern France.",
-            reason: "Relies heavily on the *Ch'ti* regional dialect and phonetic wordplay.",
-            tip: "Challenge yourself to spot differences between standard French and regional accents."
-          },
-          {
-            title: "Kaamelott",
-            type: "Show / Film",
-            gradient: "grad-kaamelott",
-            icon: tvIcon,
-            summary: "Fast modern slang blended with medieval themes.",
-            synopsis: "A humorous retelling of Arthurian legend featuring incompetent knights.",
-            reason: "Rapid, overlapping dialogue blending contemporary slang with formal phrasing.",
-            tip: "Understanding this show indicates near-native cultural and linguistic fluency."
-          },
-          {
             title: "La Haine",
             type: "Film (Drama)",
-            gradient: "grad-haine",
-            icon: filmIcon,
+            img: "https://upload.wikimedia.org/wikipedia/en/2/26/La_haine_poster.jpg",
             summary: "1990s banlieue street slang and rapid delivery.",
             synopsis: "24 hours in the lives of three young men in the French suburbs after a riot.",
             reason: "Heavy use of *verlan* (backwards slang) and authentic street dialogue.",
             tip: "The ultimate benchmark for French listening comprehension."
+          },
+          {
+            title: "Chez les Ch'tis",
+            type: "Film (Comedy)",
+            img: "https://upload.wikimedia.org/wikipedia/en/7/7d/Bienvenue_chez_les_Ch%27tis_Poster.jpg",
+            summary: "Northern regional dialect and phonetic jokes.",
+            synopsis: "A post office manager from the South is reassigned to a small town in Northern France.",
+            reason: "Relies heavily on the *Ch'ti* regional dialect and phonetic wordplay.",
+            tip: "Challenge yourself to spot differences between standard French and regional accents."
           }
         ]
       }
@@ -470,12 +356,12 @@
         card.onclick = () => openModal(item);
 
         card.innerHTML = `
-          <div class="poster-art ${item.gradient}">
+          <div class="poster-wrapper">
             <span class="badge ${sec.badgeClass}">${sec.badgeText}</span>
-            <div>${item.icon}</div>
-            <div class="poster-title">${item.title}</div>
+            <img src="${item.img}" alt="${item.title}" loading="lazy">
           </div>
           <div class="card-info">
+            <div class="card-title-text">${item.title}</div>
             <span class="media-type">${item.type}</span>
             <p class="card-summary">${item.summary}</p>
           </div>

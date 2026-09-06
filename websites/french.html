@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>French Pronunciation Trainer</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #fff0f6, #ffe4ef);
+        color: #3d2631;
+        display: flex;
+        justify-content: center;
+        padding: 30px 15px;
+    }
+
+    .app {
+        width: 100%;
+        max-width: 850px;
+    }
+
+    /* Header */
+
+    .header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .logo {
+        width: 65px;
+        height: 65px;
+        margin: 0 auto 12px;
+        border-radius: 20px;
+        background: #e91e63;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        box-shadow: 0 8px 20px rgba(233, 30, 99, 0.25);
+    }
+
+    h1 {
+        font-size: 30px;
+        color: #c2185b;
+        margin-bottom: 6px;
+    }
+
+    .subtitle {
+        color: #87606f;
+        font-size: 15px;
+    }
+
+    /* Main Card */
+
+    .card {
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 24px;
+        padding: 25px;
+        box-shadow: 0 12px 35px rgba(150, 50, 90, 0.12);
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #9c174d;
+    }
+
+    /* Search */
+
+    .search-box {
+        display: flex;
+        gap: 10px;
+    }
+
+    input {
+        flex: 1;
+        height: 52px;
+        border: 2px solid #f5bfd3;
+        border-radius: 14px;
+        padding: 0 16px;
+        font-size: 17px;
+        outline: none;
+        color: #402630;
+        transition: 0.2s;
+    }
+
+    input:focus {
+        border-color: #e91e63;
+        box-shadow: 0 0 0 4px rgba(233, 30, 99, 0.08);
+    }
+
+    button {
+        border: none;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 14px;
+        transition: 0.2s;
+    }
+
+    button:active {
+        transform: scale(0.97);
+    }
+
+    .pronounce-main {
+        min-width: 130px;
+        background: #e91e63;
+        color: white;
+        padding: 0 20px;
+        box-shadow: 0 5px 15px rgba(233, 30, 99, 0.25);
+    }
+
+    .pronounce-main:hover {
+        background: #c2185b;
+    }
+
+    /* Current Word */
+
+    .current-word {
+        margin-top: 22px;
+        background: #fff5f8;
+        border: 1px solid #f8d2df;
+        border-radius: 18px;
+        padding: 22px;
+        text-align: center;
+        display: none;
+    }
+
+    .current-word.show {
+        display: block;
+    }
+
+    .word {
+        font-size: 38px;
+        font-weight: bold;
+        color: #c2185b;
+        margin-bottom: 8px;
+    }
+
+    .hint {
+        color: #98717f;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .listen-button {
+        background: #fce4ec;
+        color: #c2185b;
+        padding: 11px 20px;
+    }
+
+    .listen-button:hover {
+        background: #f8bbd0;
+    }
+
+    /* Random Words */
+
+    .random-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 18px;
+    }
+
+    .generate-button {
+        background: #c2185b;
+        color: white;
+        padding: 12px 18px;
+        white-space: nowrap;
+    }
+
+    .generate-button:hover {
+        background: #ad1457;
+    }
+
+    .words-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .word-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #fff7f9;
+        border: 1px solid #f6d6e1;
+        border-radius: 14px;
+        padding: 14px 15px;
+        transition: 0.2s;
+    }
+
+    .word-item:hover {
+        border-color: #f1a9c2;
+        transform: translateY(-1px);
+    }
+
+    .word-info {
+        min-width: 0;
+    }
+
+    .french-word {
+        font-size: 17px;
+        font-weight: bold;
+        color: #4b2836;
+    }
+
+    .english-word {
+        font-size: 12px;
+        color: #a07887;
+        margin-top: 3px;
+    }
+
+    .small-play {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #fce4ec;
+        color: #c2185b;
+        flex-shrink: 0;
+        font-size: 17px;
+    }
+
+    .small-play:hover {
+        background: #f8bbd0;
+    }
+
+    /* Status */
+
+    .status {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 13px;
+        color: #a06d7f;
+        min-height: 18px;
+    }
+
+    /* Footer */
+
+    .footer {
+        text-align: center;
+        color: #a27685;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 600px) {
+        body {
+            padding: 20px 12px;
+        }
+
+        h1 {
+            font-size: 25px;
+        }
+
+        .card {
+            padding: 18px;
+            border-radius: 20px;
+        }
+
+        .search-box {
+            flex-direction: column;
+        }
+
+        .pronounce-main {
+            height: 50px;
+        }
+
+        .words-list {
+            grid-template-columns: 1fr;
+        }
+
+        .random-header {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .generate-button {
+            width: 100%;
+        }
+
+        .word {
+            font-size: 32px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <div class="header">
+        <div class="logo">🇫🇷</div>
+        <h1>French Pronunciation</h1>
+        <div class="subtitle">
+            Listen, practice and discover French words
+        </div>
+    </div>
+
+
+    <!-- Manual pronunciation -->
+
+    <div class="card">
+
+        <div class="section-title">
+            🔊 Pronounce a French Word
+        </div>
+
+        <div class="search-box">
+            <input
+                id="wordInput"
+                type="text"
+                placeholder="Enter a French word..."
+                autocomplete="off"
+            >
+
+            <button
+                class="pronounce-main"
+                onclick="pronounceInput()"
+            >
+                🔊 Listen
+            </button>
+        </div>
+
+        <div id="currentWord" class="current-word">
+
+            <div id="displayWord" class="word"></div>
+
+            <div class="hint">
+                French pronunciation
+            </div>
+
+            <button
+                class="listen-button"
+                onclick="pronounceCurrent()"
+            >
+                🔊 Play Again
+            </button>
+
+        </div>
+
+        <div id="status" class="status"></div>
+
+    </div>
+
+
+    <!-- Random words -->
+
+    <div class="card">
+
+        <div class="random-header">
+
+            <div>
+                <div class="section-title" style="margin-bottom:4px;">
+                    🎲 Random French Words
+                </div>
+
+                <div class="subtitle">
+                    Practice 10 words
+                </div>
+            </div>
+
+            <button
+                class="generate-button"
+                onclick="generateWords()"
+            >
+                🔄 Generate 10 Words
+            </button>
+
+        </div>
+
+        <div id="wordsList" class="words-list"></div>
+
+    </div>
+
+
+    <div class="footer">
+        French pronunciation powered by your browser's speech engine
+    </div>
+
+</div>
+
+
+<script>
+
+    /*
+    ==========================================
+    FRENCH WORD DATABASE
+    ==========================================
+    */
+
+    const frenchWords = [
+
+        { fr: "bonjour", en: "hello" },
+        { fr: "merci", en: "thank you" },
+        { fr: "amour", en: "love" },
+        { fr: "maison", en: "house" },
+        { fr: "chat", en: "cat" },
+        { fr: "chien", en: "dog" },
+        { fr: "eau", en: "water" },
+        { fr: "pain", en: "bread" },
+        { fr: "fromage", en: "cheese" },
+        { fr: "pomme", en: "apple" },
+
+        { fr: "livre", en: "book" },
+        { fr: "école", en: "school" },
+        { fr: "professeur", en: "teacher" },
+        { fr: "étudiant", en: "student" },
+        { fr: "ami", en: "friend" },
+        { fr: "famille", en: "family" },
+        { fr: "mère", en: "mother" },
+        { fr: "père", en: "father" },
+        { fr: "frère", en: "brother" },
+        { fr: "sœur", en: "sister" },
+
+        { fr: "voiture", en: "car" },
+        { fr: "train", en: "train" },
+        { fr: "avion", en: "airplane" },
+        { fr: "ville", en: "city" },
+        { fr: "pays", en: "country" },
+        { fr: "rue", en: "street" },
+        { fr: "magasin", en: "shop" },
+        { fr: "restaurant", en: "restaurant" },
+        { fr: "hôtel", en: "hotel" },
+        { fr: "gare", en: "station" },
+
+        { fr: "soleil", en: "sun" },
+        { fr: "lune", en: "moon" },
+        { fr: "étoile", en: "star" },
+        { fr: "ciel", en: "sky" },
+        { fr: "mer", en: "sea" },
+        { fr: "montagne", en: "mountain" },
+        { fr: "rivière", en: "river" },
+        { fr: "arbre", en: "tree" },
+        { fr: "fleur", en: "flower" },
+        { fr: "jardin", en: "garden" },
+
+        { fr: "rouge", en: "red" },
+        { fr: "bleu", en: "blue" },
+        { fr: "vert", en: "green" },
+        { fr: "jaune", en: "yellow" },
+        { fr: "blanc", en: "white" },
+        { fr: "noir", en: "black" },
+        { fr: "grand", en: "big / tall" },
+        { fr: "petit", en: "small" },
+        { fr: "beau", en: "beautiful" },
+        { fr: "nouveau", en: "new" },
+
+        { fr: "heureux", en: "happy" },
+        { fr: "triste", en: "sad" },
+        { fr: "facile", en: "easy" },
+        { fr: "difficile", en: "difficult" },
+        { fr: "rapide", en: "fast" },
+        { fr: "lent", en: "slow" },
+        { fr: "chaud", en: "hot / warm" },
+        { fr: "froid", en: "cold" },
+        { fr: "fort", en: "strong" },
+        { fr: "important", en: "important" },
+
+        { fr: "manger", en: "to eat" },
+        { fr: "boire", en: "to drink" },
+        { fr: "parler", en: "to speak" },
+        { fr: "écouter", en: "to listen" },
+        { fr: "regarder", en: "to watch" },
+        { fr: "lire", en: "to read" },
+        { fr: "écrire", en: "to write" },
+        { fr: "dormir", en: "to sleep" },
+        { fr: "travailler", en: "to work" },
+        { fr: "apprendre", en: "to learn" },
+
+        { fr: "aimer", en: "to love / like" },
+        { fr: "aller", en: "to go" },
+        { fr: "venir", en: "to come" },
+        { fr: "voir", en: "to see" },
+        { fr: "savoir", en: "to know" },
+        { fr: "comprendre", en: "to understand" },
+        { fr: "prendre", en: "to take" },
+        { fr: "faire", en: "to do / make" },
+        { fr: "vouloir", en: "to want" },
+        { fr: "pouvoir", en: "can / to be able" },
+
+        { fr: "aujourd'hui", en: "today" },
+        { fr: "demain", en: "tomorrow" },
+        { fr: "hier", en: "yesterday" },
+        { fr: "maintenant", en: "now" },
+        { fr: "toujours", en: "always" },
+        { fr: "jamais", en: "never" },
+        { fr: "souvent", en: "often" },
+        { fr: "parfois", en: "sometimes" },
+        { fr: "beaucoup", en: "a lot" },
+        { fr: "peu", en: "little" },
+
+        { fr: "matin", en: "morning" },
+        { fr: "soir", en: "evening" },
+        { fr: "nuit", en: "night" },
+        { fr: "jour", en: "day" },
+        { fr: "semaine", en: "week" },
+        { fr: "mois", en: "month" },
+        { fr: "année", en: "year" },
+        { fr: "heure", en: "hour" },
+        { fr: "minute", en: "minute" },
+        { fr: "temps", en: "time / weather" }
+
+    ];
+
+
+    /*
+    ==========================================
+    PRONUNCIATION
+    ==========================================
+    */
+
+    let currentWord = "";
+
+
+    function speakFrench(word) {
+
+        if (!word || !word.trim()) {
+            return;
+        }
+
+        // Stop anything currently speaking
+        window.speechSynthesis.cancel();
+
+        const speech = new SpeechSynthesisUtterance(word.trim());
+
+        // French language
+        speech.lang = "fr-FR";
+
+        // Natural pronunciation speed
+        speech.rate = 0.85;
+
+        // Normal pitch
+        speech.pitch = 1;
+
+        speech.volume = 1;
+
+        speech.onstart = function () {
+            setStatus("🔊 Playing pronunciation...");
+        };
+
+        speech.onend = function () {
+            setStatus("");
+        };
+
+        speech.onerror = function () {
+            setStatus("Unable to play audio. Please try again.");
+        };
+
+        window.speechSynthesis.speak(speech);
+    }
+
+
+    /*
+    ==========================================
+    MANUAL WORD
+    ==========================================
+    */
+
+    function pronounceInput() {
+
+        const input = document
+            .getElementById("wordInput")
+            .value
+            .trim();
+
+        if (!input) {
+
+            setStatus("Please enter a French word.");
+
+            document
+                .getElementById("wordInput")
+                .focus();
+
+            return;
+        }
+
+        currentWord = input;
+
+        document
+            .getElementById("displayWord")
+            .textContent = input;
+
+        document
+            .getElementById("currentWord")
+            .classList.add("show");
+
+        speakFrench(input);
+    }
+
+
+    function pronounceCurrent() {
+
+        if (currentWord) {
+            speakFrench(currentWord);
+        }
+
+    }
+
+
+    /*
+    ==========================================
+    ENTER KEY
+    ==========================================
+    */
+
+    document
+        .getElementById("wordInput")
+        .addEventListener("keydown", function(event) {
+
+            if (event.key === "Enter") {
+                pronounceInput();
+            }
+
+        });
+
+
+    /*
+    ==========================================
+    RANDOM WORD GENERATOR
+    ==========================================
+    */
+
+    function generateWords() {
+
+        const shuffled = [...frenchWords]
+            .sort(() => Math.random() - 0.5);
+
+        const selected = shuffled.slice(0, 10);
+
+        const list = document
+            .getElementById("wordsList");
+
+        list.innerHTML = "";
+
+        selected.forEach((item, index) => {
+
+            const wordItem = document.createElement("div");
+
+            wordItem.className = "word-item";
+
+            wordItem.innerHTML = `
+
+                <div class="word-info">
+
+                    <div class="french-word">
+                        ${index + 1}. ${escapeHTML(item.fr)}
+                    </div>
+
+                    <div class="english-word">
+                        ${escapeHTML(item.en)}
+                    </div>
+
+                </div>
+
+                <button
+                    class="small-play"
+                    title="Pronounce ${escapeHTML(item.fr)}"
+                    onclick="speakFrench(${JSON.stringify(item.fr)})"
+                >
+                    🔊
+                </button>
+
+            `;
+
+            list.appendChild(wordItem);
+
+        });
+
+        setStatus("✨ 10 new French words generated!");
+
+    }
+
+
+    /*
+    ==========================================
+    SECURITY / HTML ESCAPING
+    ==========================================
+    */
+
+    function escapeHTML(text) {
+
+        const div = document.createElement("div");
+
+        div.textContent = text;
+
+        return div.innerHTML;
+
+    }
+
+
+    /*
+    ==========================================
+    STATUS MESSAGE
+    ==========================================
+    */
+
+    function setStatus(message) {
+
+        document
+            .getElementById("status")
+            .textContent = message;
+
+    }
+
+
+    /*
+    ==========================================
+    INITIAL WORDS
+    ==========================================
+    */
+
+    generateWords();
+
+</script>
+
+</body>
+</html>

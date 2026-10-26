@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "tf",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"bbox": [ 68.7038523367001, 25.0584379374384, 68.7075773918554, 25.0628250541587 ],                                                
+"features": [
+{ "type": "Feature", "properties": { "fid": 1 }, "bbox": [ 68.707577, 25.062774, 68.707577, 25.062774 ], "geometry": { "type": "MultiPoint", "coordinates": [ [ 68.707577, 25.062774 ] ] } },
+{ "type": "Feature", "properties": { "fid": 2 }, "bbox": [ 68.706477, 25.062825, 68.706477, 25.062825 ], "geometry": { "type": "MultiPoint", "coordinates": [ [ 68.706477, 25.062825 ] ] } },
+{ "type": "Feature", "properties": { "fid": 3 }, "bbox": [ 68.706443, 25.062392, 68.706443, 25.062392 ], "geometry": { "type": "MultiPoint", "coordinates": [ [ 68.706443, 25.062392 ] ] } },
+{ "type": "Feature", "properties": { "fid": 4 }, "bbox": [ 68.705038, 25.062392, 68.705038, 25.062392 ], "geometry": { "type": "MultiPoint", "coordinates": [ [ 68.705038, 25.062392 ] ] } },
+{ "type": "Feature", "properties": { "fid": 5 }, "bbox": [ 68.70511, 25.061912, 68.70511, 25.061912 ], "geometry": { "type": "MultiPoint", "coordinates": [ [ 68.70511, 25.061912 ] ] } },
+{ "type": "Feature", "properties": { "fid": 6 }, "bbox": [ 68.703852, 25.058438, 68.703852, 25.058438 ], "geometry": { "type": "MultiPoint", "coordinates": [ [ 68.703852, 25.058438 ] ] } }
+]
+}

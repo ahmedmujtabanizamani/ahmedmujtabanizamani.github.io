@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <title>Leaflet GeoJSON & Location Viewer</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    #map { height: 100%; width: 100%; }
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans antialiased overflow-hidden">
+
+  <div class="flex flex-col md:flex-row h-screen w-full relative">
+    
+    <!-- Mobile Top Header Bar -->
+    <div class="md:hidden bg-indigo-600 text-white flex items-center justify-between p-3 z-20 shadow-md">
+      <div class="flex items-center gap-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+        </svg>
+        <span class="font-bold text-base tracking-wide">GeoJSON Viewer</span>
+      </div>
+      <button id="mobileMenuBtn" class="p-2 rounded-lg bg-indigo-700 hover:bg-indigo-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Overlay / Backdrop -->
+    <div id="mobileBackdrop" class="fixed inset-0 bg-black/50 z-30 hidden transition-opacity md:hidden"></div>
+
+    <!-- Sidebar Control Panel -->
+    <div id="sidebar" class="fixed md:relative inset-y-0 left-0 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out w-80 max-w-[85vw] bg-white shadow-2xl md:shadow-xl z-40 flex flex-col h-full border-r border-gray-200">
+      
+      <!-- Sidebar Header -->
+      <div class="p-4 bg-indigo-600 text-white flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+          </svg>
+          <h1 class="text-lg font-bold">Control Panel</h1>
+        </div>
+        <button id="closeSidebarBtn" class="md:hidden p-1 rounded-md hover:bg-indigo-700 text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Controls Body -->
+      <div class="p-4 space-y-5 flex-1 overflow-y-auto">
+        
+        <!-- Location Button -->
+        <div>
+          <h2 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Geolocation</h2>
+          <button id="locateBtn" class="w-full bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-medium py-2.5 px-4 rounded-lg shadow transition flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            Find My Location
+          </button>
+        </div>
+
+        <hr class="border-gray-200" />
+
+        <!-- GeoJSON Source Section -->
+        <div class="space-y-4">
+          <h2 class="text-xs font-bold text-gray-500 uppercase tracking-wider">Load GeoJSON</h2>
+
+          <!-- 1. File Upload -->
+          <div>
+            <label class="text-xs font-semibold text-gray-600 mb-1 block">From File (.json / .geojson)</label>
+            <input type="file" id="geojsonFileInput" accept=".json,.geojson" class="hidden" />
+            <label for="geojsonFileInput" class="w-full bg-gray-50 hover:bg-gray-100 text-gray-700 border-2 border-dashed border-gray-300 hover:border-indigo-500 rounded-lg p-3 text-center cursor-pointer block transition">
+              <span class="text-xs font-medium text-gray-600">Choose file or drop here</span>
+            </label>
+          </div>
+
+          <!-- 2. Remote URL Loader -->
+          <div>
+            <label class="text-xs font-semibold text-gray-600 mb-1 block">From URL Link</label>
+            <div class="flex gap-1.5">
+              <input type="url" id="geojsonUrlInput" placeholder="https://example.com/data.geojson" class="w-full border border-gray-300 rounded-lg p-2 text-xs focus:ring-indigo-500 focus:border-indigo-500" />
+              <button id="loadUrlBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-3 py-2 rounded-lg text-xs transition shrink-0 flex items-center justify-center">
+                Fetch
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. Raw Textarea Paste -->
+          <div>
+            <label class="text-xs font-semibold text-gray-600 mb-1 block">Paste GeoJSON Code</label>
+            <textarea id="geojsonTextInput" rows="3" class="w-full border border-gray-300 rounded-lg p-2 text-xs font-mono focus:ring-indigo-500 focus:border-indigo-500" placeholder='{"type": "FeatureCollection", ...}'></textarea>
+            <button id="loadTextBtn" class="mt-1.5 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-3 rounded-lg text-xs transition">
+              Render GeoJSON Code
+            </button>
+          </div>
+        </div>
+
+        <hr class="border-gray-200" />
+
+        <!-- Storage & Coordinates Options -->
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <label for="swapCoordsToggle" class="text-xs text-gray-700 font-medium">Swap Lat/Lng (If inverted)</label>
+            <input type="checkbox" id="swapCoordsToggle" class="w-4 h-4 text-indigo-600 rounded focus:ring-indigo-500">
+          </div>
+
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-gray-700 font-medium">Saved in LocalStorage</span>
+            <button id="clearStorageBtn" class="text-xs text-red-600 hover:text-red-800 underline font-medium">
+              Clear Saved
+            </button>
+          </div>
+        </div>
+
+        <!-- Status Box -->
+        <div id="statusBox" class="hidden p-3 rounded-lg text-xs leading-tight"></div>
+      </div>
+    </div>
+
+    <!-- Map Container -->
+    <div class="flex-1 relative h-full w-full">
+      <div id="map"></div>
+    </div>
+  </div>
+
+  <script>
+    // LocalStorage Persistent Key
+    const STORAGE_KEY = 'leaflet_saved_geojson';
+
+    // Initialize Map
+    const map = L.map('map', {
+      center: [51.505, -0.09],
+      zoom: 13,
+      zoomControl: true
+    });
+
+    // 1. Esri World Street Map (Primary reliable street map)
+    const esriStreet = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19,
+      attribution: 'Tiles &copy; Esri'
+    }).addTo(map);
+
+    // 2. OpenStreetMap Mirror (Public Mirror)
+    const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    });
+
+    // 3. Esri World Imagery (Satellite)
+    const esriSat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 18,
+      attribution: 'Tiles &copy; Esri'
+    });
+
+    // Layer Switcher Widget
+    L.control.layers({
+      "Esri Street Map": esriStreet,
+      "OpenStreetMap": osm,
+      "Esri Satellite": esriSat
+    }, null, { position: 'topright' }).addTo(map);
+
+    let importedLayer = null;
+    let userMarker = null;
+    let userCircle = null;
+
+    // Mobile Drawer Toggle Handles
+    const sidebar = document.getElementById('sidebar');
+    const mobileBackdrop = document.getElementById('mobileBackdrop');
+
+    function openSidebar() {
+      sidebar.classList.remove('-translate-x-full');
+      mobileBackdrop.classList.remove('hidden');
+    }
+
+    function closeSidebar() {
+      sidebar.classList.add('-translate-x-full');
+      mobileBackdrop.classList.add('hidden');
+    }
+
+    document.getElementById('mobileMenuBtn').addEventListener('click', openSidebar);
+    document.getElementById('closeSidebarBtn').addEventListener('click', closeSidebar);
+    mobileBackdrop.addEventListener('click', closeSidebar);
+
+    // Status Helper
+    function showStatus(message, isError = false) {
+      const statusBox = document.getElementById('statusBox');
+      statusBox.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700');
+      statusBox.classList.add(isError ? 'bg-red-100' : 'bg-green-100', isError ? 'text-red-700' : 'text-green-700');
+      statusBox.textContent = message;
+    }
+
+    // Process & Render GeoJSON Data
+    function renderGeoJSON(geojsonData, saveToStorage = true) {
+      try {
+        if (importedLayer) {
+          map.removeLayer(importedLayer);
+        }
+
+        const swapCoords = document.getElementById('swapCoordsToggle').checked;
+
+        importedLayer = L.geoJSON(geojsonData, {
+          style: {
+            color: '#3B82F6',
+            weight: 3,
+            fillColor: '#60A5FA',
+            fillOpacity: 0.4
+          },
+          coordsToLatLng: function(coords) {
+            return swapCoords 
+              ? new L.LatLng(coords[0], coords[1]) 
+              : new L.LatLng(coords[1], coords[0]);
+          },
+          onEachFeature: function(feature, layer) {
+            if (feature.properties) {
+              let popupContent = '<div class="text-sm font-sans max-h-48 overflow-y-auto"><strong>Feature Properties:</strong><br/>';
+              for (const [key, value] of Object.entries(feature.properties)) {
+                popupContent += `<span class="text-gray-600">${key}:</span> <b>${value}</b><br/>`;
+              }
+              popupContent += '</div>';
+              layer.bindPopup(popupContent);
+            }
+          }
+        }).addTo(map);
+
+        // Auto fly/zoom to bounds
+        const bounds = importedLayer.getBounds();
+        if (bounds.isValid()) {
+          map.flyToBounds(bounds, { padding: [40, 40], duration: 1.5 });
+          showStatus("GeoJSON loaded successfully!");
+          
+          if (saveToStorage) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(geojsonData));
+          }
+        } else {
+          showStatus("Layer rendered, but invalid bounds detected. Export in EPSG:4326 from QGIS.", true);
+        }
+
+        // Close sidebar on mobile after successful render
+        if (window.innerWidth < 768) {
+          closeSidebar();
+        }
+
+      } catch (err) {
+        showStatus("Invalid GeoJSON format: " + err.message, true);
+      }
+    }
+
+    // Re-render when coordinate swapping checkbox changes
+    document.getElementById('swapCoordsToggle').addEventListener('change', function() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        renderGeoJSON(JSON.parse(saved), false);
+      }
+    });
+
+    // 1. File Upload Listener
+    document.getElementById('geojsonFileInput').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        try {
+          const json = JSON.parse(evt.target.result);
+          renderGeoJSON(json);
+        } catch (err) {
+          showStatus("Failed to parse JSON file.", true);
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    // 2. Fetch GeoJSON from URL
+    document.getElementById('loadUrlBtn').addEventListener('click', function() {
+      const url = document.getElementById('geojsonUrlInput').value.trim();
+      if (!url) {
+        showStatus("Please enter a valid URL.", true);
+        return;
+      }
+
+      showStatus("Fetching GeoJSON from link...");
+      fetch(url)
+        .then(res => {
+          if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+          return res.json();
+        })
+        .then(data => {
+          renderGeoJSON(data);
+        })
+        .catch(err => {
+          showStatus("Failed to fetch URL: " + err.message, true);
+        });
+    });
+
+    // 3. Paste Raw Text Listener
+    document.getElementById('loadTextBtn').addEventListener('click', function() {
+      const text = document.getElementById('geojsonTextInput').value.trim();
+      if (!text) {
+        showStatus("Please paste GeoJSON content first.", true);
+        return;
+      }
+      try {
+        const json = JSON.parse(text);
+        renderGeoJSON(json);
+      } catch (err) {
+        showStatus("Invalid GeoJSON string.", true);
+      }
+    });
+
+    // Clear Storage Handler
+    document.getElementById('clearStorageBtn').addEventListener('click', function() {
+      localStorage.removeItem(STORAGE_KEY);
+      if (importedLayer) {
+        map.removeLayer(importedLayer);
+        importedLayer = null;
+      }
+      showStatus("Saved GeoJSON removed from browser storage.");
+    });
+
+    // Geolocation Handler
+    document.getElementById('locateBtn').addEventListener('click', function() {
+      if (!navigator.geolocation) {
+        showStatus("Geolocation is not supported by your browser.", true);
+        return;
+      }
+
+      showStatus("Locating...");
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude, accuracy } = position.coords;
+
+          if (userMarker) map.removeLayer(userMarker);
+          if (userCircle) map.removeLayer(userCircle);
+
+          userMarker = L.marker([latitude, longitude]).addTo(map)
+            .bindPopup(`<b>Your Location</b><br/>Accuracy: ~${Math.round(accuracy)}m`)
+            .openPopup();
+
+          userCircle = L.circle([latitude, longitude], { radius: accuracy, color: '#6366F1', fillOpacity: 0.15 }).addTo(map);
+
+          map.flyTo([latitude, longitude], 16, { duration: 1.5 });
+          showStatus("Location found!");
+
+          if (window.innerWidth < 768) {
+            closeSidebar();
+          }
+        },
+        (error) => {
+          showStatus("Location access denied or timed out.", true);
+        },
+        { enableHighAccuracy: true }
+      );
+    });
+
+    // Auto-load Saved GeoJSON on Page Refresh
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedGeoJSON = localStorage.getItem(STORAGE_KEY);
+      if (savedGeoJSON) {
+        try {
+          const json = JSON.parse(savedGeoJSON);
+          renderGeoJSON(json, false);
+          showStatus("Restored last used GeoJSON from persistent storage.");
+        } catch (e) {
+          localStorage.removeItem(STORAGE_KEY);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

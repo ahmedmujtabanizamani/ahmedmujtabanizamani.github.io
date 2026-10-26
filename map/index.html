@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="referrer" content="no-referrer-when-downgrade" />
   <title>Leaflet GeoJSON & Location Viewer</title>
   
@@ -14,61 +14,76 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <style>
-    #map { height: 100%; width: 100%; }
-    .glass-panel {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(8px);
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #map {
+      height: 100%;
+      width: 100%;
+      z-index: 1;
     }
   </style>
 </head>
-<body class="bg-gray-100 font-sans antialiased overflow-hidden">
+<body class="bg-gray-100 font-sans antialiased">
 
-  <div class="flex flex-col md:flex-row h-screen w-full relative">
-    
-    <!-- Mobile Top Header Bar -->
-    <div class="md:hidden bg-indigo-600 text-white flex items-center justify-between p-3 z-20 shadow-md">
-      <div class="flex items-center gap-2">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+  <div class="relative w-full h-full flex flex-col md:flex-row overflow-hidden">
+
+    <!-- Floating Mobile Top Control Bar -->
+    <div class="md:hidden absolute top-3 left-3 right-3 z-[1000] flex items-center justify-between gap-2 pointer-events-none">
+      <button id="openMobileMenuBtn" class="pointer-events-auto bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-3.5 py-2 rounded-xl shadow-lg flex items-center gap-2 text-sm transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
         </svg>
-        <span class="font-bold text-base tracking-wide">GeoJSON Viewer</span>
-      </div>
-      <button id="mobileMenuBtn" class="p-2 rounded-lg bg-indigo-700 hover:bg-indigo-800 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        <span>Controls</span>
+      </button>
+
+      <button id="quickLocateBtn" class="pointer-events-auto bg-white text-indigo-600 hover:bg-gray-50 font-medium px-3 py-2 rounded-xl shadow-lg flex items-center gap-1.5 text-sm transition border border-gray-200">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
         </svg>
+        <span>My Location</span>
       </button>
     </div>
 
-    <!-- Mobile Drawer Overlay / Backdrop -->
-    <div id="mobileBackdrop" class="fixed inset-0 bg-black/50 z-30 hidden transition-opacity md:hidden"></div>
+    <!-- Mobile Backdrop Overlay -->
+    <div id="backdrop" class="fixed inset-0 bg-black/50 z-[1001] hidden md:hidden transition-opacity"></div>
 
-    <!-- Sidebar Control Panel -->
-    <div id="sidebar" class="fixed md:relative inset-y-0 left-0 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out w-80 max-w-[85vw] bg-white shadow-2xl md:shadow-xl z-40 flex flex-col h-full border-r border-gray-200">
+    <!-- Sidebar / Mobile Drawer Panel -->
+    <aside id="sidebar" class="fixed md:relative inset-x-0 bottom-0 md:inset-auto md:top-0 md:left-0 transform translate-y-full md:translate-y-0 transition-transform duration-300 ease-in-out w-full md:w-80 max-h-[85vh] md:max-h-full bg-white shadow-2xl md:shadow-xl z-[1002] flex flex-col rounded-t-2xl md:rounded-none border-t md:border-t-0 md:border-r border-gray-200 shrink-0">
       
-      <!-- Sidebar Header -->
-      <div class="p-4 bg-indigo-600 text-white flex items-center justify-between shrink-0">
+      <!-- Mobile Drawer Handle -->
+      <div class="md:hidden w-full flex justify-center pt-2.5 pb-1">
+        <div class="w-12 h-1.5 bg-gray-300 rounded-full"></div>
+      </div>
+
+      <!-- Header -->
+      <div class="px-4 py-3 bg-indigo-600 text-white flex items-center justify-between shrink-0 md:rounded-none">
         <div class="flex items-center gap-2">
-          <svg class="w-5 h-5 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
           </svg>
-          <h1 class="text-lg font-bold">Control Panel</h1>
+          <h1 class="text-base font-bold">Map Controls</h1>
         </div>
-        <button id="closeSidebarBtn" class="md:hidden p-1 rounded-md hover:bg-indigo-700 text-white">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button id="closeSidebarBtn" class="p-1 rounded-md hover:bg-indigo-700 text-white focus:outline-none">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
           </svg>
         </button>
       </div>
 
-      <!-- Controls Body -->
+      <!-- Scrollable Controls Body -->
       <div class="p-4 space-y-5 flex-1 overflow-y-auto">
         
         <!-- Location Button -->
         <div>
           <h2 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Geolocation</h2>
-          <button id="locateBtn" class="w-full bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-medium py-2.5 px-4 rounded-lg shadow transition flex items-center justify-center gap-2">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button id="locateBtn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 px-4 rounded-xl shadow transition flex items-center justify-center gap-2 text-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
@@ -78,15 +93,15 @@
 
         <hr class="border-gray-200" />
 
-        <!-- GeoJSON Source Section -->
-        <div class="space-y-4">
+        <!-- Load GeoJSON Section -->
+        <div class="space-y-3.5">
           <h2 class="text-xs font-bold text-gray-500 uppercase tracking-wider">Load GeoJSON</h2>
 
           <!-- 1. File Upload -->
           <div>
             <label class="text-xs font-semibold text-gray-600 mb-1 block">From File (.json / .geojson)</label>
             <input type="file" id="geojsonFileInput" accept=".json,.geojson" class="hidden" />
-            <label for="geojsonFileInput" class="w-full bg-gray-50 hover:bg-gray-100 text-gray-700 border-2 border-dashed border-gray-300 hover:border-indigo-500 rounded-lg p-3 text-center cursor-pointer block transition">
+            <label for="geojsonFileInput" class="w-full bg-gray-50 hover:bg-gray-100 text-gray-700 border-2 border-dashed border-gray-300 hover:border-indigo-500 rounded-xl p-3 text-center cursor-pointer block transition">
               <span class="text-xs font-medium text-gray-600">Choose file or drop here</span>
             </label>
           </div>
@@ -96,7 +111,7 @@
             <label class="text-xs font-semibold text-gray-600 mb-1 block">From URL Link</label>
             <div class="flex gap-1.5">
               <input type="url" id="geojsonUrlInput" placeholder="https://example.com/data.geojson" class="w-full border border-gray-300 rounded-lg p-2 text-xs focus:ring-indigo-500 focus:border-indigo-500" />
-              <button id="loadUrlBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-3 py-2 rounded-lg text-xs transition shrink-0 flex items-center justify-center">
+              <button id="loadUrlBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-3 py-2 rounded-lg text-xs transition shrink-0">
                 Fetch
               </button>
             </div>
@@ -104,9 +119,9 @@
 
           <!-- 3. Raw Textarea Paste -->
           <div>
-            <label class="text-xs font-semibold text-gray-600 mb-1 block">Paste GeoJSON Code</label>
+            <label class="text-xs font-semibold text-gray-600 mb-1 block">Paste Raw GeoJSON Code</label>
             <textarea id="geojsonTextInput" rows="3" class="w-full border border-gray-300 rounded-lg p-2 text-xs font-mono focus:ring-indigo-500 focus:border-indigo-500" placeholder='{"type": "FeatureCollection", ...}'></textarea>
-            <button id="loadTextBtn" class="mt-1.5 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-3 rounded-lg text-xs transition">
+            <button id="loadTextBtn" class="mt-1.5 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-3 rounded-xl text-xs transition">
               Render GeoJSON Code
             </button>
           </div>
@@ -114,7 +129,7 @@
 
         <hr class="border-gray-200" />
 
-        <!-- Storage & Coordinates Options -->
+        <!-- Options -->
         <div class="space-y-3">
           <div class="flex items-center justify-between">
             <label for="swapCoordsToggle" class="text-xs text-gray-700 font-medium">Swap Lat/Lng (If inverted)</label>
@@ -122,42 +137,45 @@
           </div>
 
           <div class="flex items-center justify-between">
-            <span class="text-xs text-gray-700 font-medium">Saved in LocalStorage</span>
+            <span class="text-xs text-gray-700 font-medium">Saved in Browser</span>
             <button id="clearStorageBtn" class="text-xs text-red-600 hover:text-red-800 underline font-medium">
               Clear Saved
             </button>
           </div>
         </div>
 
-        <!-- Status Box -->
-        <div id="statusBox" class="hidden p-3 rounded-lg text-xs leading-tight"></div>
+        <!-- Status Notification Box -->
+        <div id="statusBox" class="hidden p-3 rounded-xl text-xs leading-tight"></div>
       </div>
-    </div>
+    </aside>
 
-    <!-- Map Container -->
-    <div class="flex-1 relative h-full w-full">
+    <!-- Map Canvas Area -->
+    <main class="flex-1 h-full w-full relative">
       <div id="map"></div>
-    </div>
+    </main>
+
   </div>
 
   <script>
-    // LocalStorage Persistent Key
     const STORAGE_KEY = 'leaflet_saved_geojson';
 
-    // Initialize Map
+    // Initialize Leaflet Map
     const map = L.map('map', {
-      center: [51.505, -0.09],
-      zoom: 13,
-      zoomControl: true
+      center: [24.8607, 67.0011], // Default coordinates
+      zoom: 12,
+      zoomControl: false // Custom placement for zoom control
     });
 
-    // 1. Esri World Street Map (Primary reliable street map)
+    // Add Zoom Control to Top Right
+    L.control.zoom({ position: 'topright' }).addTo(map);
+
+    // 1. Esri World Street Map
     const esriStreet = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
       maxZoom: 19,
       attribution: 'Tiles &copy; Esri'
     }).addTo(map);
 
-    // 2. OpenStreetMap Mirror (Public Mirror)
+    // 2. OpenStreetMap Public Mirror
     const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; OpenStreetMap contributors'
@@ -169,7 +187,7 @@
       attribution: 'Tiles &copy; Esri'
     });
 
-    // Layer Switcher Widget
+    // Add Layer Control Widget
     L.control.layers({
       "Esri Street Map": esriStreet,
       "OpenStreetMap": osm,
@@ -180,23 +198,25 @@
     let userMarker = null;
     let userCircle = null;
 
-    // Mobile Drawer Toggle Handles
+    // Mobile Drawer Elements & Handlers
     const sidebar = document.getElementById('sidebar');
-    const mobileBackdrop = document.getElementById('mobileBackdrop');
+    const backdrop = document.getElementById('backdrop');
 
-    function openSidebar() {
-      sidebar.classList.remove('-translate-x-full');
-      mobileBackdrop.classList.remove('hidden');
+    function openMobileDrawer() {
+      sidebar.classList.remove('translate-y-full');
+      backdrop.classList.remove('hidden');
     }
 
-    function closeSidebar() {
-      sidebar.classList.add('-translate-x-full');
-      mobileBackdrop.classList.add('hidden');
+    function closeMobileDrawer() {
+      if (window.innerWidth < 768) {
+        sidebar.classList.add('translate-y-full');
+        backdrop.classList.add('hidden');
+      }
     }
 
-    document.getElementById('mobileMenuBtn').addEventListener('click', openSidebar);
-    document.getElementById('closeSidebarBtn').addEventListener('click', closeSidebar);
-    mobileBackdrop.addEventListener('click', closeSidebar);
+    document.getElementById('openMobileMenuBtn').addEventListener('click', openMobileDrawer);
+    document.getElementById('closeSidebarBtn').addEventListener('click', closeMobileDrawer);
+    backdrop.addEventListener('click', closeMobileDrawer);
 
     // Status Helper
     function showStatus(message, isError = false) {
@@ -252,17 +272,14 @@
           showStatus("Layer rendered, but invalid bounds detected. Export in EPSG:4326 from QGIS.", true);
         }
 
-        // Close sidebar on mobile after successful render
-        if (window.innerWidth < 768) {
-          closeSidebar();
-        }
+        closeMobileDrawer();
 
       } catch (err) {
         showStatus("Invalid GeoJSON format: " + err.message, true);
       }
     }
 
-    // Re-render when coordinate swapping checkbox changes
+    // Re-render when coordinate swapping toggle changes
     document.getElementById('swapCoordsToggle').addEventListener('change', function() {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
@@ -295,7 +312,7 @@
         return;
       }
 
-      showStatus("Fetching GeoJSON from link...");
+      showStatus("Fetching GeoJSON from URL...");
       fetch(url)
         .then(res => {
           if (!res.ok) throw new Error(`HTTP error ${res.status}`);
@@ -331,11 +348,11 @@
         map.removeLayer(importedLayer);
         importedLayer = null;
       }
-      showStatus("Saved GeoJSON removed from browser storage.");
+      showStatus("Saved GeoJSON removed from storage.");
     });
 
-    // Geolocation Handler
-    document.getElementById('locateBtn').addEventListener('click', function() {
+    // Geolocation Core Function
+    function performGeolocation() {
       if (!navigator.geolocation) {
         showStatus("Geolocation is not supported by your browser.", true);
         return;
@@ -358,16 +375,17 @@
           map.flyTo([latitude, longitude], 16, { duration: 1.5 });
           showStatus("Location found!");
 
-          if (window.innerWidth < 768) {
-            closeSidebar();
-          }
+          closeMobileDrawer();
         },
         (error) => {
           showStatus("Location access denied or timed out.", true);
         },
         { enableHighAccuracy: true }
       );
-    });
+    }
+
+    document.getElementById('locateBtn').addEventListener('click', performGeolocation);
+    document.getElementById('quickLocateBtn').addEventListener('click', performGeolocation);
 
     // Auto-load Saved GeoJSON on Page Refresh
     window.addEventListener('DOMContentLoaded', () => {
@@ -376,7 +394,7 @@
         try {
           const json = JSON.parse(savedGeoJSON);
           renderGeoJSON(json, false);
-          showStatus("Restored last used GeoJSON from persistent storage.");
+          showStatus("Restored saved GeoJSON from persistent storage.");
         } catch (e) {
           localStorage.removeItem(STORAGE_KEY);
         }
